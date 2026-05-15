@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Johanna Ober — Design Portfolio</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">JO</a>
+    <ul class="nav-links">
+      <li><a href="#" class="active" data-en="About" data-de="About">About</a></li>
+      <li><a href="#projects" data-en="Projects"   data-de="Projekte">Projects</a></li>
+      <li><a href="#resume"   data-en="Resume"     data-de="Lebenslauf">Resume</a></li>
+    </ul>
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang="en">EN</button>
+      <span class="lang-divider">|</span>
+      <button class="lang-btn" data-lang="de">DE</button>
+    </div>
+  </nav>
+
+  <!-- INTRO -->
+  <section id="intro">
+    <div class="intro-upper">
+      <div class="intro-content">
+        <div class="slogan-wrap">
+          <p class="hero-display"
+             data-en="Clear, human-centered  <br> digital experiences."
+             data-de="Klare, menschenzentrierte  <br> digitale Erlebnisse.">
+            Clear, human-centered  <br> digital experiences.
+          </p>
+        </div>
+        <div class="intro-id">
+          <h1 class="hero-display">Johanna Ober</h1>
+          <p class="hero-title"
+             data-en="UX Design &amp;<br>Product Engineer"
+             data-de="UX Design &amp;<br>Product Engineer">UX Design &amp; Engineer</p>
+        </div>
+        <div class="badges">
+          <span class="badge">Product Design</span>
+          <span class="badge">UX Research</span>
+          <span class="badge">Prototyping</span>
+          <span class="flex-break"></span>
+          <span class="badge">Interaction Design</span>
+          <span class="badge">Design Systems</span>
+        </div>
+      </div>
+      <div class="intro-photo">
+        <img src="images/JO_Titelbild_lowres.png" alt="Johanna Ober" />
+      </div>
+      <div id="scroll-hint" aria-hidden="true"></div>
+    </div>
+    <!-- <div class="intro-lower">
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#projects"
+           data-en="View Projects"
+           data-de="Projekte ansehen">View Projects</a>
+        <a class="btn btn-ghost" href="#contact"
+           data-en="Get in Touch"
+           data-de="Kontakt aufnehmen">Get in Touch</a>
+      </div>
+    </div> -->
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2 data-en="Projects" data-de="Projekte">Projects</h2>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <a href="project-1.html"><img class="project-thumb" src="images/project-1.png" alt="Bloom Shopping Redesign mockup"/></a>
+        <div class="project-body">
+          <div class="badges">
+            <span class="badge-outline">E-commerce</span>
+            <span class="badge-outline">Mobile</span>
+          </div>
+          <p class="project-title">Bloom — Shopping Redesign</p>
+          <p class="project-desc"
+             data-en="End-to-end redesign of a retail app's checkout flow, reducing drop-off by 34% through progressive disclosure and inline error handling."
+             data-de="Vollständige Neugestaltung des Checkout-Flows einer Retail-App — Drop-off-Rate um 34 % gesenkt durch progressive Offenlegung und kontextuelle Fehlerbehandlung.">
+            End-to-end redesign of a retail app's checkout flow, reducing drop-off by 34% through progressive disclosure and inline error handling.
+          </p>
+          <a class="project-link" href="project-1.html" data-en="Show me →" data-de="Zeig mir →">Show me →</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <a href="project-2.html"><img class="project-thumb" src="images/project-2.png" alt="Meridian Analytics mockup"/></a>
+        <div class="project-body">
+          <div class="badges">
+            <span class="badge-outline">SaaS</span>
+            <span class="badge-outline">Dashboard</span>
+          </div>
+          <p class="project-title">Meridian Analytics</p>
+          <p class="project-desc"
+             data-en="Designed a data-dense analytics dashboard with a focus on scannability — custom charting components and a token-based design system."
+             data-de="Gestaltung eines datenreichen Analytics-Dashboards mit Fokus auf Scannbarkeit — individuelle Diagrammkomponenten und ein token-basiertes Designsystem.">
+            Designed a data-dense analytics dashboard with a focus on scannability — custom charting components and a token-based design system.
+          </p>
+          <a class="project-link" href="project-2.html" data-en="Show me →" data-de="Zeig mir →">Show me →</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <a href="project-3.html"><img class="project-thumb" src="images/project-3.png" alt="CareFlow Patient Portal mockup"/></a>
+        <div class="project-body">
+          <div class="badges">
+            <span class="badge-outline">HealthTech</span>
+            <span class="badge-outline">Web</span>
+          </div>
+          <p class="project-title">CareFlow Patient Portal</p>
+          <p class="project-desc"
+             data-en="Accessible patient portal for a regional hospital network. Led research, journey mapping, and high-fidelity prototyping from scratch."
+             data-de="Barrierefreies Patientenportal für ein regionales Krankenhausnetzwerk. Verantwortlich für Research, Journey Mapping und High-Fidelity-Prototyping.">
+            Accessible patient portal for a regional hospital network. Led research, journey mapping, and high-fidelity prototyping from scratch.
+          </p>
+          <a class="project-link" href="project-3.html" data-en="Show me →" data-de="Zeig mir →">Show me →</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <a href="project-4.html"><img class="project-thumb" src="images/project-4.png" alt="Tempo Music App mockup"/></a>
+        <div class="project-body">
+          <div class="badges">
+            <span class="badge-outline">Consumer</span>
+            <span class="badge-outline">iOS</span>
+          </div>
+          <p class="project-title">Tempo Music App</p>
+          <p class="project-desc"
+             data-en="Concept exploration for a collaborative playlist app. Focused on the social layer — shared queues, reactions, and real-time listening."
+             data-de="Konzeptionelle Erkundung einer kollaborativen Playlist-App. Fokus auf die soziale Ebene — gemeinsame Warteschlangen, Reaktionen und Echtzeit-Hören.">
+            Concept exploration for a collaborative playlist app. Focused on the social layer — shared queues, reactions, and real-time listening.
+          </p>
+          <a class="project-link" href="project-4.html" data-en="Show me →" data-de="Zeig mir →">Show me →</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <a href="project-5.html"><img class="project-thumb" src="images/project-5.png" alt="Helix Component Library mockup"/></a>
+        <div class="project-body">
+          <div class="badges">
+            <span class="badge-outline">Design System</span>
+          </div>
+          <p class="project-title">Helix Component Library</p>
+          <p class="project-desc"
+             data-en="Built and documented a shared component library across four product teams — 80+ components, Figma variables, and Storybook integration."
+             data-de="Aufbau und Dokumentation einer gemeinsamen Komponentenbibliothek für vier Produktteams — 80+ Komponenten, Figma-Variablen und Storybook-Integration.">
+            Built and documented a shared component library across four product teams — 80+ components, Figma variables, and Storybook integration.
+          </p>
+          <a class="project-link" href="project-5.html" data-en="Show me →" data-de="Zeig mir →">Show me →</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <a href="project-6.html"><img class="project-thumb" src="images/project-6.png" alt="TerraWatch Climate Hub mockup"/></a>
+        <div class="project-body">
+          <div class="badges">
+            <span class="badge-outline">Non-profit</span>
+            <span class="badge-outline">Web</span>
+          </div>
+          <p class="project-title">TerraWatch Climate Hub</p>
+          <p class="project-desc"
+             data-en="Pro-bono redesign of a climate data platform. Simplified complex datasets for a broad public audience through storytelling and data visualisation."
+             data-de="Pro-Bono-Redesign einer Klimadatenplattform. Vereinfachung komplexer Datensätze für ein breites Publikum durch Storytelling und Datenvisualisierung.">
+            Pro-bono redesign of a climate data platform. Simplified complex datasets for a broad public audience through storytelling and data visualisation.
+          </p>
+          <a class="project-link" href="project-6.html" data-en="Show me →" data-de="Zeig mir →">Show me →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- RESUME -->
+  <section id="resume">
+    <h2 data-en="Resume" data-de="Lebenslauf">Resume</h2>
+
+    <div class="resume-tabs">
+      <input type="radio" name="resume-tab" id="tab-exp" checked>
+      <input type="radio" name="resume-tab" id="tab-edu">
+      <input type="radio" name="resume-tab" id="tab-vol">
+
+      <div class="tab-nav">
+        <label for="tab-exp" data-en="Experience" data-de="Erfahrung">Experience</label>
+        <label for="tab-edu" data-en="Education" data-de="Ausbildung">Education</label>
+        <label for="tab-vol" data-en="Volunteering" data-de="Ehrenamt">Volunteering</label>
+      </div>
+
+      <!-- EXPERIENCE PANEL -->
+      <div class="tab-panel" id="panel-exp">
+
+        <div class="resume-item">
+          <span class="resume-meta">10/2025</span>
+          <div class="resume-company-col">
+            <p class="resume-org">Titanom Solutions, Germering</p>
+          </div>
+          <div class="resume-role-col">
+            <p class="resume-role">UX/UI Design</p>
+            <p class="resume-detail">AI in Education Technologies</p>
+            <div class="resume-tags">
+              <span class="badge">Learner Centered Design</span>
+              <span class="badge">Human-AI Interaction</span>
+              <span class="badge">Accessibility</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="resume-item">
+          <span class="resume-meta">02/2025</span>
+          <div class="resume-company-col">
+            <p class="resume-org">Audi AG, Ingolstadt</p>
+          </div>
+          <div class="resume-role-col">
+            <p class="resume-role">UX/UI Concept</p>
+            <p class="resume-detail">Future car interaction concept "mobile first car UX"</p>
+            <div class="resume-tags">
+              <span class="badge">Speculative Design</span>
+              <span class="badge">Concept</span>
+              <span class="badge">Prototyping</span>
+              <span class="badge">Focus group</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="resume-item">
+          <span class="resume-meta">08/2024</span>
+          <div class="resume-company-col">
+            <p class="resume-org">Audi AG, Ingolstadt</p>
+          </div>
+          <div class="resume-role-col">
+            <p class="resume-role">UX/UI Concept</p>
+            <p class="resume-detail">Conception of physical &amp; digital car UI elements</p>
+            <div class="resume-tags">
+              <span class="badge">Concept</span>
+              <span class="badge">Prototyping</span>
+              <span class="badge">User Testing</span>
+              <span class="badge">Icon Design</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="resume-item">
+          <span class="resume-meta">08/2022</span>
+          <div class="resume-company-col">
+            <p class="resume-org">AKKODIS, Sindelfingen</p>
+          </div>
+          <div class="resume-role-col">
+            <p class="resume-role">Graphic &amp; UX Design</p>
+            <p class="resume-detail">B2B &amp; B2C software solutions</p>
+            <div class="resume-tags">
+              <span class="badge">User Research</span>
+              <span class="badge">Prototyping</span>
+              <span class="badge">User Testing</span>
+              <span class="badge">Visual Design</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="resume-item">
+          <span class="resume-meta">11/2021</span>
+          <div class="resume-company-col">
+            <p class="resume-org">Kaleon-Media, Rosenheim</p>
+          </div>
+          <div class="resume-role-col">
+            <p class="resume-role">Graphic &amp; Web Design</p>
+            <p class="resume-detail">Inhouse &amp; B2C projects</p>
+            <div class="resume-tags">
+              <span class="badge">Web Design</span>
+              <span class="badge">Online Media</span>
+              <span class="badge">Print Layouts</span>
+              <span class="badge">Wireframing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="resume-item">
+          <span class="resume-meta">02/2019</span>
+          <div class="resume-company-col">
+            <p class="resume-org">F&amp;W Druck- &amp; Mediencenter, Kienberg</p>
+          </div>
+          <div class="resume-role-col">
+            <p class="resume-role">Media Design &amp; Project Management</p>
+            <p class="resume-detail">Inhouse, B2B &amp; B2C print products</p>
+            <div class="resume-tags">
+              <span class="badge">Consulting</span>
+              <span class="badge">Project Management</span>
+              <span class="badge">Design &amp; Data Processing</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- EDUCATION PANEL -->
+      <div class="tab-panel" id="panel-edu">
+
+        <div class="resume-item">
+          <span class="resume-meta">08/2023</span>
+          <div class="resume-company-col">
+            <p class="resume-org">Linköping University, Sweden</p>
+          </div>
+          <div class="resume-role-col">
+            <p class="resume-role">Exchange Semester</p>
+            <p class="resume-detail">Graphic Design &amp; Communication</p>
+            <div class="resume-tags">
+              <span class="badge">Communication Design</span>
+              <span class="badge">Learner Centered Design</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="resume-item">
+          <span class="resume-meta">09/2021</span>
+          <div class="resume-company-col">
+            <p class="resume-org">Hochschule der Medien, Stuttgart</p>
+          </div>
+          <div class="resume-role-col">
+            <p class="resume-role">B.A. Information Design</p>
+            <p class="resume-detail">Focus on UX/UI &amp; Interaction Design</p>
+            <div class="resume-tags">
+              <span class="badge">UX Design</span>
+              <span class="badge">HCD</span>
+              <span class="badge">User Research</span>
+              <span class="badge">Information Visualisation</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="resume-item">
+          <span class="resume-meta">09/2016</span>
+          <div class="resume-company-col">
+            <p class="resume-org">Berufsschulzentrum Alois Senefelder, Munich</p>
+          </div>
+          <div class="resume-role-col">
+            <p class="resume-role">Apprenticeship · Digital &amp; Print Media Design</p>
+            <p class="resume-detail">Vocational training in digital &amp; print media design</p>
+            <div class="resume-tags">
+              <span class="badge">Print Design</span>
+              <span class="badge">Digital Media</span>
+              <span class="badge">Typography</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="resume-item">
+          <span class="resume-meta">09/2014</span>
+          <div class="resume-company-col">
+            <p class="resume-org">Städtische Fachoberschule for Design, Munich</p>
+          </div>
+          <div class="resume-role-col">
+            <p class="resume-role">University Entrance Qualification · Design</p>
+            <p class="resume-detail">Fachhochschulreife, Design focus</p>
+            <div class="resume-tags">
+              <span class="badge">Design</span>
+              <span class="badge">Visual Arts</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- VOLUNTEERING PANEL -->
+      <div class="tab-panel" id="panel-vol">
+
+        <div class="resume-item">
+          <span class="resume-meta">05/2014</span>
+          <div class="resume-company-col">
+            <p class="resume-org" data-en="Clubs &amp; Activities" data-de="Vereine &amp; Aktivitäten">Clubs &amp; Activities</p>
+          </div>
+          <div class="resume-role-col">
+            <p class="resume-role">Keyboarder in a Wedding Band</p>
+            <p class="resume-role">Volunteer Firefighter</p>
+            <p class="resume-role">Trainer in a Sport Shooting Club</p>
+           <div class="resume-tags">
+              <span class="badge">Team spirit</span>
+              <span class="badge">Community work</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="resume-item">
+          <span class="resume-meta">ALWAYS</span>
+          <div class="resume-company-col">
+            <p class="resume-org" data-en="Interests" data-de="Interessen">Interests</p>
+          </div>
+          <div class="resume-role-col">
+            <p class="resume-role">Running</p>
+            <p class="resume-role">Hiking</p>
+            <p class="resume-role">Cycling</p>
+            <p class="resume-role">Analog Design &amp; Handicraft</p>
+           <div class="resume-tags">
+              <span class="badge">Nature love</span>
+              <span class="badge">Community love</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="resume-section">
+      <h3 data-en="Skills &amp; Tools" data-de="Fähigkeiten &amp; Tools">Skills &amp; Tools</h3>
+      <div class="skills-grid">
+        <span class="skill-tag">Figma</span>
+        <span class="skill-tag">UX Research</span>
+        <span class="skill-tag">Prototyping</span>
+        <span class="skill-tag">User Testing</span>
+        <span class="skill-tag">Wireframing</span>
+        <span class="flex-break"></span>
+        <span class="skill-tag">Visual Design</span>
+        <span class="skill-tag">Icon Design</span>
+        <span class="skill-tag">Accessibility (WCAG)</span>
+        <span class="flex-break"></span>
+        <span class="skill-tag">Human-AI Interaction</span>
+        <span class="skill-tag">Learner Centered Design</span>
+        <span class="skill-tag">Speculative Design</span>
+        <span class="flex-break"></span>
+        <span class="skill-tag">Web Design</span>
+        <span class="skill-tag">Print Design</span>
+        <span class="skill-tag">Project Management</span>
+        <span class="skill-tag">HTML / CSS</span>
+      </div>
+    </div>
+
+    <a class="btn btn-ghost" href="#" download
+       data-en="↓ Download PDF Resume"
+       data-de="↓ Lebenslauf als PDF herunterladen">
+      ↓ Download PDF Resume
+    </a>
+  </section>
+
+  <!-- PROFILE PHOTO -->
+  <section id="profile">
+    <div class="profile-left">
+      <div class="profile-stats">
+        <div class="stat">
+          <span class="stat-num">7+</span>
+          <span class="stat-label">Years of experience</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">5+</span>
+          <span class="stat-label">Companies</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">B.A.</span>
+          <span class="stat-label">Communication Design</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">Munich</span>
+          <span class="stat-label">Based in</span>
+        </div>
+      </div>
+    </div>
+    <div class="profile-photo">
+      <!-- Replace with: <img src="images/profile.jpg" alt="Johanna Ober" /> -->
+    </div>
+  </section>
+
+  <!-- FOOTER / CONTACT -->
+  <footer id="contact">
+    <div class="contact-card">
+      <div class="contact-info">
+        <p class="footer-name">Johanna Ober</p>
+        <p class="footer-role">UX Design &amp; Product Engineer</p>
+        <div class="footer-links">
+          <a href="mailto:johanna.ober@titanom.com">johanna.ober@titanom.com</a>
+          <a href="https://linkedin.com/in/johannaober" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer-mark">JO&thinsp;—&thinsp;©'26</div>
+    </div>
+    <div class="footer-copy">©2026. All rights reserved.</div>
+  </footer>
+
+  <a href="#intro" id="back-to-top" aria-label="Back to top">↑</a>
+  <script src="script.js"></script>
+</body>
+</html>

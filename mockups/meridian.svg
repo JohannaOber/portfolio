@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <filter id="shadow-m" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#00000028"/>
+    </filter>
+    <clipPath id="screen-clip-m">
+      <polygon points="163,97 581,73 597,336 179,360"/>
+    </clipPath>
+    <!-- Chart line gradient -->
+    <linearGradient id="chart-fill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="#eeeeee"/>
+
+  <!-- MacBook group -->
+  <g filter="url(#shadow-m)">
+
+    <!-- Screen bezel (outer dark) -->
+    <polygon points="148,82 596,56 614,350 166,376" fill="#1c1c1e"/>
+
+    <!-- Screen inner (white) -->
+    <polygon points="163,97 581,73 597,336 179,360" fill="#ffffff"/>
+
+    <!-- Camera dot -->
+    <circle cx="372" cy="87" r="4" fill="#333333"/>
+
+    <!-- Screen UI content (clipped to inner screen) -->
+    <g clip-path="url(#screen-clip-m)">
+
+      <!-- Top navigation bar -->
+      <polygon points="163,97 581,73 585,98 167,122" fill="#f8f9fa"/>
+      <!-- Nav title -->
+      <text x="220" y="113" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" fill="#1c1c1e" font-weight="700" transform="skewX(-2)">Meridian Analytics</text>
+      <!-- Nav right items -->
+      <rect x="530" y="103" width="36" height="12" rx="6" fill="#3b82f6" transform="skewX(-2)"/>
+      <text x="548" y="112" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="7" fill="#ffffff" text-anchor="middle" transform="skewX(-2)">Export</text>
+
+      <!-- Nav divider -->
+      <line x1="163" y1="122" x2="585" y2="98" stroke="#e5e7eb" stroke-width="1"/>
+
+      <!-- Sidebar -->
+      <polygon points="163,122 207,119 218,336 179,360" fill="#f3f4f6"/>
+      <text x="174" y="140" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="7" fill="#6b7280" transform="skewX(-1)">Dashboard</text>
+      <rect x="164" y="148" width="40" height="14" rx="3" fill="#e0e7ff" transform="skewX(-1)"/>
+      <text x="174" y="158" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6.5" fill="#4338ca" transform="skewX(-1)">Overview</text>
+      <text x="174" y="176" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6.5" fill="#9ca3af" transform="skewX(-1)">Reports</text>
+      <text x="174" y="190" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6.5" fill="#9ca3af" transform="skewX(-1)">Users</text>
+      <text x="174" y="204" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6.5" fill="#9ca3af" transform="skewX(-1)">Settings</text>
+
+      <!-- Main content area -->
+      <!-- Metric cards row -->
+      <!-- Card 1: Revenue -->
+      <rect x="218" y="130" width="110" height="52" rx="6" fill="#ffffff" stroke="#e5e7eb" stroke-width="0.8" transform="skewX(-1.5)"/>
+      <text x="228" y="146" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="7" fill="#6b7280" transform="skewX(-1.5)">Revenue</text>
+      <text x="228" y="162" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" fill="#1c1c1e" font-weight="700" transform="skewX(-1.5)">€84,231</text>
+      <text x="228" y="174" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6.5" fill="#22c55e" transform="skewX(-1.5)">▲ 12.4% vs last mo</text>
+
+      <!-- Card 2: Users -->
+      <rect x="336" y="126" width="110" height="52" rx="6" fill="#ffffff" stroke="#e5e7eb" stroke-width="0.8" transform="skewX(-1.5)"/>
+      <text x="346" y="142" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="7" fill="#6b7280" transform="skewX(-1.5)">Active Users</text>
+      <text x="346" y="158" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" fill="#1c1c1e" font-weight="700" transform="skewX(-1.5)">12,849</text>
+      <text x="346" y="170" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6.5" fill="#22c55e" transform="skewX(-1.5)">▲ 8.1% vs last mo</text>
+
+      <!-- Card 3: Conversion -->
+      <rect x="454" y="122" width="110" height="52" rx="6" fill="#ffffff" stroke="#e5e7eb" stroke-width="0.8" transform="skewX(-1.5)"/>
+      <text x="464" y="138" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="7" fill="#6b7280" transform="skewX(-1.5)">Conversion</text>
+      <text x="464" y="154" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" fill="#1c1c1e" font-weight="700" transform="skewX(-1.5)">3.72%</text>
+      <text x="464" y="166" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6.5" fill="#ef4444" transform="skewX(-1.5)">▼ 0.3% vs last mo</text>
+
+      <!-- Chart section -->
+      <rect x="218" y="192" width="348" height="108" rx="6" fill="#ffffff" stroke="#e5e7eb" stroke-width="0.8" transform="skewX(-1)"/>
+      <text x="228" y="206" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="7.5" fill="#1c1c1e" font-weight="600" transform="skewX(-1)">Revenue over time</text>
+      <!-- Y axis labels -->
+      <text x="228" y="220" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6" fill="#9ca3af" transform="skewX(-1)">€100k</text>
+      <text x="228" y="248" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6" fill="#9ca3af" transform="skewX(-1)">€50k</text>
+      <text x="228" y="276" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6" fill="#9ca3af" transform="skewX(-1)">€0</text>
+      <!-- Grid lines -->
+      <line x1="246" y1="216" x2="556" y2="209" stroke="#f3f4f6" stroke-width="0.8" transform="skewX(-1)"/>
+      <line x1="246" y1="244" x2="556" y2="237" stroke="#f3f4f6" stroke-width="0.8" transform="skewX(-1)"/>
+      <line x1="246" y1="272" x2="556" y2="265" stroke="#f3f4f6" stroke-width="0.8" transform="skewX(-1)"/>
+      <!-- Line chart path (approximate skewed coords) -->
+      <polyline points="250,268 285,256 320,248 355,238 390,230 425,222 460,235 495,220 530,214 555,210" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linejoin="round" transform="skewX(-1)"/>
+      <!-- Fill under chart -->
+      <polygon points="250,268 285,256 320,248 355,238 390,230 425,222 460,235 495,220 530,214 555,210 555,272 250,279" fill="#3b82f620" transform="skewX(-1)"/>
+      <!-- X axis labels -->
+      <text x="252" y="285" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6" fill="#9ca3af" transform="skewX(-1)">Jan</text>
+      <text x="286" y="284" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6" fill="#9ca3af" transform="skewX(-1)">Feb</text>
+      <text x="321" y="283" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6" fill="#9ca3af" transform="skewX(-1)">Mar</text>
+      <text x="355" y="282" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6" fill="#9ca3af" transform="skewX(-1)">Apr</text>
+      <text x="390" y="281" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6" fill="#9ca3af" transform="skewX(-1)">May</text>
+      <text x="426" y="280" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6" fill="#9ca3af" transform="skewX(-1)">Jun</text>
+      <text x="461" y="279" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6" fill="#9ca3af" transform="skewX(-1)">Jul</text>
+      <text x="494" y="278" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6" fill="#9ca3af" transform="skewX(-1)">Aug</text>
+      <text x="525" y="277" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6" fill="#9ca3af" transform="skewX(-1)">Sep</text>
+
+      <!-- Data table -->
+      <rect x="218" y="308" width="348" height="36" rx="6" fill="#ffffff" stroke="#e5e7eb" stroke-width="0.8" transform="skewX(-1)"/>
+      <!-- Table header -->
+      <rect x="218" y="308" width="348" height="14" rx="6" fill="#f9fafb" stroke="#e5e7eb" stroke-width="0.8" transform="skewX(-1)"/>
+      <text x="228" y="318" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6.5" fill="#6b7280" font-weight="600" transform="skewX(-1)">Product</text>
+      <text x="338" y="318" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6.5" fill="#6b7280" font-weight="600" transform="skewX(-1)">Revenue</text>
+      <text x="420" y="318" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6.5" fill="#6b7280" font-weight="600" transform="skewX(-1)">Users</text>
+      <text x="490" y="318" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6.5" fill="#6b7280" font-weight="600" transform="skewX(-1)">Conv.</text>
+      <!-- Table row -->
+      <text x="228" y="332" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6.5" fill="#1c1c1e" transform="skewX(-1)">Pro Plan</text>
+      <text x="338" y="332" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6.5" fill="#1c1c1e" transform="skewX(-1)">€52,100</text>
+      <text x="420" y="332" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6.5" fill="#1c1c1e" transform="skewX(-1)">7,420</text>
+      <text x="490" y="332" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6.5" fill="#22c55e" transform="skewX(-1)">4.8%</text>
+    </g>
+
+    <!-- Keyboard base top -->
+    <polygon points="166,376 614,350 644,432 136,458" fill="#c8c8cc"/>
+
+    <!-- Hinge shadow -->
+    <polygon points="166,376 614,350 614,358 166,384" fill="#a0a0a4" opacity="0.5"/>
+
+    <!-- Base front edge -->
+    <polygon points="136,458 644,432 648,450 132,476" fill="#b0b0b4"/>
+
+    <!-- Keyboard details -->
+    <!-- Trackpad -->
+    <rect x="330" y="396" width="148" height="24" rx="4" fill="#b8b8bc" transform="skewX(-1)"/>
+
+    <!-- Speaker grilles -->
+    <rect x="178" y="390" width="28" height="3" rx="1.5" fill="#a8a8ac"/>
+    <rect x="178" y="395" width="28" height="3" rx="1.5" fill="#a8a8ac"/>
+    <rect x="178" y="400" width="28" height="3" rx="1.5" fill="#a8a8ac"/>
+    <rect x="590" y="382" width="28" height="3" rx="1.5" fill="#a8a8ac"/>
+    <rect x="590" y="387" width="28" height="3" rx="1.5" fill="#a8a8ac"/>
+    <rect x="590" y="392" width="28" height="3" rx="1.5" fill="#a8a8ac"/>
+  </g>
+</svg>

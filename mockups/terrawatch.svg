@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg-tw" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f2f0eb"/>
+      <stop offset="100%" stop-color="#e8e4dc"/>
+    </linearGradient>
+    <filter id="shadow-tw" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#00000028"/>
+    </filter>
+    <clipPath id="screen-clip-tw">
+      <polygon points="166,100 576,78 592,334 182,356"/>
+    </clipPath>
+    <!-- Chart area fill gradient -->
+    <linearGradient id="chart-fill-tw" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+    </linearGradient>
+    <!-- Warm chart line -->
+    <linearGradient id="temp-gradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="60%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg-tw)"/>
+
+  <!-- MacBook group -->
+  <g filter="url(#shadow-tw)">
+
+    <!-- Screen bezel outer -->
+    <polygon points="152,86 590,62 608,348 170,372" fill="#1c1c1e"/>
+
+    <!-- Screen inner (dark UI) -->
+    <polygon points="166,100 576,78 592,334 182,356" fill="#0d1117"/>
+
+    <!-- Camera -->
+    <circle cx="371" cy="91" r="4" fill="#333333"/>
+    <circle cx="371" cy="91" r="1.5" fill="#1a1a1a"/>
+
+    <!-- Screen content clipped -->
+    <g clip-path="url(#screen-clip-tw)">
+
+      <!-- Dark background base -->
+      <rect x="100" y="60" width="560" height="320" fill="#0d1117"/>
+
+      <!-- Subtle grid/noise texture -->
+      <line x1="166" y1="120" x2="592" y2="98" stroke="#ffffff" stroke-width="0.3" opacity="0.05"/>
+      <line x1="166" y1="150" x2="592" y2="128" stroke="#ffffff" stroke-width="0.3" opacity="0.05"/>
+      <line x1="166" y1="180" x2="592" y2="158" stroke="#ffffff" stroke-width="0.3" opacity="0.05"/>
+      <line x1="166" y1="210" x2="592" y2="188" stroke="#ffffff" stroke-width="0.3" opacity="0.05"/>
+      <line x1="166" y1="240" x2="592" y2="218" stroke="#ffffff" stroke-width="0.3" opacity="0.05"/>
+      <line x1="166" y1="270" x2="592" y2="248" stroke="#ffffff" stroke-width="0.3" opacity="0.05"/>
+      <line x1="166" y1="300" x2="592" y2="278" stroke="#ffffff" stroke-width="0.3" opacity="0.05"/>
+
+      <!-- Header bar -->
+      <polygon points="166,100 576,78 578,102 168,124" fill="#161b22"/>
+
+      <!-- Logo/Brand -->
+      <circle cx="184" cy="113" r="6" fill="#3b82f6" opacity="0.8"/>
+      <text x="194" y="118" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" fill="#ffffff" font-weight="700" transform="skewX(-2)">TerraWatch</text>
+      <text x="242" y="118" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="7" fill="#3b82f6" transform="skewX(-2)">Climate Intelligence</text>
+
+      <!-- Nav right -->
+      <text x="530" y="118" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="7" fill="#8b949e" transform="skewX(-2)">2025 Report ▾</text>
+      <rect x="548" y="107" width="20" height="12" rx="3" fill="#3b82f6" opacity="0.2" transform="skewX(-2)"/>
+
+      <!-- Main headline -->
+      <text x="184" y="148" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="15" fill="#ffffff" font-weight="700" transform="skewX(-1.5)">Global Temperature</text>
+      <text x="184" y="162" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#8b949e" transform="skewX(-1.5)">Anomaly vs 1950–1980 baseline · Global surface mean</text>
+
+      <!-- Period selector -->
+      <rect x="480" y="140" width="28" height="13" rx="3" fill="#21262d" transform="skewX(-1.5)"/>
+      <text x="494" y="150" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6.5" fill="#8b949e" text-anchor="middle" transform="skewX(-1.5)">1Y</text>
+      <rect x="512" y="140" width="28" height="13" rx="3" fill="#3b82f6" transform="skewX(-1.5)"/>
+      <text x="526" y="150" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6.5" fill="#ffffff" text-anchor="middle" transform="skewX(-1.5)">10Y</text>
+      <rect x="544" y="140" width="28" height="13" rx="3" fill="#21262d" transform="skewX(-1.5)"/>
+      <text x="558" y="150" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6.5" fill="#8b949e" text-anchor="middle" transform="skewX(-1.5)">All</text>
+
+      <!-- Chart area background -->
+      <rect x="180" y="170" width="390" height="110" rx="4" fill="#161b22" transform="skewX(-0.5)"/>
+
+      <!-- Y axis labels -->
+      <text x="184" y="182" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6" fill="#58a6ff" transform="skewX(-1)">+1.5°C</text>
+      <text x="184" y="205" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6" fill="#8b949e" transform="skewX(-1)">+1.0°C</text>
+      <text x="184" y="228" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6" fill="#8b949e" transform="skewX(-1)">+0.5°C</text>
+      <text x="184" y="251" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6" fill="#8b949e" transform="skewX(-1)">0.0°C</text>
+      <text x="184" y="273" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6" fill="#8b949e" transform="skewX(-1)">-0.5°C</text>
+
+      <!-- Grid lines for chart -->
+      <line x1="202" y1="178" x2="570" y2="164" stroke="#30363d" stroke-width="0.8"/>
+      <line x1="202" y1="201" x2="570" y2="187" stroke="#30363d" stroke-width="0.8"/>
+      <line x1="202" y1="224" x2="570" y2="210" stroke="#30363d" stroke-width="0.8"/>
+      <line x1="202" y1="247" x2="570" y2="233" stroke="#ef4444" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.4"/>
+      <line x1="202" y1="270" x2="570" y2="256" stroke="#30363d" stroke-width="0.8"/>
+
+      <!-- Area fill under temperature line -->
+      <polygon points="206,252 232,248 262,242 292,236 322,230 352,222 382,215 412,208 442,200 472,192 502,184 530,178 560,174 560,268 206,282" fill="url(#chart-fill-tw)" transform="skewX(-0.5)" opacity="0.6"/>
+
+      <!-- Temperature line (rising trend) -->
+      <polyline points="206,252 232,248 262,242 292,236 322,230 352,222 382,215 412,208 442,200 472,192 502,184 530,178 560,174" fill="none" stroke="url(#temp-gradient)" stroke-width="2.5" stroke-linejoin="round" transform="skewX(-0.5)"/>
+
+      <!-- Endpoint dot -->
+      <circle cx="558" cy="174" r="4" fill="#ef4444" transform="skewX(-0.5)"/>
+      <circle cx="558" cy="174" r="7" fill="#ef4444" opacity="0.2" transform="skewX(-0.5)"/>
+
+      <!-- Tooltip marker -->
+      <line x1="440" y1="170" x2="436" y2="270" stroke="#58a6ff" stroke-width="0.8" stroke-dasharray="3,2" transform="skewX(-0.5)" opacity="0.6"/>
+      <rect x="444" y="178" width="60" height="28" rx="4" fill="#21262d" stroke="#30363d" stroke-width="1" transform="skewX(-0.5)"/>
+      <text x="474" y="190" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6.5" fill="#8b949e" text-anchor="middle" transform="skewX(-0.5)">2018</text>
+      <text x="474" y="202" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#f59e0b" text-anchor="middle" font-weight="600" transform="skewX(-0.5)">+1.04°C</text>
+
+      <!-- X axis labels -->
+      <text x="208" y="284" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6" fill="#8b949e" transform="skewX(-1)">2000</text>
+      <text x="264" y="282" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6" fill="#8b949e" transform="skewX(-1)">2005</text>
+      <text x="320" y="280" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6" fill="#8b949e" transform="skewX(-1)">2010</text>
+      <text x="376" y="278" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6" fill="#8b949e" transform="skewX(-1)">2015</text>
+      <text x="432" y="276" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6" fill="#8b949e" transform="skewX(-1)">2020</text>
+      <text x="488" y="274" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6" fill="#8b949e" transform="skewX(-1)">2023</text>
+
+      <!-- Stat cards row -->
+      <!-- Card 1: Current anomaly -->
+      <rect x="186" y="292" width="112" height="44" rx="5" fill="#161b22" stroke="#30363d" stroke-width="1" transform="skewX(-1)"/>
+      <text x="196" y="306" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="7" fill="#8b949e" transform="skewX(-1)">Current Anomaly</text>
+      <text x="196" y="320" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" fill="#ef4444" font-weight="700" transform="skewX(-1)">+1.48°C</text>
+      <text x="196" y="330" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6.5" fill="#ef444488" transform="skewX(-1)">▲ highest on record</text>
+
+      <!-- Card 2: CO2 level -->
+      <rect x="306" y="290" width="112" height="44" rx="5" fill="#161b22" stroke="#30363d" stroke-width="1" transform="skewX(-1)"/>
+      <text x="316" y="304" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="7" fill="#8b949e" transform="skewX(-1)">CO₂ Concentration</text>
+      <text x="316" y="318" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" fill="#f59e0b" font-weight="700" transform="skewX(-1)">421 ppm</text>
+      <text x="316" y="328" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6.5" fill="#f59e0b88" transform="skewX(-1)">▲ 2.3 ppm/year</text>
+
+      <!-- Card 3: Sea level -->
+      <rect x="426" y="288" width="112" height="44" rx="5" fill="#161b22" stroke="#30363d" stroke-width="1" transform="skewX(-1)"/>
+      <text x="436" y="302" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="7" fill="#8b949e" transform="skewX(-1)">Sea Level Rise</text>
+      <text x="436" y="316" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" fill="#58a6ff" font-weight="700" transform="skewX(-1)">+101mm</text>
+      <text x="436" y="326" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6.5" fill="#58a6ff88" transform="skewX(-1)">since 1993</text>
+
+    </g>
+
+    <!-- Keyboard base top -->
+    <polygon points="170,372 608,348 638,426 140,450" fill="#c8c8cc"/>
+
+    <!-- Hinge line/shadow -->
+    <polygon points="170,372 608,348 608,356 170,380" fill="#a0a0a4" opacity="0.5"/>
+
+    <!-- Base front edge -->
+    <polygon points="140,450 638,426 642,444 136,468" fill="#b0b0b4"/>
+
+    <!-- Keyboard detail: trackpad -->
+    <rect x="325" y="392" width="152" height="26" rx="4" fill="#b8b8bc" transform="skewX(-0.5)"/>
+
+    <!-- Speaker grilles -->
+    <rect x="182" y="386" width="28" height="3" rx="1.5" fill="#a8a8ac"/>
+    <rect x="182" y="392" width="28" height="3" rx="1.5" fill="#a8a8ac"/>
+    <rect x="182" y="398" width="28" height="3" rx="1.5" fill="#a8a8ac"/>
+    <rect x="588" y="378" width="28" height="3" rx="1.5" fill="#a8a8ac"/>
+    <rect x="588" y="384" width="28" height="3" rx="1.5" fill="#a8a8ac"/>
+    <rect x="588" y="390" width="28" height="3" rx="1.5" fill="#a8a8ac"/>
+  </g>
+</svg>

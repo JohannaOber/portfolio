@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <filter id="shadow-h" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#00000022"/>
+    </filter>
+    <clipPath id="browser-clip">
+      <rect x="120" y="42" width="560" height="388" rx="10"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f0f0f0"/>
+
+  <!-- Browser window group -->
+  <g filter="url(#shadow-h)">
+
+    <!-- Outer browser frame -->
+    <rect x="120" y="42" width="560" height="388" rx="10" fill="#1c1c1e"/>
+
+    <!-- Title bar -->
+    <rect x="120" y="42" width="560" height="38" rx="10" fill="#1c1c1e"/>
+    <!-- Round bottom corners of title bar -->
+    <rect x="120" y="62" width="560" height="18" fill="#1c1c1e"/>
+
+    <!-- Traffic light dots -->
+    <circle cx="148" cy="61" r="6" fill="#ff5f57"/>
+    <circle cx="168" cy="61" r="6" fill="#febc2e"/>
+    <circle cx="188" cy="61" r="6" fill="#28c840"/>
+
+    <!-- Tab area -->
+    <rect x="210" y="48" width="120" height="24" rx="6" fill="#2a2a2e"/>
+    <text x="266" y="63" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" fill="#e0e0e0" text-anchor="middle">Helix Design System</text>
+    <!-- Favicon dot -->
+    <circle cx="218" cy="60" r="4" fill="#6366f1"/>
+
+    <!-- Add tab button -->
+    <text x="342" y="64" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="14" fill="#6b7280">+</text>
+
+    <!-- URL bar -->
+    <rect x="120" y="80" width="560" height="32" fill="#2a2a2a"/>
+    <rect x="200" y="87" width="400" height="18" rx="9" fill="#3a3a3e"/>
+    <!-- Lock icon -->
+    <text x="216" y="99" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#6b7280">🔒</text>
+    <text x="228" y="99" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#9ca3af">helix.design/components</text>
+
+    <!-- Browser content area -->
+    <rect x="120" y="112" width="560" height="318" fill="#ffffff"/>
+
+    <g clip-path="url(#browser-clip)">
+      <!-- Inner content clipped to browser shape -->
+      <rect x="120" y="112" width="560" height="318" fill="#fafafa"/>
+
+      <!-- Left sidebar -->
+      <rect x="120" y="112" width="160" height="318" fill="#f5f5f7"/>
+      <!-- Sidebar header -->
+      <text x="136" y="134" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" fill="#1c1c1e" font-weight="700">Helix</text>
+      <text x="163" y="134" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" fill="#6366f1" font-weight="600">DS</text>
+      <line x1="120" y1="142" x2="280" y2="142" stroke="#e5e5e7" stroke-width="1"/>
+
+      <!-- Sidebar nav items -->
+      <text x="136" y="158" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#9ca3af" font-weight="600">FOUNDATIONS</text>
+      <text x="136" y="174" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" fill="#64748b">Colors</text>
+      <text x="136" y="188" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" fill="#64748b">Typography</text>
+      <text x="136" y="202" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" fill="#64748b">Spacing</text>
+      <text x="136" y="216" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" fill="#64748b">Icons</text>
+
+      <text x="136" y="234" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#9ca3af" font-weight="600">COMPONENTS</text>
+      <!-- Active item highlight -->
+      <rect x="128" y="238" width="140" height="20" rx="6" fill="#eef2ff"/>
+      <text x="136" y="252" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" fill="#4f46e5" font-weight="600">All Components</text>
+      <text x="136" y="270" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" fill="#64748b">Buttons</text>
+      <text x="136" y="284" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" fill="#64748b">Forms</text>
+      <text x="136" y="298" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" fill="#64748b">Navigation</text>
+      <text x="136" y="312" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" fill="#64748b">Overlays</text>
+      <text x="136" y="326" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" fill="#64748b">Data Display</text>
+      <text x="136" y="340" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" fill="#64748b">Feedback</text>
+      <text x="136" y="354" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" fill="#64748b">Layout</text>
+
+      <!-- Sidebar divider -->
+      <line x1="280" y1="112" x2="280" y2="430" stroke="#e5e5e7" stroke-width="1"/>
+
+      <!-- Main content header -->
+      <text x="296" y="132" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="14" fill="#1c1c1e" font-weight="700">All Components</text>
+      <text x="296" y="146" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" fill="#94a3b8">48 components across 8 categories</text>
+
+      <!-- Search bar in content area -->
+      <rect x="480" y="120" width="180" height="24" rx="12" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="496" y="135" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" fill="#94a3b8">Search components...</text>
+
+      <line x1="280" y1="156" x2="680" y2="156" stroke="#f1f5f9" stroke-width="1"/>
+
+      <!-- Component grid — Row 1 label -->
+      <text x="296" y="172" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#94a3b8" font-weight="600">BUTTONS</text>
+
+      <!-- Button component card 1 -->
+      <rect x="296" y="178" width="86" height="70" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+      <rect x="312" y="192" width="54" height="22" rx="6" fill="#6366f1"/>
+      <text x="339" y="207" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="500">Button</text>
+      <text x="339" y="235" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">Primary</text>
+
+      <!-- Button component card 2 -->
+      <rect x="390" y="178" width="86" height="70" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+      <rect x="406" y="192" width="54" height="22" rx="6" fill="#ffffff" stroke="#6366f1" stroke-width="1.5"/>
+      <text x="433" y="207" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" fill="#6366f1" text-anchor="middle" font-weight="500">Button</text>
+      <text x="433" y="235" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">Outline</text>
+
+      <!-- Button component card 3 -->
+      <rect x="484" y="178" width="86" height="70" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+      <rect x="500" y="192" width="54" height="22" rx="6" fill="#f1f5f9"/>
+      <text x="527" y="207" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" fill="#475569" text-anchor="middle" font-weight="500">Button</text>
+      <text x="527" y="235" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">Ghost</text>
+
+      <!-- Button component card 4 — Icon button -->
+      <rect x="578" y="178" width="86" height="70" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+      <circle cx="621" cy="203" r="14" fill="#6366f1"/>
+      <text x="621" y="208" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle">+</text>
+      <text x="621" y="235" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">Icon</text>
+
+      <!-- Row 2 label -->
+      <text x="296" y="264" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#94a3b8" font-weight="600">FORMS &amp; INPUTS</text>
+
+      <!-- Input card -->
+      <rect x="296" y="270" width="86" height="70" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+      <rect x="308" y="284" width="62" height="20" rx="5" fill="#ffffff" stroke="#d1d5db" stroke-width="1"/>
+      <text x="312" y="298" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="7.5" fill="#9ca3af">Placeholder</text>
+      <text x="339" y="322" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">Input</text>
+
+      <!-- Select / Dropdown card -->
+      <rect x="390" y="270" width="86" height="70" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+      <rect x="402" y="284" width="62" height="20" rx="5" fill="#ffffff" stroke="#d1d5db" stroke-width="1"/>
+      <text x="406" y="298" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="7.5" fill="#374151">Select</text>
+      <text x="456" y="298" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#9ca3af">▾</text>
+      <text x="433" y="322" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">Dropdown</text>
+
+      <!-- Checkbox card -->
+      <rect x="484" y="270" width="86" height="70" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+      <rect x="510" y="286" width="14" height="14" rx="3" fill="#6366f1"/>
+      <text x="521" y="297" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" fill="#ffffff" text-anchor="middle">✓</text>
+      <rect x="530" y="286" width="14" height="14" rx="3" fill="#ffffff" stroke="#d1d5db" stroke-width="1"/>
+      <text x="527" y="322" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">Checkbox</text>
+
+      <!-- Toggle/Switch card -->
+      <rect x="578" y="270" width="86" height="70" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+      <rect x="600" y="288" width="42" height="18" rx="9" fill="#6366f1"/>
+      <circle cx="633" cy="297" r="7" fill="#ffffff"/>
+      <text x="621" y="322" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">Toggle</text>
+
+      <!-- Row 3 label -->
+      <text x="296" y="356" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#94a3b8" font-weight="600">FEEDBACK &amp; STATUS</text>
+
+      <!-- Badge card -->
+      <rect x="296" y="362" width="86" height="58" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+      <rect x="308" y="376" width="30" height="14" rx="7" fill="#dcfce7"/>
+      <text x="323" y="387" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="7" fill="#16a34a" text-anchor="middle">Active</text>
+      <rect x="344" y="376" width="28" height="14" rx="7" fill="#fee2e2"/>
+      <text x="358" y="387" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="7" fill="#dc2626" text-anchor="middle">Error</text>
+      <text x="339" y="408" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">Badge</text>
+
+      <!-- Alert card -->
+      <rect x="390" y="362" width="86" height="58" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+      <rect x="402" y="374" width="62" height="24" rx="5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+      <text x="406" y="386" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6.5" fill="#1d4ed8">ℹ Info message</text>
+      <text x="406" y="395" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="5.5" fill="#3b82f6">Additional detail text</text>
+      <text x="433" y="410" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">Alert</text>
+
+      <!-- Card component card -->
+      <rect x="484" y="362" width="86" height="58" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+      <rect x="496" y="372" width="62" height="36" rx="5" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+      <rect x="496" y="372" width="62" height="12" rx="5" fill="#e0e7ff"/>
+      <text x="527" y="392" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6.5" fill="#64748b" text-anchor="middle">Card content</text>
+      <text x="527" y="410" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">Card</text>
+
+      <!-- Avatar card -->
+      <rect x="578" y="362" width="86" height="58" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+      <circle cx="605" cy="387" r="12" fill="#e0e7ff"/>
+      <text x="605" y="391" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" fill="#6366f1" text-anchor="middle">JO</text>
+      <circle cx="635" cy="387" r="12" fill="#dcfce7"/>
+      <text x="635" y="391" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" fill="#16a34a" text-anchor="middle">KW</text>
+      <text x="621" y="410" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">Avatar</text>
+    </g>
+  </g>
+</svg>

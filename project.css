@@ -1,0 +1,264 @@
+/* ── PROJECT SUBPAGE ──────────────────────────────── */
+
+/* BACK BAR */
+.project-back-bar {
+  padding: 1.5rem clamp(3rem, 12vw, 12rem) 0;
+}
+
+.project-back-link {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.project-back-link:hover { color: var(--blue); }
+
+/* HERO */
+.project-hero {
+  padding: 80px clamp(3rem, 12vw, 12rem) 60px;
+}
+
+.project-hero-meta {
+  margin-bottom: 1.25rem;
+}
+
+.project-hero-title {
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  max-width: 800px;
+}
+
+.project-hero-sub {
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 640px;
+}
+
+/* COVER IMAGE */
+.project-cover {
+  width: 100%;
+  max-height: 70vh;
+  overflow: hidden;
+  border-top: 1px solid var(--gray-200);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.project-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* SHARED SECTION */
+.project-section {
+  padding: 80px clamp(3rem, 12vw, 12rem);
+  position: relative;
+}
+
+.project-section + .project-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: calc(-50vw + 50%);
+  width: 100vw;
+  height: 1px;
+  background: var(--gray-200);
+}
+
+/* OVERVIEW META GRID */
+.project-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.project-meta-item .section-label {
+  display: block;
+  margin-bottom: 0.6rem;
+}
+
+.project-meta-item p {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* CONTENT GRID: label left, body right */
+.project-content-grid {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.project-col-label .section-label {
+  margin-bottom: 0;
+  padding-top: 0.35rem;
+}
+
+.project-col-body h2 {
+  margin-bottom: 1.25rem;
+  font-size: clamp(1.3rem, 2.2vw, 1.75rem);
+}
+
+.project-col-body p {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 620px;
+}
+
+/* PROCESS TABS */
+.process-tabs input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.process-tabs {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.proc-tab-nav {
+  grid-row: 1;
+  grid-column: 1;
+  display: flex;
+  border-bottom: 1px solid var(--gray-200);
+  margin-bottom: 1.75rem;
+}
+
+.proc-tab-nav label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--muted);
+  padding: 0.6rem 0;
+  margin-right: 1.75rem;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+
+.proc-tab-nav label:hover { color: var(--text); }
+
+/* All panels share the same grid cell — height = tallest panel, no layout shift */
+.proc-panel {
+  grid-row: 2;
+  grid-column: 1;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+#proc-1:checked ~ .proc-tab-nav label[for="proc-1"],
+#proc-2:checked ~ .proc-tab-nav label[for="proc-2"],
+#proc-3:checked ~ .proc-tab-nav label[for="proc-3"],
+#proc-4:checked ~ .proc-tab-nav label[for="proc-4"] {
+  color: var(--text);
+  border-bottom-color: var(--blue);
+}
+
+#proc-1:checked ~ #proc-panel-1,
+#proc-2:checked ~ #proc-panel-2,
+#proc-3:checked ~ #proc-panel-3,
+#proc-4:checked ~ #proc-panel-4 {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.process-title {
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.process-desc {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 560px;
+}
+
+/* FULL-WIDTH IMAGE */
+.project-image-full {
+  width: 100%;
+  overflow: hidden;
+  border-top: 1px solid var(--gray-200);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.project-image-full img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* 2-UP IMAGES */
+.project-image-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--gray-200);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.project-image-two img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+
+.project-image-two img + img {
+  border-left: 1px solid var(--gray-200);
+}
+
+/* MORE PROJECTS */
+.project-more {
+  padding: 80px clamp(3rem, 12vw, 12rem) 100px;
+}
+
+.project-more > .section-label {
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.project-more-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+/* ── RESPONSIVE ───────────────────────────────────── */
+@media (max-width: 860px) {
+  .project-meta-grid { grid-template-columns: 1fr 1fr; }
+  .project-more-grid { grid-template-columns: 1fr 1fr; }
+  .project-more-grid .project-card:last-child { display: none; }
+}
+
+@media (max-width: 720px) {
+  .project-back-bar { padding: 0.75rem 1.25rem; }
+  .project-hero { padding: 48px 1.25rem 40px; }
+  .project-section { padding: 60px 1.25rem; }
+  .project-content-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .project-col-label { display: none; }
+  .project-meta-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .project-image-two { grid-template-columns: 1fr; }
+  .project-image-two img + img { border-left: none; border-top: 1px solid var(--gray-200); }
+  .project-more { padding: 60px 1.25rem 80px; }
+  .project-more-grid { grid-template-columns: 1fr; }
+  .project-more-grid .project-card:last-child { display: block; }
+  .proc-tab-nav label { margin-right: 1.25rem; font-size: 0.75rem; }
+}
