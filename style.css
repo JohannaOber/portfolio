@@ -603,7 +603,6 @@ h2 {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  border-top: 1px solid var(--gray-200);
   display: flex;
   justify-content: flex-end;
 }
@@ -629,7 +628,6 @@ h2 {
 /* ── MARQUEE BAND ─────────────────────────────────── */
 .marquee-band {
   overflow: hidden;
-  border-top: 1px solid var(--gray-200);
   border-bottom: 1px solid var(--gray-200);
   padding: clamp(1rem, 2vw, 1.8rem) 0;
   white-space: nowrap;
@@ -639,7 +637,7 @@ h2 {
 .marquee-track {
   display: inline-flex;
   align-items: baseline;
-  animation: marquee 22s linear infinite;
+  animation: marquee 14s linear infinite;
 }
 
 .marquee-track span {
@@ -653,7 +651,7 @@ h2 {
 
 .marquee-dot {
   font-size: clamp(2.5rem, 5.2vw, 5.8rem) !important;
-  color: var(--blue) !important;
+  color: var(--text) !important;
   padding: 0 0.5rem !important;
 }
 
@@ -685,7 +683,7 @@ footer {
 .footer-role {
   font-size: 0.86rem;
   color: var(--text);
-  margin-bottom: 1.5rem;
+  margin-bottom: 3rem;
 }
 
 .footer-links {
