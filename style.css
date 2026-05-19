@@ -608,6 +608,7 @@ h2 {
 }
 
 #profile::before { display: none; }
+#resume::before  { display: none; }
 
 .profile-left {
   flex: 1;
@@ -644,9 +645,10 @@ h2 {
 }
 
 .profile-photo {
+  flex: 0 0 auto;
   width: 55%;
+  aspect-ratio: 1 / 1;
   background: var(--gray-100);
-  flex-shrink: 0;
   overflow: hidden;
 }
 
