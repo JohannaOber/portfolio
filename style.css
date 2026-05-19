@@ -412,7 +412,7 @@ h2 {
   row-gap: 5rem;
 }
 
-.project-card a {
+.project-card a:not(.project-link) {
   display: block;
   overflow: hidden;
   margin-bottom: 1.25rem;
@@ -453,7 +453,7 @@ h2 {
 
 .project-desc {
   font-size: 0.92rem;
-  color: var(--muted);
+  color: var(--text);
   line-height: 1.7;
   max-width: 640px;
   margin-bottom: 1.25rem;
@@ -462,13 +462,15 @@ h2 {
 .project-link {
   display: inline-block;
   font-size: 0.92rem;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--text);
   text-decoration: none;
-  transition: color 0.2s;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s;
 }
 
-.project-link:hover { color: var(--blue); }
+.project-link:hover { border-bottom-color: var(--blue); }
 
 /* ── RESUME TABS ──────────────────────────────────── */
 .resume-tabs input[type="radio"] {
@@ -533,7 +535,7 @@ h2 {
 
 .resume-item {
   display: grid;
-  grid-template-columns: 130px 1fr 1fr;
+  grid-template-columns: 130px 1fr 2fr;
   gap: 2rem;
   padding-bottom: 2rem;
   margin-bottom: 2rem;
@@ -562,7 +564,7 @@ h2 {
 
 .resume-detail {
   font-size: 0.8rem;
-  color: var(--muted);
+  color: var(--text);
   line-height: 1.65;
 }
 
@@ -637,7 +639,7 @@ h2 {
 
 .stat-label {
   font-size: 0.8rem;
-  color: var(--muted);
+  color: var(--text);
   font-weight: 400;
 }
 
@@ -677,7 +679,7 @@ footer {
 
 .footer-role {
   font-size: 0.86rem;
-  color: var(--muted);
+  color: var(--text);
   margin-bottom: 1.5rem;
 }
 
@@ -708,7 +710,7 @@ footer {
 .footer-copy {
   padding: 1.2rem 2.5rem;
   font-size: 0.75rem;
-  color: var(--muted);
+  color: var(--text);
   border-top: 1px solid var(--gray-200);
 }
 

@@ -8,7 +8,7 @@
 .project-back-link {
   font-size: 0.8rem;
   font-weight: 500;
-  color: var(--muted);
+  color: var(--text);
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -36,7 +36,7 @@
 
 .project-hero-sub {
   font-size: clamp(0.95rem, 1.5vw, 1.1rem);
-  color: var(--muted);
+  color: var(--text);
   line-height: 1.7;
   max-width: 640px;
 }
@@ -72,6 +72,10 @@
   height: 1px;
   background: var(--gray-200);
 }
+
+.project-section.no-top-line::before { display: none; }
+
+.project-section:has(+ .project-more) { padding-bottom: 140px; }
 
 /* OVERVIEW META GRID */
 .project-meta-grid {
@@ -112,7 +116,7 @@
 
 .project-col-body p {
   font-size: 0.92rem;
-  color: var(--muted);
+  color: var(--text);
   line-height: 1.7;
   max-width: 620px;
 }
@@ -187,7 +191,7 @@
 
 .process-desc {
   font-size: 0.82rem;
-  color: var(--muted);
+  color: var(--text);
   line-height: 1.7;
   max-width: 560px;
 }
@@ -228,6 +232,7 @@
 /* MORE PROJECTS */
 .project-more {
   padding: 80px clamp(3rem, 12vw, 12rem) 100px;
+  border-top: 1px solid var(--gray-200);
 }
 
 .project-more > .section-label {
@@ -239,6 +244,10 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
+}
+
+.project-more-grid .project-title {
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
 }
 
 /* ── RESPONSIVE ───────────────────────────────────── */
