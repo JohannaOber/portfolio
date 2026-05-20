@@ -637,11 +637,12 @@ h2 {
 .marquee-track {
   display: inline-flex;
   align-items: baseline;
+  width: max-content;
   animation: marquee 14s linear infinite;
 }
 
 .marquee-track span {
-  font-size: clamp(2.5rem, 5.2vw, 5.8rem);
+  font-size: clamp(3.5rem, 7vw, 8rem);
   font-weight: 400;
   letter-spacing: -0.03em;
   line-height: 1.2;
@@ -650,7 +651,7 @@ h2 {
 }
 
 .marquee-dot {
-  font-size: clamp(2.5rem, 5.2vw, 5.8rem) !important;
+  font-size: clamp(3.5rem, 7vw, 8rem) !important;
   color: var(--text) !important;
   padding: 0 !important;
 }
