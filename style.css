@@ -645,14 +645,14 @@ h2 {
   font-weight: 400;
   letter-spacing: -0.03em;
   line-height: 1.2;
-  padding: 0 1.5rem;
+  padding: 0 0.5rem;
   color: var(--text);
 }
 
 .marquee-dot {
   font-size: clamp(2.5rem, 5.2vw, 5.8rem) !important;
   color: var(--text) !important;
-  padding: 0 0.5rem !important;
+  padding: 0 !important;
 }
 
 @keyframes marquee {
@@ -683,7 +683,7 @@ footer {
 .footer-role {
   font-size: 0.86rem;
   color: var(--text);
-  margin-bottom: 3rem;
+  margin-bottom: 6rem;
 }
 
 .footer-links {
