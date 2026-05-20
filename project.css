@@ -249,6 +249,22 @@
   margin-bottom: 2rem;
 }
 
+.project-more-heading {
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  color: var(--text);
+  margin-bottom: 2rem;
+}
+
+.project-more-heading::before {
+  content: '↓';
+  display: inline;
+  color: var(--text);
+  font-weight: 400;
+  margin-right: 0.5em;
+}
+
 .project-more-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
