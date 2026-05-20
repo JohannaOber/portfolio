@@ -79,7 +79,7 @@
 
 .project-section.no-top-line::before { display: none; }
 
-.project-section:has(+ .project-more) { padding-bottom: 140px; }
+.project-section:has(+ .project-more) { padding-bottom: 220px; }
 
 /* OVERVIEW META GRID */
 .project-meta-grid {
@@ -167,6 +167,7 @@
   grid-column: 1;
   visibility: hidden;
   pointer-events: none;
+  max-width: 560px;
 }
 
 #proc-1:checked ~ .proc-tab-nav label[for="proc-1"],
@@ -186,18 +187,23 @@
 }
 
 .process-title {
-  font-size: 0.92rem;
+  display: inline;
+  font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--text);
-  margin-bottom: 0.5rem;
+}
+
+.process-title::after {
+  content: " — ";
+  font-weight: 400;
 }
 
 .process-desc {
+  display: inline;
   font-size: 0.82rem;
   color: var(--text);
   line-height: 1.7;
-  max-width: 560px;
 }
 
 /* FULL-WIDTH IMAGE */
@@ -236,7 +242,6 @@
 /* MORE PROJECTS */
 .project-more {
   padding: 80px clamp(3rem, 12vw, 12rem) 100px;
-  border-top: 1px solid var(--gray-200);
 }
 
 .project-more > .section-label {

@@ -368,7 +368,7 @@ h2 {
 
 .badge {
   display: inline-block;
-  border: 1px solid var(--gray-500);
+  border: 0.5px solid var(--text);
   color: var(--text);
   font-size: 0.82rem;
   font-weight: 400;
@@ -437,7 +437,7 @@ h2 {
 
 .badge-outline {
   display: inline-block;
-  border: 1px solid var(--gray-500);
+  border: 0.5px solid var(--text);
   color: var(--text);
   font-size: 0.82rem;
   font-weight: 400;
