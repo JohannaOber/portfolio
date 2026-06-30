@@ -113,7 +113,9 @@ body {
   color: var(--text);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  /* Horizontal scroll is prevented via html { overflow-x: clip }.
+     Do NOT use overflow-x: hidden here: it turns body into a scroll
+     container and breaks position: sticky on the project pages. */
   padding-top: 0;
 }
 

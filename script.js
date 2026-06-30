@@ -1,3 +1,18 @@
+// On a manual refresh, start at the top instead of restoring the previous
+// scroll position. Only affects reloads with no #hash, so back/forward
+// restoration and #section deep-links keep working.
+(function () {
+  if (!('scrollRestoration' in history)) return;
+  var nav = (performance.getEntriesByType && performance.getEntriesByType('navigation')[0]) || null;
+  var isReload = nav ? nav.type === 'reload'
+                     : (performance.navigation && performance.navigation.type === 1);
+  if (isReload && !location.hash) {
+    history.scrollRestoration = 'manual';
+    window.scrollTo(0, 0);
+    window.addEventListener('load', function () { window.scrollTo(0, 0); });
+  }
+})();
+
 // Custom cursor (pointer devices only)
 if (window.matchMedia('(pointer: fine)').matches) {
   const diff  = document.createElement('div');
