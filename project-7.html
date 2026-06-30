@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Horror Mode — Johanna Ober</title>
+  <title>The Horror Mode · Johanna Ober</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="project.css" />
 </head>
-<body>
+<body class="alt-page">
 
   <nav>
-    <a href="index.html" class="nav-logo">JO</a>
+    <a href="index.html" class="nav-back" onclick="if(history.length&gt;1){history.back();return false;}">←</a>
     <ul class="nav-links">
       <li><a href="index.html#intro" data-en="About" data-de="About">About</a></li>
       <li><a href="index.html#projects" class="active" data-en="Projects" data-de="Projekte">Projects</a></li>
@@ -24,158 +24,168 @@
     </div>
   </nav>
 
-  <div class="project-back-bar">
-    <a href="index.html#projects" class="project-back-link"
-       data-en="← All Projects" data-de="← Alle Projekte">← All Projects</a>
-  </div>
-
-  <section class="project-hero">
-    <div class="project-hero-meta">
-      <span class="section-label">Motion · Social Media</span>
-    </div>
-    <h1 class="project-hero-title">The Horror Mode</h1>
-    <p class="project-hero-sub"
-       data-en="A Halloween motion piece for Akkodis that turns corporate social media into something genuinely creepy through illustration and animation."
-       data-de="Ein Halloween-Motionpiece für Akkodis, das einen Corporate-Social-Media-Post durch Illustration und Animation wirklich gruselig werden lässt.">
-      A Halloween motion piece for Akkodis that turns corporate social media into something genuinely creepy through illustration and animation.
-    </p>
-  </section>
-
-  <div class="project-cover">
-    <img src="images/project-7/project-7-1.png" alt="The Horror Mode — Cover" />
-  </div>
-
-  <section class="project-section">
-    <div class="project-meta-grid">
-      <div class="project-meta-item">
-        <span class="section-label">My Role</span>
-        <p>Concept, Illustration &amp; Animation</p>
+  <!-- HEADER -->
+  <section class="alt-intro">
+    <div class="alt-intro-columns">
+      <div class="alt-intro-left">
+        <p class="alt-intro-tags">
+          <span>[Year]</span><span>Motion</span><span>Social Media</span>
+        </p>
+        <h1 class="alt-intro-title">The Horror Mode</h1>
+        <p class="alt-intro-desc"
+           data-en="A Halloween motion piece for Akkodis that turns corporate social media into something genuinely creepy through illustration and animation."
+           data-de="Ein Halloween-Motionpiece für Akkodis, das Corporate Social Media durch Illustration und Animation wirklich gruselig werden lässt.">
+          A Halloween motion piece for Akkodis that turns corporate social media into something genuinely creepy through illustration and animation.
+        </p>
       </div>
-      <div class="project-meta-item">
-        <span class="section-label">Client</span>
-        <p>Akkodis<br>Internal Project · Solo</p>
-      </div>
-      <div class="project-meta-item">
-        <span class="section-label">Duration</span>
-        <p>[Duration · Year]</p>
-      </div>
-      <div class="project-meta-item">
-        <span class="section-label">Tasks</span>
-        <div class="badges" style="margin-top: 0.5rem;">
-          <span class="badge">Concept</span>
-          <span class="badge">Illustration</span>
-          <span class="badge">After Effects Animation</span>
+      <div class="alt-intro-meta">
+        <div>
+          <span class="section-label" data-en="Client" data-de="Kunde">Client</span>
+          <p>Akkodis</p>
+          <p data-en="Internal Project · Solo" data-de="Internes Projekt · Solo">Internal Project · Solo</p>
+        </div>
+        <div>
+          <span class="section-label" data-en="My Tasks" data-de="Meine Aufgaben">My Tasks</span>
+          <p class="alt-meta-tasks">
+            <span data-en="Concept" data-de="Konzept">Concept</span><span data-en="Illustration" data-de="Illustration">Illustration</span><span data-en="After Effects Animation" data-de="After-Effects-Animation">After Effects Animation</span>
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="project-section">
-    <div class="project-content-grid">
-      <div class="project-col-label"><span class="section-label">Challenge</span></div>
-      <div class="project-col-body">
-        <h2>Standing out in a sea of corporate Halloween posts</h2>
-        <p data-en="Every year, brands flood social media with the same orange-and-black Halloween aesthetics: pumpkins, skeletons, and generic spooky vibes. Akkodis wanted something different: a Halloween post that felt genuinely creative, in-character, and worth stopping for. The brief was open, and the challenge was finding an angle that felt authentic rather than forced. Image rights held by Akkodis." data-de="Jedes Jahr überschwemmen Marken Social Media mit denselben Orange-Schwarz-Halloween-Ästhetiken: Kürbisse, Skelette und generische Gruselstimmung. Akkodis wollte etwas anderes: einen Halloween-Post, der wirklich kreativ und glaubwürdig wirkt und das Scrollen zum Stoppen bringt. Das Briefing war offen, die Herausforderung bestand darin, einen Ansatz zu finden, der authentisch statt aufgesetzt wirkt. Bildrechte bei Akkodis.">
-          Every year, brands flood social media with the same orange-and-black Halloween aesthetics: pumpkins, skeletons, and generic spooky vibes. Akkodis wanted something different: a Halloween post that felt genuinely creative, in-character, and worth stopping for. The brief was open, and the challenge was finding an angle that felt authentic rather than forced. Image rights held by Akkodis.
-        </p>
-      </div>
-    </div>
-  </section>
+  <!-- COVER IMAGE -->
+  <div class="alt-cover">
+    <img src="images/project-7/project-7-1.png" alt="The Horror Mode" />
+  </div>
 
-  <section class="project-section no-top-line">
-    <div class="project-content-grid">
-      <div class="project-col-label"><span class="section-label">Process</span></div>
-      <div class="project-col-body">
-        <div class="process-tabs">
-          <input type="radio" id="proc-1" name="process" checked />
-          <input type="radio" id="proc-2" name="process" />
-          <input type="radio" id="proc-3" name="process" />
-          <input type="radio" id="proc-4" name="process" />
-          <div class="proc-tab-nav">
-            <label for="proc-1">01 Discovery</label>
-            <label for="proc-2">02 Define</label>
-            <label for="proc-3">03 Design</label>
-            <label for="proc-4">04 Test</label>
-          </div>
-          <div class="proc-panel" id="proc-panel-1">
-            <p class="process-title">Ghost-Centered Design Concept</p>
-            <p class="process-desc" data-en="The concept started with a simple question: what if UX design principles applied to Halloween? Ghost-Centered Design was born, a parody of Human-Centered Design that positions a ghost as the primary user. This gave the piece a voice and a hook that felt native to the design community Akkodis wanted to reach." data-de="Das Konzept begann mit einer einfachen Frage: Was wäre, wenn UX-Designprinzipien auf Halloween angewendet würden? Ghost-Centered Design entstand, eine Parodie auf Human-Centered Design, die einen Geist als primären User positioniert. Das verlieh dem Beitrag eine Stimme und einen Aufhänger, der sich für die Design-Community, die Akkodis ansprechen wollte, natürlich anfühlte.">The concept started with a simple question: what if UX design principles applied to Halloween? Ghost-Centered Design was born, a parody of Human-Centered Design that positions a ghost as the primary user. This gave the piece a voice and a hook that felt native to the design community Akkodis wanted to reach.</p>
-          </div>
-          <div class="proc-panel" id="proc-panel-2">
-            <p class="process-title">Storyboard &amp; Script</p>
-            <p class="process-desc" data-en="I mapped out the narrative arc: introduce the ghost persona, walk through exaggerated 'design insights' about haunting, and close with a brand moment. The pacing was planned for short-form video, with visual punchlines timed to keep viewers through to the end." data-de="Ich skizzierte den Erzählbogen: die Geisterpersona einführen, übertriebene 'Designerkenntnisse' über das Spuken durchgehen und mit einem Markenmoment schließen. Das Tempo war für Kurzvideos geplant, mit visuellen Pointen, die die Zuschauer bis zum Ende halten." >I mapped out the narrative arc: introduce the ghost persona, walk through exaggerated 'design insights' about haunting, and close with a brand moment. The pacing was planned for short-form video, with visual punchlines timed to keep viewers through to the end.</p>
-          </div>
-          <div class="proc-panel" id="proc-panel-3">
-            <p class="process-title">Illustration &amp; After Effects</p>
-            <p class="process-desc" data-en="Custom illustrations were created for each scene, keeping a consistent character style throughout. The animation was built in After Effects, with transitions and timing designed to land each joke clearly, playful but polished." data-de="Für jede Szene wurden eigene Illustrationen erstellt, mit einem konsistenten Charakterstil. Die Animation wurde in After Effects aufgebaut, mit Übergängen und Timing, das jeden Witz klar trifft, verspielt, aber poliert.">Custom illustrations were created for each scene, keeping a consistent character style throughout. The animation was built in After Effects, with transitions and timing designed to land each joke clearly, playful but polished.</p>
-          </div>
-          <div class="proc-panel" id="proc-panel-4">
-            <p class="process-title">Team Review &amp; LinkedIn Publishing</p>
-            <p class="process-desc" data-en="The finished piece was reviewed internally for tone and brand fit before publishing to Akkodis's LinkedIn. Feedback confirmed the balance between humour and brand voice, and validated the Ghost-Centered Design concept as a recurring creative format." data-de="Das fertige Stück wurde intern auf Tonalität und Markenstimmigkeit geprüft, bevor es auf Akkodis' LinkedIn veröffentlicht wurde. Das Feedback bestätigte die Balance zwischen Humor und Markenstimme und validierte Ghost-Centered Design als wiederkehrendes kreatives Format.">The finished piece was reviewed internally for tone and brand fit before publishing to Akkodis's LinkedIn. Feedback confirmed the balance between humour and brand voice, and validated the Ghost-Centered Design concept as a recurring creative format.</p>
-          </div>
+  <!-- ── STICKY SCROLL SECTION ─────────────────────────── -->
+  <div class="alt-sticky-wrapper">
+
+    <!-- Left: sticky text panels -->
+    <div class="alt-sticky-left">
+      <div class="alt-panels-wrapper">
+
+        <!-- Panel 0: Challenge --><!-- Panel 1: Concept --><!-- Panel 2: Script --><!-- Panel 3: Design --><!-- Panel 4: Animation --><!-- Panel 5: Solution --></div>
+    </div>
+
+    <!-- Right: scrolling images -->
+    <div class="alt-scroll-right">
+      <div class="alt-scroll-item" data-index="0">
+        <img src="images/project-7/project-7-2.png" alt="The Horror Mode: Overview" />
+      </div>
+      <div class="alt-text-panel active" data-panel="0">
+          <span class="alt-panel-label"
+                data-en="Challenge" data-de="Herausforderung">Challenge</span>
+          <h2 class="alt-panel-heading"
+              data-en="Standing out in a sea of corporate Halloween posts"
+              data-de="Auffallen in einem Meer aus Corporate-Halloween-Posts">
+            Standing out in a sea of corporate Halloween posts
+          </h2>
+          <p class="alt-panel-body"
+             data-en="Every year, brands flood social media with the same orange-and-black Halloween aesthetics: pumpkins, skeletons, and generic spooky vibes. Akkodis wanted something different: a Halloween post that felt genuinely creative, in-character, and worth stopping for. The brief was open, and the challenge was finding an angle that felt authentic rather than forced. Image rights held by Akkodis."
+             data-de="Jedes Jahr überschwemmen Marken Social Media mit denselben Orange-Schwarz-Halloween-Ästhetiken: Kürbisse, Skelette und generische Gruselstimmung. Akkodis wollte etwas anderes: einen Halloween-Post, der wirklich kreativ und glaubwürdig wirkt und das Scrollen zum Stoppen bringt. Das Briefing war offen, die Herausforderung bestand darin, einen Ansatz zu finden, der authentisch statt aufgesetzt wirkt. Bildrechte bei Akkodis.">
+            Every year, brands flood social media with the same orange-and-black Halloween aesthetics: pumpkins, skeletons, and generic spooky vibes. Akkodis wanted something different: a Halloween post that felt genuinely creative, in-character, and worth stopping for. The brief was open, and the challenge was finding an angle that felt authentic rather than forced. Image rights held by Akkodis.
+          </p>
         </div>
+      <div class="alt-scroll-item" data-index="1">
+        <img src="images/project-7/project-7-1.png" alt="The Horror Mode: Concept" />
+      </div>
+      <div class="alt-text-panel" data-panel="1">
+          <span class="alt-panel-label"
+                data-en="01 Concept" data-de="01 Konzept">01 Concept</span>
+          <h2 class="alt-panel-heading"
+              data-en="Finding the Right Angle"
+              data-de="Den richtigen Ansatz finden">
+            Finding the Right Angle
+          </h2>
+          <p class="alt-panel-body"
+             data-en="Ideation focused on concepts that felt native to Akkodis's identity as a technology and engineering consultancy. Ghost-Centered Design emerged as the idea: a fictional UX framework that reframes haunting as a design problem, using language and formats the audience would immediately recognise."
+             data-de="Die Ideation konzentrierte sich auf Konzepte, die zur Identität von Akkodis als Technologie- und Ingenieurberatung passten. Ghost-Centered Design entstand als Idee: ein fiktives UX-Framework, das Spuken als Designproblem neu rahmt, in einer Sprache, die das Publikum sofort erkennt.">
+            Ideation focused on concepts that felt native to Akkodis's identity as a technology and engineering consultancy. Ghost-Centered Design emerged as the idea: a fictional UX framework that reframes haunting as a design problem, using language and formats the audience would immediately recognise.
+          </p>
+        </div>
+      <div class="alt-scroll-item" data-index="2">
+        <img src="images/placeholder.svg" alt="The Horror Mode: Script" />
+      </div>
+      <div class="alt-text-panel" data-panel="2">
+          <span class="alt-panel-label"
+                data-en="02 Script" data-de="02 Skript">02 Script</span>
+          <h2 class="alt-panel-heading"
+              data-en="Writing the Framework"
+              data-de="Das Framework schreiben">
+            Writing the Framework
+          </h2>
+          <p class="alt-panel-body"
+             data-en="The Ghost-Centered Design framework was written out in full: complete with ghost personas, pain points, journey maps, and interaction principles. The script was structured as a short animated presentation, mirroring the format of real UX case studies."
+             data-de="Das Ghost-Centered-Design-Framework wurde vollständig ausgearbeitet: mit Ghost-Personas, Pain Points, Journey Maps und Interaktionsprinzipien. Das Skript wurde als kurze animierte Präsentation strukturiert, in Anlehnung an das Format echter UX-Fallstudien.">
+            The Ghost-Centered Design framework was written out in full: complete with ghost personas, pain points, journey maps, and interaction principles. The script was structured as a short animated presentation, mirroring the format of real UX case studies.
+          </p>
+        </div>
+      <div class="alt-scroll-item" data-index="3">
+        <img src="images/placeholder.svg" alt="The Horror Mode: Design" />
+      </div>
+      <div class="alt-text-panel" data-panel="3">
+          <span class="alt-panel-label"
+                data-en="03 Design" data-de="03 Design">03 Design</span>
+          <h2 class="alt-panel-heading"
+              data-en="Visual Language and Motion"
+              data-de="Bildsprache und Bewegung">
+            Visual Language and Motion
+          </h2>
+          <p class="alt-panel-body"
+             data-en="The visual style combined the Akkodis brand with a deliberately eerie aesthetic: desaturated tones, ghostly overlays, and UX diagram conventions applied to supernatural subject matter. Each frame was crafted to be readable as a still image as well as in motion."
+             data-de="Der visuelle Stil kombinierte die Akkodis-Marke mit einer bewusst unheimlichen Ästhetik: entsättigte Töne, geisterhafte Overlays und UX-Diagrammkonventionen auf übernatürliche Themen angewendet. Jedes Frame war sowohl als Standbild als auch in Bewegung lesbar gestaltet.">
+            The visual style combined the Akkodis brand with a deliberately eerie aesthetic: desaturated tones, ghostly overlays, and UX diagram conventions applied to supernatural subject matter. Each frame was crafted to be readable as a still image as well as in motion.
+          </p>
+        </div>
+      <div class="alt-scroll-item" data-index="4">
+        <img src="images/placeholder.svg" alt="The Horror Mode: Animation" />
+      </div>
+      <div class="alt-text-panel" data-panel="4">
+          <span class="alt-panel-label"
+                data-en="04 Animation" data-de="04 Animation">04 Animation</span>
+          <h2 class="alt-panel-heading"
+              data-en="Bringing the Framework to Life"
+              data-de="Das Framework zum Leben erwecken">
+            Bringing the Framework to Life
+          </h2>
+          <p class="alt-panel-body"
+             data-en="The piece was animated and produced for LinkedIn. Timing, pacing, and caption design were optimised for auto-play viewing without sound, ensuring the content landed even for users who scrolled past without audio."
+             data-de="Das Stück wurde für LinkedIn animiert und produziert. Timing, Tempo und Untertitelgestaltung wurden für die Autoplay-Wiedergabe ohne Ton optimiert, damit der Inhalt auch für Nutzer wirkt, die ohne Audio scrollen.">
+            The piece was animated and produced for LinkedIn. Timing, pacing, and caption design were optimised for auto-play viewing without sound, ensuring the content landed even for users who scrolled past without audio.
+          </p>
+        </div>
+      <div class="alt-scroll-item" data-index="5">
+        <img src="images/placeholder.svg" alt="The Horror Mode: Solution" />
+      </div>
+      <div class="alt-text-panel" data-panel="5">
+          <span class="alt-panel-label"
+                data-en="Solution &amp; Impact" data-de="Lösung &amp; Wirkung">Solution &amp; Impact</span>
+          <h2 class="alt-panel-heading"
+              data-en="Ghost-Centered Design, activated every 31st October"
+              data-de="Ghost-Centered Design, jedes Jahr am 31. Oktober aktiviert">
+            Ghost-Centered Design, activated every 31st October
+          </h2>
+          <p class="alt-panel-body"
+             data-en="The Horror Mode is an animated short built around the Ghost-Centered Design framework, a fictional design methodology for optimising the haunting experience. Complete with user journey maps, pain points, and interaction principles (all ghost-specific), the piece translates UX language into something absurd and immediately shareable. It gives Akkodis a recognisable creative concept they can revisit each Halloween.<br><br>The Horror Mode performed strongly on LinkedIn, outperforming standard Akkodis content in engagement. More importantly, it demonstrated that a tech consultancy can have a genuine personality, one that resonates with the designers, engineers, and creative thinkers they want to attract. Ghost-Centered Design is now a recurring internal concept."
+             data-de="The Horror Mode ist ein animierter Kurzfilm rund um das Ghost-Centered-Design-Framework, eine fiktive Designmethodik zur Optimierung des Spukerlebnisses. Mit User-Journey-Maps, Pain Points und Interaktionsprinzipien (alles geisterspezifisch) übersetzt das Stück UX-Sprache in etwas Absurdes und sofort Teilbares. Es gibt Akkodis ein wiedererkennbares kreatives Konzept, das jedes Halloween neu belebt werden kann.<br><br>The Horror Mode erzielte auf LinkedIn starke Ergebnisse und übertraf reguläre Akkodis-Inhalte in der Interaktionsrate. Noch wichtiger: Es zeigte, dass eine Technologieberatung eine echte Persönlichkeit haben kann, eine, die bei den Designerinnen, Ingenieuren und kreativen Denkenden ankommt, die sie ansprechen möchten. Ghost-Centered Design ist nun ein wiederkehrendes internes Konzept.">
+            The Horror Mode is an animated short built around the Ghost-Centered Design framework, a fictional design methodology for optimising the haunting experience. Complete with user journey maps, pain points, and interaction principles (all ghost-specific), the piece translates UX language into something absurd and immediately shareable. It gives Akkodis a recognisable creative concept they can revisit each Halloween.<br><br>The Horror Mode performed strongly on LinkedIn, outperforming standard Akkodis content in engagement. More importantly, it demonstrated that a tech consultancy can have a genuine personality, one that resonates with the designers, engineers, and creative thinkers they want to attract. Ghost-Centered Design is now a recurring internal concept.
+          </p>
+        </div>
+      <div class="alt-scroll-item" data-index="6">
+        <img src="images/project-9/project-9-8.png" alt="" />
       </div>
     </div>
-  </section>
 
-  <div class="project-image-full">
-    <img src="images/placeholder.svg" alt="The Horror Mode — Process" />
-  </div>
+  </div><!-- /.alt-sticky-wrapper -->
 
-  <section class="project-section">
-    <div class="project-content-grid">
-      <div class="project-col-label"><span class="section-label">Solution</span></div>
-      <div class="project-col-body">
-        <h2>Ghost-Centered Design, activated every 31st October</h2>
-        <p data-en="The Horror Mode is an animated short built around the Ghost-Centered Design framework, a fictional design methodology for optimising the haunting experience. Complete with user journey maps, pain points, and interaction principles (all ghost-specific), the piece translates UX language into something absurd and immediately shareable. It gives Akkodis a recognisable creative concept they can revisit each Halloween." data-de="The Horror Mode ist ein animierter Kurzfilm rund um das Ghost-Centered-Design-Framework, eine fiktive Designmethodik zur Optimierung des Spukerlebnisses. Mit User-Journey-Maps, Pain Points und Interaktionsprinzipien (alles geisterspezifisch) übersetzt das Stück UX-Sprache in etwas Absurdes und sofort Teilbares. Es gibt Akkodis ein wiedererkennbares kreatives Konzept, das jedes Halloween neu belebt werden kann.">
-          The Horror Mode is an animated short built around the Ghost-Centered Design framework, a fictional design methodology for optimising the haunting experience. Complete with user journey maps, pain points, and interaction principles (all ghost-specific), the piece translates UX language into something absurd and immediately shareable. It gives Akkodis a recognisable creative concept they can revisit each Halloween.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <div class="project-image-two">
-    <img src="images/placeholder.svg" alt="The Horror Mode — Detail A" />
-    <img src="images/placeholder.svg" alt="The Horror Mode — Detail B" />
-  </div>
-
-  <section class="project-section">
-    <div class="project-content-grid">
-      <div class="project-col-label"><span class="section-label">Impact</span></div>
-      <div class="project-col-body">
-        <h2>Humanising a tech brand through micro-content</h2>
-        <p data-en="The Horror Mode performed strongly on LinkedIn, outperforming standard Akkodis content in engagement. More importantly, it demonstrated that a tech consultancy can have a genuine personality, one that resonates with the designers, engineers, and creative thinkers they want to attract. Ghost-Centered Design is now a recurring internal concept." data-de="The Horror Mode erzielte auf LinkedIn starke Ergebnisse und übertraf reguläre Akkodis-Inhalte in der Interaktionsrate. Noch wichtiger: Es zeigte, dass eine Technologieberatung eine echte Persönlichkeit haben kann, eine, die bei den Designerinnen, Ingenieuren und kreativen Denkenden ankommt, die sie ansprechen möchten. Ghost-Centered Design ist nun ein wiederkehrendes internes Konzept.">
-          The Horror Mode performed strongly on LinkedIn, outperforming standard Akkodis content in engagement. More importantly, it demonstrated that a tech consultancy can have a genuine personality, one that resonates with the designers, engineers, and creative thinkers they want to attract. Ghost-Centered Design is now a recurring internal concept.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="project-section">
-    <div class="project-content-grid">
-      <div class="project-col-label"><span class="section-label">Disclaimer</span></div>
-      <div class="project-col-body">
-        <p data-en="The design work was created on behalf of the employer. Image rights are held by Akkodis." data-de="Die Designarbeit wurde im Auftrag des Arbeitgebers erstellt. Die Bildrechte liegen bei Akkodis.">The design work was created on behalf of the employer. Image rights are held by Akkodis.</p>
-      </div>
-    </div>
-  </section>
-
+  <!-- SEE MORE -->
   <section class="project-more">
     <h2 class="project-more-heading" data-en="See More" data-de="Mehr sehen">See More</h2>
     <div class="project-more-grid">
       <div class="project-card">
-        <a href="project-8.html"><img class="project-thumb" src="images/project-8/project-8-1.png" alt="Little Food Fighters" /></a>
-        <div class="project-body">
-          <div class="badges">
-            <span class="badge-outline">Game Design</span>
-            <span class="badge-outline">Sustainability</span>
-          </div>
-          <p class="project-title">Little Food Fighters</p>
-          <a class="project-link" href="project-8.html" data-en="Show me →" data-de="Zeig mir mehr">Show me →</a>
-        </div>
-      </div>
-      <div class="project-card">
-        <a href="project-1.html"><img class="project-thumb" src="images/project-1/project-1-1.jpg" alt="BIRD Education Platform" /></a>
+        <a href="project-1.html"><img class="alt-thumb" src="images/project-1/project-1-1.jpg" alt="BIRD Education Platform" /></a>
         <div class="project-body">
           <div class="badges">
             <span class="badge-outline">EdTech</span>
@@ -186,14 +196,25 @@
         </div>
       </div>
       <div class="project-card">
-        <a href="project-2.html"><img class="project-thumb" src="images/project-2/project-2-1.png" alt="Mobile-First Car UX" /></a>
+        <a href="project-9.html"><img class="alt-thumb" src="images/project-9/Free Walking with iPhone X mockup (Mockuuups Studio).png" alt="Langenscheidt Language Coach" /></a>
         <div class="project-body">
           <div class="badges">
-            <span class="badge-outline">Automotive</span>
-            <span class="badge-outline">Speculative Design</span>
+            <span class="badge-outline">EdTech</span>
+            <span class="badge-outline" data-en="Learner-Centered Design" data-de="Lernzentriertes Design">Learner-Centered Design</span>
           </div>
-          <p class="project-title">Mobile-First Car UX</p>
-          <a class="project-link" href="project-2.html" data-en="Show me →" data-de="Zeig mir mehr">Show me →</a>
+          <p class="project-title">Langenscheidt Language Coach</p>
+          <a class="project-link" href="project-9.html" data-en="Show me →" data-de="Zeig mir mehr">Show me →</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <a href="project-3.html"><img class="alt-thumb" src="images/project-3/project-3-1.png" alt="Chain²Bike" /></a>
+        <div class="project-body">
+          <div class="badges">
+            <span class="badge-outline">Web3</span>
+            <span class="badge-outline">Mobile</span>
+          </div>
+          <p class="project-title">Chain²Bike</p>
+          <a class="project-link" href="project-3.html" data-en="Show me →" data-de="Zeig mir mehr">Show me →</a>
         </div>
       </div>
     </div>

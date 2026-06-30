@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HMI for Driving Simulation — Johanna Ober</title>
+  <title>HMI for Driving Simulation · Johanna Ober</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="project.css" />
 </head>
-<body>
+<body class="alt-page">
 
   <nav>
-    <a href="index.html" class="nav-logo">JO</a>
+    <a href="index.html" class="nav-back" onclick="if(history.length&gt;1){history.back();return false;}">←</a>
     <ul class="nav-links">
-      <li><a href="index.html#intro" data-en="About" data-de="About">About</a></li>
-      <li><a href="index.html#projects" class="active" data-en="Projects" data-de="Projekte">Projects</a></li>
-      <li><a href="index.html#resume" data-en="Resume" data-de="Lebenslauf">Resume</a></li>
+      <li><a href="index.html#intro">About</a></li>
+      <li><a href="index.html#projects" class="active">Projects</a></li>
+      <li><a href="index.html#resume">Resume</a></li>
     </ul>
     <div class="lang-toggle">
       <button class="lang-btn active" data-lang="en">EN</button>
@@ -24,182 +24,171 @@
     </div>
   </nav>
 
-  <div class="project-back-bar">
-    <a href="index.html#projects" class="project-back-link"
-       data-en="← All Projects" data-de="← Alle Projekte">← All Projects</a>
-  </div>
-
-  <section class="project-hero">
-    <div class="project-hero-meta">
-      <span class="section-label">Automotive · HMI</span>
-    </div>
-    <h1 class="project-hero-title">HMI for Driving Simulation</h1>
-    <p class="project-hero-sub"
-       data-en="A modular, brand-aligned EV cockpit interface built for Akkodis's internal driving simulation software, ready for animation and system integration."
-       data-de="Ein modulares, markenkonsistentes E-Auto-Cockpit-Interface für die interne Fahrsimulationssoftware von Akkodis, bereit für Animation und Systemintegration.">
-      A modular, brand-aligned EV cockpit interface built for Akkodis's internal driving simulation software, ready for animation and system integration.
-    </p>
-  </section>
-
-  <div class="project-cover">
-    <img src="images/project-6/project-6-1.png" alt="HMI for Driving Simulation — Cover" />
-  </div>
-
-  <section class="project-section">
-    <div class="project-meta-grid">
-      <div class="project-meta-item">
-        <span class="section-label">My Role</span>
-        <p>UI Designer</p>
+  <!-- ── HEADER (above first image) ──────────────────── -->
+  <section class="alt-intro">
+    <div class="alt-intro-columns">
+      <div class="alt-intro-left">
+        <p class="alt-intro-tags">
+          <span>[Year]</span><span>Automotive</span><span>HMI</span>
+        </p>
+        <h1 class="alt-intro-title">HMI for Driving Simulation</h1>
+        <p class="alt-intro-desc" data-en="A modular, brand-aligned EV cockpit interface built for Akkodis's internal driving simulation software, ready for animation and system integration." data-de="Ein modulares, markenkonsistentes E-Auto-Cockpit-Interface für die interne Fahrsimulationssoftware von Akkodis, bereit für Animation und Systemintegration.">
+          A modular, brand-aligned EV cockpit interface built for Akkodis's internal driving simulation software, ready for animation and system integration.
+        </p>
       </div>
-      <div class="project-meta-item">
-        <span class="section-label">Client</span>
-        <p>Akkodis<br>Internal Project · Solo</p>
-      </div>
-      <div class="project-meta-item">
-        <span class="section-label">Duration</span>
-        <p>[Duration · Year]</p>
-      </div>
-      <div class="project-meta-item">
-        <span class="section-label">Tasks</span>
-        <div class="badges" style="margin-top: 0.5rem;">
-          <span class="badge">Concept</span>
-          <span class="badge">UI Design</span>
-          <span class="badge">Component Library</span>
+      <div class="alt-intro-meta">
+        <div>
+          <span class="section-label" data-en="Client" data-de="Kunde">Client</span>
+          <p>Akkodis</p>
+          <p data-en="Internal Project · Solo" data-de="Internes Projekt · Solo">Internal Project · Solo</p>
+        </div>
+        <div>
+          <span class="section-label" data-en="My Tasks" data-de="Meine Aufgaben">My Tasks</span>
+          <p class="alt-meta-tasks">
+            <span data-en="Concept" data-de="Konzept">Concept</span><span>UI Design</span><span data-en="Component Library" data-de="Komponentenbibliothek">Component Library</span>
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="project-section">
-    <div class="project-content-grid">
-      <div class="project-col-label"><span class="section-label">Challenge</span></div>
-      <div class="project-col-body">
-        <h2>A generic HMI that needs to feel real</h2>
-        <p data-en="Akkodis needed a clean, generic electric vehicle HMI to showcase the capabilities of their driving simulation software to potential clients. The interface had to reflect the Akkodis corporate identity, cover all essential EV functions, and be fully modular, ready for animation, system signal integration, and 3D vehicle extensions. Image rights held by Akkodis." data-de="Akkodis benötigte ein sauberes, generisches E-Fahrzeug-HMI, um potenziellen Kunden die Möglichkeiten der internen Fahrsimulationssoftware zu demonstrieren. Das Interface musste die Akkodis Corporate Identity widerspiegeln, alle wesentlichen E-Fahrzeugfunktionen abdecken und vollständig modular sein, bereit für Animation, Signalintegration und 3D-Fahrzeugerweiterungen. Bildrechte bei Akkodis.">
-          Akkodis needed a clean, generic electric vehicle HMI to showcase the capabilities of their driving simulation software to potential clients. The interface had to reflect the Akkodis corporate identity, cover all essential EV functions, and be fully modular, ready for animation, system signal integration, and 3D vehicle extensions. Image rights held by Akkodis.
-        </p>
-      </div>
-    </div>
-  </section>
+  <!-- ── FIRST IMAGE (cover) ─────────────────────────── -->
+  <div class="alt-cover">
+    <img src="images/project-6/project-6-1.png" alt="HMI for Driving Simulation" />
+  </div>
 
-  <section class="project-section no-top-line">
-    <div class="project-content-grid">
-      <div class="project-col-label"><span class="section-label">Process</span></div>
-      <div class="project-col-body">
-        <div class="process-tabs">
-          <input type="radio" id="proc-1" name="process" checked />
-          <input type="radio" id="proc-2" name="process" />
-          <input type="radio" id="proc-3" name="process" />
-          <input type="radio" id="proc-4" name="process" />
-          <div class="proc-tab-nav">
-            <label for="proc-1">01 Discovery</label>
-            <label for="proc-2">02 Define</label>
-            <label for="proc-3">03 Design</label>
-            <label for="proc-4">04 Test</label>
-          </div>
-          <div class="proc-panel" id="proc-panel-1">
-            <p class="process-title">Benchmarking EV Interfaces</p>
-            <p class="process-desc" data-en="I reviewed existing EV cockpit interfaces and HMI design principles to identify the essential elements for a convincing simulation environment. The goal was a generic interface, not tied to any specific vehicle brand, that still felt technically credible." data-de="Ich analysierte bestehende E-Fahrzeug-Cockpit-Interfaces und HMI-Designprinzipien, um die wesentlichen Elemente für eine überzeugende Simulationsumgebung zu identifizieren. Ziel war ein generisches Interface, unabhängig von einer bestimmten Fahrzeugmarke, das dennoch technisch glaubwürdig wirkt.">I reviewed existing EV cockpit interfaces and HMI design principles to identify the essential elements for a convincing simulation environment. The goal was a generic interface, not tied to any specific vehicle brand, that still felt technically credible.</p>
-          </div>
-          <div class="proc-panel" id="proc-panel-2">
-            <p class="process-title">Scope &amp; Component Planning</p>
-            <p class="process-desc" data-en="I defined the full set of HMI elements: speed, range, drive modes, turn signals, system states, and media controls. Each element was planned as a standalone component to enable flexible animation and system integration in later phases." data-de="Ich definierte den vollständigen Satz an HMI-Elementen: Geschwindigkeit, Reichweite, Fahrmodi, Blinker, Systemstatus und Mediensteuerung. Jedes Element wurde als eigenständige Komponente geplant, um flexible Animation und Systemintegration in späteren Phasen zu ermöglichen.">I defined the full set of HMI elements: speed, range, drive modes, turn signals, system states, and media controls. Each element was planned as a standalone component to enable flexible animation and system integration in later phases.</p>
-          </div>
-          <div class="proc-panel" id="proc-panel-3">
-            <p class="process-title">Reduced, Functional UI</p>
-            <p class="process-desc" data-en="The interface uses a deliberately minimal visual language, with clean typography, structured layout, and the Akkodis brand palette. Every element is designed to communicate clearly at a glance, even in a simulated driving context." data-de="Das Interface verwendet eine bewusst minimale visuelle Sprache, mit sauberer Typografie, strukturiertem Layout und der Akkodis-Markenpalette. Jedes Element ist darauf ausgelegt, auch im Simulationskontext auf einen Blick klar zu kommunizieren.">The interface uses a deliberately minimal visual language, with clean typography, structured layout, and the Akkodis brand palette. Every element is designed to communicate clearly at a glance, even in a simulated driving context.</p>
-          </div>
-          <div class="proc-panel" id="proc-panel-4">
-            <p class="process-title">Component Handoff &amp; Review</p>
-            <p class="process-desc" data-en="The completed component library was reviewed against the simulation team's technical requirements and adjusted for animation readiness. All elements were annotated and structured for efficient handoff to the engineering team." data-de="Die fertige Komponentenbibliothek wurde mit den technischen Anforderungen des Simulationsteams abgeglichen und auf Animationsbereitschaft geprüft. Alle Elemente wurden annotiert und strukturiert für die effiziente Übergabe ans Engineering-Team.">The completed component library was reviewed against the simulation team's technical requirements and adjusted for animation readiness. All elements were annotated and structured for efficient handoff to the engineering team.</p>
-          </div>
+  <!-- ── STICKY SCROLL SECTION ───────────────────────── -->
+  <div class="alt-sticky-wrapper">
+
+    <!-- Left: sticky text panels -->
+    <div class="alt-sticky-left">
+      <div class="alt-panels-wrapper">
+
+        <!-- Panel 0: Challenge --><!-- Panel 1: Discovery --><!-- Panel 2: Define --><!-- Panel 3: Design --><!-- Panel 4: Test --><!-- Panel 5: Solution --></div>
+    </div>
+
+    <!-- Right: scrolling images -->
+    <div class="alt-scroll-right">
+      <div class="alt-scroll-item" data-index="0">
+        <img src="images/project-6/HMI_60kmh.png" alt="HMI: 60 km/h view" />
+      </div>
+      <div class="alt-text-panel active" data-panel="0">
+          <span class="alt-panel-label" data-en="Challenge" data-de="Herausforderung">Challenge</span>
+          <h2 class="alt-panel-heading" data-en="A generic HMI that needs to feel real" data-de="Ein generisches HMI, das echt wirken muss">A generic HMI that needs to feel real</h2>
+          <p class="alt-panel-body" data-en="Akkodis needed a clean, generic electric vehicle HMI to showcase the capabilities of their driving simulation software to potential clients. The interface had to reflect the Akkodis corporate identity, cover all essential EV functions, and be fully modular, ready for animation, system signal integration, and 3D vehicle extensions." data-de="Akkodis benötigte ein sauberes, generisches E-Fahrzeug-HMI, um potenziellen Kunden die Möglichkeiten der internen Fahrsimulationssoftware zu demonstrieren. Das Interface musste die Akkodis Corporate Identity widerspiegeln, alle wesentlichen E-Fahrzeugfunktionen abdecken und vollständig modular sein, bereit für Animation, Signalintegration und 3D-Fahrzeugerweiterungen.">
+            Akkodis needed a clean, generic electric vehicle HMI to showcase the capabilities of their driving simulation software to potential clients. The interface had to reflect the Akkodis corporate identity, cover all essential EV functions, and be fully modular, ready for animation, system signal integration, and 3D vehicle extensions.
+          </p>
         </div>
+      <div class="alt-scroll-item" data-index="1">
+        <img src="images/project-6/HMI_86kmh.png" alt="HMI: 86 km/h view" />
+      </div>
+      <div class="alt-text-panel" data-panel="1">
+          <span class="alt-panel-label" data-en="01 Discovery" data-de="01 Recherche">01 Discovery</span>
+          <h2 class="alt-panel-heading" data-en="Benchmarking EV Interfaces" data-de="Benchmarking von E-Fahrzeug-Interfaces">Benchmarking EV Interfaces</h2>
+          <p class="alt-panel-body" data-en="I reviewed existing EV cockpit interfaces and HMI design principles to identify the essential elements for a convincing simulation environment. The goal was a generic interface, not tied to any specific vehicle brand, that still felt technically credible." data-de="Ich analysierte bestehende E-Fahrzeug-Cockpit-Interfaces und HMI-Designprinzipien, um die wesentlichen Elemente für eine überzeugende Simulationsumgebung zu identifizieren. Ziel war ein generisches Interface, unabhängig von einer bestimmten Fahrzeugmarke, das dennoch technisch glaubwürdig wirkt.">
+            I reviewed existing EV cockpit interfaces and HMI design principles to identify the essential elements for a convincing simulation environment. The goal was a generic interface, not tied to any specific vehicle brand, that still felt technically credible.
+          </p>
+        </div>
+      <div class="alt-scroll-item" data-index="2">
+        <img src="images/project-6/HMI_ElementCollection.jpg" alt="HMI: Element collection" />
+      </div>
+      <div class="alt-text-panel" data-panel="2">
+          <span class="alt-panel-label" data-en="02 Define" data-de="02 Definition">02 Define</span>
+          <h2 class="alt-panel-heading" data-en="Scope and Component Planning" data-de="Umfang und Komponentenplanung">Scope and Component Planning</h2>
+          <p class="alt-panel-body" data-en="I defined the full set of HMI elements: speed, range, drive modes, turn signals, system states, and media controls. Each element was planned as a standalone component to enable flexible animation and system integration in later phases." data-de="Ich definierte den vollständigen Satz an HMI-Elementen: Geschwindigkeit, Reichweite, Fahrmodi, Blinker, Systemstatus und Mediensteuerung. Jedes Element wurde als eigenständige Komponente geplant, um flexible Animation und Systemintegration in späteren Phasen zu ermöglichen.">
+            I defined the full set of HMI elements: speed, range, drive modes, turn signals, system states, and media controls. Each element was planned as a standalone component to enable flexible animation and system integration in later phases.
+          </p>
+        </div>
+      <div class="alt-scroll-item" data-index="3">
+        <img src="images/project-6/HMI_60kmh_oHG.png" alt="HMI: 60 km/h without background" />
+      </div>
+      <div class="alt-text-panel" data-panel="3">
+          <span class="alt-panel-label">03 Design</span>
+          <h2 class="alt-panel-heading" data-en="Reduced, Functional UI" data-de="Reduziertes, funktionales UI">Reduced, Functional UI</h2>
+          <p class="alt-panel-body" data-en="The interface uses a deliberately minimal visual language, with clean typography, structured layout, and the Akkodis brand palette. Every element is designed to communicate clearly at a glance, even in a simulated driving context." data-de="Das Interface verwendet eine bewusst minimale visuelle Sprache, mit sauberer Typografie, strukturiertem Layout und der Akkodis-Markenpalette. Jedes Element ist darauf ausgelegt, auch im Simulationskontext auf einen Blick klar zu kommunizieren.">
+            The interface uses a deliberately minimal visual language, with clean typography, structured layout, and the Akkodis brand palette. Every element is designed to communicate clearly at a glance, even in a simulated driving context.
+          </p>
+        </div>
+      <div class="alt-scroll-item" data-index="4">
+        <img src="images/project-6/HMI_86kmh_oHG.png" alt="HMI: 86 km/h without background" />
+      </div>
+      <div class="alt-text-panel" data-panel="4">
+          <span class="alt-panel-label">04 Test</span>
+          <h2 class="alt-panel-heading" data-en="Component Handoff and Review" data-de="Komponentenübergabe und Review">Component Handoff and Review</h2>
+          <p class="alt-panel-body" data-en="The completed component library was reviewed against the simulation team's technical requirements and adjusted for animation readiness. All elements were annotated and structured for efficient handoff to the engineering team." data-de="Die fertige Komponentenbibliothek wurde mit den technischen Anforderungen des Simulationsteams abgeglichen und auf Animationsbereitschaft geprüft. Alle Elemente wurden annotiert und strukturiert für die effiziente Übergabe ans Engineering-Team.">
+            The completed component library was reviewed against the simulation team's technical requirements and adjusted for animation readiness. All elements were annotated and structured for efficient handoff to the engineering team.
+          </p>
+        </div>
+      <div class="alt-scroll-item" data-index="5">
+        <img src="images/project-6/project-6-2.png" alt="HMI: Solution" />
+      </div>
+      <div class="alt-text-panel" data-panel="5">
+          <span class="alt-panel-label" data-en="Solution &amp; Impact" data-de="Lösung &amp; Wirkung">Solution &amp; Impact</span>
+          <h2 class="alt-panel-heading" data-en="Modular, brand-ready, simulation-tested" data-de="Modular, markenbereit, simulationsgetestet">Modular, brand-ready, simulation-tested</h2>
+          <p class="alt-panel-body"
+             data-en="The result is a complete, modular EV HMI covering all core vehicle functions in a clean, Akkodis-branded interface. Every UI element is provided as an individual component in a structured library, ready for animation, signal input, and 3D integration. The design is intentionally generic, ensuring it remains neutral across different automotive contexts.<br><br>The HMI component library streamlined the simulation team's animation workflow and provided a solid foundation for client demonstrations. The project serves as a base product to clearly and realistically communicate the possibilities of working with Akkodis."
+             data-de="Das Ergebnis ist ein vollständiges, modulares E-Fahrzeug-HMI, das alle wesentlichen Fahrzeugfunktionen in einem sauberen, im Akkodis-Branding gehaltenen Interface abdeckt. Jedes UI-Element ist als eigenständige Komponente in einer strukturierten Bibliothek bereitgestellt, bereit für Animation, Signaleingabe und 3D-Integration. Das Design ist bewusst generisch gehalten, sodass es über verschiedene Automotive-Kontexte hinweg neutral bleibt.<br><br>Die HMI-Komponentenbibliothek optimierte den Animationsworkflow des Simulationsteams und lieferte eine solide Grundlage für Kundendemonstrationen. Das Projekt dient als Basisprodukt, das Kunden realistisch und nachvollziehbar die Möglichkeiten einer Zusammenarbeit mit Akkodis aufzeigt.">
+            The result is a complete, modular EV HMI covering all core vehicle functions in a clean, Akkodis-branded interface. Every UI element is provided as an individual component in a structured library, ready for animation, signal input, and 3D integration. The design is intentionally generic, ensuring it remains neutral across different automotive contexts.<br><br>The HMI component library streamlined the simulation team's animation workflow and provided a solid foundation for client demonstrations. The project serves as a base product to clearly and realistically communicate the possibilities of working with Akkodis.
+          </p>
+        </div>
+      <div class="alt-scroll-item" data-index="6">
+        <img src="images/project-8/project-8-2.png" alt="Solution and Impact" />
+      </div>
+      <div class="alt-text-panel" data-panel="6">
+          <span class="alt-panel-label" data-en="Disclaimer" data-de="Hinweis">Disclaimer</span>
+          <p class="alt-panel-body" data-en="The design work was created on behalf of the employer. Image rights are held by Akkodis." data-de="Die Designarbeit wurde im Auftrag des Arbeitgebers erstellt. Die Bildrechte liegen bei Akkodis.">
+            The design work was created on behalf of the employer. Image rights are held by Akkodis.
+          </p>
+        </div>
+      <div class="alt-scroll-item" data-index="7">
+        <img src="images/project-9/project-9-8.png" alt="" />
       </div>
     </div>
-  </section>
 
-  <div class="project-image-full">
-    <img src="images/placeholder.svg" alt="HMI for Driving Simulation — Process" />
-  </div>
+  </div><!-- /.alt-sticky-wrapper -->
 
-  <section class="project-section">
-    <div class="project-content-grid">
-      <div class="project-col-label"><span class="section-label">Solution</span></div>
-      <div class="project-col-body">
-        <h2>Modular, brand-ready, simulation-tested</h2>
-        <p data-en="The result is a complete, modular EV HMI covering all core vehicle functions in a clean, Akkodis-branded interface. Every UI element is provided as an individual component in a structured library, ready for animation, signal input, and 3D integration. The design is intentionally generic, ensuring it remains neutral across different automotive contexts." data-de="Das Ergebnis ist ein vollständiges, modulares E-Fahrzeug-HMI, das alle wesentlichen Fahrzeugfunktionen in einem sauberen, akkodis-konformen Interface abdeckt. Jedes UI-Element ist als eigenständige Komponente in einer strukturierten Bibliothek bereitgestellt, bereit für Animation, Signaleingabe und 3D-Integration. Das Design ist bewusst generisch gehalten.">
-          The result is a complete, modular EV HMI covering all core vehicle functions in a clean, Akkodis-branded interface. Every UI element is provided as an individual component in a structured library, ready for animation, signal input, and 3D integration. The design is intentionally generic, ensuring it remains neutral across different automotive contexts.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <div class="project-image-two">
-    <img src="images/placeholder.svg" alt="HMI for Driving Simulation — Detail A" />
-    <img src="images/placeholder.svg" alt="HMI for Driving Simulation — Detail B" />
-  </div>
-
-  <section class="project-section">
-    <div class="project-content-grid">
-      <div class="project-col-label"><span class="section-label">Impact</span></div>
-      <div class="project-col-body">
-        <h2>A tangible showcase for simulation capabilities</h2>
-        <p data-en="The HMI component library streamlined the simulation team's animation workflow and provided a solid foundation for client demonstrations. The project serves as a base product to clearly and realistically communicate the possibilities of working with Akkodis." data-de="Die HMI-Komponentenbibliothek optimierte den Animationsworkflow des Simulationsteams und lieferte eine solide Grundlage für Kundendemonstrationen. Das Projekt dient als Basisprodukt, das Kunden realistisch und nachvollziehbar die Möglichkeiten einer Zusammenarbeit mit Akkodis aufzeigt.">
-          The HMI component library streamlined the simulation team's animation workflow and provided a solid foundation for client demonstrations. The project serves as a base product to clearly and realistically communicate the possibilities of working with Akkodis.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="project-section">
-    <div class="project-content-grid">
-      <div class="project-col-label"><span class="section-label">Disclaimer</span></div>
-      <div class="project-col-body">
-        <p data-en="The design work was created on behalf of the employer. Image rights are held by Akkodis." data-de="Die Designarbeit wurde im Auftrag des Arbeitgebers erstellt. Die Bildrechte liegen bei Akkodis.">The design work was created on behalf of the employer. Image rights are held by Akkodis.</p>
-      </div>
-    </div>
-  </section>
-
+  <!-- ── SEE MORE ─────────────────────────────────────────── -->
   <section class="project-more">
     <h2 class="project-more-heading" data-en="See More" data-de="Mehr sehen">See More</h2>
     <div class="project-more-grid">
       <div class="project-card">
-        <a href="project-7.html"><img class="project-thumb" src="images/project-7/project-7-1.png" alt="The Horror Mode" /></a>
-        <div class="project-body">
-          <div class="badges">
-            <span class="badge-outline">Motion</span>
-            <span class="badge-outline">Social Media</span>
-          </div>
-          <p class="project-title">The Horror Mode</p>
-          <a class="project-link" href="project-7.html" data-en="Show me →" data-de="Zeig mir mehr">Show me →</a>
-        </div>
-      </div>
-      <div class="project-card">
-        <a href="project-8.html"><img class="project-thumb" src="images/project-8/project-8-1.png" alt="Little Food Fighters" /></a>
-        <div class="project-body">
-          <div class="badges">
-            <span class="badge-outline">Game Design</span>
-            <span class="badge-outline">Sustainability</span>
-          </div>
-          <p class="project-title">Little Food Fighters</p>
-          <a class="project-link" href="project-8.html" data-en="Show me →" data-de="Zeig mir mehr">Show me →</a>
-        </div>
-      </div>
-      <div class="project-card">
-        <a href="project-1.html"><img class="project-thumb" src="images/project-1/project-1-1.jpg" alt="BIRD Education Platform" /></a>
+        <a href="project-1.html"><img class="alt-thumb" src="images/project-1/project-1-1.jpg" alt="BIRD Education Platform" /></a>
         <div class="project-body">
           <div class="badges">
             <span class="badge-outline">EdTech</span>
-            <span class="badge-outline">Mobile</span>
+            <span class="badge-outline" data-en="Mobile" data-de="Mobile">Mobile</span>
           </div>
           <p class="project-title">BIRD Education Platform</p>
           <a class="project-link" href="project-1.html" data-en="Show me →" data-de="Zeig mir mehr">Show me →</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <a href="project-9.html"><img class="alt-thumb" src="images/project-9/Free Walking with iPhone X mockup (Mockuuups Studio).png" alt="Langenscheidt Language Coach" /></a>
+        <div class="project-body">
+          <div class="badges">
+            <span class="badge-outline">EdTech</span>
+            <span class="badge-outline" data-en="Learner-Centered Design" data-de="Lernzentriertes Design">Learner-Centered Design</span>
+          </div>
+          <p class="project-title">Langenscheidt Language Coach</p>
+          <a class="project-link" href="project-9.html" data-en="Show me →" data-de="Zeig mir mehr">Show me →</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <a href="project-3.html"><img class="alt-thumb" src="images/project-3/project-3-1.png" alt="Chain²Bike" /></a>
+        <div class="project-body">
+          <div class="badges">
+            <span class="badge-outline">Web3</span>
+            <span class="badge-outline">Mobile</span>
+          </div>
+          <p class="project-title">Chain²Bike</p>
+          <a class="project-link" href="project-3.html" data-en="Show me →" data-de="Zeig mir mehr">Show me →</a>
         </div>
       </div>
     </div>
   </section>
 
   <a href="#" id="back-to-top" aria-label="Back to top">↑</a>
+
   <script src="script.js"></script>
 </body>
 </html>

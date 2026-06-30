@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Little Food Fighters — Johanna Ober</title>
+  <title>Little Food Fighters (Alt Layout) · Johanna Ober</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="project.css" />
 </head>
-<body>
+<body class="alt-page">
 
   <nav>
-    <a href="index.html" class="nav-logo">JO</a>
+    <a href="index.html" class="nav-back" onclick="if(history.length&gt;1){history.back();return false;}">←</a>
     <ul class="nav-links">
-      <li><a href="index.html#intro" data-en="About" data-de="About">About</a></li>
-      <li><a href="index.html#projects" class="active" data-en="Projects" data-de="Projekte">Projects</a></li>
-      <li><a href="index.html#resume" data-en="Resume" data-de="Lebenslauf">Resume</a></li>
+      <li><a href="index.html#intro">About</a></li>
+      <li><a href="index.html#projects" class="active">Projects</a></li>
+      <li><a href="index.html#resume">Resume</a></li>
     </ul>
     <div class="lang-toggle">
       <button class="lang-btn active" data-lang="en">EN</button>
@@ -24,139 +24,188 @@
     </div>
   </nav>
 
-  <div class="project-back-bar">
-    <a href="index.html#projects" class="project-back-link"
-       data-en="← All Projects" data-de="← Alle Projekte">← All Projects</a>
-  </div>
-
-  <section class="project-hero">
-    <div class="project-hero-meta">
-      <span class="section-label">Game Design · Sustainability</span>
-    </div>
-    <h1 class="project-hero-title">Little Food Fighters</h1>
-    <p class="project-hero-sub"
-       data-en="A printed card game about food waste designed for families, packaged directly in the grocery bag and extended with an AR companion app."
-       data-de="Ein gedrucktes Kartenspiel über Lebensmittelverschwendung für Familien, direkt in der Einkaufstüte verpackt und durch eine AR-Begleit-App erweitert.">
-      A printed card game about food waste designed for families, packaged directly in the grocery bag and extended with an AR companion app.
-    </p>
-  </section>
-
-  <div class="project-cover">
-    <img src="images/project-8/project-8-1.png" alt="Little Food Fighters — Cover" />
-  </div>
-
-  <section class="project-section">
-    <div class="project-meta-grid">
-      <div class="project-meta-item">
-        <span class="section-label">My Role</span>
-        <p>Game &amp; Visual Designer</p>
+  <!-- ── HEADER (above first image) ──────────────────── -->
+  <section class="alt-intro">
+    <div class="alt-intro-columns">
+      <div class="alt-intro-left">
+        <p class="alt-intro-tags">
+          <span>2024</span><span data-en="Game Design" data-de="Spieldesign">Game Design</span><span data-en="Sustainability" data-de="Nachhaltigkeit">Sustainability</span>
+        </p>
+        <h1 class="alt-intro-title">Little Food Fighters</h1>
+        <p class="alt-intro-desc" data-en="A printed board game educating kids about food waste. It comes directly
+          with the grocery bag, extended with an AR companion app." data-de="Ein gedrucktes Brettspiel, das Kindern Lebensmittelverschwendung näherbringt. Es kommt direkt
+          mit der Einkaufstüte und wird durch eine AR-Begleit-App erweitert.">
+          A printed board game educating kids about food waste. It comes directly
+          with the grocery bag, extended with an AR companion app.
+        </p>
       </div>
-      <div class="project-meta-item">
-        <span class="section-label">Client</span>
-        <p>Linköping University<br>Course Project · Team of 4</p>
-      </div>
-      <div class="project-meta-item">
-        <span class="section-label">Duration</span>
-        <p>[Duration · Year]</p>
-      </div>
-      <div class="project-meta-item">
-        <span class="section-label">Tasks</span>
-        <div class="badges" style="margin-top: 0.5rem;">
-          <span class="badge">Game Design</span>
-          <span class="badge">Illustration</span>
-          <span class="badge">Print Design</span>
-          <span class="badge">AR Implementation</span>
+      <div class="alt-intro-meta">
+        <div>
+          <span class="section-label" data-en="Client" data-de="Kunde">Client</span>
+          <p>Linköping University</p>
+          <p data-en="Course Project · Team of 4" data-de="Kursprojekt · Team aus 4">Course Project · Team of 4</p>
+        </div>
+        <div>
+          <span class="section-label" data-en="My Tasks" data-de="Meine Aufgaben">My Tasks</span>
+          <p class="alt-meta-tasks">
+            <span data-en="Game Design" data-de="Spieldesign">Game Design</span><span data-en="Illustration" data-de="Illustration">Illustration</span><span data-en="Print Design" data-de="Printdesign">Print Design</span><span data-en="AR Implementation" data-de="AR-Umsetzung">AR Implementation</span>
+          </p>
         </div>
       </div>
-    </div>
+    </div><!-- /.alt-intro-columns -->
   </section>
 
-  <section class="project-section">
-    <div class="project-content-grid">
-      <div class="project-col-label"><span class="section-label">Challenge</span></div>
-      <div class="project-col-body">
-        <h2>Teaching kids about food waste without being preachy</h2>
-        <p data-en="One third of all food produced globally is wasted, and changing that starts at home. The challenge was to design a sustainability intervention for families with children that didn't feel like a lecture. It had to reach kids where they already are: at the table, playing. The game also needed to connect to SDG 12 (Responsible Consumption and Production) in a way that was concrete and age-appropriate, not abstract.">
-          One third of all food produced globally is wasted, and changing that starts at home. The challenge was to design a sustainability intervention for families with children that didn't feel like a lecture. It had to reach kids where they already are: at the table, playing. The game also needed to connect to SDG 12 (Responsible Consumption and Production) in a way that was concrete and age-appropriate, not abstract.
-        </p>
-      </div>
-    </div>
-  </section>
+  <!-- ── FIRST IMAGE (cover) ─────────────────────────── -->
+  <div class="alt-cover">
+    <img src="images/project-8/project-8-1.png" alt="Little Food Fighters" />
+  </div>
 
-  <section class="project-section no-top-line">
-    <div class="project-content-grid">
-      <div class="project-col-label"><span class="section-label">Process</span></div>
-      <div class="project-col-body">
-        <div class="process-tabs">
-          <input type="radio" id="proc-1" name="process" checked />
-          <input type="radio" id="proc-2" name="process" />
-          <input type="radio" id="proc-3" name="process" />
-          <input type="radio" id="proc-4" name="process" />
-          <div class="proc-tab-nav">
-            <label for="proc-1">01 Discovery</label>
-            <label for="proc-2">02 Define</label>
-            <label for="proc-3">03 Design</label>
-            <label for="proc-4">04 Test</label>
-          </div>
-          <div class="proc-panel" id="proc-panel-1">
-            <p class="process-title">Food Waste Research &amp; Family Games</p>
-            <p class="process-desc" data-en="We researched the scale and causes of food waste, from shopping habits to expiry date confusion, and studied how existing games successfully teach sustainability to younger audiences. This revealed a gap: most interventions target adults, not the family unit as a whole." data-de="Wir erforschten Ausmaß und Ursachen von Lebensmittelverschwendung, von Einkaufsgewohnheiten bis zur Verwirrung bei Ablaufdaten, und analysierten, wie bestehende Spiele Nachhaltigkeit erfolgreich an jüngere Zielgruppen vermitteln. Das zeigte eine Lücke: Die meisten Maßnahmen richten sich an Erwachsene, nicht an die Familie als Einheit.">We researched the scale and causes of food waste, from shopping habits to expiry date confusion, and studied how existing games successfully teach sustainability to younger audiences. This revealed a gap: most interventions target adults, not the family unit as a whole.</p>
-          </div>
-          <div class="proc-panel" id="proc-panel-2">
-            <p class="process-title">Mechanics, Format &amp; SDG 12</p>
-            <p class="process-desc" data-en="We defined the core game mechanics: cooperative play, food-character cards with personalities and vulnerabilities, and a grocery bag distribution format that puts the game directly in families' hands. The link to SDG 12 was embedded in the narrative: players rescue food from waste, making the sustainability message structural rather than instructional." data-de="Wir definierten die Kernmechaniken: kooperatives Spiel, Lebensmittel-Charakterkarten mit Persönlichkeiten und Schwachstellen, sowie ein Verteilungsformat über Einkaufstüten, das das Spiel direkt in die Hände von Familien bringt. Der Bezug zu SDG 12 wurde in die Narration eingebettet: Spielende retten Lebensmittel vor der Verschwendung.">We defined the core game mechanics: cooperative play, food-character cards with personalities and vulnerabilities, and a grocery bag distribution format that puts the game directly in families' hands. The link to SDG 12 was embedded in the narrative: players rescue food from waste, making the sustainability message structural rather than instructional.</p>
-          </div>
-          <div class="proc-panel" id="proc-panel-3">
-            <p class="process-title">Illustration, Print &amp; AR App</p>
-            <p class="process-desc" data-en="Each food character was illustrated with a distinct personality, making the cards collectable and emotionally engaging. The print layout was designed for the physical card format and grocery bag packaging. An AR companion app was implemented to extend the game into the digital space, bringing characters to life when scanned." data-de="Jeder Lebensmittelcharakter wurde mit einer eigenen Persönlichkeit illustriert, was die Karten sammelbar und emotional ansprechend macht. Das Drucklayout wurde für das physische Kartenformat und die Einkaufstütenverpackung gestaltet. Eine AR-Begleit-App wurde implementiert, um das Spiel in den digitalen Raum zu erweitern und Charaktere beim Scannen zum Leben zu erwecken.">Each food character was illustrated with a distinct personality, making the cards collectable and emotionally engaging. The print layout was designed for the physical card format and grocery bag packaging. An AR companion app was implemented to extend the game into the digital space, bringing characters to life when scanned.</p>
-          </div>
-          <div class="proc-panel" id="proc-panel-4">
-            <p class="process-title">Playtest with Kids &amp; Parents</p>
-            <p class="process-desc" data-en="The game was playtested with families, children and parents playing together. Observations focused on engagement, rule clarity, and whether the sustainability message landed naturally. The AR feature generated immediate excitement and became a strong motivator for repeat play." data-de="Das Spiel wurde mit Familien getestet, Kinder und Eltern spielten gemeinsam. Beobachtungen konzentrierten sich auf Engagement, Regelklarheit und ob die Nachhaltigkeitsbotschaft natürlich ankam. Das AR-Feature erzeugte sofortige Begeisterung und wurde zu einem starken Motivator für wiederholtes Spielen.">The game was playtested with families, children and parents playing together. Observations focused on engagement, rule clarity, and whether the sustainability message landed naturally. The AR feature generated immediate excitement and became a strong motivator for repeat play.</p>
-          </div>
+  <!-- ── STICKY SCROLL SECTION ───────────────────────── -->
+  <div class="alt-sticky-wrapper">
+
+    <!-- Left: sticky text panels -->
+    <div class="alt-sticky-left">
+      <div class="alt-panels-wrapper">
+
+        <!-- Panel 0: Challenge --><!-- Panel 1: Discovery --><!-- Panel 2: Define --><!-- Panel 3: Design --><!-- Panel 4: Test --><!-- Panel 5: Solution --></div>
+    </div>
+
+    <!-- Right: scrolling images -->
+    <div class="alt-scroll-right">
+      <div class="alt-scroll-item alt-scroll-spacer" data-index="0"></div>
+      <div class="alt-text-panel active" data-panel="0">
+          <span class="alt-panel-label" data-en="Challenge" data-de="Herausforderung">Challenge</span>
+          <h2 class="alt-panel-heading" data-en="Showing kids how to save food" data-de="Kindern zeigen, wie man Lebensmittel rettet">Showing kids how to save food</h2>
+          <p class="alt-panel-body" data-en="One third of all food produced globally is wasted, and changing that starts at home.
+            The challenge was to design a sustainability intervention for families that did not feel
+            like a lecture, reaching kids through play. Crucially, the game itself should not require
+            any resources beyond what already exists." data-de="Ein Drittel aller weltweit produzierten Lebensmittel wird verschwendet, und das zu
+            ändern beginnt zu Hause. Die Herausforderung bestand darin, eine Nachhaltigkeits-Intervention
+            für Familien zu gestalten, die sich nicht wie eine Belehrung anfühlt und Kinder über das
+            Spiel erreicht. Entscheidend: Das Spiel selbst sollte keine Ressourcen über das hinaus
+            erfordern, was bereits vorhanden ist.">
+            One third of all food produced globally is wasted, and changing that starts at home.
+            The challenge was to design a sustainability intervention for families that did not feel
+            like a lecture, reaching kids through play. Crucially, the game itself should not require
+            any resources beyond what already exists.
+          </p>
         </div>
+      <div class="alt-scroll-item" data-index="1">
+        <img src="images/project-8/Group 427320055.png" alt="Little Food Fighters: Discovery" />
+      </div>
+      <div class="alt-text-panel" data-panel="1">
+          <span class="alt-panel-label" data-en="01 Discovery" data-de="01 Recherche">01 Discovery</span>
+          <h2 class="alt-panel-heading" data-en="Research and Insights" data-de="Recherche und Erkenntnisse">Research and Insights</h2>
+          <p class="alt-panel-body" data-en="We researched the scale and causes of food waste and studied how games successfully
+            teach sustainability to younger audiences. A key insight: kids engage best through
+            concrete cause-and-effect, everyday tasks, and collaboration." data-de="Wir untersuchten das Ausmaß und die Ursachen von Lebensmittelverschwendung und
+            betrachteten, wie Spiele jüngeren Zielgruppen erfolgreich Nachhaltigkeit vermitteln.
+            Eine zentrale Erkenntnis: Kinder lassen sich am besten durch konkrete Ursache-Wirkung,
+            alltägliche Aufgaben und Zusammenarbeit einbinden.">
+            We researched the scale and causes of food waste and studied how games successfully
+            teach sustainability to younger audiences. A key insight: kids engage best through
+            concrete cause-and-effect, everyday tasks, and collaboration.
+          </p>
+        </div>
+      <div class="alt-scroll-item" data-index="2">
+        <img src="images/project-8/Group 427320054.png" alt="Little Food Fighters: Define" />
+      </div>
+      <div class="alt-text-panel" data-panel="2">
+          <span class="alt-panel-label" data-en="02 Define" data-de="02 Definition">02 Define</span>
+          <h2 class="alt-panel-heading" data-en="Mechanics and Format" data-de="Mechaniken und Format">Mechanics and Format</h2>
+          <p class="alt-panel-body" data-en="We identified the everyday moments where kids can actually help avoid food waste and
+            built the game around those. Core mechanics: cooperative play, shared tasks including
+            donating food to players in need, and a grocery bag format that puts the game directly
+            in families' hands. Sustainability is not explained, it is played." data-de="Wir identifizierten die Alltagsmomente, in denen Kinder tatsächlich helfen können,
+            Lebensmittelverschwendung zu vermeiden, und bauten das Spiel darum herum auf.
+            Kernmechaniken: kooperatives Spiel, gemeinsame Aufgaben einschließlich des Spendens von
+            Lebensmitteln an bedürftige Mitspielende sowie ein Einkaufstüten-Format, das das Spiel
+            direkt in die Hände der Familien legt. Nachhaltigkeit wird nicht erklärt, sie wird gespielt.">
+            We identified the everyday moments where kids can actually help avoid food waste and
+            built the game around those. Core mechanics: cooperative play, shared tasks including
+            donating food to players in need, and a grocery bag format that puts the game directly
+            in families' hands. Sustainability is not explained, it is played.
+          </p>
+        </div>
+      <div class="alt-scroll-item" data-index="3">
+        <img src="images/project-8/Mockup_Bag_mFlappe_2.jpg" alt="Little Food Fighters: bag mockup with flap detail" />
+      </div>
+      <div class="alt-text-panel" data-panel="3">
+          <span class="alt-panel-label" data-en="03 Design" data-de="03 Design">03 Design</span>
+          <h2 class="alt-panel-heading" data-en="Illustration, Print and AR" data-de="Illustration, Print und AR">Illustration, Print and AR</h2>
+          <p class="alt-panel-body" data-en="Food characters were illustrated as colorful, gender and skin-tone neutral figures to
+            reflect diversity. The print layout was designed for standard ICA grocery bag packaging.
+            An AR companion app extends the game into the digital space, bringing characters to life
+            and delivering varied tasks." data-de="Die Lebensmittel-Figuren wurden als bunte, geschlechts- und hautfarbenneutrale
+            Charaktere illustriert, um Vielfalt widerzuspiegeln. Das Print-Layout wurde für die
+            Standard-Verpackung der ICA-Einkaufstüten gestaltet. Eine AR-Begleit-App erweitert das
+            Spiel in den digitalen Raum, erweckt die Figuren zum Leben und liefert abwechslungsreiche Aufgaben.">
+            Food characters were illustrated as colorful, gender and skin-tone neutral figures to
+            reflect diversity. The print layout was designed for standard ICA grocery bag packaging.
+            An AR companion app extends the game into the digital space, bringing characters to life
+            and delivering varied tasks.
+          </p>
+        </div>
+      <div class="alt-scroll-item" data-index="4">
+        <img src="images/project-8/Playtesting_1.jpg" alt="Little Food Fighters: playtesting session" />
+      </div>
+      <div class="alt-text-panel" data-panel="4">
+          <span class="alt-panel-label" data-en="04 Test" data-de="04 Test">04 Test</span>
+          <h2 class="alt-panel-heading" data-en="Playtesting with Kids" data-de="Playtesting mit Kindern">Playtesting with Kids</h2>
+          <p class="alt-panel-body" data-en="The game was playtested with kids aged 7 to 10 from our personal circle. Observations
+            focused on engagement, rule clarity, and whether the sustainability message landed
+            naturally. The AR feature generated immediate excitement and became a strong motivator
+            for repeat play." data-de="Das Spiel wurde mit Kindern im Alter von 7 bis 10 Jahren aus unserem persönlichen
+            Umfeld getestet. Die Beobachtungen konzentrierten sich auf Engagement, Verständlichkeit
+            der Regeln und darauf, ob die Nachhaltigkeitsbotschaft auf natürliche Weise ankam. Die
+            AR-Funktion sorgte sofort für Begeisterung und wurde zu einem starken Anreiz, immer
+            wieder zu spielen.">
+            The game was playtested with kids aged 7 to 10 from our personal circle. Observations
+            focused on engagement, rule clarity, and whether the sustainability message landed
+            naturally. The AR feature generated immediate excitement and became a strong motivator
+            for repeat play.
+          </p>
+        </div>
+      <div class="alt-scroll-item" data-index="5">
+        <img src="images/project-8/Mockup_Bag_mFlappe.jpg" alt="Little Food Fighters: bag mockup with flap" />
+      </div>
+      <div class="alt-text-panel" data-panel="5">
+          <span class="alt-panel-label" data-en="Solution &amp; Impact" data-de="Lösung &amp; Wirkung">Solution &amp; Impact</span>
+          <h2 class="alt-panel-heading" data-en="Comes Home With Your Groceries" data-de="Kommt mit dem Einkauf nach Hause">Comes Home With Your Groceries</h2>
+          <p class="alt-panel-body" data-en="Little Food Fighters is a cooperative board game where players rescue expiring food from
+            the waste bin. It arrives printed on a grocery bag, no extra purchase or materials needed,
+            meeting families at the moment food decisions are made.<br><br>The project was met with enthusiasm by faculty, who saw SDG 12 addressed in a concrete and
+            age-appropriate way. The concept was well received to the point where instructors expressed
+            wanting to see it available in actual supermarkets." data-de="Little Food Fighters ist ein kooperatives Brettspiel, bei dem die Spielenden ablaufende
+            Lebensmittel vor dem Mülleimer retten. Es kommt aufgedruckt auf einer Einkaufstüte, ohne
+            zusätzlichen Kauf oder Material, und erreicht Familien genau in dem Moment, in dem
+            Entscheidungen über Lebensmittel getroffen werden.<br><br>Das Projekt stieß bei den Lehrenden auf
+            Begeisterung, die SDG 12 hier auf konkrete und altersgerechte Weise behandelt sahen. Das
+            Konzept kam so gut an, dass die Dozierenden den Wunsch äußerten, es in echten Supermärkten
+            zu sehen.">
+            Little Food Fighters is a cooperative board game where players rescue expiring food from
+            the waste bin. It arrives printed on a grocery bag, no extra purchase or materials needed,
+            meeting families at the moment food decisions are made.<br><br>The project was met with enthusiasm by faculty, who saw SDG 12 addressed in a concrete and
+            age-appropriate way. The concept was well received to the point where instructors expressed
+            wanting to see it available in actual supermarkets.
+          </p>
+        </div>
+      <div class="alt-scroll-item" data-index="6">
+        <img src="images/project-8/Mockup_Bag_frontback_2.jpg" alt="Little Food Fighters: bag mockup variant" />
+      </div>
+      <div class="alt-scroll-item" data-index="7">
+        <img src="images/project-9/project-9-8.png" alt="" />
       </div>
     </div>
-  </section>
 
-  <div class="project-image-full">
-    <img src="images/placeholder.svg" alt="Little Food Fighters — Process" />
-  </div>
+  </div><!-- /.alt-sticky-wrapper -->
 
-  <section class="project-section">
-    <div class="project-content-grid">
-      <div class="project-col-label"><span class="section-label">Solution</span></div>
-      <div class="project-col-body">
-        <h2>The game that comes home with your groceries</h2>
-        <p data-en="Little Food Fighters is a cooperative card game where players team up to rescue expiring food characters from the waste bin. Each character, from Broccoli Bob to Leftover Larry, has a personality, a backstory, and an AR alter ego. The game arrives folded inside a grocery bag, meeting families at the exact moment food decisions are made. Play makes the lesson; no lecture required.">
-          Little Food Fighters is a cooperative card game where players team up to rescue expiring food characters from the waste bin. Each character, from Broccoli Bob to Leftover Larry, has a personality, a backstory, and an AR alter ego. The game arrives folded inside a grocery bag, meeting families at the exact moment food decisions are made. Play makes the lesson; no lecture required.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <div class="project-image-two">
-    <img src="images/placeholder.svg" alt="Little Food Fighters — Detail A" />
-    <img src="images/placeholder.svg" alt="Little Food Fighters — Detail B" />
-  </div>
-
-  <section class="project-section">
-    <div class="project-content-grid">
-      <div class="project-col-label"><span class="section-label">Impact</span></div>
-      <div class="project-col-body">
-        <h2>A sustainability lesson disguised as a game</h2>
-        <p data-en="Little Food Fighters showed that behaviour change design doesn't need to be earnest; it needs to be fun. The grocery bag distribution model was particularly well received for its elegance: zero extra effort from the family, maximum reach for the message. The project demonstrated how physical game design and AR can work together to make abstract sustainability goals feel personal and playable." data-de="Little Food Fighters zeigte, dass Verhaltensänderungsdesign nicht ernsthaft sein muss; es muss Spaß machen. Das Einkaufstüten-Distributionsmodell wurde besonders für seine Eleganz geschätzt: kein zusätzlicher Aufwand für die Familie, maximale Reichweite für die Botschaft. Das Projekt zeigte, wie physisches Spieldesign und AR zusammenwirken können, um abstrakte Nachhaltigkeitsziele persönlich und spielbar zu machen.">
-          Little Food Fighters showed that behaviour change design doesn't need to be earnest; it needs to be fun. The grocery bag distribution model was particularly well received for its elegance: zero extra effort from the family, maximum reach for the message. The project demonstrated how physical game design and AR can work together to make abstract sustainability goals feel personal and playable.
-        </p>
-      </div>
-    </div>
-  </section>
-
+  <!-- ── SEE MORE ─────────────────────────────────────────── -->
   <section class="project-more">
     <h2 class="project-more-heading" data-en="See More" data-de="Mehr sehen">See More</h2>
     <div class="project-more-grid">
       <div class="project-card">
-        <a href="project-1.html"><img class="project-thumb" src="images/project-1/project-1-1.jpg" alt="BIRD Education Platform" /></a>
+        <a href="project-1.html"><img class="alt-thumb" src="images/project-1/project-1-1.jpg" alt="BIRD Education Platform" /></a>
         <div class="project-body">
           <div class="badges">
             <span class="badge-outline">EdTech</span>
@@ -167,18 +216,18 @@
         </div>
       </div>
       <div class="project-card">
-        <a href="project-2.html"><img class="project-thumb" src="images/project-2/project-2-1.png" alt="Mobile-First Car UX" /></a>
+        <a href="project-9.html"><img class="alt-thumb" src="images/project-9/Free Walking with iPhone X mockup (Mockuuups Studio).png" alt="Langenscheidt Language Coach" /></a>
         <div class="project-body">
           <div class="badges">
-            <span class="badge-outline">Automotive</span>
-            <span class="badge-outline">Speculative Design</span>
+            <span class="badge-outline">EdTech</span>
+            <span class="badge-outline" data-en="Learner-Centered Design" data-de="Lernzentriertes Design">Learner-Centered Design</span>
           </div>
-          <p class="project-title">Mobile-First Car UX</p>
-          <a class="project-link" href="project-2.html" data-en="Show me →" data-de="Zeig mir mehr">Show me →</a>
+          <p class="project-title">Langenscheidt Language Coach</p>
+          <a class="project-link" href="project-9.html" data-en="Show me →" data-de="Zeig mir mehr">Show me →</a>
         </div>
       </div>
       <div class="project-card">
-        <a href="project-3.html"><img class="project-thumb" src="images/project-3/project-3-1.png" alt="Chain²Bike" /></a>
+        <a href="project-3.html"><img class="alt-thumb" src="images/project-3/project-3-1.png" alt="Chain²Bike" /></a>
         <div class="project-body">
           <div class="badges">
             <span class="badge-outline">Web3</span>
@@ -192,6 +241,31 @@
   </section>
 
   <a href="#" id="back-to-top" aria-label="Back to top">↑</a>
+
   <script src="script.js"></script>
+  <script>
+    (function () {
+      if (!window.matchMedia('(pointer: fine)').matches) return;
+      var elD  = document.getElementById('cursor-diff');
+      var elS  = document.getElementById('cursor-screen');
+      var elW  = document.getElementById('cursor-white');
+      var elPC = document.getElementById('cursor-photo');
+
+      var cover = document.querySelector('.alt-cover');
+      if (cover && elPC) {
+        cover.addEventListener('mouseenter', function () {
+          if (elD)  elD.style.opacity  = '0';
+          if (elS)  elS.style.opacity  = '0';
+          if (elW)  elW.style.opacity  = '0';
+          elPC.classList.add('active');
+        });
+        cover.addEventListener('mouseleave', function () {
+          if (elD)  elD.style.opacity  = '';
+          if (elS)  elS.style.opacity  = '';
+          elPC.classList.remove('active');
+        });
+      }
+    })();
+  </script>
 </body>
 </html>

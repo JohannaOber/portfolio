@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LOVEsick — Johanna Ober</title>
+  <title>LOVEsick (Alt Layout) · Johanna Ober</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="project.css" />
 </head>
-<body>
+<body class="alt-page">
 
   <nav>
-    <a href="index.html" class="nav-logo">JO</a>
+    <a href="index.html" class="nav-back" onclick="if(history.length&gt;1){history.back();return false;}">←</a>
     <ul class="nav-links">
       <li><a href="index.html#intro" data-en="About" data-de="About">About</a></li>
       <li><a href="index.html#projects" class="active" data-en="Projects" data-de="Projekte">Projects</a></li>
@@ -24,174 +24,223 @@
     </div>
   </nav>
 
-  <div class="project-back-bar">
-    <a href="index.html#projects" class="project-back-link"
-       data-en="← All Projects" data-de="← Alle Projekte">← All Projects</a>
-  </div>
-
-  <section class="project-hero">
-    <div class="project-hero-meta">
-      <span class="section-label">Exhibition · Interactive</span>
-    </div>
-    <h1 class="project-hero-title">LOVEsick</h1>
-    <p class="project-hero-sub"
-       data-en="An interactive museum exhibit at Visualiseringscenter C in Sweden, inviting young visitors to explore the biology and feeling of falling in love."
-       data-de="Ein interaktives Museumsexponat im Visualiseringscenter C in Schweden, das junge Besucherinnen und Besucher einlädt, die Biologie und das Gefühl des Sich-Verliebens zu erforschen.">
-      An interactive museum exhibit at Visualiseringscenter C in Sweden, inviting young visitors to explore the biology and feeling of falling in love.
-    </p>
-  </section>
-
-  <div class="project-cover">
-    <img src="images/project-5/project-5-1.jpg" alt="LOVEsick — Cover" />
-  </div>
-
-  <section class="project-section">
-    <div class="project-meta-grid">
-      <div class="project-meta-item">
-        <span class="section-label">My Role</span>
-        <p>Experience Designer</p>
+  <!-- ── HEADER ──────────────────────────────────────── -->
+  <section class="alt-intro">
+    <div class="alt-intro-columns">
+      <div class="alt-intro-left">
+        <p class="alt-intro-tags">
+          <span>2024</span><span data-en="Exhibition" data-de="Ausstellung">Exhibition</span><span data-en="Interactive" data-de="Interaktiv">Interactive</span>
+        </p>
+        <h1 class="alt-intro-title">LOVEsick</h1>
+        <p class="alt-intro-desc"
+           data-en="An interactive museum exhibit at Visualiseringscenter C in Sweden, inviting young visitors to explore the biology and feeling of falling in love."
+           data-de="Ein interaktives Museumsexponat im Visualiseringscenter C in Schweden, das junge Besucherinnen und Besucher einlädt, die Biologie und das Gefühl des Sich-Verliebens zu erforschen.">
+          An interactive museum exhibit at Visualiseringscenter C in Sweden, inviting young visitors to explore the biology and feeling of falling in love.
+        </p>
       </div>
-      <div class="project-meta-item">
-        <span class="section-label">Client</span>
-        <p>Linköping University &amp;<br>Visualiseringscenter C · Team of 6</p>
-      </div>
-      <div class="project-meta-item">
-        <span class="section-label">Duration</span>
-        <p>[Duration · Year]</p>
-      </div>
-      <div class="project-meta-item">
-        <span class="section-label">Tasks</span>
-        <div class="badges" style="margin-top: 0.5rem;">
-          <span class="badge">User Research</span>
-          <span class="badge">Storytelling</span>
-          <span class="badge">Interaction Concept</span>
-          <span class="badge">Prototyping</span>
+      <div class="alt-intro-meta">
+        <div>
+          <span class="section-label" data-en="Client" data-de="Kunde">Client</span>
+          <p>Linköping University &amp;<br>Visualiseringscenter C</p>
+          <p data-en="Team of 6" data-de="Team aus 6">Team of 6</p>
+        </div>
+        <div>
+          <span class="section-label" data-en="My Tasks" data-de="Meine Aufgaben">My Tasks</span>
+          <p class="alt-meta-tasks">
+            <span data-en="UX Research" data-de="Nutzerforschung">UX Research</span><span data-en="Concept Design" data-de="Konzeptdesign">Concept Design</span><span data-en="Interaction Design" data-de="Interaktionsdesign">Interaction Design</span><span data-en="Prototyping" data-de="Prototyping">Prototyping</span>
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="project-section">
-    <div class="project-content-grid">
-      <div class="project-col-label"><span class="section-label">Challenge</span></div>
-      <div class="project-col-body">
-        <h2>Making the science of love feel personal and fun</h2>
-        <p data-en="The Visualiseringscenter C in Norrköping, Sweden, invites student teams to develop interactive science exhibits for young audiences. Our brief: explain the complex biology and psychology of falling in love in a way that's engaging, relatable, and safe to explore, even for teenagers who might not even admit they're curious." data-de="Das Visualiseringscenter C in Norrköping, Schweden, lädt Studierendenteams ein, interaktive Wissenschaftsexponate für junges Publikum zu entwickeln. Unsere Aufgabe: die komplexe Biologie und Psychologie des Sich-Verliebens so zu erklären, dass sie ansprechend, zugänglich und ungefährlich erkundbar ist, auch für Jugendliche, die ihr Interesse vielleicht noch nicht zugeben wollen.">
-          The Visualiseringscenter C in Norrköping, Sweden, invites student teams to develop interactive science exhibits for young audiences. Our brief: explain the complex biology and psychology of falling in love in a way that's engaging, relatable, and safe to explore, even for teenagers who might not even admit they're curious.
-        </p>
-      </div>
-    </div>
-  </section>
+  <!-- ── COVER IMAGE ─────────────────────────────────── -->
+  <div class="alt-cover">
+    <img src="images/project-5/project-5-1.jpg" alt="LOVEsick" />
+  </div>
 
-  <section class="project-section no-top-line">
-    <div class="project-content-grid">
-      <div class="project-col-label"><span class="section-label">Process</span></div>
-      <div class="project-col-body">
-        <div class="process-tabs">
-          <input type="radio" id="proc-1" name="process" checked />
-          <input type="radio" id="proc-2" name="process" />
-          <input type="radio" id="proc-3" name="process" />
-          <input type="radio" id="proc-4" name="process" />
-          <div class="proc-tab-nav">
-            <label for="proc-1">01 Discovery</label>
-            <label for="proc-2">02 Define</label>
-            <label for="proc-3">03 Design</label>
-            <label for="proc-4">04 Test</label>
-          </div>
-          <div class="proc-panel" id="proc-panel-1">
-            <p class="process-title">Research &amp; Target Group</p>
-            <p class="process-desc" data-en="We researched the biology and psychology of falling in love and studied how science museums engage young audiences. We mapped the emotions, questions, and knowledge gaps typical of first experiences with romantic feelings." data-de="Wir erforschten die Biologie und Psychologie des Sich-Verliebens und analysierten, wie Wissenschaftsmuseen junges Publikum ansprechen. Wir kartierten die Emotionen, Fragen und Wissenslücken, die typisch für erste Verliebtheitserfahrungen sind.">We researched the biology and psychology of falling in love and studied how science museums engage young audiences. We mapped the emotions, questions, and knowledge gaps typical of first experiences with romantic feelings.</p>
-          </div>
-          <div class="proc-panel" id="proc-panel-2">
-            <p class="process-title">Dual-Sided Narrative Structure</p>
-            <p class="process-desc" data-en="We defined the core narrative: a love-struck patient who needs examination. Two opposing perspectives shaped the exhibit's structure: the left side explores the biological and chemical mechanisms, the right the emotional and sensory experience. Visitors choose their entry point." data-de="Wir definierten die Kernnarrative: ein verliebter Patient, der untersucht werden muss. Zwei gegensätzliche Perspektiven prägen die Struktur des Exponats: die linke Seite erkundet die biologischen und chemischen Mechanismen, die rechte das emotionale und sinnliche Erleben. Besucherinnen und Besucher wählen ihren Einstiegspunkt.">We defined the core narrative: a love-struck patient who needs examination. Two opposing perspectives shaped the exhibit's structure: the left side explores the biological and chemical mechanisms, the right the emotional and sensory experience. Visitors choose their entry point.</p>
-          </div>
-          <div class="proc-panel" id="proc-panel-3">
-            <p class="process-title">Tangible Interaction &amp; Roleplay</p>
-            <p class="process-desc" data-en="Visitors become nurses, using a physical tangible as a stethoscope to 'examine' the patient. A doctor narrates the findings, explaining that love is natural and nothing to worry about. The concept transforms a potentially embarrassing topic into something warm, funny, and safe." data-de="Besucherinnen und Besucher schlüpfen in die Rolle einer Krankenschwester und nutzen ein physisches Tangible als Stethoskop, um den Patienten zu untersuchen. Ein Arzt erläutert die Befunde und stellt klar, dass Verliebtsein natürlich ist und keinen Grund zur Sorge bietet. Das Konzept macht ein potenziell peinliches Thema warm, witzig und zugänglich.">Visitors become nurses, using a physical tangible as a stethoscope to 'examine' the patient. A doctor narrates the findings, explaining that love is natural and nothing to worry about. The concept transforms a potentially embarrassing topic into something warm, funny, and safe.</p>
-          </div>
-          <div class="proc-panel" id="proc-panel-4">
-            <p class="process-title">Watchout Prototype Evaluation</p>
-            <p class="process-desc" data-en="The concept was prototyped in Watchout and evaluated for clarity, engagement, and educational impact. The dual-sided structure proved highly effective in creating curiosity and guiding exploration without prescribing a single path." data-de="Das Konzept wurde in Watchout prototypisch umgesetzt und auf Klarheit, Engagement und pädagogischen Nutzen evaluiert. Die zweiseitige Struktur erwies sich als äußerst effektiv, um Neugier zu wecken und die Erkundung zu leiten, ohne einen festen Weg vorzuschreiben.">The concept was prototyped in Watchout and evaluated for clarity, engagement, and educational impact. The dual-sided structure proved highly effective in creating curiosity and guiding exploration without prescribing a single path.</p>
-          </div>
+  <!-- ── STICKY SCROLL SECTION ───────────────────────── -->
+  <div class="alt-sticky-wrapper">
+
+    <!-- Left: sticky text panels -->
+    <div class="alt-sticky-left">
+      <div class="alt-panels-wrapper">
+
+        <!-- Panel 0: Challenge --><!-- Panel 1: Discovery --><!-- Panel 2: Define --><!-- Panel 3: Design --><!-- Panel 4: Test --><!-- Panel 5: Solution --></div>
+    </div>
+
+    <!-- Right: scrolling images -->
+    <div class="alt-scroll-right">
+      <div class="alt-scroll-item" data-index="0">
+        <img src="images/project-5/Bildschirmfoto 2024-04-22 um 01.02.33.png" alt="LOVEsick: Challenge overview" />
+      </div>
+      <div class="alt-text-panel active" data-panel="0">
+          <span class="alt-panel-label" data-en="Challenge" data-de="Herausforderung">Challenge</span>
+          <h2 class="alt-panel-heading"
+              data-en="Making the science of love feel personal and fun"
+              data-de="Die Wissenschaft der Liebe persönlich und spielerisch erlebbar machen">
+            Making the science of love feel personal and fun
+          </h2>
+          <p class="alt-panel-body"
+             data-en="The Visualiseringscenter C in Norrköping, Sweden, invites student teams to develop interactive science exhibits for young audiences. Our brief: explain the complex biology and psychology of falling in love in a way that's engaging, relatable, and safe to explore, even for teenagers who might not even admit they're curious."
+             data-de="Das Visualiseringscenter C in Norrköping, Schweden, lädt Studierendenteams ein, interaktive Wissenschaftsexponate für junges Publikum zu entwickeln. Unsere Aufgabe: die komplexe Biologie und Psychologie des Sich-Verliebens so zu erklären, dass sie ansprechend, zugänglich und ungefährlich erkundbar ist, auch für Jugendliche, die ihr Interesse vielleicht noch nicht zugeben wollen.">
+            The Visualiseringscenter C in Norrköping, Sweden, invites student teams to develop interactive science exhibits for young audiences. Our brief: explain the complex biology and psychology of falling in love in a way that's engaging, relatable, and safe to explore, even for teenagers who might not even admit they're curious.
+          </p>
         </div>
+      <div class="alt-scroll-item" data-index="1">
+        <img src="images/project-5/Bildschirmfoto 2024-04-22 um 01.02.58.png" alt="LOVEsick: Discovery phase" />
+      </div>
+      <div class="alt-text-panel" data-panel="1">
+          <span class="alt-panel-label" data-en="01 Discovery" data-de="01 Recherche">01 Discovery</span>
+          <h2 class="alt-panel-heading"
+              data-en="Research and Target Group"
+              data-de="Recherche und Zielgruppe">
+            Research and Target Group
+          </h2>
+          <p class="alt-panel-body"
+             data-en="We researched the biology and psychology of falling in love and studied how science museums engage young audiences. We mapped the emotions, questions, and knowledge gaps typical of first experiences with romantic feelings."
+             data-de="Wir erforschten die Biologie und Psychologie des Sich-Verliebens und analysierten, wie Wissenschaftsmuseen junges Publikum ansprechen. Wir kartierten die Emotionen, Fragen und Wissenslücken, die typisch für erste Verliebtheitserfahrungen sind.">
+            We researched the biology and psychology of falling in love and studied how science museums engage young audiences. We mapped the emotions, questions, and knowledge gaps typical of first experiences with romantic feelings.
+          </p>
+        </div>
+      <div class="alt-scroll-item" data-index="2">
+        <img src="images/project-5/Bildschirmfoto 2024-04-22 um 01.04.49.png" alt="LOVEsick: Narrative structure" />
+      </div>
+      <div class="alt-text-panel" data-panel="2">
+          <span class="alt-panel-label" data-en="02 Define" data-de="02 Definition">02 Define</span>
+          <h2 class="alt-panel-heading"
+              data-en="Dual-Sided Narrative Structure"
+              data-de="Zweiseitige Erzählstruktur">
+            Dual-Sided Narrative Structure
+          </h2>
+          <p class="alt-panel-body"
+             data-en="We defined the core narrative: a love-struck patient who needs examination. Two opposing perspectives shaped the exhibit's structure: the left side explores the biological and chemical mechanisms, the right the emotional and sensory experience. Visitors choose their entry point."
+             data-de="Wir definierten die Kernnarrative: ein verliebter Patient, der untersucht werden muss. Zwei gegensätzliche Perspektiven prägen die Struktur des Exponats: die linke Seite erkundet die biologischen und chemischen Mechanismen, die rechte das emotionale und sinnliche Erleben. Besucherinnen und Besucher wählen ihren Einstiegspunkt.">
+            We defined the core narrative: a love-struck patient who needs examination. Two opposing perspectives shaped the exhibit's structure: the left side explores the biological and chemical mechanisms, the right the emotional and sensory experience. Visitors choose their entry point.
+          </p>
+        </div>
+      <div class="alt-scroll-item" data-index="3">
+        <img src="images/project-5/Bildschirmfoto 2024-04-22 um 01.06.04.png" alt="LOVEsick: Interaction design" />
+      </div>
+      <div class="alt-text-panel" data-panel="3">
+          <span class="alt-panel-label" data-en="03 Design" data-de="03 Design">03 Design</span>
+          <h2 class="alt-panel-heading"
+              data-en="Tangible Interaction and Roleplay"
+              data-de="Tangible Interaktion und Rollenspiel">
+            Tangible Interaction and Roleplay
+          </h2>
+          <p class="alt-panel-body"
+             data-en="Visitors become nurses, using a physical tangible as a stethoscope to 'examine' the patient. A doctor narrates the findings, explaining that love is natural and nothing to worry about. The concept transforms a potentially embarrassing topic into something warm, funny, and safe."
+             data-de="Besucherinnen und Besucher schlüpfen in die Rolle einer Krankenschwester und nutzen ein physisches Tangible als Stethoskop, um den Patienten zu untersuchen. Ein Arzt erläutert die Befunde und stellt klar, dass Verliebtsein natürlich ist und keinen Grund zur Sorge bietet. Das Konzept macht ein potenziell peinliches Thema warm, witzig und zugänglich.">
+            Visitors become nurses, using a physical tangible as a stethoscope to 'examine' the patient. A doctor narrates the findings, explaining that love is natural and nothing to worry about. The concept transforms a potentially embarrassing topic into something warm, funny, and safe.
+          </p>
+        </div>
+      <div class="alt-scroll-item" data-index="4">
+        <img src="images/project-5/Bildschirmfoto 2024-04-22 um 01.06.54.png" alt="LOVEsick: Prototype evaluation" />
+      </div>
+      <div class="alt-text-panel" data-panel="4">
+          <span class="alt-panel-label" data-en="04 Test" data-de="04 Test">04 Test</span>
+          <h2 class="alt-panel-heading"
+              data-en="Watchout Prototype Evaluation"
+              data-de="Evaluation des Watchout-Prototyps">
+            Watchout Prototype Evaluation
+          </h2>
+          <p class="alt-panel-body"
+             data-en="The concept was prototyped in Watchout and evaluated for clarity, engagement, and educational impact. The dual-sided structure proved highly effective in creating curiosity and guiding exploration without prescribing a single path."
+             data-de="Das Konzept wurde in Watchout prototypisch umgesetzt und auf Klarheit, Engagement und pädagogischen Nutzen evaluiert. Die zweiseitige Struktur erwies sich als äußerst effektiv, um Neugier zu wecken und die Erkundung zu leiten, ohne einen festen Weg vorzuschreiben.">
+            The concept was prototyped in Watchout and evaluated for clarity, engagement, and educational impact. The dual-sided structure proved highly effective in creating curiosity and guiding exploration without prescribing a single path.
+          </p>
+        </div>
+      <div class="alt-scroll-item" data-index="5">
+        <img src="images/project-5/project-5-2.png" alt="LOVEsick: Solution" />
+      </div>
+      <div class="alt-text-panel" data-panel="5">
+          <span class="alt-panel-label"
+                data-en="Solution &amp; Impact" data-de="Lösung &amp; Wirkung">Solution &amp; Impact</span>
+          <h2 class="alt-panel-heading"
+              data-en="Put on the nurse's coat and explore"
+              data-de="Den Kittel anziehen und erkunden">
+            Put on the nurse's coat and explore
+          </h2>
+          <p class="alt-panel-body"
+             data-en="LOVEsick lets visitors step into the role of a nurse, using a tangible stethoscope to examine a fictional patient suffering from love. The left body half answers 'How does it work?', covering hormones, chemistry, and biology. The right side explores 'What does it feel like?', tracing emotions, sensations, and personal experience. A doctor's voiceover guides the examination with warmth and humour, reassuring visitors: this patient has absolutely nothing to worry about.<br><br>LOVEsick received outstanding feedback from educators and visitors for its creativity, educational clarity, and emotional resonance. The Visualiseringscenter C selected it as their favourite student project, with potential for real integration into the permanent exhibition. It demonstrates how physical interaction and playful roleplay can turn a complex topic into a memorable learning experience."
+             data-de="LOVEsick versetzt Besucherinnen und Besucher in die Rolle einer Krankenschwester. Mit einem Tangible als Stethoskop untersuchen sie einen fiktiven Patienten, der unter Liebeskummer leidet. Die linke Körperhälfte beantwortet 'Wie funktioniert das?', mit Hormonen, Chemie und Biologie. Die rechte erkundet 'Wie fühlt es sich an?', mit Emotionen, Sinneswahrnehmungen und persönlichem Erleben. Ein Arzt führt mit Wärme und Humor durch die Untersuchung: Dem Patienten geht es gut, er ist einfach verliebt.<br><br>LOVEsick erhielt herausragendes Feedback von Lehrkräften und Besucherinnen und Besuchern für Kreativität, pädagogische Klarheit und emotionale Wirkung. Das Visualiseringscenter C wählte es als sein Lieblingsstudienprojekt, mit Potenzial zur Integration in die Dauerausstellung. Es zeigt, wie physische Interaktion und spielerische Rollenübernahme ein komplexes Thema zu einem unvergesslichen Lernerlebnis machen.">
+            LOVEsick lets visitors step into the role of a nurse, using a tangible stethoscope to examine a fictional patient suffering from love. The left body half answers 'How does it work?', covering hormones, chemistry, and biology. The right side explores 'What does it feel like?', tracing emotions, sensations, and personal experience. A doctor's voiceover guides the examination with warmth and humour, reassuring visitors: this patient has absolutely nothing to worry about.<br><br>LOVEsick received outstanding feedback from educators and visitors for its creativity, educational clarity, and emotional resonance. The Visualiseringscenter C selected it as their favourite student project, with potential for real integration into the permanent exhibition. It demonstrates how physical interaction and playful roleplay can turn a complex topic into a memorable learning experience.
+          </p>
+        </div>
+      <div class="alt-scroll-item" data-index="6">
+        <img src="images/project-9/project-9-8.png" alt="" />
       </div>
     </div>
-  </section>
 
-  <div class="project-image-full">
-    <img src="images/placeholder.svg" alt="LOVEsick — Process" />
-  </div>
+  </div><!-- /.alt-sticky-wrapper -->
 
-  <section class="project-section">
-    <div class="project-content-grid">
-      <div class="project-col-label"><span class="section-label">Solution</span></div>
-      <div class="project-col-body">
-        <h2>Put on the nurse's coat and explore</h2>
-        <p data-en="LOVEsick lets visitors step into the role of a nurse, using a tangible stethoscope to examine a fictional patient suffering from love. The left body half answers 'How does it work?', covering hormones, chemistry, and biology. The right side explores 'What does it feel like?', tracing emotions, sensations, and personal experience. A doctor's voiceover guides the examination with warmth and humour, reassuring visitors: this patient has absolutely nothing to worry about." data-de="LOVEsick versetzt Besucherinnen und Besucher in die Rolle einer Krankenschwester. Mit einem Tangible als Stethoskop untersuchen sie einen fiktiven Patienten, der unter Liebeskummer leidet. Die linke Körperhälfte beantwortet 'Wie funktioniert das?', mit Hormonen, Chemie und Biologie. Die rechte erkundet 'Wie fühlt es sich an?', mit Emotionen, Sinneswahrnehmungen und persönlichem Erleben. Ein Arzt führt mit Wärme und Humor durch die Untersuchung: Dem Patienten geht es gut, er ist einfach verliebt.">
-          LOVEsick lets visitors step into the role of a nurse, using a tangible stethoscope to examine a fictional patient suffering from love. The left body half answers 'How does it work?', covering hormones, chemistry, and biology. The right side explores 'What does it feel like?', tracing emotions, sensations, and personal experience. A doctor's voiceover guides the examination with warmth and humour, reassuring visitors: this patient has absolutely nothing to worry about.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <div class="project-image-two">
-    <img src="images/placeholder.svg" alt="LOVEsick — Detail A" />
-    <img src="images/placeholder.svg" alt="LOVEsick — Detail B" />
-  </div>
-
-  <section class="project-section">
-    <div class="project-content-grid">
-      <div class="project-col-label"><span class="section-label">Impact</span></div>
-      <div class="project-col-body">
-        <h2>The Visualiseringscenter's favourite student project</h2>
-        <p data-en="LOVEsick received outstanding feedback from educators and visitors for its creativity, educational clarity, and emotional resonance. The Visualiseringscenter C selected it as their favourite student project, with potential for real integration into the permanent exhibition. It demonstrates how physical interaction and playful roleplay can turn a complex topic into a memorable learning experience." data-de="LOVEsick erhielt herausragendes Feedback von Lehrkräften und Besucherinnen und Besuchern für Kreativität, pädagogische Klarheit und emotionale Wirkung. Das Visualiseringscenter C wählte es als sein Lieblingsstudienprojekt, mit Potenzial zur Integration in die Dauerausstellung. Es zeigt, wie physische Interaktion und spielerische Rollenübernahme ein komplexes Thema zu einem unvergesslichen Lernerlebnis machen.">
-          LOVEsick received outstanding feedback from educators and visitors for its creativity, educational clarity, and emotional resonance. The Visualiseringscenter C selected it as their favourite student project, with potential for real integration into the permanent exhibition. It demonstrates how physical interaction and playful roleplay can turn a complex topic into a memorable learning experience.
-        </p>
-      </div>
-    </div>
-  </section>
-
+  <!-- ── SEE MORE ────────────────────────────────────── -->
   <section class="project-more">
     <h2 class="project-more-heading" data-en="See More" data-de="Mehr sehen">See More</h2>
     <div class="project-more-grid">
       <div class="project-card">
-        <a href="project-6.html"><img class="project-thumb" src="images/project-6/project-6-1.png" alt="HMI for Driving Simulation" /></a>
+        <a href="project-1.html"><img class="alt-thumb" src="images/project-1/project-1-1.jpg" alt="BIRD Education Platform" /></a>
         <div class="project-body">
           <div class="badges">
-            <span class="badge-outline">Automotive</span>
-            <span class="badge-outline">HMI</span>
+            <span class="badge-outline">EdTech</span>
+            <span class="badge-outline">Mobile</span>
           </div>
-          <p class="project-title">HMI for Driving Simulation</p>
-          <a class="project-link" href="project-6.html" data-en="Show me →" data-de="Zeig mir mehr">Show me →</a>
+          <p class="project-title">BIRD Education Platform</p>
+          <a class="project-link" href="project-1.html" data-en="Show me →" data-de="Zeig mir mehr">Show me →</a>
         </div>
       </div>
       <div class="project-card">
-        <a href="project-7.html"><img class="project-thumb" src="images/project-7/project-7-1.png" alt="The Horror Mode" /></a>
+        <a href="project-9.html"><img class="alt-thumb" src="images/project-9/Free Walking with iPhone X mockup (Mockuuups Studio).png" alt="Langenscheidt Language Coach" /></a>
         <div class="project-body">
           <div class="badges">
-            <span class="badge-outline">Motion</span>
-            <span class="badge-outline">Social Media</span>
+            <span class="badge-outline">EdTech</span>
+            <span class="badge-outline" data-en="Learner-Centered Design" data-de="Lernzentriertes Design">Learner-Centered Design</span>
           </div>
-          <p class="project-title">The Horror Mode</p>
-          <a class="project-link" href="project-7.html" data-en="Show me →" data-de="Zeig mir mehr">Show me →</a>
+          <p class="project-title">Langenscheidt Language Coach</p>
+          <a class="project-link" href="project-9.html" data-en="Show me →" data-de="Zeig mir mehr">Show me →</a>
         </div>
       </div>
       <div class="project-card">
-        <a href="project-8.html"><img class="project-thumb" src="images/project-8/project-8-1.png" alt="Little Food Fighters" /></a>
+        <a href="project-3.html"><img class="alt-thumb" src="images/project-3/project-3-1.png" alt="Chain²Bike" /></a>
         <div class="project-body">
           <div class="badges">
-            <span class="badge-outline">Game Design</span>
-            <span class="badge-outline">Sustainability</span>
+            <span class="badge-outline">Web3</span>
+            <span class="badge-outline">Mobile</span>
           </div>
-          <p class="project-title">Little Food Fighters</p>
-          <a class="project-link" href="project-8.html" data-en="Show me →" data-de="Zeig mir mehr">Show me →</a>
+          <p class="project-title">Chain²Bike</p>
+          <a class="project-link" href="project-3.html" data-en="Show me →" data-de="Zeig mir mehr">Show me →</a>
         </div>
       </div>
     </div>
   </section>
 
   <a href="#" id="back-to-top" aria-label="Back to top">↑</a>
+
   <script src="script.js"></script>
+  <script>
+    (function () {
+      if (!window.matchMedia('(pointer: fine)').matches) return;
+      var elD  = document.getElementById('cursor-diff');
+      var elS  = document.getElementById('cursor-screen');
+      var elW  = document.getElementById('cursor-white');
+      var elPC = document.getElementById('cursor-photo');
+
+      var cover = document.querySelector('.alt-cover');
+      if (cover && elPC) {
+        cover.addEventListener('mouseenter', function () {
+          if (elD)  elD.style.opacity  = '0';
+          if (elS)  elS.style.opacity  = '0';
+          if (elW)  elW.style.opacity  = '0';
+          elPC.classList.add('active');
+        });
+        cover.addEventListener('mouseleave', function () {
+          if (elD)  elD.style.opacity  = '';
+          if (elS)  elS.style.opacity  = '';
+          elPC.classList.remove('active');
+        });
+      }
+    })();
+  </script>
 </body>
 </html>

@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BIRD Education Platform — Johanna Ober</title>
+  <title>BIRD Education Platform · Johanna Ober</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="project.css" />
 </head>
-<body>
+<body class="alt-page">
 
   <nav>
-    <a href="index.html" class="nav-logo">JO</a>
+    <a href="index.html" class="nav-back" onclick="if(history.length&gt;1){history.back();return false;}">←</a>
     <ul class="nav-links">
-      <li><a href="index.html#intro" data-en="About" data-de="About">About</a></li>
-      <li><a href="index.html#projects" class="active" data-en="Projects" data-de="Projekte">Projects</a></li>
-      <li><a href="index.html#resume" data-en="Resume" data-de="Lebenslauf">Resume</a></li>
+      <li><a href="index.html#intro">About</a></li>
+      <li><a href="index.html#projects" class="active">Projects</a></li>
+      <li><a href="index.html#resume">Resume</a></li>
     </ul>
     <div class="lang-toggle">
       <button class="lang-btn active" data-lang="en">EN</button>
@@ -24,153 +24,201 @@
     </div>
   </nav>
 
-  <div class="project-back-bar">
-    <a href="index.html#projects" class="project-back-link"
-       data-en="← All Projects" data-de="← Alle Projekte">← All Projects</a>
-  </div>
-
-  <section class="project-hero">
-    <div class="project-hero-meta">
-      <span class="section-label">EdTech · Mobile</span>
-    </div>
-    <h1 class="project-hero-title">BIRD Education Platform</h1>
-    <p class="project-hero-sub"
-       data-en="Mobile companion app for Germany's national education platform, helping students discover and navigate their options."
-       data-de="Mobile Begleit-App für Deutschlands nationale Bildungsplattform, die Schülerinnen und Schülern hilft, Angebote zu entdecken und zu navigieren.">
-      Mobile companion app for Germany's national education platform, helping students discover and navigate their options.
-    </p>
-  </section>
-
-  <div class="project-cover">
-    <img src="images/project-1/project-1-1.jpg" alt="BIRD Education Platform — Cover" />
-  </div>
-
-  <section class="project-section">
-    <div class="project-meta-grid">
-      <div class="project-meta-item">
-        <span class="section-label">My Role</span>
-        <p>UX &amp; UI Designer</p>
+  <!-- HEADER -->
+  <section class="alt-intro">
+    <div class="alt-intro-columns">
+      <div class="alt-intro-left">
+        <p class="alt-intro-tags">
+          <span>2024</span><span>EdTech</span><span>Mobile</span>
+        </p>
+        <h1 class="alt-intro-title">BIRD Education Platform</h1>
+        <p class="alt-intro-desc" data-en="Mobile companion app for Germany's national education platform,
+          helping students discover and navigate their options." data-de="Mobile Begleit-App für Deutschlands nationale Bildungsplattform,
+          die Lernenden hilft, ihre Möglichkeiten zu entdecken und sich darin zurechtzufinden.">
+          Mobile companion app for Germany's national education platform,
+          helping students discover and navigate their options.
+        </p>
       </div>
-      <div class="project-meta-item">
-        <span class="section-label">Client</span>
-        <p>Hochschule der Medien<br>Academic Project · Team of 2</p>
-      </div>
-      <div class="project-meta-item">
-        <span class="section-label">Duration</span>
-        <p>[Duration · Year]</p>
-      </div>
-      <div class="project-meta-item">
-        <span class="section-label">Tasks</span>
-        <div class="badges" style="margin-top: 0.5rem;">
-          <span class="badge">UX Research</span>
-          <span class="badge">Wireframing</span>
-          <span class="badge">Design Concept</span>
-          <span class="badge">Mood Board</span>
-          <span class="badge">Design System</span>
-          <span class="badge">Prototyping</span>
+      <div class="alt-intro-meta">
+        <div>
+          <span class="section-label" data-en="Client" data-de="Kunde">Client</span>
+          <p>Hochschule der Medien</p>
+          <p data-en="Academic Project · Team of 2" data-de="Akademisches Projekt · Team aus 2">Academic Project · Team of 2</p>
+        </div>
+        <div>
+          <span class="section-label" data-en="My Tasks" data-de="Meine Aufgaben">My Tasks</span>
+          <p class="alt-meta-tasks">
+            <span data-en="Wireframing" data-de="Wireframing">Wireframing</span><span data-en="Design System" data-de="Designsystem">Design System</span><span data-en="Personas" data-de="Personas">Personas</span><span data-en="Paper Prototyping" data-de="Paper-Prototyping">Paper Prototyping</span><span data-en="User Testing" data-de="Nutzertests">User Testing</span>
+          </p>
         </div>
       </div>
-    </div>
+    </div><!-- /.alt-intro-columns -->
   </section>
 
-  <section class="project-section">
-    <div class="project-content-grid">
-      <div class="project-col-label"><span class="section-label">Challenge</span></div>
-      <div class="project-col-body">
-        <h2>Navigating Germany's educational landscape</h2>
-        <p data-en="BIRD (Bildungsraum Digital) is Germany's federally funded platform for discovering educational programs and institutions. Its web prototype needed a mobile companion to help students not just find offerings, but navigate them with confidence. Primary audience: high school students exploring their options for the first time."
-           data-de="BIRD (Bildungsraum Digital) ist Deutschlands bundesgeförderte Plattform zum Entdecken von Bildungsangeboten und -einrichtungen. Der Web-Prototyp brauchte eine mobile Begleitung, die Schülerinnen und Schülern nicht nur hilft, Angebote zu finden, sondern sie sicher durch den Prozess führt. Hauptzielgruppe: Schülerinnen und Schüler, die ihre Optionen zum ersten Mal erkunden.">
-          BIRD (Bildungsraum Digital) is Germany's federally funded platform for discovering educational programs and institutions. Its web prototype needed a mobile companion to help students not just find offerings, but navigate them with confidence. Primary audience: high school students exploring their options for the first time.
-        </p>
+  <!-- COVER IMAGE -->
+  <div class="alt-cover">
+    <img src="images/project-1/project-1-1.jpg" alt="BIRD Education Platform" />
+  </div>
+
+  <!-- STICKY SCROLL SECTION -->
+  <div class="alt-sticky-wrapper">
+
+    <!-- Left: sticky text panels -->
+    <div class="alt-sticky-left">
+      <div class="alt-panels-wrapper">
+
+        <!-- Panel 0: Challenge --><!-- Panel 1: Discovery --><!-- Panel 2: Define --><!-- Panel 3: Design --><!-- Panel 4: Test --><!-- Panel 5: Solution --></div>
+    </div>
+
+    <!-- Right: scrolling images -->
+    <div class="alt-scroll-right">
+      <div class="alt-scroll-item" data-index="0" data-panel-index="0">
+        <img src="images/project-1/project-1-2.png" alt="BIRD: Challenge overview" />
       </div>
-    </div>
-  </section>
-
-  <section class="project-section no-top-line">
-    <div class="project-content-grid">
-      <div class="project-col-label"><span class="section-label">Process</span></div>
-      <div class="project-col-body">
-        <div class="process-tabs">
-          <input type="radio" id="proc-1" name="process" checked />
-          <input type="radio" id="proc-2" name="process" />
-          <input type="radio" id="proc-3" name="process" />
-          <input type="radio" id="proc-4" name="process" />
-          <div class="proc-tab-nav">
-            <label for="proc-1">01 Discovery</label>
-            <label for="proc-2">02 Define</label>
-            <label for="proc-3">03 Design</label>
-            <label for="proc-4">04 Test</label>
-          </div>
-          <div class="proc-panel" id="proc-panel-1">
-            <p class="process-title">User Research &amp; Journey Mapping</p>
-            <p class="process-desc" data-en="We mapped the journey of education seekers and identified key moments of uncertainty and overwhelm. Interviews with high school students revealed a need for personalisation and guidance: not just a search engine, but a companion that understands where you are in life." data-de="Wir haben die Bildungsreise von Lernenden kartiert und zentrale Momente der Unsicherheit und Überforderung identifiziert. Gespräche mit Schülerinnen und Schülern zeigten den Bedarf an Personalisierung und Orientierung: nicht nur eine Suchmaschine, sondern ein Begleiter, der versteht, wo man im Leben steht.">We mapped the journey of education seekers and identified key moments of uncertainty and overwhelm. Interviews with high school students revealed a need for personalisation and guidance: not just a search engine, but a companion that understands where you are in life.</p>
-          </div>
-          <div class="proc-panel" id="proc-panel-2">
-            <p class="process-title">Defining Features &amp; Priorities</p>
-            <p class="process-desc" data-en="Based on our findings, we defined the core feature set: personalised content via the BIRD Wallet, intelligent search across all programs and institutions, a personal notebook for collecting favourites, and a chatbot offering real-time support. Each feature was mapped to a specific user need." data-de="Auf Basis unserer Erkenntnisse haben wir den Kernfunktionsumfang definiert: personalisierte Inhalte über die BIRD Wallet, intelligente Suche über alle Angebote und Einrichtungen, ein persönliches Notizbuch zum Sammeln von Favoriten und ein Chatbot für Echtzeitunterstützung. Jede Funktion wurde einem konkreten Nutzerbedürfnis zugeordnet.">Based on our findings, we defined the core feature set: personalised content via the BIRD Wallet, intelligent search across all programs and institutions, a personal notebook for collecting favourites, and a chatbot offering real-time support. Each feature was mapped to a specific user need.</p>
-          </div>
-          <div class="proc-panel" id="proc-panel-3">
-            <p class="process-title">Wireframes to High-Fidelity</p>
-            <p class="process-desc" data-en="We developed wireframes for all core flows and iterated toward high-fidelity screens. The visual language, inspired by paper and handwriting, was chosen to feel familiar and approachable for younger users, while communicating quality and trustworthiness through texture and tactility." data-de="Wir haben Wireframes für alle zentralen Flows entwickelt und diese zu High-Fidelity-Screens ausgearbeitet. Die visuelle Sprache, inspiriert von Papier und Handschrift, wurde gewählt, um für junge Nutzerinnen und Nutzer Vertrautheit und Nahbarkeit zu vermitteln, während Haptik und Textur Qualität und Seriosität signalisieren.">We developed wireframes for all core flows and iterated toward high-fidelity screens. The visual language, inspired by paper and handwriting, was chosen to feel familiar and approachable for younger users, while communicating quality and trustworthiness through texture and tactility.</p>
-          </div>
-          <div class="proc-panel" id="proc-panel-4">
-            <p class="process-title">Usability Testing &amp; Iteration</p>
-            <p class="process-desc" data-en="The interactive prototype was tested with students and educators. Feedback confirmed the value of the personalisation layer and the chatbot, and led to refinements in the notebook and search interactions. The paper-inspired visual style was consistently well-received." data-de="Der interaktive Prototyp wurde mit Schülerinnen, Schülern und Lehrkräften getestet. Das Feedback bestätigte den Wert der Personalisierungsebene und des Chatbots und führte zu Verbesserungen bei Notizbuch und Suche. Der papierinspirierte Stil wurde durchweg positiv aufgenommen.">The interactive prototype was tested with students and educators. Feedback confirmed the value of the personalisation layer and the chatbot, and led to refinements in the notebook and search interactions. The paper-inspired visual style was consistently well-received.</p>
-          </div>
+      <div class="alt-text-panel active" data-panel="0">
+          <span class="alt-panel-label" data-en="Challenge" data-de="Herausforderung">Challenge</span>
+          <h2 class="alt-panel-heading" data-en="Navigating through a complex educational landscape" data-de="Orientierung in einer komplexen Bildungslandschaft">Navigating through a complex educational landscape</h2>
+          <p class="alt-panel-body" data-en="BIRD (Bildungsraum Digital) is Germany's federally funded platform for discovering
+            educational programs and institutions. Its web prototype needed a mobile companion
+            to help students find offerings, navigate them through the whole process flexibly
+            and individually." data-de="BIRD (Bildungsraum Digital) ist Deutschlands bundesweit geförderte Plattform, um
+            Bildungsangebote und Einrichtungen zu entdecken. Der Web-Prototyp benötigte eine mobile
+            Begleitung, die Lernenden hilft, Angebote zu finden und sie flexibel und individuell
+            durch den gesamten Prozess zu führen.">
+            BIRD (Bildungsraum Digital) is Germany's federally funded platform for discovering
+            educational programs and institutions. Its web prototype needed a mobile companion
+            to help students find offerings, navigate them through the whole process flexibly
+            and individually.
+          </p>
         </div>
+      <div class="alt-scroll-item" data-index="1" data-panel-index="1">
+        <img src="images/project-1/project-1-3.jpg" alt="BIRD: Interviews and research" />
+      </div>
+      <div class="alt-scroll-item" data-index="1b" data-panel-index="2">
+        <img src="images/project-1/Moodboard.png" alt="BIRD: Feature definition" />
+      </div>
+      <div class="alt-text-panel" data-panel="1">
+          <span class="alt-panel-label" data-en="01 Discovery" data-de="01 Recherche">01 Discovery</span>
+          <h2 class="alt-panel-heading" data-en="User Research and Journey Mapping" data-de="Nutzerforschung und Journey Mapping">User Research and Journey Mapping</h2>
+          <p class="alt-panel-body" data-en="We mapped the journey of education seekers and identified key moments of uncertainty
+            and overwhelm. Interviews with high school students revealed a need for personalisation
+            and guidance: not just a search engine, but a companion that understands where you
+            are in life." data-de="Wir haben die Journey von Bildungssuchenden abgebildet und zentrale Momente von
+            Unsicherheit und Überforderung identifiziert. Interviews mit Schülerinnen und Schülern
+            zeigten einen Bedarf an Personalisierung und Orientierung: nicht nur eine Suchmaschine,
+            sondern eine Begleitung, die versteht, wo man im Leben steht.">
+            We mapped the journey of education seekers and identified key moments of uncertainty
+            and overwhelm. Interviews with high school students revealed a need for personalisation
+            and guidance: not just a search engine, but a companion that understands where you
+            are in life.
+          </p>
+        </div>
+      <div class="alt-scroll-item" data-index="2" data-panel-index="3">
+        <img src="images/project-1/project-1-4.jpg" alt="BIRD: Feature definition" />
+      </div>
+      <div class="alt-text-panel" data-panel="2">
+          <span class="alt-panel-label" data-en="02 Define" data-de="02 Definition">02 Define</span>
+          <h2 class="alt-panel-heading" data-en="Defining Features and Priorities" data-de="Funktionen und Prioritäten definieren">Defining Features and Priorities</h2>
+          <p class="alt-panel-body" data-en="Based on the findings, we defined the core feature set: personalised content via the
+            BIRD Wallet, intelligent search across all programs and institutions, a personal
+            notebook for collecting favourites and notes, and the BIRD chatbot offering
+            real-time support." data-de="Auf Basis der Erkenntnisse haben wir den zentralen Funktionsumfang definiert:
+            personalisierte Inhalte über das BIRD Wallet, eine intelligente Suche über alle
+            Angebote und Einrichtungen hinweg, ein persönliches Notizbuch zum Sammeln von
+            Favoriten und Notizen sowie der BIRD-Chatbot, der Unterstützung in Echtzeit bietet.">
+            Based on the findings, we defined the core feature set: personalised content via the
+            BIRD Wallet, intelligent search across all programs and institutions, a personal
+            notebook for collecting favourites and notes, and the BIRD chatbot offering
+            real-time support.
+          </p>
+        </div>
+      <div class="alt-scroll-item" data-index="3" data-panel-index="4">
+        <img src="images/project-1/project-1-5.jpg" alt="BIRD: Design screens" />
+      </div>
+      <div class="alt-text-panel" data-panel="3">
+          <span class="alt-panel-label" data-en="03 Design" data-de="03 Design">03 Design</span>
+          <h2 class="alt-panel-heading" data-en="From Wireframes to High-Fidelity" data-de="Von Wireframes zu High-Fidelity">From Wireframes to High-Fidelity</h2>
+          <p class="alt-panel-body" data-en="We developed a moodboard, paper wireframes for all core flows and iterated toward
+            high-fidelity screens. The visual language, inspired by paper and handwriting, was
+            chosen to feel familiar and approachable for younger users while communicating
+            quality through texture and tactility." data-de="Wir entwickelten ein Moodboard, Paper-Wireframes für alle zentralen Flows und
+            iterierten hin zu High-Fidelity-Screens. Die visuelle Sprache, inspiriert von Papier
+            und Handschrift, wurde gewählt, um sich für jüngere Nutzerinnen und Nutzer vertraut
+            und zugänglich anzufühlen und zugleich durch Textur und Haptik Qualität zu vermitteln.">
+            We developed a moodboard, paper wireframes for all core flows and iterated toward
+            high-fidelity screens. The visual language, inspired by paper and handwriting, was
+            chosen to feel familiar and approachable for younger users while communicating
+            quality through texture and tactility.
+          </p>
+        </div>
+      <div class="alt-scroll-item" data-index="4" data-panel-index="5">
+        <img src="images/project-1/project-1-6.jpg" alt="BIRD: Tested prototype" />
+      </div>
+      <div class="alt-text-panel" data-panel="4">
+          <span class="alt-panel-label" data-en="04 Test" data-de="04 Test">04 Test</span>
+          <h2 class="alt-panel-heading" data-en="Usability Testing" data-de="Usability-Tests">Usability Testing</h2>
+          <p class="alt-panel-body" data-en="The interactive prototype was tested with a small group of students. Feedback confirmed
+            the value of the personalisation layer and the chatbot, and led to refinements in
+            the notebook and search interactions. The paper-inspired visual style was
+            consistently well-received." data-de="Der interaktive Prototyp wurde mit einer kleinen Gruppe von Studierenden getestet.
+            Das Feedback bestätigte den Wert der Personalisierungsebene und des Chatbots und
+            führte zu Verfeinerungen bei den Notizbuch- und Suchinteraktionen. Der vom Papier
+            inspirierte visuelle Stil wurde durchweg positiv aufgenommen.">
+            The interactive prototype was tested with a small group of students. Feedback confirmed
+            the value of the personalisation layer and the chatbot, and led to refinements in
+            the notebook and search interactions. The paper-inspired visual style was
+            consistently well-received.
+          </p>
+        </div>
+      <div class="alt-scroll-item" data-index="5" data-panel-index="5">
+        <img src="images/project-1/project-1-1.jpg" alt="BIRD Education Platform" />
+      </div>
+      <div class="alt-text-panel" data-panel="5">
+          <span class="alt-panel-label" data-en="Solution &amp; Impact" data-de="Lösung &amp; Wirkung">Solution &amp; Impact</span>
+          <h2 class="alt-panel-heading" data-en="Personal space with hands on character" data-de="Persönlicher Raum mit handgemachtem Charakter">Personal space with hands on character</h2>
+          <p class="alt-panel-body" data-en="The app brings Germany's education options into one place. It offers
+            individual content, space for personal notes and support on the go. The
+            paper-inspired design adds familiarity and a hands-on-work character.
+            <br><br>
+            Usability tests with students praised the prototype for clarity and ease of navigation.
+            The concept was under further consideration as part of the national BIRD platform." data-de="Die App bringt Deutschlands Bildungsangebote an einem Ort zusammen. Sie bietet
+            individuelle Inhalte, Raum für persönliche Notizen und Unterstützung für unterwegs.
+            Das vom Papier inspirierte Design schafft Vertrautheit und einen handgemachten Charakter.
+            <br><br>
+            Usability-Tests mit Studierenden lobten den Prototyp für seine Klarheit und einfache
+            Navigation. Das Konzept wurde als Teil der nationalen BIRD-Plattform weiter in Betracht gezogen.">
+            The app brings Germany's education options into one place. It offers
+            individual content, space for personal notes and support on the go. The
+            paper-inspired design adds familiarity and a hands-on-work character.
+            <br><br>
+            Usability tests with students praised the prototype for clarity and ease of navigation.
+            The concept was under further consideration as part of the national BIRD platform.
+          </p>
+        </div>
+      <div class="alt-scroll-item" data-index="8">
+        <img src="images/project-9/project-9-8.png" alt="" />
       </div>
     </div>
-  </section>
 
-  <div class="project-image-full">
-    <img src="images/project-1/project-1-2.jpg" alt="BIRD Education Platform — Process" />
-  </div>
+  </div><!-- /.alt-sticky-wrapper -->
 
-  <section class="project-section">
-    <div class="project-content-grid">
-      <div class="project-col-label"><span class="section-label">Solution</span></div>
-      <div class="project-col-body">
-        <h2>One app, every step of the way</h2>
-        <p data-en="The app brings every program and institution in Germany into one place. The BIRD Wallet surfaces personalised content based on each user's interests. A notebook saves favourites; a chatbot answers questions on the go. The paper-inspired design adds warmth and familiarity, especially for first-timers navigating an unfamiliar system." data-de="Die App bündelt alle Angebote und Einrichtungen Deutschlands an einem Ort. Die BIRD Wallet zeigt personalisierte Inhalte basierend auf den Interessen der Nutzenden. Ein Notizbuch speichert Favoriten; ein Chatbot beantwortet Fragen unterwegs. Das papierinspirierte Design schafft Wärme und Vertrautheit, besonders für Erstnutzende.">
-          The app brings every program and institution in Germany into one place. The BIRD Wallet surfaces personalised content based on each user's interests. A notebook saves favourites; a chatbot answers questions on the go. The paper-inspired design adds warmth and familiarity, especially for first-timers navigating an unfamiliar system.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <div class="project-image-two">
-    <img src="images/project-1/project-1-3.jpg" alt="BIRD Education Platform — Detail A" />
-    <img src="images/project-1/project-1-4.jpg" alt="BIRD Education Platform — Detail B" />
-  </div>
-
-  <section class="project-section">
-    <div class="project-content-grid">
-      <div class="project-col-label"><span class="section-label">Impact</span></div>
-      <div class="project-col-body">
-        <h2>Clarity confirmed in testing</h2>
-        <p data-en="Usability tests with students and teachers praised the prototype for clarity and ease of navigation. The concept is now under consideration as part of the national BIRD platform strategy." data-de="Nutzertests mit Schülerinnen, Schülern und Lehrkräften lobten den Prototyp für Klarheit und einfache Navigation. Das Konzept wird nun als Teil der nationalen BIRD-Plattformstrategie weiterentwickelt.">
-          Usability tests with students and teachers praised the prototype for clarity and ease of navigation. The concept is now under consideration as part of the national BIRD platform strategy.
-        </p>
-      </div>
-    </div>
-  </section>
-
+  <!-- SEE MORE -->
   <section class="project-more">
     <h2 class="project-more-heading" data-en="See More" data-de="Mehr sehen">See More</h2>
     <div class="project-more-grid">
       <div class="project-card">
-        <a href="project-2.html"><img class="project-thumb" src="images/project-2/project-2-1.png" alt="Mobile-First Car UX" /></a>
+        <a href="project-9.html"><img class="alt-thumb" src="images/project-9/Free Walking with iPhone X mockup (Mockuuups Studio).png" alt="Langenscheidt Language Coach" /></a>
         <div class="project-body">
           <div class="badges">
-            <span class="badge-outline">Automotive</span>
-            <span class="badge-outline">Speculative Design</span>
+            <span class="badge-outline">EdTech</span>
+            <span class="badge-outline" data-en="Learner-Centered Design" data-de="Lernzentriertes Design">Learner-Centered Design</span>
           </div>
-          <p class="project-title">Mobile-First Car UX</p>
-          <a class="project-link" href="project-2.html" data-en="Show me →" data-de="Zeig mir mehr">Show me →</a>
+          <p class="project-title">Langenscheidt Language Coach</p>
+          <a class="project-link" href="project-9.html" data-en="Show me →" data-de="Zeig mir mehr">Show me →</a>
         </div>
       </div>
       <div class="project-card">
-        <a href="project-3.html"><img class="project-thumb" src="images/project-3/project-3-1.png" alt="Chain²Bike" /></a>
+        <a href="project-3.html"><img class="alt-thumb" src="images/project-3/project-3-1.png" alt="Chain²Bike" /></a>
         <div class="project-body">
           <div class="badges">
             <span class="badge-outline">Web3</span>
@@ -181,20 +229,45 @@
         </div>
       </div>
       <div class="project-card">
-        <a href="project-4.html"><img class="project-thumb" src="images/project-4/project-4-1.jpg" alt="AKKAdemy E-Learning" /></a>
+        <a href="project-8.html"><img class="alt-thumb" src="images/project-8/project-8-1.png" alt="Little Food Fighters" /></a>
         <div class="project-body">
           <div class="badges">
-            <span class="badge-outline">E-Learning</span>
-            <span class="badge-outline">Web</span>
+            <span class="badge-outline" data-en="Game Design" data-de="Spieldesign">Game Design</span>
+            <span class="badge-outline" data-en="Sustainability" data-de="Nachhaltigkeit">Sustainability</span>
           </div>
-          <p class="project-title">AKKAdemy E-Learning</p>
-          <a class="project-link" href="project-4.html" data-en="Show me →" data-de="Zeig mir mehr">Show me →</a>
+          <p class="project-title">Little Food Fighters</p>
+          <a class="project-link" href="project-8.html" data-en="Show me →" data-de="Zeig mir mehr">Show me →</a>
         </div>
       </div>
     </div>
   </section>
 
   <a href="#" id="back-to-top" aria-label="Back to top">↑</a>
+
   <script src="script.js"></script>
+  <script>
+    (function () {
+      if (!window.matchMedia('(pointer: fine)').matches) return;
+      var elD  = document.getElementById('cursor-diff');
+      var elS  = document.getElementById('cursor-screen');
+      var elW  = document.getElementById('cursor-white');
+      var elPC = document.getElementById('cursor-photo');
+
+      var cover = document.querySelector('.alt-cover');
+      if (cover && elPC) {
+        cover.addEventListener('mouseenter', function () {
+          if (elD)  elD.style.opacity  = '0';
+          if (elS)  elS.style.opacity  = '0';
+          if (elW)  elW.style.opacity  = '0';
+          elPC.classList.add('active');
+        });
+        cover.addEventListener('mouseleave', function () {
+          if (elD)  elD.style.opacity  = '';
+          if (elS)  elS.style.opacity  = '';
+          elPC.classList.remove('active');
+        });
+      }
+    })();
+  </script>
 </body>
 </html>

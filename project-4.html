@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AKKAdemy E-Learning — Johanna Ober</title>
+  <title>AKKAdemy E-Learning · Johanna Ober</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="project.css" />
 </head>
-<body>
+<body class="alt-page">
 
   <nav>
-    <a href="index.html" class="nav-logo">JO</a>
+    <a href="index.html" class="nav-back" onclick="if(history.length&gt;1){history.back();return false;}">←</a>
     <ul class="nav-links">
-      <li><a href="index.html#intro" data-en="About" data-de="About">About</a></li>
-      <li><a href="index.html#projects" class="active" data-en="Projects" data-de="Projekte">Projects</a></li>
-      <li><a href="index.html#resume" data-en="Resume" data-de="Lebenslauf">Resume</a></li>
+      <li><a href="index.html#intro">About</a></li>
+      <li><a href="index.html#projects" class="active">Projects</a></li>
+      <li><a href="index.html#resume">Resume</a></li>
     </ul>
     <div class="lang-toggle">
       <button class="lang-btn active" data-lang="en">EN</button>
@@ -24,183 +24,198 @@
     </div>
   </nav>
 
-  <div class="project-back-bar">
-    <a href="index.html#projects" class="project-back-link"
-       data-en="← All Projects" data-de="← Alle Projekte">← All Projects</a>
-  </div>
-
-  <section class="project-hero">
-    <div class="project-hero-meta">
-      <span class="section-label">E-Learning · Web</span>
-    </div>
-    <h1 class="project-hero-title">AKKAdemy E-Learning</h1>
-    <p class="project-hero-sub"
-       data-en="Redesigning Akkodis's internal learning platform after a company merger, aligning brand identity, improving usability, and rebuilding the component library."
-       data-de="Redesign der internen Lernplattform von Akkodis nach einer Unternehmensfusion, mit Angleichung der Markenidentität, verbesserter Usability und neu aufgebauter Komponentenbibliothek.">
-      Redesigning Akkodis's internal learning platform after a company merger, aligning brand identity, improving usability, and rebuilding the component library.
-    </p>
-  </section>
-
-  <div class="project-cover">
-    <img src="images/project-4/project-4-1.jpg" alt="AKKAdemy E-Learning — Cover" />
-  </div>
-
-  <section class="project-section">
-    <div class="project-meta-grid">
-      <div class="project-meta-item">
-        <span class="section-label">My Role</span>
-        <p>UX/UI Designer</p>
+  <!-- ── HEADER ────────────────────────────────────────── -->
+  <section class="alt-intro">
+    <div class="alt-intro-columns">
+      <div class="alt-intro-left">
+        <p class="alt-intro-tags">
+          <span>[Year]</span><span>E-Learning</span><span>Web</span>
+        </p>
+        <h1 class="alt-intro-title">AKKAdemy E-Learning</h1>
+        <p class="alt-intro-desc"
+           data-en="Redesigning Akkodis's internal learning platform after a company merger, aligning brand identity, improving usability, and rebuilding the component library."
+           data-de="Redesign der internen Lernplattform von Akkodis nach einer Unternehmensfusion, mit Angleichung der Markenidentität, verbesserter Usability und neu aufgebauter Komponentenbibliothek.">
+          Redesigning Akkodis's internal learning platform after a company merger, aligning brand identity, improving usability, and rebuilding the component library.
+        </p>
       </div>
-      <div class="project-meta-item">
-        <span class="section-label">Client</span>
-        <p>Akkodis<br>Internal Project · Solo</p>
-      </div>
-      <div class="project-meta-item">
-        <span class="section-label">Duration</span>
-        <p>[Duration · Year]</p>
-      </div>
-      <div class="project-meta-item">
-        <span class="section-label">Tasks</span>
-        <div class="badges" style="margin-top: 0.5rem;">
-          <span class="badge">Component Audit</span>
-          <span class="badge">CI Implementation</span>
-          <span class="badge">Design System</span>
-          <span class="badge">Grid System</span>
+      <div class="alt-intro-meta">
+        <div>
+          <span class="section-label" data-en="Client" data-de="Kunde">Client</span>
+          <p>Akkodis</p>
+          <p data-en="Internal Project · Solo" data-de="Internes Projekt · Solo">Internal Project · Solo</p>
+        </div>
+        <div>
+          <span class="section-label" data-en="My Tasks" data-de="Meine Aufgaben">My Tasks</span>
+          <p class="alt-meta-tasks">
+            <span data-en="Component Audit" data-de="Komponenten-Audit">Component Audit</span><span data-en="CI Implementation" data-de="CI-Umsetzung">CI Implementation</span><span data-en="Design System" data-de="Designsystem">Design System</span><span data-en="Grid System" data-de="Grid-System">Grid System</span>
+          </p>
         </div>
       </div>
-    </div>
+    </div><!-- /.alt-intro-columns -->
   </section>
 
-  <section class="project-section">
-    <div class="project-content-grid">
-      <div class="project-col-label"><span class="section-label">Challenge</span></div>
-      <div class="project-col-body">
-        <h2>A platform that didn't match its new identity</h2>
-        <p data-en="After the merger of AKKA and Modis into Akkodis, the internal learning platform still reflected the old brand. Beyond a visual refresh, the platform needed a thorough usability review, as inconsistent components and unclear interface patterns were slowing down both learners and content creators. Image rights held by Akkodis." data-de="Nach der Fusion von AKKA und Modis zu Akkodis spiegelte die interne Lernplattform noch das alte Branding wider. Neben einer visuellen Aktualisierung benötigte die Plattform eine gründliche Überprüfung der Usability, da inkonsistente Komponenten und unklare Interface-Muster Lernende und Content-Creator verlangsamten. Bildrechte bei Akkodis.">
-          After the merger of AKKA and Modis into Akkodis, the internal learning platform still reflected the old brand. Beyond a visual refresh, the platform needed a thorough usability review, as inconsistent components and unclear interface patterns were slowing down both learners and content creators. Image rights held by Akkodis.
-        </p>
+  <!-- ── COVER IMAGE ───────────────────────────────────── -->
+  <div class="alt-cover">
+    <img src="images/project-4/project-4-1.jpg" alt="AKKAdemy E-Learning" />
+  </div>
+
+  <!-- ── STICKY SCROLL SECTION ─────────────────────────── -->
+  <div class="alt-sticky-wrapper">
+
+    <!-- Left: sticky text panels -->
+    <div class="alt-sticky-left">
+      <div class="alt-panels-wrapper">
+
+        <!-- Panel 0: Challenge --><!-- Panel 1: Discovery --><!-- Panel 2: Define --><!-- Panel 3: Design --><!-- Panel 4: Test --><!-- Panel 5: Solution --></div>
+    </div>
+
+    <!-- Right: scrolling images -->
+    <div class="alt-scroll-right">
+      <div class="alt-scroll-item" data-index="0">
+        <img src="images/project-4/project-4-2.png" alt="AKKAdemy E-Learning: Challenge overview" />
       </div>
-    </div>
-  </section>
-
-  <section class="project-section no-top-line">
-    <div class="project-content-grid">
-      <div class="project-col-label"><span class="section-label">Process</span></div>
-      <div class="project-col-body">
-        <div class="process-tabs">
-          <input type="radio" id="proc-1" name="process" checked />
-          <input type="radio" id="proc-2" name="process" />
-          <input type="radio" id="proc-3" name="process" />
-          <input type="radio" id="proc-4" name="process" />
-          <div class="proc-tab-nav">
-            <label for="proc-1">01 Discovery</label>
-            <label for="proc-2">02 Define</label>
-            <label for="proc-3">03 Design</label>
-            <label for="proc-4">04 Test</label>
-          </div>
-          <div class="proc-panel" id="proc-panel-1">
-            <p class="process-title">Component Audit &amp; Analysis</p>
-            <p class="process-desc" data-en="I started with a comprehensive audit of the existing UI components, mapping each against the new brand guidelines and assessing usability quality. This created a clear picture of what needed to be replaced, refined, or rebuilt from scratch." data-de="Ich begann mit einem umfassenden Audit der bestehenden UI-Komponenten und ordnete jede den neuen Brand-Guidelines zu, um die Usability-Qualität zu bewerten. Das ergab ein klares Bild davon, was ersetzt, überarbeitet oder neu aufgebaut werden musste.">I started with a comprehensive audit of the existing UI components, mapping each against the new brand guidelines and assessing usability quality. This created a clear picture of what needed to be replaced, refined, or rebuilt from scratch.</p>
-          </div>
-          <div class="proc-panel" id="proc-panel-2">
-            <p class="process-title">Defining Scope &amp; Naming</p>
-            <p class="process-desc" data-en="Based on the audit, I prioritised the component set needed for the platform's core learning and course-creation workflows. Clear naming conventions and layout rules were defined to ensure consistency going forward." data-de="Auf Basis des Audits priorisierte ich die Komponentenmenge für die zentralen Lern- und Kurserstellungsworkflows der Plattform. Klare Benennungskonventionen und Layoutregeln wurden festgelegt, um künftige Konsistenz zu gewährleisten.">Based on the audit, I prioritised the component set needed for the platform's core learning and course-creation workflows. Clear naming conventions and layout rules were defined to ensure consistency going forward.</p>
-          </div>
-          <div class="proc-panel" id="proc-panel-3">
-            <p class="process-title">Rebuilding the Library &amp; Implementing CI</p>
-            <p class="process-desc" data-en="I rebuilt the component library in Figma, implementing the Akkodis corporate identity across all elements. A flexible grid system was introduced to ensure consistency across different player views and screen sizes." data-de="Ich baute die Komponentenbibliothek in Figma neu auf und implementierte die Akkodis Corporate Identity durchgehend. Ein flexibles Rastersystem sorgt für Konsistenz über verschiedene Player-Ansichten und Bildschirmgrößen hinweg.">I rebuilt the component library in Figma, implementing the Akkodis corporate identity across all elements. A flexible grid system was introduced to ensure consistency across different player views and screen sizes.</p>
-          </div>
-          <div class="proc-panel" id="proc-panel-4">
-            <p class="process-title">Quality Review &amp; Handoff</p>
-            <p class="process-desc" data-en="The new components were reviewed against the original audit criteria to confirm all issues were resolved. The library was documented and handed off to development in a structured, annotated format ready for implementation." data-de="Die neuen Komponenten wurden anhand der ursprünglichen Audit-Kriterien geprüft, um sicherzustellen, dass alle Probleme behoben wurden. Die Bibliothek wurde dokumentiert und strukturiert, annotiert an die Entwicklung übergeben.">The new components were reviewed against the original audit criteria to confirm all issues were resolved. The library was documented and handed off to development in a structured, annotated format ready for implementation.</p>
-          </div>
+      <div class="alt-text-panel active" data-panel="0">
+          <span class="alt-panel-label" data-en="Challenge" data-de="Herausforderung">Challenge</span>
+          <h2 class="alt-panel-heading" data-en="A platform that didn't match its new identity" data-de="Eine Plattform, die nicht zur neuen Identität passte">A platform that didn't match its new identity</h2>
+          <p class="alt-panel-body"
+             data-en="After the merger of AKKA and Modis into Akkodis, the internal learning platform still reflected the old brand. Beyond a visual refresh, the platform needed a thorough usability review, as inconsistent components and unclear interface patterns were slowing down both learners and content creators."
+             data-de="Nach der Fusion von AKKA und Modis zu Akkodis spiegelte die interne Lernplattform noch das alte Branding wider. Neben einer visuellen Aktualisierung benötigte die Plattform eine gründliche Überprüfung der Usability, da inkonsistente Komponenten und unklare Interface-Muster Lernende und Content-Creator verlangsamten.">
+            After the merger of AKKA and Modis into Akkodis, the internal learning platform still reflected the old brand. Beyond a visual refresh, the platform needed a thorough usability review, as inconsistent components and unclear interface patterns were slowing down both learners and content creators.
+          </p>
         </div>
+      <div class="alt-scroll-item" data-index="1">
+        <img src="images/project-4/project-4-3.jpg" alt="AKKAdemy E-Learning: Component audit" />
+      </div>
+      <div class="alt-text-panel" data-panel="1">
+          <span class="alt-panel-label" data-en="01 Discovery" data-de="01 Recherche">01 Discovery</span>
+          <h2 class="alt-panel-heading" data-en="Component Audit &amp; Analysis" data-de="Komponenten-Audit &amp; Analyse">Component Audit &amp; Analysis</h2>
+          <p class="alt-panel-body"
+             data-en="I started with a comprehensive audit of the existing UI components, mapping each against the new brand guidelines and assessing usability quality. This created a clear picture of what needed to be replaced, refined, or rebuilt from scratch."
+             data-de="Ich begann mit einem umfassenden Audit der bestehenden UI-Komponenten und ordnete jede den neuen Brand-Guidelines zu, um die Usability-Qualität zu bewerten. Das ergab ein klares Bild davon, was ersetzt, überarbeitet oder neu aufgebaut werden musste.">
+            I started with a comprehensive audit of the existing UI components, mapping each against the new brand guidelines and assessing usability quality. This created a clear picture of what needed to be replaced, refined, or rebuilt from scratch.
+          </p>
+        </div>
+      <div class="alt-scroll-item" data-index="2">
+        <img src="images/project-4/project-4-4.png" alt="AKKAdemy E-Learning: Rebuilt library" />
+      </div>
+      <div class="alt-text-panel" data-panel="2">
+          <span class="alt-panel-label" data-en="02 Define" data-de="02 Definition">02 Define</span>
+          <h2 class="alt-panel-heading" data-en="Defining Scope &amp; Naming" data-de="Umfang &amp; Benennung festlegen">Defining Scope &amp; Naming</h2>
+          <p class="alt-panel-body"
+             data-en="Based on the audit, I prioritised the component set needed for the platform's core learning and course-creation workflows. Clear naming conventions and layout rules were defined to ensure consistency going forward."
+             data-de="Auf Basis des Audits priorisierte ich die Komponentenmenge für die zentralen Lern- und Kurserstellungsworkflows der Plattform. Klare Benennungskonventionen und Layoutregeln wurden festgelegt, um künftige Konsistenz zu gewährleisten.">
+            Based on the audit, I prioritised the component set needed for the platform's core learning and course-creation workflows. Clear naming conventions and layout rules were defined to ensure consistency going forward.
+          </p>
+        </div>
+      <div class="alt-scroll-item" data-index="3">
+        <img src="images/placeholder.svg" alt="AKKAdemy E-Learning: Design detail" />
+      </div>
+      <div class="alt-text-panel" data-panel="3">
+          <span class="alt-panel-label">03 Design</span>
+          <h2 class="alt-panel-heading" data-en="Rebuilding the Library &amp; Implementing CI" data-de="Neuaufbau der Bibliothek &amp; CI-Umsetzung">Rebuilding the Library &amp; Implementing CI</h2>
+          <p class="alt-panel-body"
+             data-en="I rebuilt the component library in Figma, implementing the Akkodis corporate identity across all elements. A flexible grid system was introduced to ensure consistency across different player views and screen sizes."
+             data-de="Ich baute die Komponentenbibliothek in Figma neu auf und implementierte die Akkodis Corporate Identity durchgehend. Ein flexibles Rastersystem sorgt für Konsistenz über verschiedene Player-Ansichten und Bildschirmgrößen hinweg.">
+            I rebuilt the component library in Figma, implementing the Akkodis corporate identity across all elements. A flexible grid system was introduced to ensure consistency across different player views and screen sizes.
+          </p>
+        </div>
+      <div class="alt-scroll-item" data-index="4">
+        <img src="images/placeholder.svg" alt="AKKAdemy E-Learning: User testing" />
+      </div>
+      <div class="alt-text-panel" data-panel="4">
+          <span class="alt-panel-label">04 Test</span>
+          <h2 class="alt-panel-heading" data-en="Validating with Internal Users" data-de="Validierung mit internen Nutzern">Validating with Internal Users</h2>
+          <p class="alt-panel-body"
+             data-en="The redesigned components were tested with internal stakeholders: both learners using the platform and content creators building courses. Feedback was gathered to refine edge cases and validate the new grid system under real content conditions."
+             data-de="Die überarbeiteten Komponenten wurden mit internen Stakeholdern getestet: Lernenden, die die Plattform nutzen, und Content-Creatorn, die Kurse erstellen. Feedback half dabei, Grenzfälle zu verfeinern und das neue Rastersystem unter realen Inhaltsbedingungen zu validieren.">
+            The redesigned components were tested with internal stakeholders: both learners using the platform and content creators building courses. Feedback was gathered to refine edge cases and validate the new grid system under real content conditions.
+          </p>
+        </div>
+      <div class="alt-scroll-item" data-index="5">
+        <img src="images/placeholder.svg" alt="AKKAdemy E-Learning: Solution" />
+      </div>
+      <div class="alt-text-panel" data-panel="5">
+          <span class="alt-panel-label" data-en="Solution &amp; Impact" data-de="Lösung &amp; Wirkung">Solution &amp; Impact</span>
+          <h2 class="alt-panel-heading" data-en="A clean, modular foundation for focused learning" data-de="Eine klare, modulare Grundlage für fokussiertes Lernen">A clean, modular foundation for focused learning</h2>
+          <p class="alt-panel-body"
+             data-en="The redesigned AKKAdemy platform offers a reduced, functional interface that puts learning content first. The new component library makes course creation faster and more consistent. The visual system supports clarity and cognitive focus, useful whether you're building a course or taking one.<br><br>The component library significantly improved efficiency and consistency in internal course development. It also served as a design foundation for future updates across other Akkodis platforms, demonstrating how a well-structured design system pays dividends beyond its initial scope."
+             data-de="Die überarbeitete AKKAdemy-Plattform bietet eine reduzierte, funktionale Oberfläche, die Lerninhalte in den Vordergrund stellt. Die neue Komponentenbibliothek macht die Kurserstellung schneller und konsistenter. Das visuelle System fördert Klarheit und kognitive Fokussierung, nützlich für Lernende und Content-Creator gleichermaßen.<br><br>Die Komponentenbibliothek verbesserte Effizienz und Konsistenz in der internen Kursentwicklung deutlich. Sie diente zudem als Designgrundlage für künftige Updates auf weiteren Akkodis-Plattformen und zeigt, wie ein gut strukturiertes Designsystem über seinen ursprünglichen Umfang hinaus wirkt.">
+            The redesigned AKKAdemy platform offers a reduced, functional interface that puts learning content first. The new component library makes course creation faster and more consistent. The visual system supports clarity and cognitive focus, useful whether you're building a course or taking one.<br><br>The component library significantly improved efficiency and consistency in internal course development. It also served as a design foundation for future updates across other Akkodis platforms, demonstrating how a well-structured design system pays dividends beyond its initial scope.
+          </p>
+        </div>
+      <div class="alt-scroll-item" data-index="6">
+        <img src="images/project-9/project-9-8.png" alt="" />
       </div>
     </div>
-  </section>
 
-  <div class="project-image-full">
-    <img src="images/project-4/project-4-2.jpg" alt="AKKAdemy E-Learning — Process" />
-  </div>
+  </div><!-- /.alt-sticky-wrapper -->
 
-  <section class="project-section">
-    <div class="project-content-grid">
-      <div class="project-col-label"><span class="section-label">Solution</span></div>
-      <div class="project-col-body">
-        <h2>A clean, modular foundation for focused learning</h2>
-        <p data-en="The redesigned AKKAdemy platform offers a reduced, functional interface that puts learning content first. The new component library makes course creation faster and more consistent. The visual system supports clarity and cognitive focus, useful whether you're building a course or taking one." data-de="Die überarbeitete AKKAdemy-Plattform bietet eine reduzierte, funktionale Oberfläche, die Lerninhalte in den Vordergrund stellt. Die neue Komponentenbibliothek macht die Kurserstellung schneller und konsistenter. Das visuelle System fördert Klarheit und kognitive Fokussierung, nützlich für Lernende und Content-Creator gleichermaßen.">
-          The redesigned AKKAdemy platform offers a reduced, functional interface that puts learning content first. The new component library makes course creation faster and more consistent. The visual system supports clarity and cognitive focus, useful whether you're building a course or taking one.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <div class="project-image-two">
-    <img src="images/project-4/project-4-3.png" alt="AKKAdemy E-Learning — Detail A" />
-    <img src="images/project-4/project-4-4.png" alt="AKKAdemy E-Learning — Detail B" />
-  </div>
-
-  <section class="project-section">
-    <div class="project-content-grid">
-      <div class="project-col-label"><span class="section-label">Impact</span></div>
-      <div class="project-col-body">
-        <h2>Faster course creation, more consistent experience</h2>
-        <p data-en="The component library significantly improved efficiency and consistency in internal course development. It also served as a design foundation for future updates across other Akkodis platforms, demonstrating how a well-structured design system pays dividends beyond its initial scope." data-de="Die Komponentenbibliothek verbesserte Effizienz und Konsistenz in der internen Kursentwicklung deutlich. Sie diente zudem als Designgrundlage für künftige Updates auf weiteren Akkodis-Plattformen und zeigt, wie ein gut strukturiertes Designsystem über seinen ursprünglichen Umfang hinaus wirkt.">
-          The component library significantly improved efficiency and consistency in internal course development. It also served as a design foundation for future updates across other Akkodis platforms, demonstrating how a well-structured design system pays dividends beyond its initial scope.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="project-section">
-    <div class="project-content-grid">
-      <div class="project-col-label"><span class="section-label">Disclaimer</span></div>
-      <div class="project-col-body">
-        <p data-en="The design work was created on behalf of the employer. Image rights are held by Akkodis." data-de="Die Designarbeit wurde im Auftrag des Arbeitgebers erstellt. Die Bildrechte liegen bei Akkodis.">The design work was created on behalf of the employer. Image rights are held by Akkodis.</p>
-      </div>
-    </div>
-  </section>
-
+  <!-- ── SEE MORE ──────────────────────────────────────── -->
   <section class="project-more">
     <h2 class="project-more-heading" data-en="See More" data-de="Mehr sehen">See More</h2>
     <div class="project-more-grid">
       <div class="project-card">
-        <a href="project-5.html"><img class="project-thumb" src="images/project-5/project-5-1.jpg" alt="LOVEsick" /></a>
+        <a href="project-1.html"><img class="alt-thumb" src="images/project-1/project-1-1.jpg" alt="BIRD Education Platform" /></a>
         <div class="project-body">
           <div class="badges">
-            <span class="badge-outline">Exhibition</span>
-            <span class="badge-outline">Interactive</span>
+            <span class="badge-outline">EdTech</span>
+            <span class="badge-outline" data-en="Mobile" data-de="Mobile">Mobile</span>
           </div>
-          <p class="project-title">LOVEsick</p>
-          <a class="project-link" href="project-5.html" data-en="Show me →" data-de="Zeig mir mehr">Show me →</a>
+          <p class="project-title">BIRD Education Platform</p>
+          <a class="project-link" href="project-1.html" data-en="Show me →" data-de="Zeig mir mehr">Show me →</a>
         </div>
       </div>
       <div class="project-card">
-        <a href="project-6.html"><img class="project-thumb" src="images/project-6/project-6-1.png" alt="HMI for Driving Simulation" /></a>
+        <a href="project-9.html"><img class="alt-thumb" src="images/project-9/Free Walking with iPhone X mockup (Mockuuups Studio).png" alt="Langenscheidt Language Coach" /></a>
         <div class="project-body">
           <div class="badges">
-            <span class="badge-outline">Automotive</span>
-            <span class="badge-outline">HMI</span>
+            <span class="badge-outline">EdTech</span>
+            <span class="badge-outline" data-en="Learner-Centered Design" data-de="Lernzentriertes Design">Learner-Centered Design</span>
           </div>
-          <p class="project-title">HMI for Driving Simulation</p>
-          <a class="project-link" href="project-6.html" data-en="Show me →" data-de="Zeig mir mehr">Show me →</a>
+          <p class="project-title">Langenscheidt Language Coach</p>
+          <a class="project-link" href="project-9.html" data-en="Show me →" data-de="Zeig mir mehr">Show me →</a>
         </div>
       </div>
       <div class="project-card">
-        <a href="project-7.html"><img class="project-thumb" src="images/project-7/project-7-1.png" alt="The Horror Mode" /></a>
+        <a href="project-3.html"><img class="alt-thumb" src="images/project-3/project-3-1.png" alt="Chain²Bike" /></a>
         <div class="project-body">
           <div class="badges">
-            <span class="badge-outline">Motion</span>
-            <span class="badge-outline">Social Media</span>
+            <span class="badge-outline">Web3</span>
+            <span class="badge-outline">Mobile</span>
           </div>
-          <p class="project-title">The Horror Mode</p>
-          <a class="project-link" href="project-7.html" data-en="Show me →" data-de="Zeig mir mehr">Show me →</a>
+          <p class="project-title">Chain²Bike</p>
+          <a class="project-link" href="project-3.html" data-en="Show me →" data-de="Zeig mir mehr">Show me →</a>
         </div>
       </div>
     </div>
   </section>
 
   <a href="#" id="back-to-top" aria-label="Back to top">↑</a>
+
   <script src="script.js"></script>
+  <script>
+    (function () {
+      if (!window.matchMedia('(pointer: fine)').matches) return;
+      var elD  = document.getElementById('cursor-diff');
+      var elS  = document.getElementById('cursor-screen');
+      var elW  = document.getElementById('cursor-white');
+      var elPC = document.getElementById('cursor-photo');
+
+      var cover = document.querySelector('.alt-cover');
+      if (cover && elPC) {
+        cover.addEventListener('mouseenter', function () {
+          if (elD)  elD.style.opacity  = '0';
+          if (elS)  elS.style.opacity  = '0';
+          if (elW)  elW.style.opacity  = '0';
+          elPC.classList.add('active');
+        });
+        cover.addEventListener('mouseleave', function () {
+          if (elD)  elD.style.opacity  = '';
+          if (elS)  elS.style.opacity  = '';
+          elPC.classList.remove('active');
+        });
+      }
+    })();
+  </script>
 </body>
 </html>

@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chain²Bike — Johanna Ober</title>
+  <title>Chain²Bike · Johanna Ober</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="project.css" />
 </head>
-<body>
+<body class="alt-page">
 
   <nav>
-    <a href="index.html" class="nav-logo">JO</a>
+    <a href="index.html" class="nav-back" onclick="if(history.length&gt;1){history.back();return false;}">←</a>
     <ul class="nav-links">
-      <li><a href="index.html#intro" data-en="About" data-de="About">About</a></li>
-      <li><a href="index.html#projects" class="active" data-en="Projects" data-de="Projekte">Projects</a></li>
-      <li><a href="index.html#resume" data-en="Resume" data-de="Lebenslauf">Resume</a></li>
+      <li><a href="index.html#intro">About</a></li>
+      <li><a href="index.html#projects" class="active">Projects</a></li>
+      <li><a href="index.html#resume">Resume</a></li>
     </ul>
     <div class="lang-toggle">
       <button class="lang-btn active" data-lang="en">EN</button>
@@ -24,184 +24,201 @@
     </div>
   </nav>
 
-  <div class="project-back-bar">
-    <a href="index.html#projects" class="project-back-link"
-       data-en="← All Projects" data-de="← Alle Projekte">← All Projects</a>
-  </div>
-
-  <section class="project-hero">
-    <div class="project-hero-meta">
-      <span class="section-label">Web3 · Mobile</span>
-    </div>
-    <h1 class="project-hero-title">Chain²Bike</h1>
-    <p class="project-hero-sub"
-       data-en="A blockchain-powered dApp making e-bike ownership transparent, with a tamper-proof digital logbook and secure peer-to-peer ownership transfers."
-       data-de="Eine Blockchain-basierte dApp für transparenten E-Bike-Besitz, mit manipulationssicherem digitalen Logbuch und sicherem Eigentümerwechsel.">
-      A blockchain-powered dApp making e-bike ownership transparent, with a tamper-proof digital logbook and secure peer-to-peer ownership transfers.
-    </p>
-  </section>
-
-  <div class="project-cover">
-    <img src="images/project-3/project-3-1.png" alt="Chain²Bike — Cover" />
-  </div>
-
-  <section class="project-section">
-    <div class="project-meta-grid">
-      <div class="project-meta-item">
-        <span class="section-label">My Role</span>
-        <p>UX/UI Designer</p>
+  <!-- ── HEADER (above first image) ──────────────────── -->
+  <section class="alt-intro">
+    <div class="alt-intro-columns">
+      <div class="alt-intro-left">
+        <p class="alt-intro-tags">
+          <span>2023</span><span>Web3</span><span>Mobile</span>
+        </p>
+        <h1 class="alt-intro-title">Chain²Bike dApp</h1>
+        <p class="alt-intro-desc" data-en="A decentralized App making e-bike ownership transparent, with a blockchain-based tamper-proof digital logbook and secure peer-to-peer ownership transfers." data-de="Eine dezentrale App, die den Besitz von E-Bikes transparent macht, mit einem blockchainbasierten, fälschungssicheren digitalen Logbuch und sicheren Eigentumsübertragungen von Person zu Person.">
+          A decentralized App making e-bike ownership transparent, with a blockchain-based tamper-proof digital logbook and secure peer-to-peer ownership transfers.
+        </p>
       </div>
-      <div class="project-meta-item">
-        <span class="section-label">Client</span>
-        <p>Akkodis<br>Internal Project · Team of 2</p>
-      </div>
-      <div class="project-meta-item">
-        <span class="section-label">Duration</span>
-        <p>[Duration · Year]</p>
-      </div>
-      <div class="project-meta-item">
-        <span class="section-label">Tasks</span>
-        <div class="badges" style="margin-top: 0.5rem;">
-          <span class="badge">Logo Design</span>
-          <span class="badge">Interaction Concept</span>
-          <span class="badge">Wireframing</span>
-          <span class="badge">Design System</span>
-          <span class="badge">Prototyping</span>
+      <div class="alt-intro-meta">
+        <div>
+          <span class="section-label" data-en="Client" data-de="Kunde">Client</span>
+          <p>Akkodis</p>
+          <p data-en="Internal Project · Team of 2" data-de="Internes Projekt · Team aus 2">Internal Project · Team of 2</p>
+        </div>
+        <div>
+          <span class="section-label" data-en="My Tasks" data-de="Meine Aufgaben">My Tasks</span>
+          <p class="alt-meta-tasks">
+            <span data-en="Information Architecture" data-de="Informationsarchitektur">Information Architecture</span><span data-en="Interaction Concept" data-de="Interaktionskonzept">Interaction Concept</span><span data-en="UI Design" data-de="UI Design">UI Design</span><span data-en="Design System" data-de="Designsystem">Design System</span><span data-en="Prototyping" data-de="Prototyping">Prototyping</span>
+          </p>
         </div>
       </div>
-    </div>
+    </div><!-- /.alt-intro-columns -->
   </section>
 
-  <section class="project-section">
-    <div class="project-content-grid">
-      <div class="project-col-label"><span class="section-label">Challenge</span></div>
-      <div class="project-col-body">
-        <h2>No trust, no transparency: the used e-bike problem</h2>
-        <p data-en="Buying or selling a used e-bike often comes with uncertainty: there's no verified history of ownership, maintenance, or accidents. Akkodis wanted to solve this with blockchain, but the real challenge was making complex decentralised technology accessible to everyday users who don't know what a blockchain is. The design had to communicate security and trust without relying on technical jargon. Image rights held by Akkodis." data-de="Beim Kauf oder Verkauf eines gebrauchten E-Bikes fehlt es häufig an Transparenz: keine nachvollziehbare Besitz- oder Wartungshistorie, kein Schutz vor Manipulation. Akkodis wollte das mit Blockchain-Technologie lösen, doch die eigentliche Herausforderung lag darin, diese komplexe Technologie für alltägliche Nutzerinnen und Nutzer zugänglich zu machen. Das Design musste Sicherheit und Vertrauen vermitteln, ohne auf technischen Jargon zu setzen. Bildrechte bei Akkodis.">
-          Buying or selling a used e-bike often comes with uncertainty: there's no verified history of ownership, maintenance, or accidents. Akkodis wanted to solve this with blockchain, but the real challenge was making complex decentralised technology accessible to everyday users who don't know what a blockchain is. The design had to communicate security and trust without relying on technical jargon. Image rights held by Akkodis.
-        </p>
+  <!-- ── FIRST IMAGE (cover) ─────────────────────────── -->
+  <div class="alt-cover">
+    <img src="images/project-3/project-3-1.png" alt="Chain²Bike" />
+  </div>
+
+  <!-- ── STICKY SCROLL SECTION ───────────────────────── -->
+  <div class="alt-sticky-wrapper">
+
+    <!-- Left: sticky text panels -->
+    <div class="alt-sticky-left">
+      <div class="alt-panels-wrapper">
+
+        <!-- Panel 0: Challenge --><!-- Panel 1: Discovery --><!-- Panel 2: Define --><!-- Panel 3: Design --><!-- Panel 4: Test --><!-- Panel 5: Solution --></div>
+    </div>
+
+    <!-- Right: scrolling images -->
+    <div class="alt-scroll-right">
+      <div class="alt-scroll-item" data-index="0">
+        <img src="images/project-3/project-3-2.png" alt="Chain²Bike: Challenge overview" />
       </div>
-    </div>
-  </section>
-
-  <section class="project-section no-top-line">
-    <div class="project-content-grid">
-      <div class="project-col-label"><span class="section-label">Process</span></div>
-      <div class="project-col-body">
-        <div class="process-tabs">
-          <input type="radio" id="proc-1" name="process" checked />
-          <input type="radio" id="proc-2" name="process" />
-          <input type="radio" id="proc-3" name="process" />
-          <input type="radio" id="proc-4" name="process" />
-          <div class="proc-tab-nav">
-            <label for="proc-1">01 Discovery</label>
-            <label for="proc-2">02 Define</label>
-            <label for="proc-3">03 Design</label>
-            <label for="proc-4">04 Test</label>
-          </div>
-          <div class="proc-panel" id="proc-panel-1">
-            <p class="process-title">Onboarding from External Research</p>
-            <p class="process-desc" data-en="Initial user research and journey mapping were handled externally before our involvement. We onboarded with a thorough review of the findings and the blockchain architecture to understand both user needs and the technical constraints shaping the design space." data-de="Initiales User Research und Journey Mapping wurden extern durchgeführt. Wir stiegen mit einer gründlichen Analyse der Ergebnisse und der Blockchain-Architektur ein, um Nutzerbedürfnisse und technische Rahmenbedingungen zu verstehen.">Initial user research and journey mapping were handled externally before our involvement. We onboarded with a thorough review of the findings and the blockchain architecture to understand both user needs and the technical constraints shaping the design space.</p>
-          </div>
-          <div class="proc-panel" id="proc-panel-2">
-            <p class="process-title">Translating Tech into UX Flows</p>
-            <p class="process-desc" data-en="We defined the three core user flows: registering a bike, viewing the digital logbook, and completing an ownership transfer. The design challenge was abstracting blockchain complexity into familiar, trustworthy interactions to make the technology invisible." data-de="Wir definierten die drei zentralen Nutzerflows: Fahrrad registrieren, digitales Logbuch einsehen und Eigentümerwechsel durchführen. Die Designaufgabe bestand darin, die Blockchain-Komplexität in vertraute, vertrauenswürdige Interaktionen zu übersetzen und die Technologie dabei unsichtbar zu machen.">We defined the three core user flows: registering a bike, viewing the digital logbook, and completing an ownership transfer. The design challenge was abstracting blockchain complexity into familiar, trustworthy interactions to make the technology invisible.</p>
-          </div>
-          <div class="proc-panel" id="proc-panel-3">
-            <p class="process-title">Logo, Design System &amp; Screens</p>
-            <p class="process-desc" data-en="We created the Chain²Bike logo, a modular design system, and all interface screens. The visual language prioritises clarity and trust, using neutral tones and clean typography to communicate security without intimidating non-technical users." data-de="Wir erstellten das Chain²Bike-Logo, ein modulares Designsystem und alle Interface-Screens. Die visuelle Sprache priorisiert Klarheit und Vertrauen, mit neutralen Tönen und sauberer Typografie, um Sicherheit zu kommunizieren ohne nicht-technische Nutzer zu überfordern.">We created the Chain²Bike logo, a modular design system, and all interface screens. The visual language prioritises clarity and trust, using neutral tones and clean typography to communicate security without intimidating non-technical users.</p>
-          </div>
-          <div class="proc-panel" id="proc-panel-4">
-            <p class="process-title">Prototype Review &amp; Refinement</p>
-            <p class="process-desc" data-en="A clickable prototype was developed and evaluated internally. Feedback focused on the ownership transfer flow and the readability of the logbook, and both were refined based on the results to achieve the clearest possible experience." data-de="Ein klickbarer Prototyp wurde entwickelt und intern evaluiert. Das Feedback konzentrierte sich auf den Eigentümerwechsel-Flow und die Lesbarkeit des Logbuchs, beides wurde auf Basis der Ergebnisse überarbeitet.">A clickable prototype was developed and evaluated internally. Feedback focused on the ownership transfer flow and the readability of the logbook, and both were refined based on the results to achieve the clearest possible experience.</p>
-          </div>
+      <div class="alt-text-panel active" data-panel="0">
+          <span class="alt-panel-label" data-en="Challenge" data-de="Herausforderung">Challenge</span>
+          <h2 class="alt-panel-heading" data-en="No trust &amp; transparency for used e-bikes" data-de="Kein Vertrauen &amp; keine Transparenz bei gebrauchten E-Bikes">No trust &amp; transparency for used e-bikes</h2>
+          <p class="alt-panel-body" data-en="Buying or selling a used e-bike often comes with uncertainty: there's no verified history of ownership, maintenance, or accidents. Akkodis wanted to solve this with blockchain, but the real challenge was making complex decentralised technology accessible to everyday users who don't know what a blockchain is. The design had to communicate security and trust without relying on technical jargon." data-de="Der Kauf oder Verkauf eines gebrauchten E-Bikes ist oft mit Unsicherheit verbunden: Es gibt keine verifizierte Historie zu Besitz, Wartung oder Unfällen. Akkodis wollte dies mit Blockchain lösen, doch die eigentliche Herausforderung bestand darin, komplexe dezentrale Technologie für alltägliche Nutzende zugänglich zu machen, die nicht wissen, was eine Blockchain ist. Das Design musste Sicherheit und Vertrauen vermitteln, ohne auf technischen Fachjargon zurückzugreifen.">
+            Buying or selling a used e-bike often comes with uncertainty: there's no verified
+            history of ownership, maintenance, or accidents. Akkodis wanted to solve this with
+            blockchain, but the real challenge was making complex decentralised technology
+            accessible to everyday users who don't know what a blockchain is. The design had to
+            communicate security and trust without relying on technical jargon.
+          </p>
         </div>
+      <div class="alt-scroll-item" data-index="1">
+        <img src="images/project-3/Bildschirmfoto 2026-06-28 um 22.17.06.png" alt="Chain²Bike: Discovery phase" />
+      </div>
+      <div class="alt-text-panel" data-panel="1">
+          <span class="alt-panel-label" data-en="01 Discovery" data-de="01 Recherche">01 Discovery</span>
+          <h2 class="alt-panel-heading" data-en="Onboarding from External Research" data-de="Einarbeitung aus externer Recherche">Onboarding from External Research</h2>
+          <p class="alt-panel-body" data-en="Initial user research and journey mapping was handled from a colleague. I onboarded with a thorough review of the findings and the blockchain architecture to understand both user needs and the technical constraints shaping the design space." data-de="Die anfängliche Nutzerforschung und das Journey Mapping wurden von einer Kollegin übernommen. Ich arbeitete mich mit einer gründlichen Durchsicht der Ergebnisse und der Blockchain-Architektur ein, um sowohl die Nutzerbedürfnisse als auch die technischen Rahmenbedingungen zu verstehen, die den Gestaltungsraum prägen.">
+            Initial user research and journey mapping was handled from a colleague. I onboarded with a thorough review of the findings and the blockchain architecture to understand both user needs and the technical constraints shaping the design space.
+          </p>
+        </div>
+      <div class="alt-scroll-item" data-index="2">
+        <img src="images/project-3/project-3-3.jpg" alt="Chain²Bike: UX flows" />
+      </div>
+      <div class="alt-text-panel" data-panel="2">
+          <span class="alt-panel-label" data-en="02 Define" data-de="02 Definition">02 Define</span>
+          <h2 class="alt-panel-heading" data-en="Translating Tech into UX Flows" data-de="Technik in UX-Flows übersetzen">Translating Tech into UX Flows</h2>
+          <p class="alt-panel-body" data-en="We defined the three core user flows: registering a bike, viewing and maintaining the digital logbook, and completing an ownership transfer. The design challenge was abstracting blockchain complexity into familiar, trustworthy interactions." data-de="Wir definierten die drei zentralen User Flows: ein Bike registrieren, das digitale Logbuch einsehen und pflegen sowie eine Eigentumsübertragung abschließen. Die gestalterische Herausforderung bestand darin, die Komplexität der Blockchain in vertraute, vertrauenswürdige Interaktionen zu übersetzen.">
+            We defined the three core user flows: registering a bike, viewing and maintaining the digital logbook, and completing an ownership transfer. The design challenge was abstracting blockchain complexity into familiar, trustworthy interactions.
+          </p>
+        </div>
+      <div class="alt-scroll-item" data-index="3">
+        <img src="images/project-3/project-3-4.png" alt="Chain²Bike: Design screens" />
+      </div>
+      <div class="alt-text-panel" data-panel="3">
+          <span class="alt-panel-label" data-en="03 Design" data-de="03 Design">03 Design</span>
+          <h2 class="alt-panel-heading" data-en="Logo, Design System and Screens" data-de="Logo, Designsystem und Screens">Logo, Design System and Screens</h2>
+          <p class="alt-panel-body" data-en="We created the Chain²Bike logo, a modular design system, and all interface screens. The visual language based on the AKKODIS CI prioritises clarity and trust, using neutral tones and clean typography to communicate security without intimidating non-technical users." data-de="Wir gestalteten das Chain²Bike-Logo, ein modulares Designsystem und alle Interface-Screens. Die visuelle Sprache, basierend auf der AKKODIS CI, setzt auf Klarheit und Vertrauen und nutzt neutrale Töne und eine klare Typografie, um Sicherheit zu vermitteln, ohne nicht-technische Nutzende abzuschrecken.">
+            We created the Chain²Bike logo, a modular design system, and all interface screens.
+            The visual language based on the AKKODIS CI prioritises clarity and trust, using neutral tones and clean
+            typography to communicate security without intimidating non-technical users.
+          </p>
+        </div>
+      <div class="alt-scroll-item" data-index="4">
+        <img src="images/project-3/project-3-5.png" alt="Chain²Bike: Tested prototype" />
+      </div>
+      <div class="alt-text-panel" data-panel="4">
+          <span class="alt-panel-label" data-en="04 Test" data-de="04 Test">04 Test</span>
+          <h2 class="alt-panel-heading" data-en="Prototype Review and Refinement" data-de="Prototyp prüfen und verfeinern">Prototype Review and Refinement</h2>
+          <p class="alt-panel-body" data-en="A clickable prototype was developed and evaluated internally. Feedback focused on the ownership transfer flow and the readability of the logbook, and both were refined based on the results to achieve the clearest possible experience." data-de="Ein klickbarer Prototyp wurde entwickelt und intern evaluiert. Das Feedback konzentrierte sich auf den Ablauf der Eigentumsübertragung und die Lesbarkeit des Logbuchs, und beides wurde auf Basis der Ergebnisse verfeinert, um ein möglichst klares Erlebnis zu erreichen.">
+            A clickable prototype was developed and evaluated internally. Feedback focused on
+            the ownership transfer flow and the readability of the logbook, and both were
+            refined based on the results to achieve the clearest possible experience.
+          </p>
+        </div>
+      <div class="alt-scroll-item" data-index="5">
+        <img src="images/project-3/project-3-6.png" alt="Chain²Bike: Solution" />
+      </div>
+      <div class="alt-text-panel" data-panel="5">
+          <span class="alt-panel-label" data-en="Solution &amp; Impact" data-de="Lösung &amp; Wirkung">Solution &amp; Impact</span>
+          <h2 class="alt-panel-heading" data-en="A tamper-proof logbook in your pocket" data-de="Ein fälschungssicheres Logbuch in der Hosentasche">A tamper-proof logbook in your pocket</h2>
+          <p class="alt-panel-body" data-en="The Chain²Bike dApp gives users a full view of any registered e-bike's history, including previous owners, maintenance records, and workshop visits, all secured by blockchain. Selling a bike is just as simple: the ownership transfer happens directly between parties, transparently and without middlemen.<br><br>The design keeps the technology in the background so users experience security and simplicity first. The prototype became after more iterations a reference project for internal innovation at Akkodis." data-de="Die Chain²Bike dApp gibt Nutzenden einen vollständigen Einblick in die Historie jedes registrierten E-Bikes, einschließlich Vorbesitzer, Wartungsnachweise und Werkstattbesuche, alles durch Blockchain abgesichert. Der Verkauf eines Bikes ist genauso einfach: Die Eigentumsübertragung erfolgt direkt zwischen den Parteien, transparent und ohne Zwischenhändler.<br><br>Das Design hält die Technologie im Hintergrund, sodass Nutzende zuerst Sicherheit und Einfachheit erleben. Der Prototyp wurde nach weiteren Iterationen zu einem Referenzprojekt für interne Innovation bei Akkodis.">
+            The Chain²Bike dApp gives users a full view of any registered e-bike's history, including previous owners, maintenance records, and workshop visits, all secured by blockchain. Selling a bike is just as simple: the ownership transfer happens directly between parties, transparently and without middlemen.<br><br>The design keeps the technology in the background so users experience security and simplicity first. The prototype became after more iterations a reference project for internal innovation at Akkodis.
+          </p>
+        </div>
+      <div class="alt-text-panel" data-panel="6">
+          <span class="alt-panel-label" data-en="Disclaimer" data-de="Hinweis">Disclaimer</span>
+          <p class="alt-panel-body" data-en="The design work was created on behalf of Akkodis. Image rights are held by Akkodis." data-de="Die Designarbeit wurde im Auftrag von Akkodis erstellt. Die Bildrechte liegen bei Akkodis.">
+            The design work was created on behalf of Akkodis. Image rights are held by Akkodis.
+          </p>
+        </div>
+      <div class="alt-scroll-item" data-index="5b">
+        <img src="images/project-3/project-3-1.png" alt="Chain²Bike" />
+      </div>
+      <div class="alt-scroll-item" data-index="6">
+        <img src="images/project-9/project-9-8.png" alt="" />
       </div>
     </div>
-  </section>
 
-  <div class="project-image-full">
-    <img src="images/project-3/project-3-2.jpg" alt="Chain²Bike — Process" />
-  </div>
+  </div><!-- /.alt-sticky-wrapper -->
 
-  <section class="project-section">
-    <div class="project-content-grid">
-      <div class="project-col-label"><span class="section-label">Solution</span></div>
-      <div class="project-col-body">
-        <h2>A tamper-proof logbook in your pocket</h2>
-        <p data-en="The Chain²Bike dApp gives users a full view of any registered e-bike's history, including previous owners, maintenance records, and workshop visits, all secured by blockchain. Selling a bike is just as simple: the ownership transfer happens directly between parties, transparently and without middlemen. The design keeps the technology in the background so users experience security and simplicity first. Image rights held by Akkodis." data-de="Die Chain²Bike dApp gibt Nutzern vollständigen Einblick in die Geschichte eines registrierten E-Bikes, einschließlich Vorbesitzer, Wartungshistorie und Werkstattbesuche, manipulationssicher durch Blockchain. Der Verkauf ist ebenso einfach: Der Eigentümerwechsel erfolgt direkt und transparent zwischen den Parteien, ohne Zwischeninstanzen. Das Design hält die Technologie im Hintergrund. Bildrechte bei Akkodis.">
-          The Chain²Bike dApp gives users a full view of any registered e-bike's history, including previous owners, maintenance records, and workshop visits, all secured by blockchain. Selling a bike is just as simple: the ownership transfer happens directly between parties, transparently and without middlemen. The design keeps the technology in the background so users experience security and simplicity first. Image rights held by Akkodis.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <div class="project-image-two">
-    <img src="images/project-3/project-3-3.png" alt="Chain²Bike — Detail A" />
-    <img src="images/project-3/project-3-4.png" alt="Chain²Bike — Detail B" />
-  </div>
-
-  <section class="project-section">
-    <div class="project-content-grid">
-      <div class="project-col-label"><span class="section-label">Impact</span></div>
-      <div class="project-col-body">
-        <h2>Demystifying blockchain for everyday mobility</h2>
-        <p data-en="The prototype successfully demonstrated blockchain's potential for consumer mobility in a way that non-technical users could understand and trust. It became a reference project for internal innovation at Akkodis, showcasing how decentralised technology can be made human." data-de="Der Prototyp demonstrierte erfolgreich das Potenzial von Blockchain für den Verbrauchermarkt, verständlich auch für nicht-technische Nutzerinnen und Nutzer. Er wurde zu einem Referenzprojekt für interne Innovation bei Akkodis und zeigt, wie dezentralisierte Technologie menschlich gestaltet werden kann.">
-          The prototype successfully demonstrated blockchain's potential for consumer mobility in a way that non-technical users could understand and trust. It became a reference project for internal innovation at Akkodis, showcasing how decentralised technology can be made human.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="project-section">
-    <div class="project-content-grid">
-      <div class="project-col-label"><span class="section-label">Disclaimer</span></div>
-      <div class="project-col-body">
-        <p data-en="The design work was created on behalf of the employer. Image rights are held by Akkodis." data-de="Die Designarbeit wurde im Auftrag des Arbeitgebers erstellt. Die Bildrechte liegen bei Akkodis.">The design work was created on behalf of the employer. Image rights are held by Akkodis.</p>
-      </div>
-    </div>
-  </section>
-
+  <!-- ── SEE MORE ─────────────────────────────────────────── -->
   <section class="project-more">
     <h2 class="project-more-heading" data-en="See More" data-de="Mehr sehen">See More</h2>
     <div class="project-more-grid">
       <div class="project-card">
-        <a href="project-4.html"><img class="project-thumb" src="images/project-4/project-4-1.jpg" alt="AKKAdemy E-Learning" /></a>
+        <a href="project-1.html"><img class="alt-thumb" src="images/project-1/project-1-1.jpg" alt="BIRD Education Platform" /></a>
         <div class="project-body">
           <div class="badges">
-            <span class="badge-outline">E-Learning</span>
-            <span class="badge-outline">Web</span>
+            <span class="badge-outline">EdTech</span>
+            <span class="badge-outline">Mobile</span>
           </div>
-          <p class="project-title">AKKAdemy E-Learning</p>
-          <a class="project-link" href="project-4.html" data-en="Show me →" data-de="Zeig mir mehr">Show me →</a>
+          <p class="project-title" data-en="BIRD Education Platform" data-de="BIRD Education Platform">BIRD Education Platform</p>
+          <a class="project-link" href="project-1.html" data-en="Show me →" data-de="Zeig mir mehr">Show me →</a>
         </div>
       </div>
       <div class="project-card">
-        <a href="project-5.html"><img class="project-thumb" src="images/project-5/project-5-1.jpg" alt="LOVEsick" /></a>
+        <a href="project-9.html"><img class="alt-thumb" src="images/project-9/Free Walking with iPhone X mockup (Mockuuups Studio).png" alt="Langenscheidt Language Coach" /></a>
         <div class="project-body">
           <div class="badges">
-            <span class="badge-outline">Exhibition</span>
-            <span class="badge-outline">Interactive</span>
+            <span class="badge-outline">EdTech</span>
+            <span class="badge-outline" data-en="Learner-Centered Design" data-de="Lernzentriertes Design">Learner-Centered Design</span>
           </div>
-          <p class="project-title">LOVEsick</p>
-          <a class="project-link" href="project-5.html" data-en="Show me →" data-de="Zeig mir mehr">Show me →</a>
+          <p class="project-title" data-en="Langenscheidt Language Coach" data-de="Langenscheidt Language Coach">Langenscheidt Language Coach</p>
+          <a class="project-link" href="project-9.html" data-en="Show me →" data-de="Zeig mir mehr">Show me →</a>
         </div>
       </div>
       <div class="project-card">
-        <a href="project-6.html"><img class="project-thumb" src="images/project-6/project-6-1.png" alt="HMI for Driving Simulation" /></a>
+        <a href="project-8.html"><img class="alt-thumb" src="images/project-8/project-8-1.png" alt="Little Food Fighters" /></a>
         <div class="project-body">
           <div class="badges">
-            <span class="badge-outline">Automotive</span>
-            <span class="badge-outline">HMI</span>
+            <span class="badge-outline">Game Design</span>
+            <span class="badge-outline" data-en="Sustainability" data-de="Nachhaltigkeit">Sustainability</span>
           </div>
-          <p class="project-title">HMI for Driving Simulation</p>
-          <a class="project-link" href="project-6.html" data-en="Show me →" data-de="Zeig mir mehr">Show me →</a>
+          <p class="project-title" data-en="Little Food Fighters" data-de="Little Food Fighters">Little Food Fighters</p>
+          <a class="project-link" href="project-8.html" data-en="Show me →" data-de="Zeig mir mehr">Show me →</a>
         </div>
       </div>
     </div>
   </section>
 
   <a href="#" id="back-to-top" aria-label="Back to top">↑</a>
+
   <script src="script.js"></script>
+  <script>
+    (function () {
+      if (!window.matchMedia('(pointer: fine)').matches) return;
+      var elD  = document.getElementById('cursor-diff');
+      var elS  = document.getElementById('cursor-screen');
+      var elW  = document.getElementById('cursor-white');
+      var elPC = document.getElementById('cursor-photo');
+
+      var cover = document.querySelector('.alt-cover');
+      if (cover && elPC) {
+        cover.addEventListener('mouseenter', function () {
+          if (elD)  elD.style.opacity  = '0';
+          if (elS)  elS.style.opacity  = '0';
+          if (elW)  elW.style.opacity  = '0';
+          elPC.classList.add('active');
+        });
+        cover.addEventListener('mouseleave', function () {
+          if (elD)  elD.style.opacity  = '';
+          if (elS)  elS.style.opacity  = '';
+          elPC.classList.remove('active');
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
