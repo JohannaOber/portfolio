@@ -373,13 +373,18 @@
   .alt-scroll-right {
     display: flex;
     flex-direction: column;
-    gap: 0;
+    gap: 2.5rem;
     padding: 0 0 64px;
     width: 100%;
   }
 
   .alt-scroll-item {
     width: 100%;
+  }
+
+  /* Mobile only: hide the first image of the picture strecke */
+  .alt-scroll-right > .alt-scroll-item:first-child {
+    display: none;
   }
 
 
