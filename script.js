@@ -225,6 +225,30 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   }
 })();
 
+// Project page back button: smart return to the homepage
+(function () {
+  const back = document.querySelector('.nav-back');
+  if (!back) return;
+  back.addEventListener('click', e => {
+    e.preventDefault();
+    let cameFromIndex = false;
+    try {
+      const ref = new URL(document.referrer, location.href);
+      if (ref.origin === location.origin) {
+        const page = ref.pathname.split('/').pop();
+        if (page === '' || page === 'index.html') cameFromIndex = true;
+      }
+    } catch (err) {}
+    if (cameFromIndex && history.length > 1) {
+      // Returns to the homepage at the exact scroll position we left from
+      history.back();
+    } else {
+      // Came from another project (or direct entry): land on the projects section
+      location.href = 'index.html#projects';
+    }
+  });
+})();
+
 // Language toggle
 const langBtns = document.querySelectorAll('.lang-btn');
 const translatables = document.querySelectorAll('[data-en]');

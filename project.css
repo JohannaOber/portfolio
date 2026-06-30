@@ -344,6 +344,12 @@
 
 /* ── RESPONSIVE ────────────────────────────────────── */
 @media (max-width: 860px) {
+  /* Hide the top tab nav (About/Projects/Resume) on mobile only;
+     return to the main page happens via the back button */
+  .alt-page .nav-links {
+    display: none;
+  }
+
   .alt-task-strip {
     padding: 1rem 32px 1.75rem;
   }
@@ -384,6 +390,12 @@
 
   /* Mobile only: hide the first image of the picture strecke */
   .alt-scroll-right > .alt-scroll-item:first-child {
+    display: none;
+  }
+
+  /* Mobile only: hide the extra image that shares a text panel and has none of its own,
+     so two images don't stack back-to-back without text between them */
+  .alt-scroll-right > .alt-scroll-item[data-index="1b"] {
     display: none;
   }
 

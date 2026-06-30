@@ -410,7 +410,7 @@ h2 {
 
 .badge {
   display: inline-block;
-  border: 0.5px solid var(--text);
+  border: 1px solid var(--text);
   color: var(--text);
   font-size: 0.82rem;
   font-weight: 400;
@@ -476,7 +476,7 @@ h2 {
 
 .badge-outline {
   display: inline-block;
-  border: 0.5px solid var(--text);
+  border: 1px solid var(--text);
   color: var(--text);
   font-size: 0.82rem;
   font-weight: 400;
@@ -556,7 +556,7 @@ h2 {
 .pe-r1 {
   display: flex;
   align-items: flex-start;
-  gap: 3rem;
+  gap: 1.5rem;
 }
 
 .pe-r1 .pe-item {
@@ -977,7 +977,7 @@ h2 {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  border: 0.5px solid var(--text);
+  border: 1px solid var(--text);
   border-radius: 999px;
   padding: 0.45rem 1.1rem;
   font-size: 0.82rem;
