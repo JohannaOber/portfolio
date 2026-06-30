@@ -206,6 +206,7 @@ nav {
   align-items: center;
   gap: 0.1rem;
   justify-self: end;
+  grid-column: 3;
 }
 
 .lang-btn {
@@ -556,7 +557,7 @@ h2 {
 .pe-r1 {
   display: flex;
   align-items: flex-start;
-  gap: 1.5rem;
+  gap: 3rem;
 }
 
 .pe-r1 .pe-item {
@@ -657,6 +658,7 @@ h2 {
   .pe-r1 {
     flex-direction: column;
     align-items: flex-start;
+    gap: 0;
   }
   .pe-r1 .pe-item { width: 100%; }
   .pe-r1 > .pe-meta { margin-top: 1rem; }
