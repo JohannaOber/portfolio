@@ -105,8 +105,8 @@ if (window.matchMedia('(pointer: fine)').matches) {
     });
   });
 
-  // pe-link zones: show nav cursor (→), hide blend-mode layers
-  Array.from(document.querySelectorAll('.pe-link')).forEach(link => {
+  // pe-link zones + See More project cards: show nav cursor (→), hide blend-mode layers
+  Array.from(document.querySelectorAll('.pe-link, .project-card a:not(.project-link)')).forEach(link => {
     link.addEventListener('mouseenter', () => {
       onNavZone = true;
       diff.style.opacity  = '0';
@@ -398,3 +398,119 @@ window.addEventListener('scroll', () => {
   checkBreakpoint();
 })();
 
+// Momentum smooth scrolling for the whole page.
+// Eases the real scroll position (no transform wrapper), so position: sticky,
+// the custom cursor and the anchor smooth-scroll keep working untouched.
+// Desktop pointer devices only; mobile keeps native scrolling.
+(function () {
+  if (!window.matchMedia('(pointer: fine)').matches) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var EASE    = 0.1;                  // lerp per frame: lower = smoother / longer glide
+  var target  = window.scrollY;
+  var current = window.scrollY;
+  var running = false;
+
+  function maxScroll() {
+    return Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+  }
+  function clamp(v) { return Math.max(0, Math.min(v, maxScroll())); }
+
+  function loop() {
+    current += (target - current) * EASE;
+    if (Math.abs(target - current) < 0.4) {   // snap & stop when close enough
+      current = target;
+      window.scrollTo(0, current);
+      running = false;
+      return;
+    }
+    window.scrollTo(0, current);
+    requestAnimationFrame(loop);
+  }
+  function start() { if (!running) { running = true; requestAnimationFrame(loop); } }
+  function stop()  { running = false; }
+
+  window.addEventListener('wheel', function (e) {
+    if (e.ctrlKey) return;            // let pinch-to-zoom through
+    e.preventDefault();
+    // Resync to the live position after any native / JS-driven scroll
+    if (!running) { current = target = window.scrollY; }
+    var unit = e.deltaMode === 1 ? 16 : (e.deltaMode === 2 ? window.innerHeight : 1);
+    target = clamp(target + e.deltaY * unit);
+    start();
+  }, { passive: false });
+
+  // Yield to other scroll sources (anchor clicks, cover click, keyboard);
+  // the next wheel event resyncs from the live scroll position.
+  window.addEventListener('mousedown', stop);
+  window.addEventListener('keydown',   stop);
+  window.addEventListener('resize', function () { target = clamp(target); });
+})();
+
+
+// Mobile burger menu: full-page sheet sliding in from the top
+(function () {
+  var nav = document.querySelector('nav');
+  var navLinks = document.querySelector('.nav-links');
+  if (!nav || !navLinks) return;
+
+  var burger = document.createElement('button');
+  burger.className = 'nav-burger';
+  burger.setAttribute('aria-label', 'Menu');
+  burger.setAttribute('aria-expanded', 'false');
+  burger.innerHTML = '<span></span><span></span>';
+  nav.appendChild(burger);
+
+  var sheet = document.createElement('div');
+  sheet.className = 'nav-sheet';
+  var ul = document.createElement('ul');
+  Array.prototype.forEach.call(navLinks.querySelectorAll('a'), function (a) {
+    var li = document.createElement('li');
+    li.appendChild(a.cloneNode(true));
+    ul.appendChild(li);
+  });
+  sheet.appendChild(ul);
+  document.body.appendChild(sheet);
+
+  function setLang() {
+    // keep cloned links in the current language
+    var lang = document.documentElement.lang === 'de' ? 'de' : 'en';
+    ul.querySelectorAll('a[data-' + lang + ']').forEach(function (a) {
+      a.textContent = a.dataset[lang];
+    });
+  }
+
+  function open()  { sheet.classList.add('open');    burger.classList.add('open');    document.body.classList.add('nav-sheet-open');    burger.setAttribute('aria-expanded', 'true'); }
+  function close() { sheet.classList.remove('open'); burger.classList.remove('open'); document.body.classList.remove('nav-sheet-open'); burger.setAttribute('aria-expanded', 'false'); }
+
+  burger.addEventListener('click', function () {
+    if (sheet.classList.contains('open')) { close(); }
+    else { setLang(); open(); }
+  });
+
+  // Close on background tap (not on a link)
+  sheet.addEventListener('click', function (e) {
+    if (e.target === sheet || e.target === ul) close();
+  });
+
+  // Link clicks: close, smooth-scroll for same-page anchors
+  ul.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      var href = link.getAttribute('href');
+      close();
+      if (href && href.charAt(0) === '#') {
+        e.preventDefault();
+        var id = href.slice(1);
+        var target = id ? document.getElementById(id) : document.documentElement;
+        if (target) {
+          var endY = id ? target.getBoundingClientRect().top + window.scrollY - 60 : 0;
+          window.scrollTo({ top: endY, behavior: 'smooth' });
+        }
+      }
+    });
+  });
+
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 860) close();
+  });
+})();

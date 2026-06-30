@@ -1116,3 +1116,69 @@ footer {
   .footer-copy { padding: 1rem 1.25rem; }
   .skills-c-panel { margin-left: 0; }
 }
+
+/* ── MOBILE NAV: BURGER + FULL-PAGE TOP SHEET ─────────── */
+.nav-burger { display: none; }
+.nav-sheet  { display: none; }
+
+@media (max-width: 860px) {
+  nav { display: flex; align-items: center; }
+  nav .nav-links { display: none; }
+  .lang-toggle { margin-left: auto; }
+
+  .nav-burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 7px;
+    width: 28px;
+    height: 28px;
+    margin-left: 1.25rem;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .nav-burger span {
+    display: block;
+    width: 26px;
+    height: 1.5px;
+    background: var(--text);
+    transition: transform 0.3s ease;
+  }
+  .nav-burger.open span:first-child { transform: translateY(4.25px) rotate(45deg); }
+  .nav-burger.open span:last-child  { transform: translateY(-4.25px) rotate(-45deg); }
+
+  /* Full-page sheet sliding in from the top (sits under the 60px nav bar) */
+  .nav-sheet {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    background: var(--white);
+    transform: translateY(-100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .nav-sheet.open { transform: translateY(0); }
+
+  .nav-sheet ul {
+    list-style: none;
+    margin: 0;
+    padding: calc(60px + 2.5rem) 1.5rem 2rem;
+    text-align: center;
+  }
+  .nav-sheet li + li { border-top: 1px solid var(--black); }
+  .nav-sheet a {
+    display: block;
+    padding: 1.5rem 0;
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  body.nav-sheet-open { overflow: hidden; }
+}
