@@ -13,7 +13,7 @@
   --muted:    #808080;
 }
 
-html { scroll-behavior: auto; }
+html { scroll-behavior: auto; overflow-x: clip; }
 
 /* ── CUSTOM CURSOR ────────────────────────────────── */
 @media (pointer: fine) {
@@ -1091,13 +1091,14 @@ footer {
   .nav-links { gap: 1.5rem; }
   section { padding: 60px 1.25rem; }
   #intro { padding: 0; }
-  .intro-upper { padding: 8vh 1.25rem 0; min-height: auto; }
+  .intro-upper { padding: calc(60px + 6vh) 1.25rem 0; min-height: auto; }
   .intro-lower { padding: 2rem 1.25rem; }
   .slogan-wrap { margin-bottom: 4vh; }
   .intro-id { margin-bottom: 1rem; }
-  .intro-photo { position: static; width: 100%; height: 55vw; margin-top: 3vh; }
+  .intro-photo { position: static; width: 100%; height: 55vw; margin-top: 2.5rem; }
   .projects-grid { grid-template-columns: 1fr; row-gap: 3rem; }
-  .resume-item { grid-template-columns: 1fr; gap: 0.2rem; }
+  .resume-item,
+  #panel-vol .resume-item { grid-template-columns: 1fr; gap: 0.2rem; }
   .resume-company-col { padding-top: 0; }
   #resume > .resume-section { margin-top: 3rem; }
   .profile-split { grid-template-columns: 1fr; padding-left: 0; }
