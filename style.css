@@ -1101,7 +1101,7 @@ footer {
   #panel-vol .resume-item { grid-template-columns: 1fr; gap: 0.2rem; }
   .resume-company-col { padding-top: 0; }
   #resume > .resume-section { margin-top: 3rem; }
-  .profile-split { grid-template-columns: 1fr; padding-left: 0; }
+  .profile-split { grid-template-columns: 1fr; padding-left: 0; row-gap: 2.5rem; }
   .profile-ph1 { width: 100%; }
   .profile-text { padding: 2rem 1.5rem 0; }
   .profile-bio { max-width: none; padding: 0; }
