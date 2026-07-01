@@ -350,6 +350,11 @@
     display: none;
   }
 
+  /* Elements hidden only on mobile (e.g. trailing strecke image) */
+  .hide-mobile {
+    display: none;
+  }
+
   .alt-task-strip {
     padding: 1rem 32px 1.75rem;
   }
