@@ -342,6 +342,81 @@
   }
 }
 
+/* ── SCROLL-DRIVEN CONTENT ANIMATION (desktop, JS-enabled) ──────────────
+   Both columns pin; images and text swap in place as you scroll. The wrapper
+   is stretched tall (one step ≈ 75vh) so scrolling advances the active step.
+   Gated by .alt-anim / .alt-anim-deck, which JS adds only on desktop, so the
+   layout degrades to the normal flow without JS or on mobile. */
+@media (min-width: 861px) {
+  .alt-sticky-wrapper.alt-anim {
+    height: calc(var(--alt-steps, 6) * 75vh);
+    align-items: start;
+  }
+
+  /* Center the pinned text block vertically in the viewport */
+  .alt-sticky-wrapper.alt-anim .alt-sticky-left {
+    align-items: center;
+  }
+
+  /* Right column: a pinned deck of stacked, crossfading images */
+  .alt-scroll-right.alt-anim-deck {
+    position: sticky;
+    top: 60px;
+    height: calc(100vh - 60px);
+    display: block;
+    padding: 0;
+    gap: 0;
+  }
+
+  .alt-scroll-right.alt-anim-deck .alt-scroll-item {
+    position: absolute;
+    top: 64px;
+    right: 0;
+    left: 0;
+    width: 100%;
+    display: block;
+    opacity: 0;
+    transform: scale(1.03);
+    transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+    will-change: opacity, transform;
+  }
+
+  /* Fill the full width of the image column (no letterboxing); natural height */
+  .alt-scroll-right.alt-anim-deck .alt-scroll-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .alt-scroll-right.alt-anim-deck .alt-scroll-item.active {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+  }
+
+  /* Left column: text swaps instantly at each step. No motion on the text,
+     so the change reads as a clean switch and doesn't pull focus. */
+  .alt-sticky-wrapper.alt-anim .alt-panels-wrapper .alt-text-panel {
+    opacity: 0;
+    transition: none;
+    pointer-events: none;
+  }
+
+  .alt-sticky-wrapper.alt-anim .alt-panels-wrapper .alt-text-panel.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .alt-scroll-right.alt-anim-deck .alt-scroll-item {
+    transition-duration: 0.001ms !important;
+    transform: none !important;
+  }
+}
+
 /* ── RESPONSIVE ────────────────────────────────────── */
 @media (max-width: 860px) {
   /* Hide the top tab nav (About/Projects/Resume) on mobile only;

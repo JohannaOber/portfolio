@@ -315,72 +315,109 @@ window.addEventListener('scroll', () => {
   backToTop.classList.toggle('visible', window.scrollY > 200);
 }, { passive: true });
 
-// Alt-layout sticky scroll panel switching
+// Alt-layout scroll animation: a pinned stage where, on desktop, both the
+// images and the text swap in place as you scroll (instead of the images
+// scrolling past a sticky text block). The wrapper is stretched tall to give
+// scroll room; scroll progress across it drives the active step. Images
+// crossfade; text rotates in with a gentle, subtle motion.
 (function () {
+  var wrapper     = document.querySelector('.alt-sticky-wrapper');
   var panels      = document.querySelectorAll('.alt-text-panel');
   var scrollItems = document.querySelectorAll('.alt-scroll-item');
-  if (!panels.length || !scrollItems.length) return;
+  if (!wrapper || !panels.length || !scrollItems.length) return;
 
   var panelsWrapper = document.querySelector('.alt-panels-wrapper');
+  var scrollRight   = document.querySelector('.alt-scroll-right');
+  var NAV_HEIGHT    = 60;
   var isDesktop     = false;
+  var currentIndex  = -1;
 
-  // Move panels into sticky container (desktop)
+  // Which text panel belongs to a given image (images can share a panel)
+  function panelIndexFor(itemIndex) {
+    if (itemIndex < 0) return -1;
+    var item = scrollItems[itemIndex];
+    var idx = (item && item.dataset.panelIndex !== undefined)
+      ? parseInt(item.dataset.panelIndex, 10)
+      : itemIndex;
+    return Math.min(idx, panels.length - 1);
+  }
+
+  // Desktop: pin both columns, turn the image column into a stacked deck and
+  // give the wrapper enough height for one viewport-ish of scroll per step.
   function activateDesktop() {
-    if (!panelsWrapper) return;
-    panels.forEach(function (panel) {
-      panel.classList.remove('active');
-      panelsWrapper.appendChild(panel);
-    });
-    if (panels[0]) panels[0].classList.add('active');
-    cacheItemTops();
+    if (panelsWrapper) {
+      panels.forEach(function (panel) {
+        panel.classList.remove('active', 'leaving');
+        panelsWrapper.appendChild(panel);
+      });
+    }
+    wrapper.style.setProperty('--alt-steps', scrollItems.length);
+    wrapper.classList.add('alt-anim');
+    if (scrollRight) scrollRight.classList.add('alt-anim-deck');
+    currentIndex = -1;
     onScroll();
   }
 
-  // Move panels back between images (mobile)
+  // Mobile: revert to the inline flow (panels sit between the images).
   function activateMobile() {
+    wrapper.classList.remove('alt-anim');
+    wrapper.style.removeProperty('--alt-steps');
+    if (scrollRight) scrollRight.classList.remove('alt-anim-deck');
     panels.forEach(function (panel) {
+      panel.classList.remove('active', 'leaving');
       var idx  = panel.dataset.panel;
       var item = document.querySelector('.alt-scroll-item[data-index="' + idx + '"]');
       if (item) item.parentNode.insertBefore(panel, item.nextSibling);
     });
-  }
-
-  var NAV_HEIGHT   = 60;
-  var currentIndex = -1;
-  var itemTops     = [];
-
-  function cacheItemTops() {
-    itemTops = Array.from(scrollItems).map(function (item) {
-      var top = 0, el = item;
-      while (el) { top += el.offsetTop; el = el.offsetParent; }
-      return top;
-    });
+    scrollItems.forEach(function (item) { item.classList.remove('active'); });
   }
 
   function setActive(index) {
     if (index === currentIndex) return;
+    var prevPanel = panelIndexFor(currentIndex);
+    var nextPanel = panelIndexFor(index);
     currentIndex = index;
+
+    // Images: crossfade to the active one.
+    for (var i = 0; i < scrollItems.length; i++) {
+      scrollItems[i].classList.toggle('active', i === index);
+    }
+
+    // Text: activate the matching panel, and let the one we just left drift
+    // out gently ("dezent rausfliegen") rather than snap away.
     panels.forEach(function (panel, i) {
-      panel.classList.toggle('active', i === index);
+      if (i === nextPanel) {
+        panel.classList.remove('leaving');
+        panel.classList.add('active');
+      } else if (i === prevPanel && prevPanel !== nextPanel) {
+        panel.classList.remove('active');
+        panel.classList.add('leaving');
+      } else {
+        panel.classList.remove('active', 'leaving');
+      }
     });
   }
 
+  // Map scroll progress across the pinned wrapper to a step index.
   function onScroll() {
-    var trigger = window.scrollY + NAV_HEIGHT + 2;
-    var active  = 0;
-    itemTops.forEach(function (top, i) { if (top <= trigger) active = i; });
-    var item = scrollItems[active];
-    var panelIdx = (item && item.dataset.panelIndex !== undefined)
-      ? parseInt(item.dataset.panelIndex, 10)
-      : active;
-    setActive(Math.min(panelIdx, panels.length - 1));
+    if (!isDesktop) return;
+    var stageH = window.innerHeight - NAV_HEIGHT;
+    var dist   = wrapper.offsetHeight - stageH;              // pinned scroll distance
+    if (dist < 1) dist = 1;
+    var rect     = wrapper.getBoundingClientRect();
+    var scrolled = Math.min(Math.max(NAV_HEIGHT - rect.top, 0), dist);
+    var p        = scrolled / dist;                          // 0 .. 1
+    var idx      = Math.floor(p * scrollItems.length);
+    if (idx > scrollItems.length - 1) idx = scrollItems.length - 1;
+    if (idx < 0) idx = 0;
+    setActive(idx);
   }
 
   // Respond to viewport width crossing the breakpoint
   function checkBreakpoint() {
     var nowDesktop = window.innerWidth > 860;
     if (nowDesktop === isDesktop) {
-      if (isDesktop) cacheItemTops(); // recalc on resize within desktop
+      if (isDesktop) onScroll(); // re-evaluate on resize within desktop
       return;
     }
     isDesktop = nowDesktop;
@@ -437,6 +474,13 @@ window.addEventListener('scroll', () => {
     if (!running) { current = target = window.scrollY; }
     var unit = e.deltaMode === 1 ? 16 : (e.deltaMode === 2 ? window.innerHeight : 1);
     target = clamp(target + e.deltaY * unit);
+    // Cap how far the glide target may lead the current position so one flick
+    // never rockets past several sections. This keeps the pace calm and
+    // consistent whether the images are still loading (short page throttles
+    // you naturally) or already cached (full height would otherwise glide far).
+    var maxGap = window.innerHeight;
+    if (target - current >  maxGap) target = current + maxGap;
+    if (target - current < -maxGap) target = current - maxGap;
     start();
   }, { passive: false });
 

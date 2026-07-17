@@ -381,9 +381,9 @@ h2 {
   position: absolute;
   z-index: 1;
   left: 30%;
-  top: 15em;
+  top: calc(15em + 24px);
   right: 0;
-  bottom: -64px;
+  bottom: -88px;
 }
 
 .intro-photo img {
@@ -555,7 +555,7 @@ h2 {
   line-height: 1.2;
 }
 
-/* Row 1: BIRD — ~50% left, meta right top-aligned */
+/* Row 1: large slot — ~50% left, meta right top-aligned */
 .pe-r1 {
   display: flex;
   align-items: flex-start;
@@ -572,7 +572,7 @@ h2 {
   margin-top: 0;
 }
 
-/* Row 2: Language Coach — ~75% right-aligned, meta below */
+/* Row 2: ~75% right-aligned, meta below */
 .pe-r2 {
   display: flex;
   justify-content: flex-end;
@@ -591,7 +591,7 @@ h2 {
   object-fit: cover;
 }
 
-/* Row 3: AKKAdemy + HMI — ~25% each, left-aligned, same height */
+/* Row 3: pair — ~25% each, left-aligned, same height */
 .pe-r3 {
   display: flex;
   gap: 1.5rem;
@@ -634,7 +634,7 @@ h2 {
   object-fit: cover;
 }
 
-/* Row 5: Little Food Fighters — right-aligned (LOVEsick hidden) */
+/* Row 5: ~50% right-aligned (second item hidden) */
 .pe-r5 {
   display: flex;
   justify-content: flex-end;
@@ -644,7 +644,7 @@ h2 {
 .pe-r5 .pe-item:first-child { width: 50%; }
 .pe-r5 .pe-item:last-child  { width: 24%; }
 
-/* Row 6: Horror Mode — ~75% right-aligned, meta below */
+/* Row 6: ~75% right-aligned, meta below */
 .pe-r6 {
   display: flex;
   justify-content: flex-end;
