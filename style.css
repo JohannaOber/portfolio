@@ -1115,6 +1115,26 @@ footer {
   .contact-card { padding: 2rem 1.25rem; flex-direction: column; align-items: flex-start; gap: 1.5rem; }
   .footer-copy { padding: 1rem 1.25rem; }
   .skills-c-panel { margin-left: 0; }
+
+  /* Tighten the space under the Projects headline before the first project */
+  #projects > h2 { margin-bottom: 2rem; }
+
+  /* Reduce the gap between Resume and the "And after work?" section */
+  #profile { padding-top: 2rem; }
+
+  /* Render "And after work?" like the section headings (Projects/Resume):
+     same font, colour and size, with a down arrow to the left of the text */
+  .profile-bio-label {
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-weight: 400;
+    letter-spacing: -0.025em;
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+  .profile-bio-label::before {
+    content: '↓';
+    margin-right: 0.5em;
+  }
 }
 
 /* ── MOBILE NAV: BURGER + FULL-PAGE TOP SHEET ─────────── */
