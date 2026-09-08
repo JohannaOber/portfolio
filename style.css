@@ -293,6 +293,10 @@ h2 {
   margin-bottom: 6rem;
 }
 
+#projects > h2 {
+  margin-bottom: 4rem;
+}
+
 #projects > h2::after,
 .resume-section > h3::after {
   content: '↓';
@@ -546,6 +550,13 @@ h2 {
 
 .pe-meta .badges {
   margin-bottom: 0.5rem;
+}
+
+/* ELLA (row 1): stack the badges vertically, second below the first */
+.pe-r1 .pe-meta .badges {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
 }
 
 .pe-title {
@@ -901,9 +912,19 @@ h2 {
 
 .profile-bio-label {
   padding: 0;
-  font-size: 1rem;
-  color: var(--muted);
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  color: var(--text);
   margin-bottom: 0.5rem;
+}
+
+.profile-bio-label::before {
+  content: '↓';
+  display: inline;
+  color: var(--text);
+  font-weight: 400;
+  margin-right: 0.5em;
 }
 
 .profile-ph2 {
@@ -1122,18 +1143,10 @@ footer {
   /* Reduce the gap between Resume and the "And after work?" section */
   #profile { padding-top: 2rem; }
 
-  /* Render "And after work?" like the section headings (Projects/Resume):
-     same font, colour and size, with a down arrow to the left of the text */
+  /* "And after work?" is styled like the section headings globally;
+     just tighten the spacing below it on mobile */
   .profile-bio-label {
-    font-size: clamp(1.4rem, 2.5vw, 2rem);
-    font-weight: 400;
-    letter-spacing: -0.025em;
-    color: var(--text);
     margin-bottom: 1rem;
-  }
-  .profile-bio-label::before {
-    content: '↓';
-    margin-right: 0.5em;
   }
 }
 
