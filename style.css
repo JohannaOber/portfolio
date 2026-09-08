@@ -1118,13 +1118,13 @@ footer {
   #intro { padding: 0; }
   .intro-upper { padding: calc(60px + 6vh) 1.25rem 0; min-height: auto; }
   .intro-lower { padding: 2rem 1.25rem; }
-  .slogan-wrap { margin-bottom: 7vh; }
+  .slogan-wrap { margin-bottom: 10vh; }
   .intro-id { margin-bottom: 1rem; }
   /* Full-bleed cover image: 100vw pulled out past the .intro-upper padding */
   .intro-photo {
     position: static;
     width: 100vw;
-    height: 55vw;
+    height: 72vw;
     margin-top: 1rem;
     margin-left: calc(-50vw + 50%);
     margin-right: calc(-50vw + 50%);
@@ -1144,6 +1144,9 @@ footer {
   .contact-card { padding: 2rem 1.25rem; flex-direction: column; align-items: flex-start; gap: 1.5rem; }
   .footer-copy { padding: 1rem 1.25rem; }
   .skills-c-panel { margin-left: 0; }
+
+  /* Smaller gap between the hero image and the Projects section (144px on desktop) */
+  #projects { margin-top: 3rem; }
 
   /* Tighten the space under the Projects headline before the first project */
   #projects > h2 { margin-bottom: 2rem; }
