@@ -293,6 +293,10 @@ h2 {
   margin-bottom: 6rem;
 }
 
+#projects > h2 {
+  margin-bottom: 4rem;
+}
+
 #projects > h2::after,
 .resume-section > h3::after {
   content: '↓';
@@ -546,6 +550,13 @@ h2 {
 
 .pe-meta .badges {
   margin-bottom: 0.5rem;
+}
+
+/* ELLA (row 1): stack the badges vertically, second below the first */
+.pe-r1 .pe-meta .badges {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
 }
 
 .pe-title {
