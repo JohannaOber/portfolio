@@ -470,14 +470,10 @@
     width: 100%;
   }
 
-  /* Mobile only: hide the first image of the picture strecke */
-  .alt-scroll-right > .alt-scroll-item:first-child {
+  /* Mobile only: hide the first strecke item only when it is still a blank
+     placeholder. Projects whose first item is a real image keep it visible. */
+  .alt-scroll-right > .alt-scroll-item.is-placeholder:first-child {
     display: none;
-  }
-
-  /* ELLA only: keep the first strecke image visible on mobile */
-  .ella-page .alt-scroll-right > .alt-scroll-item:first-child {
-    display: block;
   }
 
   /* Mobile only: hide the extra image that shares a text panel and has none of its own,
