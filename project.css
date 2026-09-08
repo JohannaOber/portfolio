@@ -1,54 +1,56 @@
 /* ── PROJECT SUBPAGE — ALT LAYOUT ─────────────────── */
 
-/* ALT INTRO */
+/* ALT INTRO — page title, then the year / badges line.
+   Title matches the start page hero (.hero-display) in size, weight and
+   top position (.intro-upper uses a 12vh top padding). */
 .alt-intro {
-  padding: 160px 32px 32px;
-  margin-top: 60px;
+  padding: 12vh 32px 0;
 }
 
 .alt-intro-title {
-  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  font-size: clamp(3rem, 6.5vw, 7.5rem);
   font-weight: 400;
   letter-spacing: -0.03em;
-  line-height: 1.1;
+  line-height: 1.15;
   color: var(--text);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-.alt-intro-badges {
-  display: flex;
-  gap: 0.4rem;
-  margin-bottom: 0.9rem;
+/* Year · category · category, directly under the title */
+.alt-intro-tags {
+  margin: 0;
+  font-size: clamp(0.85rem, 1.3vw, 1rem);
+  color: var(--muted);
+  letter-spacing: 0.01em;
+  line-height: 1.6;
 }
 
-.alt-intro-columns {
-  display: grid;
-  grid-template-columns: 1fr 24vw;
-  gap: 4rem;
-  align-items: start;
+.alt-intro-tags > span:not(:first-child)::before {
+  content: "·";
+  margin: 0 0.5em;
+  color: var(--muted);
 }
 
-.alt-intro-left {
-  display: flex;
-  flex-direction: column;
+/* PROJECT META — Client / My Tasks / About, in a column under the cover image */
+.alt-meta {
+  padding: 0 32px;
+  margin-top: 80px;
+  margin-bottom: 100px;   /* breathing room before the image strip starts */
 }
 
-.alt-intro-desc {
-  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
-  color: var(--text);
-  line-height: 1.7;
-  max-width: 600px;
+.alt-meta .alt-intro-meta {
+  margin-left: 57%;
+  max-width: 33vw;
 }
 
 .alt-intro-meta {
   display: flex;
   flex-direction: column;
   gap: 2.75rem;
-  align-self: start;
 }
 
 .alt-intro-meta .section-label {
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.4rem;
   display: block;
   color: var(--muted);
   text-transform: none;
@@ -69,22 +71,14 @@
   margin-top: 0.1rem;
 }
 
-/* Header tag line: year · category · category (left, above title) */
-.alt-intro-tags {
-  margin-bottom: 0.9rem;
-  font-size: clamp(0.85rem, 1.3vw, 1rem);
-  color: var(--muted);
-  letter-spacing: 0.01em;
-  line-height: 1.6;
+/* About paragraph: the descriptive text that used to sit under the headline */
+.alt-intro-meta .alt-intro-desc {
+  font-size: clamp(0.9rem, 1.4vw, 1.05rem);
+  color: var(--text);
+  line-height: 1.7;
 }
 
-.alt-intro-tags > span:not(:first-child)::before {
-  content: "·";
-  margin: 0 0.5em;
-  color: var(--muted);
-}
-
-/* Tasks line: task · task · task (right meta column) */
+/* Tasks line: task · task · task (My Tasks block) */
 .alt-meta-tasks > span {
   white-space: nowrap;
 }
@@ -101,7 +95,7 @@
   width: 100%;
   height: calc(70vh + 64px);
   overflow: hidden;
-  margin: 64px 0 0;
+  margin: 104px 0 0;
 }
 
 /* TASK STRIP */
@@ -142,7 +136,6 @@
 .alt-panels-wrapper {
   position: relative;
   width: 100%;
-  min-height: 380px;
 }
 
 /* Mobile-first: panels sit inline between images */
@@ -304,9 +297,23 @@
   object-fit: cover;
 }
 
+/* DISCLAIMER MARQUEE — runs before "See More", same type/size/speed as the
+   homepage band (.marquee-band / .marquee-track from style.css). Duration is
+   set by script.js so the pixels-per-second pace matches regardless of the
+   sentence length. */
+.marquee-band--disclaimer {
+  margin-top: clamp(4rem, 8vw, 8rem);
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+/* A touch more air around the // separator than the homepage dot */
+.marquee-band--disclaimer .marquee-dot {
+  padding: 0 3rem !important;
+}
+
 /* MORE PROJECTS */
 .project-more {
-  padding: 24px 32px 100px;
+  padding: 24px 32px 72px;
 }
 
 .project-more-heading {
@@ -342,78 +349,49 @@
   }
 }
 
-/* ── SCROLL-DRIVEN CONTENT ANIMATION (desktop, JS-enabled) ──────────────
-   Both columns pin; images and text swap in place as you scroll. The wrapper
-   is stretched tall (one step ≈ 75vh) so scrolling advances the active step.
-   Gated by .alt-anim / .alt-anim-deck, which JS adds only on desktop, so the
-   layout degrades to the normal flow without JS or on mobile. */
+/* ── SCROLL-DRIVEN CAPTION SWAP (desktop, JS-enabled) ───────────────────
+   The left caption column is pinned; the right image column scrolls past it
+   in normal flow. JS swaps the visible caption with a hard cut when the next
+   image's top edge reaches the caption's top edge. Gated by .alt-anim, added
+   by JS on desktop only, so it degrades to normal flow without JS / on mobile. */
 @media (min-width: 861px) {
-  .alt-sticky-wrapper.alt-anim {
-    height: calc(var(--alt-steps, 6) * 75vh);
-    align-items: start;
-  }
-
-  /* Center the pinned text block vertically in the viewport */
+  /* Pinned caption column: only as tall as its content, stuck below the nav */
   .alt-sticky-wrapper.alt-anim .alt-sticky-left {
-    align-items: center;
-  }
-
-  /* Right column: a pinned deck of stacked, crossfading images */
-  .alt-scroll-right.alt-anim-deck {
-    position: sticky;
-    top: 60px;
-    height: calc(100vh - 60px);
-    display: block;
-    padding: 0;
-    gap: 0;
-  }
-
-  .alt-scroll-right.alt-anim-deck .alt-scroll-item {
-    position: absolute;
-    top: 64px;
-    right: 0;
-    left: 0;
-    width: 100%;
-    display: block;
-    opacity: 0;
-    transform: scale(1.03);
-    transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
-                transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-    pointer-events: none;
-    will-change: opacity, transform;
-  }
-
-  /* Fill the full width of the image column (no letterboxing); natural height */
-  .alt-scroll-right.alt-anim-deck .alt-scroll-item img {
-    width: 100%;
     height: auto;
-    display: block;
+    overflow: visible;
+    align-items: flex-start;
   }
 
-  .alt-scroll-right.alt-anim-deck .alt-scroll-item.active {
-    opacity: 1;
-    transform: scale(1);
-    pointer-events: auto;
+  /* The gap between images sets how long each caption rests before the next
+     image's top reaches the line. padding-bottom (the trailing space that keeps
+     the LAST caption pinned) is set by script.js — fitTrailing() — to the last
+     caption's height, so it un-pins exactly as it clears the last image's
+     bottom. The value here is only a fallback before that runs. */
+  .alt-sticky-wrapper.alt-anim .alt-scroll-right {
+    gap: 44vh;
+    padding-bottom: 30vh;
   }
 
-  /* Left column: text swaps instantly at each step. No motion on the text,
-     so the change reads as a clean switch and doesn't pull focus. */
+  /* Same clear gap after the (released) strip whether a disclaimer band or the
+     See More section comes next. */
+  .alt-sticky-wrapper.alt-anim + .marquee-band--disclaimer,
+  .alt-sticky-wrapper.alt-anim + .project-more {
+    margin-top: calc(8vh + 90px);
+  }
+
+  /* Captions: a plain show/hide stack in normal flow — instant switch */
   .alt-sticky-wrapper.alt-anim .alt-panels-wrapper .alt-text-panel {
-    opacity: 0;
+    position: static;
+    display: none;
+    opacity: 1;
     transition: none;
-    pointer-events: none;
+    pointer-events: auto;
+    padding: 0;
+    width: auto;
   }
 
   .alt-sticky-wrapper.alt-anim .alt-panels-wrapper .alt-text-panel.active {
-    opacity: 1;
-    pointer-events: auto;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .alt-scroll-right.alt-anim-deck .alt-scroll-item {
-    transition-duration: 0.001ms !important;
-    transform: none !important;
+    display: block;
   }
 }
 
@@ -435,11 +413,24 @@
   }
 
   .alt-intro {
-    padding: 60px 32px 48px;
+    padding: calc(60px + 6vh) 32px 0;
   }
 
-  .alt-intro-columns {
-    grid-template-columns: 1fr;
+  .alt-cover {
+    margin-top: 48px;
+  }
+
+  .alt-meta {
+    margin-top: 48px;
+    margin-bottom: 64px;
+  }
+
+  .alt-meta .alt-intro-meta {
+    margin-left: 0;
+    max-width: none;
+  }
+
+  .alt-intro-meta {
     gap: 2rem;
   }
 
@@ -510,7 +501,11 @@
   }
 
   .alt-intro {
-    padding: 48px 20px 32px;
+    padding: calc(60px + 6vh) 20px 0;
+  }
+
+  .alt-meta {
+    padding: 0 20px;
   }
 
   .alt-text-panel {
