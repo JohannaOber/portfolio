@@ -418,6 +418,11 @@
 
   .alt-cover {
     margin-top: 48px;
+    /* vh grows as the mobile URL bar retracts on scroll, which makes the
+       object-fit: cover image appear to zoom. svh is fixed to the smallest
+       viewport, so the cover height stays put while scrolling. */
+    height: calc(70vh + 64px);
+    height: calc(70svh + 64px);
   }
 
   .alt-meta {
@@ -525,7 +530,8 @@
     grid-template-columns: 1fr;
   }
 
+  /* Keep only two suggested projects on mobile */
   .project-more-grid .project-card:last-child {
-    display: block;
+    display: none;
   }
 }
