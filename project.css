@@ -219,6 +219,11 @@
   height: auto;
 }
 
+/* Lift a few slightly underexposed case-study photos */
+.img-brighten {
+  filter: brightness(1.1);
+}
+
 /* SOLUTION / IMPACT TEXT SECTIONS */
 .alt-text-section {
   display: grid;
