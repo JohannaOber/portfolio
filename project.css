@@ -219,6 +219,13 @@
   height: auto;
 }
 
+/* Give each image-strip item its own layout/paint scope so scrolling only
+   repaints the item that changed, not the whole strip. No size containment,
+   so measured positions and page height stay exact for the snap logic. */
+.alt-scroll-item {
+  contain: layout paint;
+}
+
 /* SOLUTION / IMPACT TEXT SECTIONS */
 .alt-text-section {
   display: grid;
