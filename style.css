@@ -375,10 +375,10 @@ h2 {
 }
 
 .intro-bio {
-  font-size: clamp(0.82rem, 1.1vw, 0.95rem);
+  font-size: clamp(0.95rem, 1.35vw, 1.1rem);
   line-height: 1.65;
   color: var(--text);
-  max-width: 25vw;
+  max-width: 27vw;
 }
 
 .intro-photo {

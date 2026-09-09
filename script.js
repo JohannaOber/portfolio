@@ -187,7 +187,10 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     if (!target) return;
     e.preventDefault();
     const start = window.scrollY;
-    const end = id ? target.getBoundingClientRect().top + window.scrollY - 60 : 0;
+    // Land on the section's heading (just under the nav), not the top of the
+    // section box, which has large top padding above the visible title.
+    const anchor = id ? (target.querySelector(':scope > h2, :scope > h3') || target) : null;
+    const end = id ? anchor.getBoundingClientRect().top + window.scrollY - 60 - 16 : 0;
     const duration = 450;
     const startTime = performance.now();
     const ease = t => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
@@ -220,9 +223,9 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     requestAnimationFrame(step);
   }
 
-  function scrollToEl(el) {
+  function scrollToEl(el, extraOffset) {
     if (!el) return;
-    smoothScrollToY(el.getBoundingClientRect().top + window.scrollY - NAV_H);
+    smoothScrollToY(el.getBoundingClientRect().top + window.scrollY - NAV_H - (extraOffset || 0));
   }
 
   // Main page: click anywhere over the title photo area → Projects section.
@@ -236,7 +239,9 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
       const r = introPhoto.getBoundingClientRect();
       if (e.clientX >= r.left && e.clientX <= r.right &&
           e.clientY >= Math.max(r.top, NAV_H) && e.clientY <= r.bottom) {
-        scrollToEl(projects);
+        // Land on the "Projects" heading just under the nav, not the padded
+        // top of the section box.
+        scrollToEl(projects.querySelector(':scope > h2') || projects, 16);
       }
     });
   }
