@@ -833,28 +833,15 @@ h2 {
 /* Experience & Education: skills on their own line under the role, in dark gray */
 #panel-exp .resume-detail,
 #panel-edu .resume-detail {
+  margin-top: 0.5rem;
   color: var(--gray-600);
 }
 
-#panel-edu .resume-detail {
-  margin-top: 0.5rem;
-}
-
-/* Experience: bigger break after the job title, everything under it grouped
-   tightly (description + skills), all in the same grey */
-#panel-exp .resume-role {
-  margin-bottom: 0.6rem;
-}
-
+/* Experience: job description line, in the same grey, above the skills */
 #panel-exp .resume-desc {
   font-size: 0.95rem;
   line-height: 1.65;
   color: var(--gray-600);
-  margin-bottom: 0.1rem;
-}
-
-#panel-exp .resume-detail {
-  margin-top: 0.15rem;
 }
 
 .skills-grid {
