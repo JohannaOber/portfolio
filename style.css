@@ -711,7 +711,7 @@ h2 {
 .tab-nav {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--gray-200);
+  border-bottom: 0.5px solid #000;
   margin-bottom: 2.5rem;
 }
 
@@ -726,23 +726,20 @@ h2 {
 .tab-nav label {
   font-size: 0.88rem;
   font-weight: 500;
-  color: var(--muted);
+  color: var(--text);
   padding: 0.6rem 0;
   margin-right: 2rem;
   border-bottom: 2px solid transparent;
   margin-bottom: -1px;
-  transition: color 0.2s, border-color 0.2s;
+  transition: color 0.2s;
 }
-
-.tab-nav label:hover { color: var(--text); }
 
 .tab-panel { display: none; }
 
 #tab-exp:checked ~ .tab-nav label[for="tab-exp"],
 #tab-edu:checked ~ .tab-nav label[for="tab-edu"],
 #tab-vol:checked ~ .tab-nav label[for="tab-vol"] {
-  color: var(--text);
-  border-bottom-color: var(--blue);
+  color: var(--blue);
 }
 
 #tab-exp:checked ~ #panel-exp,
@@ -775,7 +772,7 @@ h2 {
   gap: 2rem;
   padding-bottom: 2rem;
   margin-bottom: 2rem;
-  border-bottom: 1px solid var(--gray-200);
+  border-bottom: 0.5px solid #000;
 }
 
 .resume-meta {
@@ -1025,7 +1022,7 @@ h2 {
 /* ── MARQUEE BAND ─────────────────────────────────── */
 .marquee-band {
   overflow: hidden;
-  border-bottom: 1px solid var(--gray-200);
+  border-bottom: 0.5px solid #000;
   padding: clamp(1rem, 2vw, 1.8rem) 0;
   white-space: nowrap;
   margin-top: clamp(9rem, 12vw, 12rem);
@@ -1060,10 +1057,6 @@ h2 {
 }
 
 /* ── FOOTER / CONTACT ─────────────────────────────── */
-footer {
-  border-top: 1px solid var(--gray-200);
-}
-
 .contact-card {
   padding: 3rem 32px;
   display: flex;
@@ -1113,7 +1106,7 @@ footer {
   padding: 1.2rem 32px;
   font-size: 0.75rem;
   color: var(--text);
-  border-top: 1px solid var(--gray-200);
+  border-top: 0.5px solid #000;
 }
 
 /* ── RESPONSIVE ───────────────────────────────────── */
@@ -1220,7 +1213,7 @@ footer {
     padding: calc(60px + 2.5rem) 1.5rem 2rem;
     text-align: center;
   }
-  .nav-sheet li + li { border-top: 1px solid var(--black); }
+  .nav-sheet li + li { border-top: 0.5px solid var(--black); }
   .nav-sheet a {
     display: block;
     padding: 1.5rem 0;
