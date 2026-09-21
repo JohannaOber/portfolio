@@ -726,23 +726,20 @@ h2 {
 .tab-nav label {
   font-size: 0.88rem;
   font-weight: 500;
-  color: var(--muted);
+  color: var(--text);
   padding: 0.6rem 0;
   margin-right: 2rem;
   border-bottom: 2px solid transparent;
   margin-bottom: -1px;
-  transition: color 0.2s, border-color 0.2s;
+  transition: color 0.2s;
 }
-
-.tab-nav label:hover { color: var(--text); }
 
 .tab-panel { display: none; }
 
 #tab-exp:checked ~ .tab-nav label[for="tab-exp"],
 #tab-edu:checked ~ .tab-nav label[for="tab-edu"],
 #tab-vol:checked ~ .tab-nav label[for="tab-vol"] {
-  color: var(--text);
-  border-bottom-color: var(--blue);
+  color: var(--blue);
 }
 
 #tab-exp:checked ~ #panel-exp,
