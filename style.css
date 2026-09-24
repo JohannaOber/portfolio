@@ -282,23 +282,28 @@ section + section::before {
 }
 
 h2 {
-  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-size: clamp(1.8rem, 3.2vw, 2.75rem);
   font-weight: 400;
   letter-spacing: -0.025em;
   margin-bottom: 2.5rem;
 }
 
 #projects > h2,
+#profile > h2,
 .resume-section > h3 {
   text-align: right;
   margin-bottom: 6rem;
 }
 
-#projects > h2 {
-  margin-bottom: 4rem;
+#projects > h2,
+#profile > h2 {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.5px solid #000;
 }
 
 #projects > h2::after,
+#profile > h2::after,
 .resume-section > h3::after {
   content: '↓';
   display: inline;
