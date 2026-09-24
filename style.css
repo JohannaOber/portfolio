@@ -1,7 +1,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --blue:     #0000ff;
+  --accent:   #b281f1;
   --black:    #0d0d0d;
   --white:    #ffffff;
   --gray-50:  #f9f9f9;
@@ -40,13 +40,13 @@ html { scroll-behavior: auto; overflow-x: clip; }
   }
 
   #cursor-screen {
-    background: #0000ff;
+    background: #b281f1;
     mix-blend-mode: screen;
     z-index: 9999;
   }
 
   #cursor-white {
-    background: var(--blue);
+    background: var(--accent);
     z-index: 10000;
     opacity: 0;
   }
@@ -58,7 +58,7 @@ html { scroll-behavior: auto; overflow-x: clip; }
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background: var(--blue);
+    background: var(--accent);
     color: #fff;
     display: flex;
     align-items: center;
@@ -86,7 +86,7 @@ html { scroll-behavior: auto; overflow-x: clip; }
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background: var(--blue);
+    background: var(--accent);
     color: #fff;
     display: flex;
     align-items: center;
@@ -200,8 +200,8 @@ nav {
   transition: border-color 0.2s;
 }
 
-.nav-links a:hover  { border-bottom-color: var(--blue); }
-.nav-links a.active { border-bottom-color: var(--blue); }
+.nav-links a:hover  { border-bottom-color: var(--accent); }
+.nav-links a.active { border-bottom-color: var(--accent); }
 
 /* LANG TOGGLE */
 .lang-toggle {
@@ -224,7 +224,7 @@ nav {
 }
 
 .lang-btn:hover    { color: var(--text); }
-.lang-btn.active   { color: var(--blue); font-weight: 600; }
+.lang-btn.active   { color: var(--accent); font-weight: 600; }
 
 .lang-divider {
   font-size: 0.7rem;
@@ -454,10 +454,10 @@ h2 {
 }
 
 .btn-primary {
-  background: var(--blue);
+  background: var(--accent);
   color: var(--white);
 }
-.btn-primary:hover { background: #1400ff; }
+.btn-primary:hover { background: #9e6ddd; }
 
 .btn-ghost {
   background: transparent;
@@ -544,7 +544,7 @@ h2 {
   transition: border-color 0.2s;
 }
 
-.project-link:hover { border-bottom-color: var(--blue); }
+.project-link:hover { border-bottom-color: var(--accent); }
 
 /* ── EDITORIAL PROJECT GRID ───────────────────────── */
 .proj-editorial {
@@ -883,7 +883,7 @@ h2 {
 }
 
 .skill-tag {
-  background: var(--blue);
+  background: var(--accent);
   color: #fff;
   font-size: 0.85rem;
   font-weight: 600;
@@ -1030,7 +1030,7 @@ h2 {
 }
 
 .pill {
-  background: var(--blue);
+  background: var(--accent);
   color: #fff;
   font-size: 0.82rem;
   font-weight: 500;
@@ -1138,7 +1138,7 @@ h2 {
   transition: color 0.2s;
 }
 
-.footer-links a:hover { color: var(--blue); }
+.footer-links a:hover { color: var(--accent); }
 
 .footer-mark {
   font-size: 1.15rem;
