@@ -112,8 +112,8 @@ if (window.matchMedia('(pointer: fine)').matches) {
     });
   });
 
-  // pe-link zones + See More project cards: show nav cursor (→), hide blend-mode layers
-  Array.from(document.querySelectorAll('.pe-link, .project-card a:not(.project-link)')).forEach(link => {
+  // pe-link zones + See More project cards + More Projects link: show nav cursor (→), hide blend-mode layers
+  Array.from(document.querySelectorAll('.pe-link, .project-card a:not(.project-link), .more-projects-link')).forEach(link => {
     link.addEventListener('mouseenter', () => {
       onNavZone = true;
       diff.style.opacity  = '0';
@@ -877,6 +877,44 @@ window.addEventListener('scroll', () => {
       var step = item ? item.getBoundingClientRect().width : track.clientWidth;
       var gap  = parseFloat(getComputedStyle(track).gap) || 0;
       smoothScrollBy(dirFor(e) * (step + gap));
+    });
+  });
+})();
+
+// Projects overview page: category filter
+(function () {
+  var filters = document.querySelectorAll('.project-filter');
+  var cards = document.querySelectorAll('.projects-grid .project-card');
+  if (!filters.length) return;
+
+  filters.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      filters.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+
+      var filter = btn.dataset.filter;
+      cards.forEach(function (card) {
+        var cats = (card.dataset.category || '').split(' ');
+        var show = filter === 'all' || cats.indexOf(filter) !== -1;
+        card.style.display = show ? '' : 'none';
+      });
+    });
+  });
+})();
+
+// "←" nav-back: go back one page in history when arriving from within the
+// site (e.g. from projects.html instead of always index.html); falls back
+// to the link's own href when there's no same-origin page to return to.
+(function () {
+  document.querySelectorAll('.nav-back').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      if (!document.referrer) return;
+      try {
+        if (new URL(document.referrer).origin === location.origin) {
+          e.preventDefault();
+          history.back();
+        }
+      } catch (err) {}
     });
   });
 })();
