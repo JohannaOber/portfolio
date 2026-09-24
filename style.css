@@ -465,26 +465,26 @@ h2 {
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 2.5rem;
+  column-gap: var(--gutter);
   row-gap: 5rem;
 }
 
 .project-card a:not(.project-link) {
   display: block;
   overflow: hidden;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.6rem;
 }
 
 .project-thumb {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 3 / 2;
   object-fit: cover;
 }
 
 .project-body .badges {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .badge-outline {
@@ -497,9 +497,24 @@ h2 {
   padding: 0.25rem 0.75rem;
 }
 
+/* Plain, dot-separated keywords (matches .alt-intro-tags on project pages) */
+.project-tags {
+  margin: 0 0 0.25rem;
+  font-size: clamp(0.85rem, 1.3vw, 1rem);
+  color: var(--muted);
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+}
+
+.project-tags > span:not(:first-child)::before {
+  content: "·";
+  margin: 0 0.5em;
+  color: var(--muted);
+}
+
 .project-title {
-  font-size: clamp(1.3rem, 2.5vw, 1.9rem);
-  font-weight: 400;
+  font-size: clamp(0.85rem, 1.3vw, 1rem);
+  font-weight: 600;
   letter-spacing: -0.02em;
   margin-bottom: 0.75rem;
   line-height: 1.2;
