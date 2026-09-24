@@ -896,25 +896,39 @@ h2 {
   overflow: hidden;
 }
 
+/* #profile has no horizontal padding of its own (the split layout below
+   sets its own offset), so give the heading the standard page gutter */
+#profile > h2 {
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+  margin-bottom: 0;
+}
+
 #profile::before { display: none; }
 #resume::before  { display: none; }
 
+.profile-gallery {
+  position: relative;
+  display: flow-root; /* contain .profile-split's margin-top so it can't
+                          collapse upward and drag the whole gallery down */
+}
+
 .profile-split {
-  display: grid;
-  grid-template-columns: 30vw 50vw;
-  align-items: start;
-  padding-left: 20vw;
-  margin-top: 64px;
+  display: flex;
+  align-items: flex-end;
+  gap: 3rem;
+  margin-top: 18.5vw;
   margin-bottom: 64px;
 }
 
 .profile-text {
-  order: 1;
+  max-width: 28vw;
   padding-right: 3rem;
 }
 
 .profile-ph1 {
-  order: 2;
+  width: 39vw;
+  flex-shrink: 0;
   overflow: hidden;
   background: var(--gray-100);
   aspect-ratio: 1 / 1;
@@ -936,27 +950,25 @@ h2 {
 
 .profile-bio-label {
   padding: 0;
-  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-size: clamp(1.1rem, 1.6vw, 1.4rem);
   font-weight: 400;
   letter-spacing: -0.025em;
   color: var(--text);
   margin-bottom: 0.5rem;
 }
 
-.profile-bio-label::before {
-  content: '↓';
-  display: inline;
-  color: var(--text);
-  font-weight: 400;
-  margin-right: 0.5em;
+/* Second photo: floats above the main pair, flush with the right edge */
+.profile-pair--second {
+  position: absolute;
+  top: 1.5rem;
+  right: 0;
+  width: 21vw;
 }
 
 .profile-ph2 {
-  width: 30vw;
-  aspect-ratio: 1 / 1;
-  margin-left: 0;
-  margin-top: 64px;
-  margin-bottom: 64px;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: var(--gray-100);
 }
 
 .profile-ph2 img {
@@ -964,6 +976,11 @@ h2 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
+}
+
+.profile-pair--second .profile-bio {
+  margin-top: 1.25rem;
 }
 
 /* ── SKILLS & TOOLS (Version C: Pills + Chips) ──────── */
@@ -1154,12 +1171,12 @@ h2 {
   #panel-vol .resume-item { grid-template-columns: 1fr; gap: 0.2rem; }
   .resume-company-col { padding-top: 0; }
   #resume > .resume-section { margin-top: 3rem; }
-  .profile-split { grid-template-columns: 1fr; padding-left: 0; row-gap: 2.5rem; }
+  .profile-split { flex-direction: column; align-items: stretch; gap: 0; margin-top: 3rem; }
   .profile-ph1 { width: 100%; }
-  .profile-text { padding: 2rem 1.5rem 0; }
+  .profile-text { max-width: none; padding: 2rem 1.5rem 0; }
   .profile-bio { max-width: none; padding: 0; }
   .intro-bio { max-width: 75%; }
-  .profile-ph2 { width: 100%; }
+  .profile-pair--second { position: static; width: 100%; padding: 0 1.5rem; margin-bottom: 2.5rem; }
   .marquee-band { margin-top: 2rem; }
   .contact-card { padding: 2rem 1.25rem; flex-direction: column; align-items: flex-start; gap: 1.5rem; }
   .footer-copy { padding: 1rem 1.25rem; }
