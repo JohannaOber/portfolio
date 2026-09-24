@@ -24,11 +24,11 @@ html { scroll-behavior: auto; overflow-x: clip; }
     position: fixed;
     top: 0;
     left: 0;
-    width: 32px;
-    height: 32px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
     pointer-events: none;
-    margin: -16px 0 0 -16px;
+    margin: -21px 0 0 -21px;
     transform: translate3d(-200px, -200px, 0);
     will-change: transform;
   }
@@ -398,7 +398,7 @@ h2 {
   left: 30%;
   top: calc(15em + 24px);
   right: 0;
-  bottom: -88px;
+  bottom: 0;
 }
 
 .intro-photo img {
@@ -1121,7 +1121,7 @@ h2 {
 .footer-role {
   font-size: 0.86rem;
   color: var(--text);
-  margin-bottom: 6rem;
+  margin-bottom: 10rem;
 }
 
 .footer-links {
