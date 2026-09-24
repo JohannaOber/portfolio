@@ -4,7 +4,7 @@
    Title matches the start page hero (.hero-display) in size, weight and
    top position (.intro-upper uses a 12vh top padding). */
 .alt-intro {
-  padding: 12vh 32px 0;
+  padding: 12vh var(--gutter) 0;
 }
 
 .alt-intro-title {
@@ -33,7 +33,7 @@
 
 /* PROJECT META — Client / My Tasks / About, in a column under the cover image */
 .alt-meta {
-  padding: 0 32px;
+  padding: 0 var(--gutter);
   margin-top: 80px;
   margin-bottom: 100px;   /* breathing room before the image strip starts */
 }
@@ -103,7 +103,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  padding: 1.25rem 32px 2rem;
+  padding: 1.25rem var(--gutter) 2rem;
   border-top: 0.5px solid #000;
 }
 
@@ -129,7 +129,7 @@
   height: calc(100vh - 60px);
   display: flex;
   align-items: flex-start;
-  padding: 64px 32px 64px;
+  padding: 64px var(--gutter) 64px;
   overflow: hidden;
 }
 
@@ -143,7 +143,7 @@
   position: relative;
   opacity: 1;
   pointer-events: auto;
-  padding: 32px 32px 24px;
+  padding: 32px var(--gutter) 24px;
   width: 100%;
   box-sizing: border-box;
 }
@@ -232,7 +232,7 @@
   grid-template-columns: 180px 1fr 1.6fr;
   gap: 2.5rem 3rem;
   align-items: start;
-  padding: 72px 32px;
+  padding: 72px var(--gutter);
   border-top: 0.5px solid #000;
 }
 
@@ -281,7 +281,7 @@
 
 /* Inline image grid section */
 .alt-image-section {
-  padding: 0 32px 80px;
+  padding: 0 var(--gutter) 80px;
 }
 
 .alt-image-grid {
@@ -320,11 +320,11 @@
 
 /* MORE PROJECTS */
 .project-more {
-  padding: 24px 32px 72px;
+  padding: 24px var(--gutter) 72px;
 }
 
 .project-more-heading {
-  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-size: clamp(1.8rem, 3.2vw, 2.75rem);
   font-weight: 400;
   letter-spacing: -0.025em;
   color: var(--text);
@@ -342,11 +342,15 @@
 .project-more-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
+  gap: var(--gutter);
+}
+
+.project-more-grid .project-tags {
+  margin-bottom: 0.25rem;
 }
 
 .project-more-grid .project-title {
-  font-size: clamp(1rem, 1.8vw, 1.3rem);
+  font-size: clamp(0.85rem, 1.3vw, 1rem);
 }
 
 /* Desktop: panels sit in alt-scroll-right before JS moves them — hide until moved */
@@ -416,11 +420,11 @@
   }
 
   .alt-task-strip {
-    padding: 1rem 32px 1.75rem;
+    padding: 1rem var(--gutter) 1.75rem;
   }
 
   .alt-intro {
-    padding: calc(60px + 6vh) 32px 0;
+    padding: calc(60px + 6vh) var(--gutter) 0;
   }
 
   .alt-cover {
@@ -486,7 +490,7 @@
   .alt-text-section {
     grid-template-columns: 1fr;
     gap: 1.25rem;
-    padding: 56px 32px;
+    padding: 56px var(--gutter);
   }
 
   .alt-text-section-label {
