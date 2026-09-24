@@ -320,11 +320,11 @@
 
 /* MORE PROJECTS */
 .project-more {
-  padding: 24px 32px 72px;
+  padding: 24px var(--gutter) 72px;
 }
 
 .project-more-heading {
-  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-size: clamp(1.8rem, 3.2vw, 2.75rem);
   font-weight: 400;
   letter-spacing: -0.025em;
   color: var(--text);
@@ -342,11 +342,15 @@
 .project-more-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
+  gap: var(--gutter);
+}
+
+.project-more-grid .project-tags {
+  margin-bottom: 0.25rem;
 }
 
 .project-more-grid .project-title {
-  font-size: clamp(1rem, 1.8vw, 1.3rem);
+  font-size: clamp(0.85rem, 1.3vw, 1rem);
 }
 
 /* Desktop: panels sit in alt-scroll-right before JS moves them — hide until moved */
