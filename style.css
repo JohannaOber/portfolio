@@ -320,6 +320,11 @@ h2 {
   margin-right: 0.5em;
 }
 
+#resume > h2 {
+  padding-bottom: 1.5rem;
+  border-bottom: 0.5px solid #000;
+}
+
 /* ── INTRO ────────────────────────────────────────── */
 #intro {
   max-width: none;
@@ -732,7 +737,6 @@ h2 {
 .tab-nav {
   display: flex;
   align-items: center;
-  border-bottom: 0.5px solid #000;
   margin-bottom: 2.5rem;
 }
 
@@ -752,7 +756,7 @@ h2 {
   margin-right: 2rem;
   border-bottom: 2px solid transparent;
   margin-bottom: -1px;
-  transition: color 0.2s;
+  transition: border-color 0.2s;
 }
 
 .tab-panel { display: none; }
@@ -760,7 +764,7 @@ h2 {
 #tab-exp:checked ~ .tab-nav label[for="tab-exp"],
 #tab-edu:checked ~ .tab-nav label[for="tab-edu"],
 #tab-vol:checked ~ .tab-nav label[for="tab-vol"] {
-  color: var(--blue);
+  border-bottom-color: var(--accent);
 }
 
 #tab-exp:checked ~ #panel-exp,
@@ -794,6 +798,10 @@ h2 {
   padding-bottom: 2rem;
   margin-bottom: 2rem;
   border-bottom: 0.5px solid #000;
+}
+
+.resume-item:last-child {
+  border-bottom: none;
 }
 
 .resume-meta {
