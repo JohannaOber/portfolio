@@ -11,6 +11,7 @@
   --gray-600: #666666;
   --text:     #0d0d0d;
   --muted:    #808080;
+  --gutter:   20px;
 }
 
 html { scroll-behavior: auto; overflow-x: clip; }
@@ -159,7 +160,7 @@ nav {
   right: 0;
   z-index: 100;
   background: var(--white);
-  padding: 0 2.5rem;
+  padding: 0 var(--gutter);
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
@@ -233,7 +234,7 @@ nav {
 
 /* ── SHARED SECTION BASE ──────────────────────────── */
 section {
-  padding: 120px 32px;
+  padding: 120px var(--gutter);
   position: relative;
 }
 
@@ -327,14 +328,14 @@ h2 {
 .intro-upper {
   position: relative;
   min-height: 100vh;
-  padding: 12vh 0 6vh 32px;
+  padding: 12vh 0 6vh var(--gutter);
   padding-bottom: 4em;
   display: flex;
   flex-direction: column;
 }
 
 .intro-lower {
-  padding: 8rem 32px 3.5rem;
+  padding: 8rem var(--gutter) 3.5rem;
 }
 
 .intro-content {
@@ -1058,7 +1059,7 @@ h2 {
 
 /* ── FOOTER / CONTACT ─────────────────────────────── */
 .contact-card {
-  padding: 3rem 32px;
+  padding: 3rem var(--gutter);
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -1103,7 +1104,7 @@ h2 {
 
 /* Copyright bar */
 .footer-copy {
-  padding: 1.2rem 32px;
+  padding: 1.2rem var(--gutter);
   font-size: 0.75rem;
   color: var(--text);
   border-top: 0.5px solid #000;
