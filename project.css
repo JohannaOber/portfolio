@@ -508,6 +508,14 @@
     align-items: flex-start;
     gap: 0;
     padding: 1.75rem 0 0.75rem;
+    /* More white space above and below the separators, towards the title and About */
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  /* Wrap left-aligned (not justified) when the viewport gets very narrow */
+  .alt-meta-strip p {
+    text-align: left;
   }
 
   .alt-meta-topic .section-label {
