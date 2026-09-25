@@ -1189,11 +1189,15 @@ h2 {
   .resume-company-col { padding-top: 0; }
   #resume > .resume-section { margin-top: 3rem; }
   .profile-split { flex-direction: column; align-items: stretch; gap: 0; margin-top: 3rem; }
-  .profile-ph1 { width: 100%; }
-  .profile-text { max-width: none; padding: 2rem 1.5rem 0; }
+  .profile-ph1 { width: auto; margin: 0 1.5rem; }
+  /* Let the photo keep its own height so no grey placeholder shows below it */
+  .profile-ph1 { aspect-ratio: auto; }
+  .profile-ph1 img { height: auto; }
+  .profile-text { width: 65vw; max-width: none; margin-left: 1.5rem; padding: 2rem 0 0; }
   .profile-bio { max-width: none; padding: 0; }
   .intro-bio { max-width: 75%; }
-  .profile-pair--second { position: static; width: 100%; padding: 0 1.5rem; margin-bottom: 2.5rem; }
+  .profile-pair--second { position: static; width: 60vw; padding: 0; margin: 0 1.5rem 2.5rem auto; }
+  .profile-pair--second .profile-bio { padding-right: 0; }
   .marquee-band { margin-top: 2rem; }
   .contact-card { padding: 2rem 1.25rem; flex-direction: column; align-items: flex-start; gap: 1.5rem; }
   .footer-copy { padding: 1rem 1.25rem; }
@@ -1208,6 +1212,8 @@ h2 {
   /* Reduce the gap between Resume and the "And after work?" section */
   #resume { padding-bottom: 2rem; }
   #profile { padding-top: 0.5rem; }
+  /* Breathing room between the About separator line and the first photo */
+  #profile > h2 { margin-bottom: 1.5rem; }
 
   /* "And after work?" is styled like the section headings globally;
      just tighten the spacing below it on mobile */
