@@ -82,7 +82,7 @@
 
 /* ABOUT SECTION — heading styled like the homepage's Projects/Resume/About */
 .alt-about {
-  margin-left: 57%;
+  margin-left: 52%;
   margin-right: var(--gutter);
   padding: 14rem 0 6rem;
 }
@@ -95,20 +95,28 @@
   margin-bottom: 0;
 }
 
-.alt-about > h2::before {
-  content: '↓';
-  display: inline;
-  color: var(--text);
-  font-weight: 400;
-  margin-right: 0.15em;
-}
-
 .alt-about .alt-intro-desc {
   font-size: clamp(0.9rem, 1.4vw, 1.05rem);
   color: var(--text);
   line-height: 1.7;
   margin-top: 0.25rem;
   max-width: 360px;
+  text-align: justify;
+}
+
+/* When the About text is long enough to split into two paragraphs, let
+   them run side by side instead of stacking as one narrow column */
+.alt-about-desc-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-top: 0.25rem;
+  max-width: 740px;
+}
+
+.alt-about-desc-pair .alt-intro-desc {
+  margin-top: 0;
+  max-width: none;
 }
 
 /* TASK STRIP */
@@ -166,11 +174,80 @@
   display: block;
 }
 
+/* A block with text plus two separate, statically placed images (no scroll),
+   each keeping its own natural aspect ratio. The images sit together on one
+   side (big one first, small one next to it, tighter gap between them), text
+   on the other side. */
+.alt-block--trio {
+  grid-template-columns: 2fr 1fr;
+}
+
+.alt-block--trio .alt-block-text {
+  order: 2;
+}
+
+.alt-block-image-duo {
+  order: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.alt-block-image-duo img {
+  width: 100%;
+  display: block;
+}
+
+/* A block whose two images sit full-width below the text, instead of
+   sitting in the usual image column. Text keeps a narrow column at the
+   top and stays on the alternating side; --flip pushes it to the right. */
+.alt-block--stacked {
+  display: block;
+  padding: 0 var(--gutter);
+}
+
+.alt-block--stacked .alt-block-text {
+  max-width: 360px;
+  margin-bottom: 3rem;
+}
+
+.alt-block--stacked.alt-block--flip .alt-block-text {
+  margin-left: 52%;
+}
+
+/* When the body text is split into two paragraphs, let them run side by
+   side under the heading instead of stacking as one narrow column, and
+   let the heading stretch across their combined width too */
+.alt-block--stacked .alt-block-text:has(.alt-panel-body-pair) {
+  max-width: 740px;
+}
+
+.alt-block--stacked .alt-block-text:has(.alt-panel-body-pair) .alt-panel-heading {
+  max-width: none;
+}
+
+.alt-panel-body-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+
+.alt-panel-body-pair .alt-panel-body {
+  max-width: none;
+}
+
 /* Two images sharing one block, shown fully and side by side (no scroll) */
 .alt-block-image-pair {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  gap: 1.5rem;
+}
+
+.alt-block-image-pair img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
 }
 
 /* ── MULTI-IMAGE GALLERY BLOCK ────────────────────────
@@ -238,6 +315,7 @@
   color: var(--text);
   line-height: 1.75;
   max-width: 360px;
+  text-align: justify;
 }
 
 /* SOLUTION / IMPACT TEXT SECTIONS */
@@ -412,6 +490,12 @@
     padding: 2.5rem var(--gutter) 3rem;
   }
 
+  .alt-about-desc-pair {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: none;
+  }
+
   /* Alternating blocks stack: image always above its text, in document order */
   .alt-block {
     grid-template-columns: 1fr;
@@ -421,6 +505,24 @@
 
   .alt-block-image-pair {
     gap: 0.75rem;
+  }
+
+  .alt-block-image-duo {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .alt-block--stacked .alt-block-text {
+    max-width: none;
+  }
+
+  .alt-block--stacked.alt-block--flip .alt-block-text {
+    margin-left: 0;
+  }
+
+  .alt-panel-body-pair {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .alt-block-image,
