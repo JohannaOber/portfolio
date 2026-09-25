@@ -496,7 +496,7 @@
     /* Width-relative height (no vh/svh at all) so it cannot react to the
        mobile URL bar hiding/showing on scroll. Any viewport-height unit here
        makes the object-fit: cover image jump/zoom as you scroll. */
-    height: min(88vw, 560px);
+    height: min(70vw, 450px);
   }
 
   .alt-gallery-item {
