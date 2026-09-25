@@ -174,6 +174,15 @@
   display: block;
 }
 
+/* Crop in tighter on a specific image without changing its box's footprint */
+.alt-block-image--zoom {
+  overflow: hidden;
+}
+
+.alt-block-image--zoom img {
+  transform: scale(1.15);
+}
+
 /* A block with text plus two separate, statically placed images (no scroll),
    each keeping its own natural aspect ratio. The images sit together on one
    side (big one first, small one next to it, tighter gap between them), text
@@ -382,6 +391,35 @@
   object-fit: cover;
 }
 
+/* Pair of videos, each keeping its own aspect ratio at the same height, sized
+   so together (plus the gap) they span the width between the gutters.
+   The height is solved for the two videos' actual aspect ratios (16:9 and
+   1080:1820), capped so it can't grow absurdly tall on very wide screens. */
+.alt-media-row {
+  --media-row-h: min(calc((100vw - 3 * var(--gutter)) / 2.37116), 80vh);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gutter);
+  padding: 0 var(--gutter);
+  height: var(--media-row-h);
+  margin-bottom: 14rem;
+}
+
+.alt-media-row video {
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.alt-media-row video:first-child {
+  width: calc(var(--media-row-h) * 1.7778);
+}
+
+.alt-media-row video:last-child {
+  width: calc(var(--media-row-h) * 0.5934);
+}
+
 /* See More thumbnails */
 .alt-thumb {
   display: block;
@@ -504,6 +542,24 @@
 
   .alt-block-image-pair {
     gap: 0.75rem;
+  }
+
+  .alt-image-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .alt-media-row {
+    flex-direction: column;
+    height: auto;
+    margin-bottom: 4rem;
+  }
+
+  .alt-media-row video,
+  .alt-media-row video:first-child,
+  .alt-media-row video:last-child {
+    width: 100%;
+    height: auto;
   }
 
   .alt-block-image-duo {
