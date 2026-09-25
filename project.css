@@ -74,6 +74,16 @@
   margin: 0;
 }
 
+.alt-meta-topic {
+  display: flex;
+  align-items: baseline;
+}
+
+/* The Topic label only shows on mobile, where the keywords sit on their own row */
+.alt-meta-topic .section-label {
+  display: none;
+}
+
 .alt-meta-strip p + p::before {
   content: "·";
   color: var(--muted);
@@ -496,7 +506,18 @@
   .alt-meta-strip {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1.5rem;
+    gap: 0;
+    padding: 1.75rem 0 0.75rem;
+  }
+
+  .alt-meta-topic .section-label {
+    display: inline;
+  }
+
+  /* Same label width in every row so all values start at the same x position */
+  .alt-meta-strip .section-label {
+    min-width: 4.5rem;
+    margin-right: 0;
   }
 
   .alt-about {
@@ -526,8 +547,21 @@
     gap: 1rem;
   }
 
+  /* Stacked blocks (text plus an image pair): images first, then the text */
+  .alt-block--stacked {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .alt-block--stacked .alt-block-image-pair {
+    order: 1;
+  }
+
   .alt-block--stacked .alt-block-text {
+    order: 2;
     max-width: none;
+    margin-bottom: 0;
   }
 
   .alt-block--stacked.alt-block--flip .alt-block-text {
