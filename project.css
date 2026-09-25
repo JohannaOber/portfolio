@@ -104,12 +104,12 @@
   text-align: justify;
 }
 
-/* When the About text is long enough to split into two paragraphs, let
-   them run side by side instead of stacking as one narrow column */
+/* When the About text is long enough to need two columns, let it flow as
+   one continuous text split evenly across both (not two fixed paragraphs,
+   which tends to leave one column much shorter than the other) */
 .alt-about-desc-pair {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
+  column-count: 2;
+  column-gap: 2.5rem;
   margin-top: 0.25rem;
   max-width: 740px;
 }
@@ -215,9 +215,10 @@
   margin-left: 52%;
 }
 
-/* When the body text is split into two paragraphs, let them run side by
-   side under the heading instead of stacking as one narrow column, and
-   let the heading stretch across their combined width too */
+/* When the body text needs two columns, let it flow as one continuous text
+   split evenly across both instead of two fixed paragraphs (which tends to
+   leave one column much shorter than the other), and let the heading
+   stretch across their combined width too */
 .alt-block--stacked .alt-block-text:has(.alt-panel-body-pair) {
   max-width: 740px;
 }
@@ -227,9 +228,8 @@
 }
 
 .alt-panel-body-pair {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
+  column-count: 2;
+  column-gap: 2.5rem;
 }
 
 .alt-panel-body-pair .alt-panel-body {
@@ -491,8 +491,7 @@
   }
 
   .alt-about-desc-pair {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    column-count: 1;
     max-width: none;
   }
 
@@ -521,8 +520,7 @@
   }
 
   .alt-panel-body-pair {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    column-count: 1;
   }
 
   .alt-block-image,
