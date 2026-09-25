@@ -1,10 +1,17 @@
 /* ── PROJECT SUBPAGE — ALT LAYOUT ─────────────────── */
 
-/* ALT INTRO — page title, then the year / badges line.
-   Title matches the start page hero (.hero-display) in size, weight and
-   top position (.intro-upper uses a 12vh top padding). */
+/* COVER IMAGE — first thing on the page, right under the fixed nav */
+.alt-cover {
+  cursor: none !important;
+  width: 100%;
+  height: calc(70vh + 64px);
+  overflow: hidden;
+  margin: 60px 0 0;
+}
+
+/* ALT INTRO — just the title now, sitting below the cover image */
 .alt-intro {
-  padding: 12vh var(--gutter) 0;
+  padding: 1.5rem var(--gutter) 9rem;
 }
 
 .alt-intro-title {
@@ -13,10 +20,9 @@
   letter-spacing: -0.03em;
   line-height: 1.15;
   color: var(--text);
-  margin-bottom: 1rem;
 }
 
-/* Year · category · category, directly under the title */
+/* Year · category · category (reused inside the meta strip below) */
 .alt-intro-tags {
   margin: 0;
   font-size: clamp(0.85rem, 1.3vw, 1rem);
@@ -31,35 +37,36 @@
   color: var(--muted);
 }
 
-/* PROJECT META — Client / My Tasks / About, in a column under the cover image */
-.alt-meta {
-  padding: 0 var(--gutter);
-  margin-top: 80px;
-  margin-bottom: 100px;   /* breathing room before the image strip starts */
-}
-
-.alt-meta .alt-intro-meta {
-  margin-left: 57%;
-  max-width: 33vw;
-}
-
-.alt-intro-meta {
+/* META STRIP — Client / Year / Keywords, spread across the width between
+   two hairline separators */
+.alt-meta-strip {
   display: flex;
-  flex-direction: column;
-  gap: 2.75rem;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 2rem 3rem;
+  margin: 0 var(--gutter);
+  padding: 2.5rem 4rem 1.25rem;
+  border-top: 0.5px solid #000;
+  border-bottom: 0.5px solid #000;
 }
 
-.alt-intro-meta .section-label {
-  margin-bottom: 0.4rem;
-  display: block;
+.alt-meta-strip > div {
+  display: flex;
+  align-items: baseline;
+}
+
+.alt-meta-strip .section-label {
+  margin-right: 0.75rem;
   color: var(--muted);
   text-transform: none;
   letter-spacing: 0.01em;
   font-weight: 400;
   font-size: clamp(0.85rem, 1.3vw, 1rem);
+  white-space: nowrap;
 }
 
-.alt-intro-meta p {
+.alt-meta-strip p {
   font-size: clamp(0.85rem, 1.3vw, 1rem);
   font-weight: 400;
   color: var(--text);
@@ -67,35 +74,41 @@
   margin: 0;
 }
 
-.alt-intro-meta p + p {
-  margin-top: 0.1rem;
+.alt-meta-strip p + p::before {
+  content: "·";
+  color: var(--muted);
+  margin: 0 0.5rem;
 }
 
-/* About paragraph: the descriptive text that used to sit under the headline */
-.alt-intro-meta .alt-intro-desc {
+/* ABOUT SECTION — heading styled like the homepage's Projects/Resume/About */
+.alt-about {
+  margin-left: 57%;
+  margin-right: var(--gutter);
+  padding: 14rem 0 6rem;
+}
+
+.alt-about > h2 {
+  font-size: clamp(1.8rem, 3.2vw, 2.75rem);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  color: var(--text);
+  margin-bottom: 0;
+}
+
+.alt-about > h2::before {
+  content: '↓';
+  display: inline;
+  color: var(--text);
+  font-weight: 400;
+  margin-right: 0.15em;
+}
+
+.alt-about .alt-intro-desc {
   font-size: clamp(0.9rem, 1.4vw, 1.05rem);
   color: var(--text);
   line-height: 1.7;
-}
-
-/* Tasks line: task · task · task (My Tasks block) */
-.alt-meta-tasks > span {
-  white-space: nowrap;
-}
-
-.alt-meta-tasks > span:not(:first-child)::before {
-  content: " · ";
-  white-space: normal;
-  color: var(--muted);
-}
-
-/* COVER IMAGE */
-.alt-cover {
-  cursor: none !important;
-  width: 100%;
-  height: calc(70vh + 64px);
-  overflow: hidden;
-  margin: 104px 0 0;
+  margin-top: 0.25rem;
+  max-width: 360px;
 }
 
 /* TASK STRIP */
@@ -114,57 +127,94 @@
   display: block;
 }
 
-/* STICKY SCROLL WRAPPER */
-.alt-sticky-wrapper {
+/* ── ALTERNATING IMAGE / TEXT BLOCKS ─────────────────
+   Each block pairs one image with its caption; alternate which side the
+   image sits on with .alt-block--flip. Plain document flow, no pinning. */
+.alt-block {
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
   align-items: start;
-  padding-top: 64px;
+  padding: 0 var(--gutter);
+  margin-bottom: 12rem;
 }
 
-/* STICKY LEFT PANEL */
-.alt-sticky-left {
-  position: sticky;
-  top: 60px;
-  height: calc(100vh - 60px);
-  display: flex;
-  align-items: flex-start;
-  padding: 64px var(--gutter) 64px;
-  overflow: hidden;
+/* Extra breathing room before the disclaimer marquee / See More */
+.alt-block:has(+ .marquee-band--disclaimer),
+.alt-block:has(+ .project-more) {
+  margin-bottom: 14rem;
 }
 
-.alt-panels-wrapper {
-  position: relative;
+.alt-block-image {
+  order: 2;
+}
+
+.alt-block-text {
+  order: 1;
+}
+
+.alt-block--flip .alt-block-image {
+  order: 1;
+}
+
+.alt-block--flip .alt-block-text {
+  order: 2;
+}
+
+/* First and last image in the sequence run bigger, over 70% of the width;
+   the bigger column always tracks wherever the image actually sits. */
+.alt-block--large:not(.alt-block--flip) {
+  grid-template-columns: 1fr 72%;
+}
+
+.alt-block--large.alt-block--flip {
+  grid-template-columns: 72% 1fr;
+}
+
+.alt-block-image img {
   width: 100%;
+  display: block;
 }
 
-/* Mobile-first: panels sit inline between images */
-.alt-text-panel {
-  position: relative;
-  opacity: 1;
-  pointer-events: auto;
-  padding: 32px var(--gutter) 24px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* Desktop: panels moved into sticky container by JS */
-.alt-panels-wrapper .alt-text-panel {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  pointer-events: none;
+/* ── MULTI-IMAGE GALLERY BLOCK ────────────────────────
+   For a panel with more than one image: text sits full-width above, the
+   images run in a horizontal, snap-scrolling strip below with the next one
+   peeking off the right edge. Click the left/right half to scroll one over. */
+.alt-block--gallery {
+  display: block;
   padding: 0;
-  width: auto;
-  box-sizing: content-box;
 }
 
-.alt-panels-wrapper .alt-text-panel.active {
-  opacity: 1;
-  pointer-events: auto;
+.alt-block--gallery .alt-block-text {
+  padding: 0 var(--gutter);
+  max-width: 640px;
+  margin-bottom: 3rem;
+}
+
+.alt-gallery {
+  overflow: hidden;
+  padding-left: var(--gutter);
+}
+
+.alt-gallery-track {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.alt-gallery-track::-webkit-scrollbar {
+  display: none;
+}
+
+.alt-gallery-item {
+  flex: 0 0 auto;
+  width: 80vw;
+}
+
+.alt-gallery-item img {
+  width: 100%;
+  display: block;
 }
 
 .alt-panel-label {
@@ -174,10 +224,6 @@
   color: var(--muted);
   display: block;
   margin-bottom: 0.6rem;
-}
-
-.alt-panel-label::before {
-  content: '↓ ';
 }
 
 .alt-panel-heading {
@@ -193,37 +239,7 @@
   font-size: 0.92rem;
   color: var(--text);
   line-height: 1.75;
-  max-width: 420px;
-}
-
-/* SCROLL RIGHT: IMAGES */
-.alt-scroll-right {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  padding: 3rem 0 0;
-}
-
-.alt-scroll-item {
-  width: 100%;
-}
-
-/* Empty white placeholder block where an image will go */
-.alt-scroll-spacer {
-  min-height: 25vh;
-}
-
-.alt-scroll-item img {
-  width: 100%;
-  display: block;
-  height: auto;
-}
-
-/* Give each image-strip item its own layout/paint scope so scrolling only
-   repaints the item that changed, not the whole strip. No size containment,
-   so measured positions and page height stay exact for the snap logic. */
-.alt-scroll-item {
-  contain: layout paint;
+  max-width: 360px;
 }
 
 /* SOLUTION / IMPACT TEXT SECTIONS */
@@ -260,12 +276,6 @@
 
 .alt-text-section--disclaimer .alt-text-section-body {
   grid-column: 2 / -1;
-}
-
-/* Space between sticky scroll and Solution */
-.alt-sticky-wrapper + .alt-text-section {
-  margin-top: 0;
-  padding-top: 72px;
 }
 
 /* Space before See More */
@@ -313,8 +323,14 @@
   margin-bottom: clamp(2.5rem, 5vw, 4rem);
 }
 
+/* Half the homepage marquee's size — this one is a disclaimer, not a headline */
+.marquee-band--disclaimer .marquee-track span {
+  font-size: clamp(1.75rem, 3.5vw, 4rem);
+}
+
 /* A touch more air around the // separator than the homepage dot */
 .marquee-band--disclaimer .marquee-dot {
+  font-size: clamp(1.75rem, 3.5vw, 4rem) !important;
   padding: 0 3rem !important;
 }
 
@@ -353,59 +369,6 @@
   font-size: clamp(0.85rem, 1.3vw, 1rem);
 }
 
-/* Desktop: panels sit in alt-scroll-right before JS moves them — hide until moved */
-@media (min-width: 861px) {
-  .alt-scroll-right > .alt-text-panel {
-    display: none;
-  }
-}
-
-/* ── SCROLL-DRIVEN CAPTION SWAP (desktop, JS-enabled) ───────────────────
-   The left caption column is pinned; the right image column scrolls past it
-   in normal flow. JS swaps the visible caption with a hard cut when the next
-   image's top edge reaches the caption's top edge. Gated by .alt-anim, added
-   by JS on desktop only, so it degrades to normal flow without JS / on mobile. */
-@media (min-width: 861px) {
-  /* Pinned caption column: only as tall as its content, stuck below the nav */
-  .alt-sticky-wrapper.alt-anim .alt-sticky-left {
-    height: auto;
-    overflow: visible;
-    align-items: flex-start;
-  }
-
-  /* The gap between images sets how long each caption rests before the next
-     image's top reaches the line. padding-bottom (the trailing space that keeps
-     the LAST caption pinned) is set by script.js — fitTrailing() — to the last
-     caption's height, so it un-pins exactly as it clears the last image's
-     bottom. The value here is only a fallback before that runs. */
-  .alt-sticky-wrapper.alt-anim .alt-scroll-right {
-    gap: 44vh;
-    padding-bottom: 30vh;
-  }
-
-  /* Same clear gap after the (released) strip whether a disclaimer band or the
-     See More section comes next. */
-  .alt-sticky-wrapper.alt-anim + .marquee-band--disclaimer,
-  .alt-sticky-wrapper.alt-anim + .project-more {
-    margin-top: calc(8vh + 90px);
-  }
-
-  /* Captions: a plain show/hide stack in normal flow — instant switch */
-  .alt-sticky-wrapper.alt-anim .alt-panels-wrapper .alt-text-panel {
-    position: static;
-    display: none;
-    opacity: 1;
-    transition: none;
-    pointer-events: auto;
-    padding: 0;
-    width: auto;
-  }
-
-  .alt-sticky-wrapper.alt-anim .alt-panels-wrapper .alt-text-panel.active {
-    display: block;
-  }
-}
-
 /* ── RESPONSIVE ────────────────────────────────────── */
 @media (max-width: 860px) {
   /* Hide the top tab nav (About/Projects/Resume) on mobile only;
@@ -424,7 +387,7 @@
   }
 
   .alt-intro {
-    padding: calc(60px + 6vh) var(--gutter) 0;
+    padding: 2rem var(--gutter);
   }
 
   .alt-cover {
@@ -435,57 +398,44 @@
     height: min(88vw, 560px);
   }
 
-  .alt-meta {
-    margin-top: 48px;
-    margin-bottom: 64px;
+  .alt-gallery-item {
+    width: 85vw;
   }
 
-  .alt-meta .alt-intro-meta {
+  .alt-meta-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .alt-about {
     margin-left: 0;
+    margin-right: 0;
+    padding: 2.5rem var(--gutter) 3rem;
+  }
+
+  /* Alternating blocks stack: image always above its text, in document order */
+  .alt-block,
+  .alt-block--large:not(.alt-block--flip),
+  .alt-block--large.alt-block--flip {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .alt-block-image,
+  .alt-block--flip .alt-block-image {
+    order: 1;
+  }
+
+  .alt-block-text,
+  .alt-block--flip .alt-block-text {
+    order: 2;
+  }
+
+  .alt-panel-body {
     max-width: none;
   }
-
-  .alt-intro-meta {
-    gap: 2rem;
-  }
-
-  .alt-sticky-wrapper {
-    grid-template-columns: 1fr;
-  }
-
-  /* Sticky-left hidden; panels already sit inline in alt-scroll-right */
-  .alt-sticky-left {
-    display: none;
-  }
-
-  .alt-sticky-wrapper {
-    display: block;
-  }
-
-  .alt-scroll-right {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-    padding: 0 0 64px;
-    width: 100%;
-  }
-
-  .alt-scroll-item {
-    width: 100%;
-  }
-
-  /* Mobile only: hide the first strecke item only when it is still a blank
-     placeholder. Projects whose first item is a real image keep it visible. */
-  .alt-scroll-right > .alt-scroll-item.is-placeholder:first-child {
-    display: none;
-  }
-
-  /* Mobile only: hide the extra image that shares a text panel and has none of its own,
-     so two images don't stack back-to-back without text between them */
-  .alt-scroll-right > .alt-scroll-item[data-index="1b"] {
-    display: none;
-  }
-
 
   .alt-text-section {
     grid-template-columns: 1fr;
@@ -509,18 +459,6 @@
 @media (max-width: 540px) {
   .alt-task-strip {
     padding: 1rem 20px 1.5rem;
-  }
-
-  .alt-intro {
-    padding: calc(60px + 6vh) 20px 0;
-  }
-
-  .alt-meta {
-    padding: 0 20px;
-  }
-
-  .alt-text-panel {
-    padding: 24px 20px 16px;
   }
 
   .alt-text-section {
