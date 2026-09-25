@@ -307,6 +307,7 @@ langBtns.forEach(btn => {
 // Active nav link on scroll
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+const navLogo = document.querySelector('.nav-logo');
 
 const sectionObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -317,6 +318,11 @@ const sectionObserver = new IntersectionObserver(entries => {
                         (href === '#' && entry.target.id === 'intro');
         link.classList.toggle('active', matches);
       });
+      // No nav tab active (e.g. still on the intro) — highlight the logo instead
+      if (navLogo) {
+        const anyActive = Array.from(navLinks).some(link => link.classList.contains('active'));
+        navLogo.classList.toggle('active', !anyActive);
+      }
     }
   });
 }, { rootMargin: '-40% 0px -55% 0px' });

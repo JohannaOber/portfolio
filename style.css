@@ -173,6 +173,11 @@ nav {
   letter-spacing: -0.01em;
   color: var(--text);
   text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-logo.active {
+  color: var(--accent);
 }
 
 .nav-back {
@@ -217,7 +222,7 @@ nav {
   border: none;
   font-size: 0.75rem;
   font-weight: 400;
-  color: var(--muted);
+  color: var(--text);
   padding: 0.2rem 0.35rem;
   transition: color 0.2s;
   font-family: inherit;
