@@ -396,6 +396,7 @@ h2 {
   line-height: 1.65;
   color: var(--text);
   max-width: 19vw;
+  text-align: justify;
 }
 
 .intro-photo {
@@ -960,6 +961,7 @@ h2 {
   font-size: 1rem;
   line-height: 1.7;
   max-width: none;
+  text-align: justify;
 }
 
 .profile-bio-label {
@@ -995,6 +997,7 @@ h2 {
 
 .profile-pair--second .profile-bio {
   margin-top: 1.25rem;
+  padding-right: var(--gutter);
 }
 
 /* ── SKILLS & TOOLS (Version C: Pills + Chips) ──────── */
