@@ -161,19 +161,16 @@
   order: 2;
 }
 
-/* First and last image in the sequence run bigger, over 70% of the width;
-   the bigger column always tracks wherever the image actually sits. */
-.alt-block--large:not(.alt-block--flip) {
-  grid-template-columns: 1fr 72%;
-}
-
-.alt-block--large.alt-block--flip {
-  grid-template-columns: 72% 1fr;
-}
-
 .alt-block-image img {
   width: 100%;
   display: block;
+}
+
+/* Two images sharing one block, shown fully and side by side (no scroll) */
+.alt-block-image-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
 }
 
 /* ── MULTI-IMAGE GALLERY BLOCK ────────────────────────
@@ -227,12 +224,13 @@
 }
 
 .alt-panel-heading {
-  font-size: clamp(1.3rem, 2vw, 1.75rem);
+  font-size: clamp(1.7rem, 2.8vw, 2.5rem);
   font-weight: 400;
   letter-spacing: -0.025em;
   line-height: 1.2;
   color: var(--text);
   margin-bottom: 1.25rem;
+  max-width: 360px;
 }
 
 .alt-panel-body {
@@ -415,12 +413,14 @@
   }
 
   /* Alternating blocks stack: image always above its text, in document order */
-  .alt-block,
-  .alt-block--large:not(.alt-block--flip),
-  .alt-block--large.alt-block--flip {
+  .alt-block {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     margin-bottom: 4rem;
+  }
+
+  .alt-block-image-pair {
+    gap: 0.75rem;
   }
 
   .alt-block-image,
@@ -433,6 +433,7 @@
     order: 2;
   }
 
+  .alt-panel-heading,
   .alt-panel-body {
     max-width: none;
   }
