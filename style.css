@@ -173,6 +173,11 @@ nav {
   letter-spacing: -0.01em;
   color: var(--text);
   text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-logo.active {
+  color: var(--accent);
 }
 
 .nav-back {
@@ -217,7 +222,7 @@ nav {
   border: none;
   font-size: 0.75rem;
   font-weight: 400;
-  color: var(--muted);
+  color: var(--text);
   padding: 0.2rem 0.35rem;
   transition: color 0.2s;
   font-family: inherit;
@@ -381,15 +386,16 @@ h2 {
 
 .intro-id h1 {
   margin-bottom: 0.6em;
-  font-size: clamp(1.05rem, 1.8vw, 1.9rem);
+  font-size: clamp(0.95rem, 1.35vw, 1.1rem);
   font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 .intro-bio {
   font-size: clamp(0.95rem, 1.35vw, 1.1rem);
   line-height: 1.65;
   color: var(--text);
-  max-width: 23vw;
+  max-width: 19vw;
 }
 
 .intro-photo {
@@ -793,7 +799,7 @@ h2 {
 
 .resume-item {
   display: grid;
-  grid-template-columns: 130px 1fr 2fr;
+  grid-template-columns: 190px 300px 1fr;
   gap: 2rem;
   padding-bottom: 2rem;
   margin-bottom: 2rem;
@@ -843,9 +849,9 @@ h2 {
 }
 
 /* Competencies tab: 2 columns (grey label | content); content starts where the
-   middle column began in the other tabs (130px label column) */
+   middle column began in the other tabs (190px label column) */
 #panel-vol .resume-item {
-  grid-template-columns: 130px 1fr;
+  grid-template-columns: 190px 1fr;
 }
 
 #panel-vol .resume-org {
@@ -1071,7 +1077,7 @@ h2 {
   border-bottom: 0.5px solid #000;
   padding: clamp(1rem, 2vw, 1.8rem) 0;
   white-space: nowrap;
-  margin-top: clamp(9rem, 12vw, 12rem);
+  margin-top: clamp(12rem, 15vw, 16rem);
 }
 
 .marquee-track {

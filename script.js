@@ -246,9 +246,9 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     });
   }
 
-  // Project pages: cover image → first content image (sticky scroll section)
+  // Project pages: cover image → first content image
   const cover = document.querySelector('.alt-cover');
-  const firstContent = document.querySelector('.alt-sticky-wrapper');
+  const firstContent = document.querySelector('.alt-block');
   if (cover && firstContent) {
     cover.addEventListener('click', () => scrollToEl(firstContent));
   }
@@ -307,6 +307,7 @@ langBtns.forEach(btn => {
 // Active nav link on scroll
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+const navLogo = document.querySelector('.nav-logo');
 
 const sectionObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -317,6 +318,11 @@ const sectionObserver = new IntersectionObserver(entries => {
                         (href === '#' && entry.target.id === 'intro');
         link.classList.toggle('active', matches);
       });
+      // No nav tab active (e.g. still on the intro) — highlight the logo instead
+      if (navLogo) {
+        const anyActive = Array.from(navLinks).some(link => link.classList.contains('active'));
+        navLogo.classList.toggle('active', !anyActive);
+      }
     }
   });
 }, { rootMargin: '-40% 0px -55% 0px' });
@@ -801,5 +807,76 @@ window.addEventListener('scroll', () => {
   // DE/EN swap changes the sentence width, so re-measure after a toggle
   document.querySelectorAll('.lang-btn').forEach(function (b) {
     b.addEventListener('click', function () { setTimeout(sync, 0); });
+  });
+})();
+
+// Multi-image gallery blocks: hover shows a left/right nav-cursor arrow
+// depending on which half of the strip the pointer is over; a click scrolls
+// exactly one image over in that direction.
+(function () {
+  var galleries = document.querySelectorAll('.alt-gallery');
+  if (!galleries.length) return;
+
+  var navCursor = document.getElementById('cursor-nav');
+  var diff  = document.getElementById('cursor-diff');
+  var scr   = document.getElementById('cursor-screen');
+  var white = document.getElementById('cursor-white');
+
+  galleries.forEach(function (gallery) {
+    var track = gallery.querySelector('.alt-gallery-track');
+    if (!track) return;
+
+    function dirFor(e) {
+      var r = gallery.getBoundingClientRect();
+      return (e.clientX - r.left) < r.width / 2 ? -1 : 1;
+    }
+
+    gallery.addEventListener('mouseenter', function () {
+      if (diff)  diff.style.opacity = '0';
+      if (scr)   scr.style.opacity = '0';
+      if (white) white.style.opacity = '0';
+      if (navCursor) navCursor.classList.add('active');
+    });
+
+    gallery.addEventListener('mousemove', function (e) {
+      if (!navCursor) return;
+      navCursor.textContent = dirFor(e) < 0 ? '←' : '→';
+    });
+
+    gallery.addEventListener('mouseleave', function () {
+      if (diff)  diff.style.opacity = '';
+      if (scr)   scr.style.opacity = '';
+      if (navCursor) {
+        navCursor.classList.remove('active');
+        navCursor.textContent = '→';
+      }
+    });
+
+    // Custom eased scroll (native "smooth" feels abrupt/linear in most browsers)
+    function easeInOutCubic(t) {
+      return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    }
+    function smoothScrollBy(delta) {
+      var start = track.scrollLeft;
+      var max = track.scrollWidth - track.clientWidth;
+      var end = Math.max(0, Math.min(start + delta, max));
+      var dist = end - start;
+      var duration = 600;
+      var startTime = null;
+      function step(ts) {
+        if (startTime === null) startTime = ts;
+        var t = Math.min((ts - startTime) / duration, 1);
+        track.scrollLeft = start + dist * easeInOutCubic(t);
+        if (t < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    gallery.addEventListener('click', function (e) {
+      var item = track.querySelector('.alt-gallery-item');
+      var step = item ? item.getBoundingClientRect().width : track.clientWidth;
+      var gap  = parseFloat(getComputedStyle(track).gap) || 0;
+      smoothScrollBy(dirFor(e) * (step + gap));
+    });
   });
 })();
