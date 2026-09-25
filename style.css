@@ -381,15 +381,16 @@ h2 {
 
 .intro-id h1 {
   margin-bottom: 0.6em;
-  font-size: clamp(1.05rem, 1.8vw, 1.9rem);
+  font-size: clamp(0.95rem, 1.35vw, 1.1rem);
   font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 .intro-bio {
   font-size: clamp(0.95rem, 1.35vw, 1.1rem);
   line-height: 1.65;
   color: var(--text);
-  max-width: 23vw;
+  max-width: 19vw;
 }
 
 .intro-photo {
@@ -1071,7 +1072,7 @@ h2 {
   border-bottom: 0.5px solid #000;
   padding: clamp(1rem, 2vw, 1.8rem) 0;
   white-space: nowrap;
-  margin-top: clamp(9rem, 12vw, 12rem);
+  margin-top: clamp(12rem, 15vw, 16rem);
 }
 
 .marquee-track {
