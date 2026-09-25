@@ -793,7 +793,7 @@ h2 {
 
 .resume-item {
   display: grid;
-  grid-template-columns: 130px 1fr 2fr;
+  grid-template-columns: 190px 300px 1fr;
   gap: 2rem;
   padding-bottom: 2rem;
   margin-bottom: 2rem;
@@ -843,9 +843,9 @@ h2 {
 }
 
 /* Competencies tab: 2 columns (grey label | content); content starts where the
-   middle column began in the other tabs (130px label column) */
+   middle column began in the other tabs (190px label column) */
 #panel-vol .resume-item {
-  grid-template-columns: 130px 1fr;
+  grid-template-columns: 190px 1fr;
 }
 
 #panel-vol .resume-org {
