@@ -112,6 +112,9 @@
   margin-top: 0.25rem;
   max-width: 360px;
   text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  overflow-wrap: break-word;
 }
 
 /* When the About text is long enough to need two columns, let it flow as
@@ -350,6 +353,9 @@
   line-height: 1.75;
   max-width: 360px;
   text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  overflow-wrap: break-word;
 }
 
 /* SOLUTION / IMPACT TEXT SECTIONS */

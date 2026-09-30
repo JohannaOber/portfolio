@@ -397,6 +397,9 @@ h2 {
   color: var(--text);
   max-width: 19vw;
   text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  overflow-wrap: break-word;
 }
 
 .intro-photo {
@@ -962,6 +965,9 @@ h2 {
   line-height: 1.7;
   max-width: none;
   text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  overflow-wrap: break-word;
 }
 
 .profile-bio-label {
