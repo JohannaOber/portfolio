@@ -12,6 +12,23 @@
   </script>
   
   <meta charset="UTF-8" />
+  <script>
+    // Runs before any rendering/restoration: on a manual reload, disable the
+    // browser's automatic scroll restoration and drop any #hash (e.g. left
+    // over from the project pages' back arrow) immediately, so neither the
+    // browser's own fragment-scroll nor its remembered scroll position can
+    // pull the page back down. Must happen this early; by the time the
+    // bottom-of-body script runs, the browser has often already restored.
+    (function () {
+      if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+      var nav = (performance.getEntriesByType && performance.getEntriesByType('navigation')[0]) || null;
+      var isReload = nav ? nav.type === 'reload'
+                         : (performance.navigation && performance.navigation.type === 1);
+      if (isReload && location.hash) {
+        history.replaceState(null, '', location.pathname + location.search);
+      }
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Johanna Ober — Design Portfolio</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />

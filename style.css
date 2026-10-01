@@ -14,7 +14,7 @@
   --gutter:   20px;
 }
 
-html { scroll-behavior: auto; overflow-x: clip; }
+html { scroll-behavior: auto; overflow-x: clip; overflow-anchor: none; }
 
 /* ── CUSTOM CURSOR ────────────────────────────────── */
 @media (pointer: fine) {
