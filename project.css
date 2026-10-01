@@ -114,7 +114,10 @@
   text-align: justify;
   hyphens: auto;
   -webkit-hyphens: auto;
+  hyphenate-limit-lines: 2;
+  -webkit-hyphenate-limit-lines: 2;
   overflow-wrap: break-word;
+  hanging-punctuation: first last allow-end;
 }
 
 /* TASK STRIP */
@@ -340,7 +343,10 @@
   text-align: justify;
   hyphens: auto;
   -webkit-hyphens: auto;
+  hyphenate-limit-lines: 2;
+  -webkit-hyphenate-limit-lines: 2;
   overflow-wrap: break-word;
+  hanging-punctuation: first last allow-end;
 }
 
 /* SOLUTION / IMPACT TEXT SECTIONS */
