@@ -14,7 +14,7 @@
   --gutter:   20px;
 }
 
-html { scroll-behavior: auto; overflow-x: clip; }
+html { scroll-behavior: auto; overflow-x: clip; overflow-anchor: none; }
 
 /* ── CUSTOM CURSOR ────────────────────────────────── */
 @media (pointer: fine) {
@@ -399,7 +399,10 @@ h2 {
   text-align: justify;
   hyphens: auto;
   -webkit-hyphens: auto;
+  hyphenate-limit-lines: 2;
+  -webkit-hyphenate-limit-lines: 2;
   overflow-wrap: break-word;
+  hanging-punctuation: first last allow-end;
 }
 
 .intro-photo {
@@ -967,7 +970,10 @@ h2 {
   text-align: justify;
   hyphens: auto;
   -webkit-hyphens: auto;
+  hyphenate-limit-lines: 2;
+  -webkit-hyphenate-limit-lines: 2;
   overflow-wrap: break-word;
+  hanging-punctuation: first last allow-end;
 }
 
 .profile-bio-label {
