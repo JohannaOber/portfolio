@@ -393,12 +393,14 @@ h2 {
 
 .intro-bio {
   font-size: clamp(0.95rem, 1.35vw, 1.1rem);
-  line-height: 1.65;
+  line-height: 1.5;
   color: var(--text);
   max-width: 19vw;
-  text-align: justify;
+  text-align: left;
   hyphens: auto;
   -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  word-break: normal;
   hyphenate-limit-lines: 2;
   -webkit-hyphenate-limit-lines: 2;
   overflow-wrap: break-word;
@@ -967,9 +969,11 @@ h2 {
   font-size: 1rem;
   line-height: 1.7;
   max-width: none;
-  text-align: justify;
+  text-align: left;
   hyphens: auto;
   -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  word-break: normal;
   hyphenate-limit-lines: 2;
   -webkit-hyphenate-limit-lines: 2;
   overflow-wrap: break-word;
