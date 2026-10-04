@@ -328,6 +328,7 @@ h2 {
 #resume > h2 {
   padding-bottom: 1.5rem;
   border-bottom: 0.5px solid #000;
+  margin-bottom: 1.75rem;
 }
 
 /* ── INTRO ────────────────────────────────────────── */
@@ -393,12 +394,14 @@ h2 {
 
 .intro-bio {
   font-size: clamp(0.95rem, 1.35vw, 1.1rem);
-  line-height: 1.65;
+  line-height: 1.5;
   color: var(--text);
   max-width: 19vw;
-  text-align: justify;
+  text-align: left;
   hyphens: auto;
   -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  word-break: normal;
   hyphenate-limit-lines: 2;
   -webkit-hyphenate-limit-lines: 2;
   overflow-wrap: break-word;
@@ -772,7 +775,7 @@ h2 {
   transition: border-color 0.2s;
 }
 
-.tab-panel { display: none; }
+.tab-panel { display: none; padding-left: max(250px, 18.5vw); }
 
 #tab-exp:checked ~ .tab-nav label[for="tab-exp"],
 #tab-edu:checked ~ .tab-nav label[for="tab-edu"],
@@ -806,7 +809,7 @@ h2 {
 
 .resume-item {
   display: grid;
-  grid-template-columns: 190px 300px 1fr;
+  grid-template-columns: max(200px, 15vw) minmax(0, 50vw);
   gap: 2rem;
   padding-bottom: 2rem;
   margin-bottom: 2rem;
@@ -855,10 +858,9 @@ h2 {
   color: var(--muted);
 }
 
-/* Competencies tab: 2 columns (grey label | content); content starts where the
-   middle column began in the other tabs (190px label column) */
+/* Skills & More tab: same narrow label | wide content grid as the other tabs */
 #panel-vol .resume-item {
-  grid-template-columns: 190px 1fr;
+  grid-template-columns: max(200px, 15vw) minmax(0, 50vw);
 }
 
 #panel-vol .resume-org {
@@ -967,9 +969,11 @@ h2 {
   font-size: 1rem;
   line-height: 1.7;
   max-width: none;
-  text-align: justify;
+  text-align: left;
   hyphens: auto;
   -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  word-break: normal;
   hyphenate-limit-lines: 2;
   -webkit-hyphenate-limit-lines: 2;
   overflow-wrap: break-word;
@@ -1199,6 +1203,7 @@ h2 {
   .resume-item,
   #panel-vol .resume-item { grid-template-columns: 1fr; gap: 0.2rem; }
   .resume-company-col { padding-top: 0; }
+  .tab-panel { padding-left: 0; }
   #resume > .resume-section { margin-top: 3rem; }
   .profile-split { flex-direction: column; align-items: stretch; gap: 0; margin-top: 3rem; }
   .profile-ph1 { width: auto; margin: 0 1.5rem; }

@@ -111,9 +111,11 @@
   line-height: 1.7;
   margin-top: 0.25rem;
   max-width: 360px;
-  text-align: justify;
+  text-align: left;
   hyphens: auto;
   -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  word-break: normal;
   hyphenate-limit-lines: 2;
   -webkit-hyphenate-limit-lines: 2;
   overflow-wrap: break-word;
@@ -160,6 +162,8 @@
 
 .alt-block-text {
   order: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .alt-block--flip .alt-block-image {
@@ -333,6 +337,7 @@
   color: var(--text);
   margin-bottom: 1.25rem;
   max-width: 360px;
+  order: -1;
 }
 
 .alt-panel-body {
@@ -340,9 +345,11 @@
   color: var(--text);
   line-height: 1.75;
   max-width: 360px;
-  text-align: justify;
+  text-align: left;
   hyphens: auto;
   -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  word-break: normal;
   hyphenate-limit-lines: 2;
   -webkit-hyphenate-limit-lines: 2;
   overflow-wrap: break-word;
