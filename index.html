@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZDEHGEWYNK"></script>
+    <!-- Google tag (gtag.js), loaded only after the first real interaction
+       (mouse wheel, mouse move, click, touch, key press). Bots that just load the
+       page never trigger it, so they don't show up as users. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-ZDEHGEWYNK');
+
+    (function () {
+      var events = ['wheel', 'mousemove', 'pointerdown', 'touchstart', 'keydown'];
+      var loaded = false;
+      function loadGtag() {
+        if (loaded) return;
+        loaded = true;
+        events.forEach(function (e) { window.removeEventListener(e, loadGtag); });
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZDEHGEWYNK';
+        document.head.appendChild(s);
+      }
+      events.forEach(function (e) {
+        window.addEventListener(e, loadGtag, { passive: true });
+      });
+    })();
   </script>
   
   <meta charset="UTF-8" />
