@@ -535,6 +535,12 @@ h2 {
   transform: scale(1.08);
 }
 
+/* Same crop, but anchored to the left edge so the left side stays in view */
+.project-thumb--zoom-left {
+  transform: scale(1.15);
+  transform-origin: left center;
+}
+
 .project-body .badges {
   margin-top: 0;
   margin-bottom: 0.5rem;
