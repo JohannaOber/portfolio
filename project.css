@@ -4,7 +4,7 @@
 .alt-cover {
   cursor: none !important;
   width: 100%;
-  height: calc(70vh + 64px);
+  height: calc(67vh + 64px);
   overflow: hidden;
   margin: 60px 0 0;
 }
@@ -19,6 +19,17 @@
   font-weight: 400;
   letter-spacing: -0.03em;
   line-height: 1.15;
+  color: var(--text);
+}
+
+/* One-sentence project summary under the title, indented like the
+   meta strip text below it so it starts in line with "Client" */
+.alt-intro-lead {
+  margin-top: 2.5rem;
+  padding-left: 1.5rem;
+  max-width: 26rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
   color: var(--text);
 }
 
@@ -45,7 +56,7 @@
   align-items: baseline;
   flex-wrap: wrap;
   gap: 2rem 3rem;
-  margin: 0 var(--gutter);
+  margin: 3rem var(--gutter);
   padding: 2.5rem 1.5rem 1.25rem;
   border-top: 2px solid #000;
   border-bottom: 2px solid #000;
@@ -91,6 +102,12 @@
 }
 
 /* ABOUT SECTION — heading styled like the homepage's Projects/Resume/About */
+/* Space between the meta strip and the first image/text block (this
+   margin collapses with the strip's own bottom margin, the larger wins) */
+.alt-meta-strip + .alt-block {
+  margin-top: 16rem;
+}
+
 .alt-about {
   margin-left: 52%;
   margin-right: var(--gutter);
@@ -98,7 +115,7 @@
 }
 
 .alt-about > h2 {
-  font-size: clamp(1.8rem, 3.2vw, 2.75rem);
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
   font-weight: 400;
   letter-spacing: -0.025em;
   color: var(--text);
@@ -330,7 +347,7 @@
 }
 
 .alt-panel-heading {
-  font-size: clamp(1.7rem, 2.8vw, 2.5rem);
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
   font-weight: 400;
   letter-spacing: -0.025em;
   line-height: 1.2;
@@ -355,6 +372,7 @@
   overflow-wrap: break-word;
   hanging-punctuation: first last allow-end;
 }
+
 
 /* SOLUTION / IMPACT TEXT SECTIONS */
 .alt-text-section {
@@ -533,6 +551,12 @@
     padding: 2rem var(--gutter);
   }
 
+  .alt-intro-lead {
+    margin-top: 1.25rem;
+    max-width: none;
+    padding-left: 0;
+  }
+
   .alt-cover {
     margin-top: 48px;
     /* Width-relative height (no vh/svh at all) so it cannot react to the
@@ -568,6 +592,10 @@
   .alt-meta-strip .section-label {
     min-width: 4.5rem;
     margin-right: 0;
+  }
+
+  .alt-meta-strip + .alt-block {
+    margin-top: 4.5rem;
   }
 
   .alt-about {
