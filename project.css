@@ -38,7 +38,7 @@
 }
 
 /* META STRIP — Client / Year / Keywords, spread across the width between
-   two hairline separators */
+   two separators, text slightly inset from their ends */
 .alt-meta-strip {
   display: flex;
   justify-content: space-between;
@@ -46,9 +46,9 @@
   flex-wrap: wrap;
   gap: 2rem 3rem;
   margin: 0 var(--gutter);
-  padding: 2.5rem 4rem 1.25rem;
-  border-top: 0.5px solid #000;
-  border-bottom: 0.5px solid #000;
+  padding: 2.5rem 1.5rem 1.25rem;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
 }
 
 .alt-meta-strip > div {
@@ -108,7 +108,7 @@
 .alt-about .alt-intro-desc {
   font-size: clamp(0.9rem, 1.4vw, 1.05rem);
   color: var(--text);
-  line-height: 1.7;
+  line-height: 1.5;
   margin-top: 0.25rem;
   max-width: 360px;
   text-align: left;
@@ -343,7 +343,7 @@
 .alt-panel-body {
   font-size: 0.92rem;
   color: var(--text);
-  line-height: 1.75;
+  line-height: 1.5;
   max-width: 360px;
   text-align: left;
   hyphens: auto;

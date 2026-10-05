@@ -243,7 +243,7 @@ section {
   position: relative;
 }
 
-#resume { padding-top: 60px; }
+#resume { padding-top: 60px; padding-bottom: 60px; }
 
 /* Full-width separator */
 section + section::before {
@@ -304,7 +304,7 @@ h2 {
 #profile > h2 {
   margin-bottom: 2.5rem;
   padding-bottom: 1.5rem;
-  border-bottom: 0.5px solid #000;
+  border-bottom: 2px solid #000;
 }
 
 #projects > h2::after,
@@ -327,7 +327,7 @@ h2 {
 
 #resume > h2 {
   padding-bottom: 1.5rem;
-  border-bottom: 0.5px solid #000;
+  border-bottom: 2px solid #000;
   margin-bottom: 1.75rem;
 }
 
@@ -387,7 +387,7 @@ h2 {
 
 .intro-id h1 {
   margin-bottom: 0.6em;
-  font-size: clamp(0.95rem, 1.35vw, 1.1rem);
+  font-size: clamp(1.15rem, 1.7vw, 1.4rem);
   font-weight: 600;
   letter-spacing: -0.02em;
 }
@@ -396,7 +396,7 @@ h2 {
   font-size: clamp(0.95rem, 1.35vw, 1.1rem);
   line-height: 1.5;
   color: var(--text);
-  max-width: 19vw;
+  max-width: 21vw;
   text-align: left;
   hyphens: auto;
   -webkit-hyphens: auto;
@@ -750,10 +750,18 @@ h2 {
   pointer-events: none;
 }
 
+/* Tabs stacked in a left column, the active panel shows to their right */
+.resume-tabs {
+  display: grid;
+  grid-template-columns: max(250px, 18.5vw) minmax(0, 1fr);
+  align-items: start;
+}
+
 .tab-nav {
   display: flex;
-  align-items: center;
-  margin-bottom: 2.5rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
 }
 
 .tab-nav .resume-download {
@@ -768,25 +776,37 @@ h2 {
   font-size: 0.88rem;
   font-weight: 500;
   color: var(--text);
-  padding: 0.6rem 0;
-  margin-right: 2rem;
+  padding: 0.1rem 0 0.35rem;
   border-bottom: 2px solid transparent;
-  margin-bottom: -1px;
   transition: border-color 0.2s;
 }
 
-.tab-panel { display: none; padding-left: max(250px, 18.5vw); }
+/* All panels share one grid cell, so the block is always as tall as the
+   longest tab (Experience) and the section height never changes between
+   tabs. Inactive panels are only hidden, they still reserve their height. */
+.tab-panel {
+  grid-column: 2;
+  grid-row: 1;
+  visibility: hidden;
+}
+
+/* The last entry keeps its separator line, just no extra space below it */
+.tab-panel .resume-item:last-child {
+  margin-bottom: 0;
+}
 
 #tab-exp:checked ~ .tab-nav label[for="tab-exp"],
 #tab-edu:checked ~ .tab-nav label[for="tab-edu"],
-#tab-vol:checked ~ .tab-nav label[for="tab-vol"] {
+#tab-vol:checked ~ .tab-nav label[for="tab-vol"],
+#tab-pers:checked ~ .tab-nav label[for="tab-pers"] {
   border-bottom-color: var(--accent);
 }
 
 #tab-exp:checked ~ #panel-exp,
 #tab-edu:checked ~ #panel-edu,
-#tab-vol:checked ~ #panel-vol {
-  display: block;
+#tab-vol:checked ~ #panel-vol,
+#tab-pers:checked ~ #panel-pers {
+  visibility: visible;
 }
 
 .resume-tags {
@@ -814,10 +834,6 @@ h2 {
   padding-bottom: 2rem;
   margin-bottom: 2rem;
   border-bottom: 0.5px solid #000;
-}
-
-.resume-item:last-child {
-  border-bottom: none;
 }
 
 .resume-meta {
@@ -858,16 +874,20 @@ h2 {
   color: var(--muted);
 }
 
-/* Skills & More tab: same narrow label | wide content grid as the other tabs */
-#panel-vol .resume-item {
-  grid-template-columns: max(200px, 15vw) minmax(0, 50vw);
+/* Competencies & Personal tabs: narrow label, but a narrower content column
+   than the other tabs so long dot-separated lists wrap sooner */
+#panel-vol .resume-item,
+#panel-pers .resume-item {
+  grid-template-columns: max(200px, 15vw) minmax(0, 32vw);
 }
 
-#panel-vol .resume-org {
+#panel-vol .resume-org,
+#panel-pers .resume-org {
   color: var(--muted);
 }
 
-#panel-vol .resume-detail {
+#panel-vol .resume-detail,
+#panel-pers .resume-detail {
   font-size: 0.95rem;
 }
 
@@ -920,10 +940,11 @@ h2 {
 }
 
 /* #profile has no horizontal padding of its own (the split layout below
-   sets its own offset), so give the heading the standard page gutter */
+   sets its own offset), so give the heading the standard page gutter.
+   Margin, not padding, so the separator line stops at the gutter too */
 #profile > h2 {
-  padding-left: var(--gutter);
-  padding-right: var(--gutter);
+  margin-left: var(--gutter);
+  margin-right: var(--gutter);
   margin-bottom: 0;
 }
 
@@ -932,6 +953,7 @@ h2 {
 
 .profile-gallery {
   position: relative;
+  margin-inline: var(--gutter); /* images stop at the page gutter, like the separator */
   display: flow-root; /* contain .profile-split's margin-top so it can't
                           collapse upward and drag the whole gallery down */
 }
@@ -967,7 +989,7 @@ h2 {
 .profile-bio {
   padding: 0;
   font-size: 1rem;
-  line-height: 1.7;
+  line-height: 1.5;
   max-width: none;
   text-align: left;
   hyphens: auto;
@@ -989,7 +1011,7 @@ h2 {
   margin-bottom: 0.5rem;
 }
 
-/* Second photo: floats above the main pair, flush with the right edge */
+/* Second photo: floats above the main pair, flush with the right gutter */
 .profile-pair--second {
   position: absolute;
   top: 1.5rem;
@@ -1013,7 +1035,6 @@ h2 {
 
 .profile-pair--second .profile-bio {
   margin-top: 1.25rem;
-  padding-right: var(--gutter);
 }
 
 /* ── SKILLS & TOOLS (Version C: Pills + Chips) ──────── */
@@ -1093,7 +1114,7 @@ h2 {
 /* ── MARQUEE BAND ─────────────────────────────────── */
 .marquee-band {
   overflow: hidden;
-  border-bottom: 0.5px solid #000;
+  border-bottom: 2px solid #000;
   padding: clamp(1rem, 2vw, 1.8rem) 0;
   white-space: nowrap;
   margin-top: clamp(12rem, 15vw, 16rem);
@@ -1201,19 +1222,27 @@ h2 {
   }
   .projects-grid { grid-template-columns: 1fr; row-gap: 3rem; }
   .resume-item,
-  #panel-vol .resume-item { grid-template-columns: 1fr; gap: 0.2rem; }
+  #panel-vol .resume-item,
+  #panel-pers .resume-item { grid-template-columns: 1fr; gap: 0.2rem; }
   .resume-company-col { padding-top: 0; }
-  .tab-panel { padding-left: 0; }
+  /* Mobile: tabs back in a row above the panel */
+  .resume-tabs { display: block; }
+  .tab-panel { display: none; visibility: visible; }
+  #tab-exp:checked ~ #panel-exp,
+  #tab-edu:checked ~ #panel-edu,
+  #tab-vol:checked ~ #panel-vol,
+  #tab-pers:checked ~ #panel-pers { display: block; }
+  .tab-nav { flex-direction: row; gap: 2rem; margin-bottom: 2.5rem; }
   #resume > .resume-section { margin-top: 3rem; }
   .profile-split { flex-direction: column; align-items: stretch; gap: 0; margin-top: 3rem; }
-  .profile-ph1 { width: auto; margin: 0 1.5rem; }
+  .profile-ph1 { width: auto; }
   /* Let the photo keep its own height so no grey placeholder shows below it */
   .profile-ph1 { aspect-ratio: auto; }
   .profile-ph1 img { height: auto; }
-  .profile-text { width: 65vw; max-width: none; margin-left: 1.5rem; padding: 2rem 0 0; }
+  .profile-text { width: 65vw; max-width: none; padding: 2rem 0 0; }
   .profile-bio { max-width: none; padding: 0; }
   .intro-bio { max-width: 75%; }
-  .profile-pair--second { position: static; width: 60vw; padding: 0; margin: 0 1.5rem 2.5rem auto; }
+  .profile-pair--second { position: static; width: 60vw; padding: 0; margin: 0 0 2.5rem auto; }
   .profile-pair--second .profile-bio { padding-right: 0; }
   .marquee-band { margin-top: 2rem; }
   .contact-card { padding: 2rem 1.25rem; flex-direction: column; align-items: flex-start; gap: 1.5rem; }
