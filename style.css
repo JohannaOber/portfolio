@@ -180,6 +180,13 @@ nav {
   color: var(--accent);
 }
 
+/* Subpages: "JO | ←" on the left, JO goes home, ← goes one step back */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
 .nav-back {
   font-size: 1rem;
   font-weight: 400;
@@ -598,6 +605,14 @@ h2 {
 
 .project-filter.active {
   border-bottom-color: var(--accent);
+}
+
+/* Number of projects shown, right-aligned on the filter row */
+.project-count {
+  margin-left: auto;
+  padding: 0.6rem 0 0.15rem;
+  font-size: 0.88rem;
+  color: var(--muted);
 }
 
 .project-desc {

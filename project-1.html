@@ -15,13 +15,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BIRD Education Platform · Johanna Ober</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="stylesheet" href="style.css?v=20261005q" />
-  <link rel="stylesheet" href="project.css?v=20261005q" />
+  <link rel="stylesheet" href="style.css?v=20261005v" />
+  <link rel="stylesheet" href="project.css?v=20261005v" />
 </head>
 <body class="alt-page">
 
   <nav>
-    <a href="index.html" class="nav-back">←</a>
+    <div class="nav-left">
+      <a href="index.html" class="nav-logo">JO</a>
+      <span class="lang-divider">|</span>
+      <a href="index.html" class="nav-back" aria-label="Back">←</a>
+    </div>
     <ul class="nav-links">
       <li><a href="index.html#projects" class="active" data-en="Projects" data-de="Projekte">Projects</a></li>
       <li><a href="index.html#resume" data-en="Resume" data-de="Lebenslauf">Resume</a></li>
@@ -42,6 +46,7 @@
   <!-- HEADER -->
   <div class="alt-intro">
     <h1 class="alt-intro-title">BIRD Education Platform</h1>
+    <p class="alt-intro-lead" data-en="Mobile companion app for Germany's national education platform, helping students discover and navigate their options." data-de="Mobile Begleit-App für Deutschlands nationale Bildungsplattform, die Lernenden hilft, ihre Möglichkeiten zu entdecken und sich darin zurechtzufinden.">Mobile companion app for Germany's national education platform, helping students discover and navigate their options.</p>
   </div>
 
   <!-- META STRIP -->
@@ -96,7 +101,7 @@
     </div>
     <div class="alt-block-text">
       <span class="alt-panel-label" data-en="01 Discovery" data-de="01 Recherche">01 Discovery</span>
-      <h2 class="alt-panel-heading" data-en="User Research and Journey Mapping" data-de="Nutzerforschung und Journey Mapping">User Research and Journey Mapping</h2>
+      <h2 class="alt-panel-heading" data-en="The user's journey" data-de="Die Journey der Nutzer">The user's journey</h2>
       <p class="alt-panel-body" data-en="We mapped the journey of education seekers and identified key moments of uncertainty
         and overwhelm. Interviews with high school students revealed a need for personalisation
         and guidance: not just a search engine, but a companion that understands where you
@@ -118,7 +123,7 @@
     </div>
     <div class="alt-block-text">
       <span class="alt-panel-label" data-en="02 Define" data-de="02 Definition">02 Define</span>
-      <h2 class="alt-panel-heading" data-en="Defining Features and Priorities" data-de="Funktionen und Prioritäten definieren">Defining Features and Priorities</h2>
+      <h2 class="alt-panel-heading" data-en="Defining flow &amp; features" data-de="Flow &amp; Funktionen definieren">Defining flow &amp; features</h2>
       <p class="alt-panel-body" data-en="Based on the findings, we defined the core feature set: personalised content via the
         BIRD Wallet, intelligent search across all programs and institutions, a personal
         notebook for collecting favourites and notes, and the BIRD chatbot offering
@@ -140,7 +145,7 @@
     </div>
     <div class="alt-block-text">
       <span class="alt-panel-label" data-en="03 Design" data-de="03 Design">03 Design</span>
-      <h2 class="alt-panel-heading" data-en="From Wireframes to High-Fidelity" data-de="Von Wireframes zu High-Fidelity">From Wireframes to High-Fidelity</h2>
+      <h2 class="alt-panel-heading" data-en="Wireframe to High-Fidelity" data-de="Vom Wireframe zu High-Fidelity">Wireframe to High-Fidelity</h2>
       <p class="alt-panel-body" data-en="We developed a moodboard, paper wireframes for all core flows and iterated toward
         high-fidelity screens. The visual language, inspired by paper and handwriting, was
         chosen to feel familiar and approachable for younger users while communicating
@@ -157,7 +162,10 @@
   </div>
 
   <!-- This panel now shows two images side by side: the moved-in Design screens image plus the original Test image -->
-  <div class="alt-block alt-block--stacked">
+  <div class="alt-block">
+    <div class="alt-block-image">
+      <img loading="lazy" decoding="async" src="images/project-1-bird/project-1-6.jpg" alt="BIRD: Tested prototype" />
+    </div>
     <div class="alt-block-text">
       <span class="alt-panel-label" data-en="04 Test" data-de="04 Test">04 Test</span>
       <h2 class="alt-panel-heading" data-en="Usability Testing" data-de="Usability-Tests">Usability Testing</h2>
@@ -174,19 +182,15 @@
         consistently well-received.
       </p>
     </div>
-    <div class="alt-block-image-pair">
-      <img loading="lazy" decoding="async" src="images/project-1-bird/project-1-6.jpg" alt="BIRD: Tested prototype" />
-      <img loading="lazy" decoding="async" src="images/project-1-bird/project-1-5.jpg" alt="BIRD: Design screens" />
-    </div>
   </div>
 
   <div class="alt-block alt-block--flip">
     <div class="alt-block-image">
-      <img loading="lazy" decoding="async" src="images/project-1-bird/project-1-1.jpg" alt="BIRD Education Platform" />
+      <img loading="lazy" decoding="async" src="images/project-1-bird/project-1-5.jpg" alt="BIRD: Design screens" />
     </div>
     <div class="alt-block-text">
       <span class="alt-panel-label" data-en="Solution &amp; Impact" data-de="Lösung &amp; Wirkung">Solution &amp; Impact</span>
-      <h2 class="alt-panel-heading" data-en="Personal space with hands on character" data-de="Persönlicher Raum mit handgemachtem Charakter">Personal space with hands on character</h2>
+      <h2 class="alt-panel-heading" data-en="A personal space with hands on character" data-de="Ein persönlicher Raum mit handgemachtem Charakter">A personal space with hands on character</h2>
       <p class="alt-panel-body" data-en="The app brings Germany's education options into one place. It offers
         individual content, space for personal notes and support on the go. The
         paper-inspired design adds familiarity and a hands-on-work character.
@@ -246,7 +250,7 @@
 
   <a href="#" id="back-to-top" aria-label="Back to top"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 14.5V2.5M2.5 8l5.5-5.5 5.5 5.5"/></svg></a>
 
-  <script src="script.js?v=20261005q"></script>
+  <script src="script.js?v=20261005v"></script>
   <script>
     (function () {
       if (!window.matchMedia('(pointer: fine)').matches) return;
