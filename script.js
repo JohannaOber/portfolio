@@ -113,8 +113,8 @@ if (window.matchMedia('(pointer: fine)').matches) {
     });
   });
 
-  // pe-link zones + See More project cards: show nav cursor (→), hide blend-mode layers
-  Array.from(document.querySelectorAll('.pe-link, .project-card a:not(.project-link)')).forEach(link => {
+  // pe-link zones + See More project cards + More Projects link: show nav cursor (→), hide blend-mode layers
+  Array.from(document.querySelectorAll('.pe-link, .project-card a:not(.project-link), .more-projects-link')).forEach(link => {
     link.addEventListener('mouseenter', () => {
       onNavZone = true;
       diff.style.opacity  = '0';
@@ -255,29 +255,6 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   }
 })();
 
-// Project page back button: smart return to the homepage
-(function () {
-  const back = document.querySelector('.nav-back');
-  if (!back) return;
-  back.addEventListener('click', e => {
-    e.preventDefault();
-    let cameFromIndex = false;
-    try {
-      const ref = new URL(document.referrer, location.href);
-      if (ref.origin === location.origin) {
-        const page = ref.pathname.split('/').pop();
-        if (page === '' || page === 'index.html') cameFromIndex = true;
-      }
-    } catch (err) {}
-    if (cameFromIndex && history.length > 1) {
-      // Returns to the homepage at the exact scroll position we left from
-      history.back();
-    } else {
-      // Came from another project (or direct entry): land on the projects section
-      location.href = 'index.html#projects';
-    }
-  });
-})();
 
 // Language toggle
 const langBtns = document.querySelectorAll('.lang-btn');
@@ -878,6 +855,56 @@ window.addEventListener('scroll', () => {
       var step = item ? item.getBoundingClientRect().width : track.clientWidth;
       var gap  = parseFloat(getComputedStyle(track).gap) || 0;
       smoothScrollBy(dirFor(e) * (step + gap));
+    });
+  });
+})();
+
+// Projects overview page: category filter
+(function () {
+  var filters = document.querySelectorAll('.project-filter');
+  var cards = document.querySelectorAll('.projects-grid .project-card');
+  var count = document.querySelector('.project-count');
+  if (!filters.length) return;
+
+  // "10 Projects" at the right end of the filter row: number of cards shown.
+  // Keeps data-en/data-de in sync so the language toggle shows the right text.
+  function updateCount() {
+    if (!count) return;
+    var n = 0;
+    cards.forEach(function (card) { if (card.style.display !== 'none') n++; });
+    count.dataset.en = n + (n === 1 ? ' Project' : ' Projects');
+    count.dataset.de = n + (n === 1 ? ' Projekt' : ' Projekte');
+    count.textContent = document.documentElement.lang === 'de' ? count.dataset.de : count.dataset.en;
+  }
+  updateCount();
+
+  filters.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      filters.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+
+      var filter = btn.dataset.filter;
+      cards.forEach(function (card) {
+        var cats = (card.dataset.category || '').split(' ');
+        var show = filter === 'all' || cats.indexOf(filter) !== -1;
+        card.style.display = show ? '' : 'none';
+      });
+      updateCount();
+    });
+  });
+})();
+
+// "←" nav-back on subpages: always one step back in the click history.
+// Falls back to the homepage when the page was opened directly (no
+// same-origin page to return to).
+(function () {
+  document.querySelectorAll('.nav-back').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      var sameOrigin = false;
+      try { sameOrigin = new URL(document.referrer).origin === location.origin; } catch (err) {}
+      if (sameOrigin && history.length > 1) history.back();
+      else location.href = 'index.html';
     });
   });
 })();

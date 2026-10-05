@@ -180,6 +180,13 @@ nav {
   color: var(--accent);
 }
 
+/* Subpages: "JO | ←" on the left, JO goes home, ← goes one step back */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
 .nav-back {
   font-size: 1rem;
   font-weight: 400;
@@ -483,6 +490,26 @@ h2 {
 .btn-ghost:hover { background: var(--gray-50); }
 
 /* ── PROJECTS ─────────────────────────────────────── */
+.more-projects-link {
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  font-size: clamp(1.8rem, 3.2vw, 2.75rem);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  color: var(--text);
+  text-decoration: none;
+  padding-bottom: 0.05em;
+  border-bottom: 4px solid transparent;
+  transition: border-color 0.2s;
+  margin-top: 14rem;
+  margin-bottom: 6rem;
+}
+
+.more-projects-link:hover {
+  border-bottom-color: var(--accent);
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -544,6 +571,48 @@ h2 {
   letter-spacing: -0.02em;
   margin-bottom: 0.75rem;
   line-height: 1.2;
+}
+
+/* ── PROJECTS OVERVIEW PAGE ──────────────────────────── */
+/* Same top offset and left inset as "UX Designer & Engineer" on the homepage */
+.projects-hero {
+  padding: 12vh var(--gutter) 0;
+}
+
+.projects-overview {
+  padding-top: 4rem;
+}
+
+.project-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.project-filter {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0.6rem 0 0.15rem;
+  margin-right: 2rem;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.project-filter.active {
+  border-bottom-color: var(--accent);
+}
+
+/* Number of projects shown, right-aligned on the filter row */
+.project-count {
+  margin-left: auto;
+  padding: 0.6rem 0 0.15rem;
+  font-size: 0.88rem;
+  color: var(--muted);
 }
 
 .project-desc {

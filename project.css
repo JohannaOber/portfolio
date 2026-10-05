@@ -90,11 +90,6 @@
   align-items: baseline;
 }
 
-/* The Topic label only shows on mobile, where the keywords sit on their own row */
-.alt-meta-topic .section-label {
-  display: none;
-}
-
 .alt-meta-strip p + p::before {
   content: "·";
   color: var(--muted);
@@ -196,6 +191,12 @@
   display: block;
 }
 
+.alt-block-video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* Crop into the image a little: the wrapper clips the scaled image */
 .alt-block-image--zoom {
   overflow: hidden;
@@ -213,6 +214,16 @@
 
 .alt-block-image--zoom-lg img {
   transform: scale(1.15);
+}
+
+/* A block whose image gets more room than its text (desktop only, the
+   mobile rule further down stacks it like every other block) */
+.alt-block--wide-image {
+  grid-template-columns: 1fr 1.8fr;
+}
+
+.alt-block--wide-image.alt-block--flip {
+  grid-template-columns: 1.8fr 1fr;
 }
 
 /* A block with text plus two separate, statically placed images (no scroll),
@@ -582,10 +593,6 @@
   /* Wrap left-aligned (not justified) when the viewport gets very narrow */
   .alt-meta-strip p {
     text-align: left;
-  }
-
-  .alt-meta-topic .section-label {
-    display: inline;
   }
 
   /* Same label width in every row so all values start at the same x position */

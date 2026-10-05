@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js), loaded only after the first real interaction
+       (mouse wheel, mouse move, click, touch, key press). Bots that just load the
+       page never trigger it, so they don't show up as users. -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZDEHGEWYNK');
+
+    (function () {
+      var events = ['wheel', 'mousemove', 'pointerdown', 'touchstart', 'keydown'];
+      var loaded = false;
+      function loadGtag() {
+        if (loaded) return;
+        loaded = true;
+        events.forEach(function (e) { window.removeEventListener(e, loadGtag); });
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZDEHGEWYNK';
+        document.head.appendChild(s);
+      }
+      events.forEach(function (e) {
+        window.addEventListener(e, loadGtag, { passive: true });
+      });
+    })();
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Projects · Johanna Ober</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="style.css?v=20261005v" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-left">
+      <a href="index.html" class="nav-logo">JO</a>
+      <span class="lang-divider">|</span>
+      <a href="index.html" class="nav-back" aria-label="Back">←</a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html#projects" class="active" data-en="Projects" data-de="Projekte">Projects</a></li>
+      <li><a href="index.html#resume"   data-en="Resume"   data-de="Lebenslauf">Resume</a></li>
+      <li><a href="index.html#profile"  data-en="About"    data-de="Über mich">About</a></li>
+    </ul>
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang="en">EN</button>
+      <span class="lang-divider">|</span>
+      <button class="lang-btn" data-lang="de">DE</button>
+    </div>
+  </nav>
+
+  <!-- ALL PROJECTS -->
+  <div class="projects-hero">
+    <h1 class="hero-display projects-overview-title" data-en="My Projects" data-de="Meine Projekte">My Projects</h1>
+  </div>
+
+  <section class="projects-overview">
+    <div class="project-filters">
+      <button type="button" class="project-filter active" data-filter="all" data-en="All" data-de="Alle">All</button>
+      <button type="button" class="project-filter" data-filter="ux" data-en="UX" data-de="UX">UX</button>
+      <button type="button" class="project-filter" data-filter="ai" data-en="AI" data-de="KI">AI</button>
+      <button type="button" class="project-filter" data-filter="graphic" data-en="Graphic" data-de="Grafik">Graphic</button>
+      <button type="button" class="project-filter" data-filter="education" data-en="Education" data-de="Bildung">Education</button>
+      <button type="button" class="project-filter" data-filter="automotive" data-en="Automotive" data-de="Automotive">Automotive</button>
+      <span class="project-count" aria-live="polite" data-en="10 Projects" data-de="10 Projekte">10 Projects</span>
+    </div>
+
+    <div class="projects-grid">
+
+      <div class="project-card" data-category="ux ai">
+        <a href="project-10.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-10-voteasy/project-10-1.jpg" alt="Voteasy Votecounter" /></a>
+        <div class="project-body">
+          <p class="project-tags">
+            <span data-en="Civic Tech" data-de="Civic Tech">Civic Tech</span><span data-en="Digital Elections" data-de="Digitale Wahlen">Digital Elections</span>
+          </p>
+          <p class="project-title">Voteasy Votecounter</p>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="education ux ai">
+        <a href="project-9.html"><img loading="lazy" decoding="async" class="project-thumb project-thumb--zoom" src="images/project-9-langenscheidt/project-9-elva.jpg" alt="Langenscheidt Language Coach" /></a>
+        <div class="project-body">
+          <p class="project-tags">
+            <span data-en="Human-AI-Interaction" data-de="Mensch-KI-Interaktion">Human-AI-Interaction</span><span>Learner-Centered Design</span>
+          </p>
+          <p class="project-title">Langenscheidt Language Coach</p>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="education ux ai">
+        <a href="project-1.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-1-bird/project-1-1.jpg" alt="BIRD Education Platform" /></a>
+        <div class="project-body">
+          <p class="project-tags">
+            <span>EdTech</span><span>Mobile</span>
+          </p>
+          <p class="project-title">BIRD Education Platform</p>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="ux">
+        <a href="project-3.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-3-chain2bike/project-3-1.jpg" alt="Chain²Bike" /></a>
+        <div class="project-body">
+          <p class="project-tags">
+            <span>Blockchain</span><span data-en="Trust &amp; Security" data-de="Vertrauen &amp; Sicherheit">Trust &amp; Security</span>
+          </p>
+          <p class="project-title">Chain²Bike</p>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="automotive ux">
+        <a href="project-6.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-6-hmi-driving-simulation/project-6-1.jpg" alt="HMI for Driving Simulation" /></a>
+        <div class="project-body">
+          <p class="project-tags">
+            <span>Automotive</span><span>HMI</span>
+          </p>
+          <p class="project-title">HMI for Driving Simulation</p>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="education ux ai">
+        <a href="project-11.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-11-ella/project-11-1.png" alt="ELLA" /></a>
+        <div class="project-body">
+          <p class="project-tags">
+            <span>International Research Project</span><span data-en="Selfregulated Learning" data-de="Selbstreguliertes Lernen">Selfregulated Learning</span>
+          </p>
+          <p class="project-title">ELLA – Lifelong Learning with AI</p>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="education ux">
+        <a href="project-4.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-4-akkademy/project-4-1.jpg" alt="AKKAdemy E-Learning" /></a>
+        <div class="project-body">
+          <p class="project-tags">
+            <span>E-Learning</span><span>Web</span>
+          </p>
+          <p class="project-title">AKKAdemy E-Learning</p>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="graphic">
+        <a href="project-7.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-7-horror-mode/project-7-1.png" alt="The Horror Mode" /></a>
+        <div class="project-body">
+          <p class="project-tags">
+            <span>Motion Design</span><span>Social Media</span>
+          </p>
+          <p class="project-title">The Horror Mode</p>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="automotive ux ai">
+        <a href="project-2.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-2-car-ux/Future-Cone_Pink-Gradient_5.jpg" alt="Mobile-First Car UX" /></a>
+        <div class="project-body">
+          <p class="project-tags">
+            <span>Automotive</span><span>Speculative Design</span>
+          </p>
+          <p class="project-title">Mobile-First Car UX</p>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="graphic education">
+        <a href="project-8.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-8-little-food-fighters/project-8-1.png" alt="Little Food Fighters" /></a>
+        <div class="project-body">
+          <p class="project-tags">
+            <span>Game Design</span><span data-en="Sustainability" data-de="Nachhaltigkeit">Sustainability</span>
+          </p>
+          <p class="project-title">Little Food Fighters</p>
+        </div>
+      </div>
+
+      <!-- LOVEsick: hidden, remove this comment wrapper to show it again
+      <div class="project-card" data-category="graphic">
+        <a href="project-5.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-5-lovesick/project-5-1.jpg" alt="LOVEsick" /></a>
+        <div class="project-body">
+          <p class="project-tags">
+            <span>Exhibition</span><span>Interactive</span>
+          </p>
+          <p class="project-title">LOVEsick</p>
+        </div>
+      </div>
+      -->
+
+    </div>
+  </section>
+
+  <a href="#" id="back-to-top" aria-label="Back to top"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 14.5V2.5M2.5 8l5.5-5.5 5.5 5.5"/></svg></a>
+  <script src="script.js?v=20261005v"></script>
+</body>
+</html>
