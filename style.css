@@ -132,7 +132,7 @@ body {
   align-items: center;
   justify-content: center;
   background: var(--white);
-  border: 1px solid var(--gray-200);
+  border: 1.5px solid #000;
   color: var(--text);
   text-decoration: none;
   font-size: 1.1rem;
@@ -501,6 +501,11 @@ h2 {
   width: 100%;
   aspect-ratio: 3 / 2;
   object-fit: cover;
+}
+
+/* Slight crop into a thumbnail (the link around it clips the overflow) */
+.project-thumb--zoom {
+  transform: scale(1.08);
 }
 
 .project-body .badges {
@@ -1198,7 +1203,7 @@ h2 {
   padding: 1.2rem var(--gutter);
   font-size: 0.75rem;
   color: var(--text);
-  border-top: 0.5px solid #000;
+  border-top: 1.5px solid #000;
 }
 
 /* ── RESPONSIVE ───────────────────────────────────── */
