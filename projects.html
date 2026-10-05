@@ -1,21 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZDEHGEWYNK"></script>
+    <!-- Google tag (gtag.js), loaded only after the first real interaction
+       (mouse wheel, mouse move, click, touch, key press). Bots that just load the
+       page never trigger it, so they don't show up as users. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-ZDEHGEWYNK');
+
+    (function () {
+      var events = ['wheel', 'mousemove', 'pointerdown', 'touchstart', 'keydown'];
+      var loaded = false;
+      function loadGtag() {
+        if (loaded) return;
+        loaded = true;
+        events.forEach(function (e) { window.removeEventListener(e, loadGtag); });
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZDEHGEWYNK';
+        document.head.appendChild(s);
+      }
+      events.forEach(function (e) {
+        window.addEventListener(e, loadGtag, { passive: true });
+      });
+    })();
   </script>
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Projects — Johanna Ober</title>
+  <title>My Projects · Johanna Ober</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=20261005q" />
 </head>
 <body>
 
@@ -50,38 +67,38 @@
 
     <div class="projects-grid">
 
-      <div class="project-card" data-category="education ux">
-        <a href="project-11.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-11/project-11-1.png" alt="ELLA" /></a>
+      <div class="project-card" data-category="ux">
+        <a href="project-10.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-10-voteasy/project-10-1.jpg" alt="Voteasy Votecounter" /></a>
         <div class="project-body">
           <p class="project-tags">
-            <span>International Research Project</span><span>Selfregulated Learning</span>
+            <span data-en="Civic Tech" data-de="Civic Tech">Civic Tech</span><span data-en="Digital Elections" data-de="Digitale Wahlen">Digital Elections</span>
           </p>
-          <p class="project-title">ELLA – Lifelong Learning with AI</p>
+          <p class="project-title">Voteasy Votecounter</p>
         </div>
       </div>
 
       <div class="project-card" data-category="education ux">
-        <a href="project-9.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-9/project-9-elva.jpg" alt="Langenscheidt Language Coach" /></a>
+        <a href="project-9.html"><img loading="lazy" decoding="async" class="project-thumb project-thumb--zoom" src="images/project-9-langenscheidt/project-9-elva.jpg" alt="Langenscheidt Language Coach" /></a>
         <div class="project-body">
           <p class="project-tags">
-            <span>Human-AI-Interaction</span><span>Learner-Centered Design</span>
+            <span data-en="Human-AI-Interaction" data-de="Mensch-KI-Interaktion">Human-AI-Interaction</span><span>Learner-Centered Design</span>
           </p>
           <p class="project-title">Langenscheidt Language Coach</p>
         </div>
       </div>
 
       <div class="project-card" data-category="education ux">
-        <a href="project-4.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-4/project-4-1.jpg" alt="AKKAdemy E-Learning" /></a>
+        <a href="project-11.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-11-ella/project-11-1.png" alt="ELLA" /></a>
         <div class="project-body">
           <p class="project-tags">
-            <span>E-Learning</span><span>Web</span>
+            <span>International Research Project</span><span data-en="Selfregulated Learning" data-de="Selbstreguliertes Lernen">Selfregulated Learning</span>
           </p>
-          <p class="project-title">AKKAdemy E-Learning</p>
+          <p class="project-title">ELLA – Lifelong Learning with AI</p>
         </div>
       </div>
 
       <div class="project-card" data-category="automotive ux">
-        <a href="project-6.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-6/project-6-1.png" alt="HMI for Driving Simulation" /></a>
+        <a href="project-6.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-6-hmi-driving-simulation/project-6-1.jpg" alt="HMI for Driving Simulation" /></a>
         <div class="project-body">
           <p class="project-tags">
             <span>Automotive</span><span>HMI</span>
@@ -90,28 +107,8 @@
         </div>
       </div>
 
-      <div class="project-card" data-category="education ux">
-        <a href="project-1.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-1/project-1-1.jpg" alt="BIRD Education Platform" /></a>
-        <div class="project-body">
-          <p class="project-tags">
-            <span>EdTech</span><span>Mobile</span>
-          </p>
-          <p class="project-title">BIRD Education Platform</p>
-        </div>
-      </div>
-
-      <div class="project-card" data-category="ux">
-        <a href="project-3.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-3/project-3-1.jpg" alt="Chain²Bike" /></a>
-        <div class="project-body">
-          <p class="project-tags">
-            <span>Web3</span><span>Mobile</span>
-          </p>
-          <p class="project-title">Chain²Bike</p>
-        </div>
-      </div>
-
       <div class="project-card" data-category="automotive ux">
-        <a href="project-2.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-2/Future-Cone_Pink-Gradient_5.jpg" alt="Mobile-First Car UX" /></a>
+        <a href="project-2.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-2-car-ux/Future-Cone_Pink-Gradient_5.jpg" alt="Mobile-First Car UX" /></a>
         <div class="project-body">
           <p class="project-tags">
             <span>Automotive</span><span>Speculative Design</span>
@@ -121,17 +118,47 @@
       </div>
 
       <div class="project-card" data-category="graphic">
-        <a href="project-8.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-8/project-8-1.png" alt="Little Food Fighters" /></a>
+        <a href="project-8.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-8-little-food-fighters/project-8-1.png" alt="Little Food Fighters" /></a>
         <div class="project-body">
           <p class="project-tags">
-            <span>Game Design</span><span>Sustainability</span>
+            <span>Game Design</span><span data-en="Sustainability" data-de="Nachhaltigkeit">Sustainability</span>
           </p>
           <p class="project-title">Little Food Fighters</p>
         </div>
       </div>
 
+      <div class="project-card" data-category="education ux">
+        <a href="project-1.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-1-bird/project-1-1.jpg" alt="BIRD Education Platform" /></a>
+        <div class="project-body">
+          <p class="project-tags">
+            <span>EdTech</span><span>Mobile</span>
+          </p>
+          <p class="project-title">BIRD Education Platform</p>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="education ux">
+        <a href="project-4.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-4-akkademy/project-4-1.jpg" alt="AKKAdemy E-Learning" /></a>
+        <div class="project-body">
+          <p class="project-tags">
+            <span>E-Learning</span><span>Web</span>
+          </p>
+          <p class="project-title">AKKAdemy E-Learning</p>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="ux">
+        <a href="project-3.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-3-chain2bike/project-3-1.jpg" alt="Chain²Bike" /></a>
+        <div class="project-body">
+          <p class="project-tags">
+            <span>Web3</span><span>Mobile</span>
+          </p>
+          <p class="project-title">Chain²Bike</p>
+        </div>
+      </div>
+
       <div class="project-card" data-category="graphic">
-        <a href="project-5.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-5/project-5-1.jpg" alt="LOVEsick" /></a>
+        <a href="project-5.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-5-lovesick/project-5-1.jpg" alt="LOVEsick" /></a>
         <div class="project-body">
           <p class="project-tags">
             <span>Exhibition</span><span>Interactive</span>
@@ -141,7 +168,7 @@
       </div>
 
       <div class="project-card" data-category="graphic">
-        <a href="project-7.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-7/project-7-1.png" alt="The Horror Mode" /></a>
+        <a href="project-7.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-7-horror-mode/project-7-1.png" alt="The Horror Mode" /></a>
         <div class="project-body">
           <p class="project-tags">
             <span>Motion</span><span>Social Media</span>
@@ -150,20 +177,10 @@
         </div>
       </div>
 
-      <div class="project-card" data-category="ux">
-        <a href="project-10.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/placeholder.svg" alt="Votecounter" /></a>
-        <div class="project-body">
-          <p class="project-tags">
-            <span>[Tag]</span>
-          </p>
-          <p class="project-title">Votecounter</p>
-        </div>
-      </div>
-
     </div>
   </section>
 
-  <a href="#" id="back-to-top" aria-label="Back to top">↑</a>
-  <script src="script.js"></script>
+  <a href="#" id="back-to-top" aria-label="Back to top"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 14.5V2.5M2.5 8l5.5-5.5 5.5 5.5"/></svg></a>
+  <script src="script.js?v=20261005q"></script>
 </body>
 </html>

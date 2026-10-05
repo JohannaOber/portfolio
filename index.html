@@ -1,21 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZDEHGEWYNK"></script>
+    <!-- Google tag (gtag.js), loaded only after the first real interaction
+       (mouse wheel, mouse move, click, touch, key press). Bots that just load the
+       page never trigger it, so they don't show up as users. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-ZDEHGEWYNK');
+
+    (function () {
+      var events = ['wheel', 'mousemove', 'pointerdown', 'touchstart', 'keydown'];
+      var loaded = false;
+      function loadGtag() {
+        if (loaded) return;
+        loaded = true;
+        events.forEach(function (e) { window.removeEventListener(e, loadGtag); });
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZDEHGEWYNK';
+        document.head.appendChild(s);
+      }
+      events.forEach(function (e) {
+        window.addEventListener(e, loadGtag, { passive: true });
+      });
+    })();
   </script>
   
   <meta charset="UTF-8" />
+  <script>
+    // Runs before any rendering/restoration: on a manual reload, disable the
+    // browser's automatic scroll restoration and drop any #hash (e.g. left
+    // over from the project pages' back arrow) immediately, so neither the
+    // browser's own fragment-scroll nor its remembered scroll position can
+    // pull the page back down. Must happen this early; by the time the
+    // bottom-of-body script runs, the browser has often already restored.
+    (function () {
+      if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+      var nav = (performance.getEntriesByType && performance.getEntriesByType('navigation')[0]) || null;
+      var isReload = nav ? nav.type === 'reload'
+                         : (performance.navigation && performance.navigation.type === 1);
+      if (isReload && location.hash) {
+        history.replaceState(null, '', location.pathname + location.search);
+      }
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Johanna Ober — Design Portfolio</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=20261005q" />
 </head>
 <body>
 
@@ -48,14 +82,14 @@
         <div class="intro-id">
           <h1 class="hero-display">Johanna Ober</h1>
           <p class="intro-bio"
-             data-en="Hi, I am a senior UX Designer focused on AI in education technologies.<br>Over the past ten years, I have gained experience across EdTech, automotive, print media and public sector."
-             data-de="Hi, ich bin eine Senior UX Designerin mit Fokus auf KI im Bildungssektor.<br>Über die letzten zehn Jahre konnte ich Erfahrung in den Bereichen EdTech, Automotive, Printmedien und im öffentlichen Sektor sammeln.">
-            Hi, I am a senior UX Designer focused on AI in education technologies.<br>Over the past ten years, I have gained experience across EdTech, automotive, print media and public sector.
+             data-en="I am a German UX/UI Designer focused on Human-AI Interaction. Over the past eight years, I have worked across EdTech, automotive, the public sector and print media, with experience at companies like Audi AG."
+             data-de="Ich bin eine deutsche UX/UI Designerin mit Fokus auf Mensch-KI-Interaktion. In den letzten acht Jahren habe ich Erfahrung in den Bereichen EdTech, Automotive, dem öffentlichen Sektor und Printmedien gesammelt, unter anderem bei Unternehmen wie der Audi AG.">
+            I am a German UX/UI Designer focused on Human-AI Interaction. Over the past eight years, I have worked across EdTech, automotive, the public sector and print media, with experience at companies like Audi AG.
           </p>
         </div>
       </div>
       <div class="intro-photo">
-        <img decoding="async" src="images/JO_Titelbild_lowres.png" alt="Johanna Ober" />
+        <img decoding="async" src="images/JO_Titelbild.jpg" alt="Johanna Ober" />
       </div>
     </div>
     <!-- <div class="intro-lower">
@@ -76,7 +110,27 @@
     <div class="projects-grid">
 
       <div class="project-card">
-        <a href="project-11.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-11/project-11-1.png" alt="ELLA" /></a>
+        <a href="project-10.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-10-voteasy/project-10-1.jpg" alt="Voteasy Votecounter" /></a>
+        <div class="project-body">
+          <p class="project-tags">
+            <span data-en="Civic Tech" data-de="Civic Tech">Civic Tech</span><span data-en="Digital Elections" data-de="Digitale Wahlen">Digital Elections</span>
+          </p>
+          <p class="project-title">Voteasy Votecounter</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <a href="project-9.html"><img loading="lazy" decoding="async" class="project-thumb project-thumb--zoom" src="images/project-9-langenscheidt/project-9-elva.jpg" alt="Langenscheidt Language Coach" /></a>
+        <div class="project-body">
+          <p class="project-tags">
+            <span data-en="Human-AI-Interaction" data-de="Mensch-KI-Interaktion">Human-AI-Interaction</span><span>Learner-Centered Design</span>
+          </p>
+          <p class="project-title">Langenscheidt Language Coach</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <a href="project-11.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-11-ella/project-11-1.png" alt="ELLA" /></a>
         <div class="project-body">
           <p class="project-tags">
             <span>International Research Project</span><span data-en="Selfregulated Learning" data-de="Selbstreguliertes Lernen">Selfregulated Learning</span>
@@ -86,29 +140,7 @@
       </div>
 
       <div class="project-card">
-        <a href="project-9.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-9/project-9-elva.jpg" alt="Langenscheidt Language Coach" /></a>
-        <div class="project-body">
-          <p class="project-tags">
-            <span data-en="Human-AI-Interaction" data-de="Mensch-KI-Interaktion">Human-AI-Interaction</span><span>Learner-Centered Design</span>
-          </p>
-          <p class="project-title">Langenscheidt Language Coach</p>
-        </div>
-      </div>
-
-      <!-- AKKAdemy E-Learning — hidden -->
-      <div class="project-card" style="display:none">
-        <a href="project-4.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-4/project-4-1.jpg" alt="AKKAdemy E-Learning" /></a>
-        <div class="project-body">
-          <p class="project-tags">
-            <span>E-Learning</span><span>Web</span>
-          </p>
-          <p class="project-title">AKKAdemy E-Learning</p>
-        </div>
-      </div>
-
-      <!-- HMI for Driving Simulation — hidden -->
-      <div class="project-card" style="display:none">
-        <a href="project-6.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-6/project-6-1.png" alt="HMI for Driving Simulation" /></a>
+        <a href="project-6.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-6-hmi-driving-simulation/project-6-1.jpg" alt="HMI for Driving Simulation" /></a>
         <div class="project-body">
           <p class="project-tags">
             <span>Automotive</span><span>HMI</span>
@@ -118,28 +150,7 @@
       </div>
 
       <div class="project-card">
-        <a href="project-1.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-1/project-1-1.jpg" alt="BIRD Education Platform" /></a>
-        <div class="project-body">
-          <p class="project-tags">
-            <span>EdTech</span><span>Mobile</span>
-          </p>
-          <p class="project-title">BIRD Education Platform</p>
-        </div>
-      </div>
-
-      <!-- Chain²Bike — hidden -->
-      <div class="project-card" style="display:none">
-        <a href="project-3.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-3/project-3-1.jpg" alt="Chain²Bike" /></a>
-        <div class="project-body">
-          <p class="project-tags">
-            <span>Web3</span><span>Mobile</span>
-          </p>
-          <p class="project-title">Chain²Bike</p>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <a href="project-2.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-2/Future-Cone_Pink-Gradient_5.jpg" alt="Mobile-First Car UX" /></a>
+        <a href="project-2.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-2-car-ux/Future-Cone_Pink-Gradient_5.jpg" alt="Mobile-First Car UX" /></a>
         <div class="project-body">
           <p class="project-tags">
             <span>Automotive</span><span>Speculative Design</span>
@@ -149,7 +160,7 @@
       </div>
 
       <div class="project-card">
-        <a href="project-8.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-8/project-8-1.png" alt="Little Food Fighters" /></a>
+        <a href="project-8.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-8-little-food-fighters/project-8-1.png" alt="Little Food Fighters" /></a>
         <div class="project-body">
           <p class="project-tags">
             <span>Game Design</span><span data-en="Sustainability" data-de="Nachhaltigkeit">Sustainability</span>
@@ -158,9 +169,42 @@
         </div>
       </div>
 
+      <!-- BIRD Education Platform: hidden, remove style="display:none" to show again -->
+      <div class="project-card" style="display:none">
+        <a href="project-1.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-1-bird/project-1-1.jpg" alt="BIRD Education Platform" /></a>
+        <div class="project-body">
+          <p class="project-tags">
+            <span>EdTech</span><span>Mobile</span>
+          </p>
+          <p class="project-title">BIRD Education Platform</p>
+        </div>
+      </div>
+
+      <!-- AKKAdemy E-Learning — hidden -->
+      <div class="project-card" style="display:none">
+        <a href="project-4.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-4-akkademy/project-4-1.jpg" alt="AKKAdemy E-Learning" /></a>
+        <div class="project-body">
+          <p class="project-tags">
+            <span>E-Learning</span><span>Web</span>
+          </p>
+          <p class="project-title">AKKAdemy E-Learning</p>
+        </div>
+      </div>
+
+      <!-- Chain²Bike — hidden -->
+      <div class="project-card" style="display:none">
+        <a href="project-3.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-3-chain2bike/project-3-1.jpg" alt="Chain²Bike" /></a>
+        <div class="project-body">
+          <p class="project-tags">
+            <span>Web3</span><span>Mobile</span>
+          </p>
+          <p class="project-title">Chain²Bike</p>
+        </div>
+      </div>
+
       <!-- LOVEsick — hidden -->
       <div class="project-card" style="display:none">
-        <a href="project-5.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-5/project-5-1.jpg" alt="LOVEsick" /></a>
+        <a href="project-5.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-5-lovesick/project-5-1.jpg" alt="LOVEsick" /></a>
         <div class="project-body">
           <p class="project-tags">
             <span>Exhibition</span><span>Interactive</span>
@@ -171,22 +215,12 @@
 
       <!-- The Horror Mode — hidden -->
       <div class="project-card" style="display:none">
-        <a href="project-7.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-7/project-7-1.png" alt="The Horror Mode" /></a>
+        <a href="project-7.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/project-7-horror-mode/project-7-1.png" alt="The Horror Mode" /></a>
         <div class="project-body">
           <p class="project-tags">
             <span>Motion</span><span>Social Media</span>
           </p>
           <p class="project-title">The Horror Mode</p>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <a href="project-10.html"><img loading="lazy" decoding="async" class="project-thumb" src="images/placeholder.svg" alt="Votecounter" /></a>
-        <div class="project-body">
-          <p class="project-tags">
-            <span>[Tag]</span>
-          </p>
-          <p class="project-title">Votecounter</p>
         </div>
       </div>
 
@@ -203,11 +237,13 @@
       <input type="radio" name="resume-tab" id="tab-exp" checked>
       <input type="radio" name="resume-tab" id="tab-edu">
       <input type="radio" name="resume-tab" id="tab-vol">
+      <input type="radio" name="resume-tab" id="tab-pers">
 
       <div class="tab-nav">
         <label for="tab-exp" data-en="Experience" data-de="Erfahrung">Experience</label>
         <label for="tab-edu" data-en="Education" data-de="Ausbildung">Education</label>
         <label for="tab-vol" data-en="Competencies" data-de="Kompetenzen">Competencies</label>
+        <label for="tab-pers" data-en="Personal" data-de="Persönliches">Personal</label>
         <a class="btn btn-ghost resume-download" href="#" download style="display:none"
            data-en="↓ Download PDF Resume"
            data-de="↓ Lebenslauf als PDF herunterladen">
@@ -219,78 +255,50 @@
       <div class="tab-panel" id="panel-exp">
 
         <div class="resume-item">
-          <span class="resume-meta">10/25 - 08/26</span>
-          <div class="resume-company-col">
-            <p class="resume-org">Titanom Solutions</p>
-            <p class="resume-loc">Germering, DE</p>
-          </div>
+          <span class="resume-meta">09/26 - now</span>
           <div class="resume-role-col">
-            <p class="resume-role">UX/UI Design</p>
-            <p class="resume-desc">AI-powered Learning &amp; Management Systems</p>
-            <p class="resume-detail dot-list">
-              <span>Learner Centered Design</span><span>Human-AI Interaction</span><span>Accessibility</span>
-            </p>
+            <p class="resume-role">Relocation to Stavanger, Norway</p>
+          </div>
+        </div>
+
+        <div class="resume-item">
+          <span class="resume-meta">10/25 - 08/26</span>
+          <div class="resume-role-col">
+            <p class="resume-role">UX/UI Designer for Education Technologies</p>
+            <p class="resume-loc">Titanom Solutions · Germering, DE · Full time</p>
           </div>
         </div>
 
         <div class="resume-item">
           <span class="resume-meta">08/24 - 08/25</span>
-          <div class="resume-company-col">
-            <p class="resume-org">AUDI AG</p>
-            <p class="resume-loc">Ingolstadt, DE</p>
-          </div>
           <div class="resume-role-col">
-            <p class="resume-role">UX Concepter</p>
-            <p class="resume-desc">Physical &amp; Digital Car Interaction Concepts</p>
-            <p class="resume-desc">Final Thesis "Mobile-First Car UX"</p>
-            <p class="resume-detail dot-list">
-              <span>Speculative Design</span><span>User Testing</span><span>Icon Design</span>
-            </p>
+            <p class="resume-role">UX/UI Designer for Automotive Interaction</p>
+            <p class="resume-desc">Internship &amp; Thesis Project · Part of Bachelor's degree</p>
+            <p class="resume-loc">AUDI AG · Ingolstadt, DE · Full time</p>
           </div>
         </div>
 
         <div class="resume-item">
           <span class="resume-meta">08/22 - 07/24</span>
-          <div class="resume-company-col">
-            <p class="resume-org">AKKODIS</p>
-            <p class="resume-loc">Sindelfingen, DE</p>
-          </div>
           <div class="resume-role-col">
-            <p class="resume-role">Graphic &amp; UI Designer</p>
-            <p class="resume-desc">B2B &amp; B2C Software Solutions</p>
-            <p class="resume-detail dot-list">
-              <span>UI Redesigns</span><span>User Research</span><span>User Testing</span><span>Visual Design</span>
-            </p>
+            <p class="resume-role">Graphic &amp; UX Designer</p>
+            <p class="resume-loc">AKKODIS · Sindelfingen, DE · Part time</p>
           </div>
         </div>
 
         <div class="resume-item">
           <span class="resume-meta">11/21 - 07/22</span>
-          <div class="resume-company-col">
-            <p class="resume-org">Kaleon Media GmbH</p>
-            <p class="resume-loc">Rosenheim, DE</p>
-          </div>
           <div class="resume-role-col">
             <p class="resume-role">Graphic &amp; Web Designer</p>
-            <p class="resume-desc">B2B Software Solutions</p>
-            <p class="resume-detail dot-list">
-              <span>Web Design</span><span>Social Media</span><span>Wireframing</span><span>Branding</span><span>Logo Design</span>
-            </p>
+            <p class="resume-loc">Kaleon Media GmbH · Rosenheim, DE · Part time</p>
           </div>
         </div>
 
         <div class="resume-item">
-          <span class="resume-meta">09/16 - 08/21</span>
-          <div class="resume-company-col">
-            <p class="resume-org">F&amp;W Druck- &amp; Mediencenter</p>
-            <p class="resume-loc">Kienberg, DE</p>
-          </div>
+          <span class="resume-meta">02/19 - 08/21</span>
           <div class="resume-role-col">
-            <p class="resume-role">Managing Product Designer</p>
-            <p class="resume-desc">B2B, B2C &amp; Inhouse Print Products</p>
-            <p class="resume-detail dot-list">
-              <span>Consulting</span><span>Production Planning</span><span>Design</span><span>Data Processing</span>
-            </p>
+            <p class="resume-role">Project Manager &amp; Graphic Designer</p>
+            <p class="resume-loc">F&amp;W Druck- &amp; Mediencenter · Kienberg, DE · Full time</p>
           </div>
         </div>
 
@@ -300,70 +308,52 @@
       <div class="tab-panel" id="panel-edu">
 
         <div class="resume-item">
-          <span class="resume-meta">2026</span>
-          <div class="resume-company-col">
-            <p class="resume-org">Titanom Solutions</p>
-            <p class="resume-loc">Germering, DE</p>
-          </div>
-          <div class="resume-role-col">
-            <p class="resume-role">Product Engineer Training</p>
-          </div>
-        </div>
-
-        <div class="resume-item">
           <span class="resume-meta">09/21 - 08/25</span>
-          <div class="resume-company-col">
-            <p class="resume-org">Media University Stuttgart</p>
-            <p class="resume-loc">Stuttgart, DE</p>
-          </div>
           <div class="resume-role-col">
             <p class="resume-role">Bachelor of Arts in Information Design</p>
-            <p class="resume-detail dot-list">
-              <span>Interaction Design</span><span>UX Design</span><span>HCD</span><span>User Research</span><span>Information Visualisation</span>
-            </p>
+            <p class="resume-loc">Media University Stuttgart · Stuttgart, DE · Full time</p>
           </div>
         </div>
 
         <div class="resume-item">
           <span class="resume-meta">08/23 - 01/24</span>
-          <div class="resume-company-col">
-            <p class="resume-org">Linköping University</p>
-            <p class="resume-loc">Linköping, SE</p>
-          </div>
           <div class="resume-role-col">
-            <p class="resume-role">Exchange Semester</p>
-            <p class="resume-detail dot-list">
-              <span>Communication Design</span><span>Learner Centered Design</span><span>Exhibition Design</span><span>Sustainable Design</span>
-            </p>
+            <p class="resume-role">Exchange Semester in Graphic Design &amp; Communication</p>
+            <p class="resume-loc">Part of Bachelor's degree</p>
+            <p class="resume-loc">Linköping University · Linköping, SE · Full time</p>
           </div>
         </div>
 
         <div class="resume-item">
           <span class="resume-meta">09/16 - 02/19</span>
-          <div class="resume-company-col">
-            <p class="resume-org">BSZ Alois-Senefelder</p>
-            <p class="resume-loc">Munich, DE</p>
-          </div>
           <div class="resume-role-col">
-            <p class="resume-role">Apprenticeship in Media Design</p>
-            <p class="resume-detail dot-list">
-              <span>Print Design</span><span>Digital Media</span><span>Design Principles</span><span>Typography</span>
-            </p>
+            <p class="resume-role">Dual Vocational Training in Digital &amp; Print Media Design</p>
+            <p class="resume-loc">Berufschulzentrum Alois-Senefelder (Studies) · Munich, DE · Part time</p>
+            <p class="resume-loc">F&amp;W Druck- &amp; Mediencenter (Traineeship) · Kienberg, DE · Part time</p>
+          </div>
+        </div>
+
+        <div class="resume-item">
+          <span class="resume-meta">09/14 - 07/16</span>
+          <div class="resume-role-col">
+            <p class="resume-role">University Entrance Qualification in Design</p>
+            <p class="resume-loc">Upper secondary school</p>
+            <p class="resume-loc">Städtische Fachoberschule für Gestaltung · Munich, DE · Full time</p>
           </div>
         </div>
 
       </div>
 
-      <!-- VOLUNTEERING PANEL -->
+      <!-- COMPETENCIES PANEL -->
       <div class="tab-panel" id="panel-vol">
 
         <div class="resume-item">
           <div class="resume-company-col">
-            <p class="resume-org" data-en="Design Skills" data-de="Design Skills">Design Skills</p>
+            <p class="resume-org" data-en="Methods" data-de="Methoden">Methods</p>
           </div>
           <div class="resume-role-col">
             <p class="resume-detail dot-list">
-              <span>User Research</span><span>User Testing</span><span>Workshop Facilitation</span><span>Prototyping</span><span>HCD</span><span>Interaction Design</span><span>Learner-Centred Design</span><span>Accessibility</span>
+              <span>Human-AI Interaction</span><span>Learning Experience Design</span><span>Accessibility</span><span>User Research</span><span>Usability Testing</span><span>Prototyping</span><span>Workshop Facilitation</span>
             </p>
           </div>
         </div>
@@ -374,10 +364,27 @@
           </div>
           <div class="resume-role-col">
             <p class="resume-detail dot-list">
-              <span>FIGMA</span><span>MIRO</span><span>Adobe CC</span><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Visual Studio Code</span><span>Github</span><span>Claude (AI)</span><span>Jira</span><span>Confluence</span><span>Microsoft Office</span>
+              <span>FIGMA</span><span>MIRO</span><span>Adobe CC</span><span>HTML</span><span>CSS</span><span>JavaScript</span><span>VS Code</span><span>GitHub</span><span>Claude AI</span><span>Jira</span><span>Confluence</span>
             </p>
           </div>
         </div>
+
+        <div class="resume-item">
+          <div class="resume-company-col">
+            <p class="resume-org" data-en="Courses" data-de="Kurse">Courses</p>
+          </div>
+          <div class="resume-role-col">
+            <p class="resume-detail">Product Engineer Training · 03/26 - 07/26</p>
+            <p class="resume-loc">Titanom Solutions · Germering, DE · Internal weekly training programme</p>
+            <p class="resume-detail" style="margin-top: 1rem;">First Aid Certificate · 11/25</p>
+            <p class="resume-loc">Titanom Solutions · Germering, DE · Corporate one-day course</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- PERSONAL PANEL -->
+      <div class="tab-panel" id="panel-pers">
 
         <div class="resume-item">
           <div class="resume-company-col">
@@ -385,7 +392,10 @@
           </div>
           <div class="resume-role-col">
             <p class="resume-detail dot-list">
-              <span data-en="German (C2, native)" data-de="Deutsch (C2, Muttersprache)">German (C2, native)</span><span data-en="English (C1)" data-de="Englisch (C1)">English (C1)</span><span data-en="Swedish (A2)" data-de="Schwedisch (A2)">Swedish (A2)</span><span data-en="Norwegian (A2, conversational, actively improving)" data-de="Norwegisch (A2, Konversation, in stetiger Verbesserung)">Norwegian (A2, conversational, actively improving)</span>
+              <span data-en="German (native)" data-de="Deutsch (Muttersprache)">German (native)</span><span data-en="English (C1)" data-de="Englisch (C1)">English (C1)</span><span data-en="Swedish (A2)" data-de="Schwedisch (A2)">Swedish (A2)</span>
+            </p>
+            <p class="resume-detail dot-list">
+              <span data-en="Norwegian (A2, actively improving)" data-de="Norwegisch (A2, in stetiger Verbesserung)">Norwegian (A2, actively improving)</span>
             </p>
           </div>
         </div>
@@ -396,7 +406,18 @@
           </div>
           <div class="resume-role-col">
             <p class="resume-detail dot-list">
-              <span data-en="Volunteer Firefighter" data-de="Freiwillige Feuerwehr">Volunteer Firefighter</span><span data-en="Sport Shooting Trainer" data-de="Sportschützen-Trainerin">Sport Shooting Trainer</span>
+              <span data-en="Volunteer Firefighter" data-de="Freiwillige Feuerwehr">Volunteer Firefighter</span><span data-en="Sport Shooting Trainer" data-de="Sportschützen-Trainerin">Sport Shooting Trainer</span><span data-en="Cultural Festival Committee Member" data-de="Mitglied im Festausschuss">Cultural Festival Committee Member</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="resume-item">
+          <div class="resume-company-col">
+            <p class="resume-org" data-en="Interests" data-de="Interessen">Interests</p>
+          </div>
+          <div class="resume-role-col">
+            <p class="resume-detail dot-list">
+              <span data-en="Running" data-de="Laufen">Running</span><span data-en="Hiking" data-de="Wandern">Hiking</span><span data-en="Cycling" data-de="Radfahren">Cycling</span><span data-en="Analog Design" data-de="Analoges Gestalten">Analog Design</span><span data-en="Handicraft" data-de="Handwerk">Handicraft</span>
             </p>
           </div>
         </div>
@@ -426,9 +447,9 @@
         </div>
         <div class="profile-text">
           <p class="profile-bio"
-             data-en="I am passionate about helping people, professionally and personally. Providing valuable information in a way it empowers others or makes them feel good, is what drives me. My off-screen time I spend outdoors. Running, cycling, hiking, camping or just relaxing at the lake. I love analogue handicraft, traditions and strolling through thrift shops."
-             data-de="Ich helfe leidenschaftlich gerne Menschen, beruflich wie privat. Relevante Informationen zu liefern, die andere weiter bringen oder ihnen ein positives Erlebnis bieten, ist, was mich antreibt. Meine Off-Screen-Zeit verbringe ich draußen. Laufen, Radfahren, Wandern, Campen oder einfach am See entspannen. Ich liebe analoge Kunst, Traditionen und das Stöbern in Secondhand-Läden.">
-            I am passionate about helping people, professionally and personally. Providing valuable information in a way it empowers others or makes them feel good, is what drives me. My off-screen time I spend outdoors. Running, cycling, hiking, camping or just relaxing at the lake. I love analogue handicraft, traditions and strolling through thrift shops.
+             data-en="I am passionate about helping people, professionally and personally. Providing valuable information in a way it empowers others or makes them feel good, is what drives me. My off-screen time I spend outdoors. Running, cycling, hiking, camping or just relaxing at the lake. I love analogue handicraft, traditions and strolling through thrift shops.&lt;br&gt;&lt;br&gt;I have recently relocated to Stavanger, Norway with my half-Norwegian partner and I am seeking a local, purpose-driven role."
+             data-de="Ich helfe leidenschaftlich gerne Menschen, beruflich wie privat. Relevante Informationen zu liefern, die andere weiter bringen oder ihnen ein positives Erlebnis bieten, ist, was mich antreibt. Meine Off-Screen-Zeit verbringe ich draußen. Laufen, Radfahren, Wandern, Campen oder einfach am See entspannen. Ich liebe analoge Kunst, Traditionen und das Stöbern in Secondhand-Läden.&lt;br&gt;&lt;br&gt;Ich bin vor Kurzem mit meinem halb-norwegischen Partner nach Stavanger, Norwegen gezogen und suche dort nach einer lokalen, sinnstiftenden Position.">
+            I am passionate about helping people, professionally and personally. Providing valuable information in a way it empowers others or makes them feel good, is what drives me. My off-screen time I spend outdoors. Running, cycling, hiking, camping or just relaxing at the lake. I love analogue handicraft, traditions and strolling through thrift shops.<br><br>I have recently relocated to Stavanger, Norway with my half-Norwegian partner and I am seeking a local, purpose-driven role.
           </p>
         </div>
       </div>
@@ -437,18 +458,24 @@
 
   <div class="marquee-band" aria-hidden="true">
     <div class="marquee-track">
+      <span>28 years</span><span class="marquee-dot">·</span>
       <span>Designing for People</span><span class="marquee-dot">·</span>
+      <span>EdTech, Public Sector, Automotive &amp; Print</span><span class="marquee-dot">·</span>
       <span>From Research to Prototype</span><span class="marquee-dot">·</span>
       <span>10 Years of Experience</span><span class="marquee-dot">·</span>
+      <span>Let's work together</span><span class="marquee-dot">·</span>
+      <span>Human-AI Interaction</span><span class="marquee-dot">·</span>
+      <span>Let’s create something meaningful</span><span class="marquee-dot">·</span>
       <span>Passionate about helping people</span><span class="marquee-dot">·</span>
-      <span>Open for New Challenges</span><span class="marquee-dot">·</span>
-      <span>Let's work together &amp; create something meaningful</span><span class="marquee-dot">·</span>
+      <span>28 years</span><span class="marquee-dot">·</span>
       <span>Designing for People</span><span class="marquee-dot">·</span>
+      <span>EdTech, Public Sector, Automotive &amp; Print</span><span class="marquee-dot">·</span>
       <span>From Research to Prototype</span><span class="marquee-dot">·</span>
       <span>10 Years of Experience</span><span class="marquee-dot">·</span>
+      <span>Let's work together</span><span class="marquee-dot">·</span>
+      <span>Human-AI Interaction</span><span class="marquee-dot">·</span>
+      <span>Let’s create something meaningful</span><span class="marquee-dot">·</span>
       <span>Passionate about helping people</span><span class="marquee-dot">·</span>
-      <span>Open for New Challenges</span><span class="marquee-dot">·</span>
-      <span>Let's work together &amp; create something meaningful</span><span class="marquee-dot">·</span>
     </div>
   </div>
 
@@ -468,7 +495,7 @@
     <div class="footer-copy">©2026. By Johanna & Claude</div>
   </footer>
 
-  <a href="#intro" id="back-to-top" aria-label="Back to top">↑</a>
-  <script src="script.js"></script>
+  <a href="#intro" id="back-to-top" aria-label="Back to top"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 14.5V2.5M2.5 8l5.5-5.5 5.5 5.5"/></svg></a>
+  <script src="script.js?v=20261005q"></script>
 </body>
 </html>

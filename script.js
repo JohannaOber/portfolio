@@ -1,12 +1,13 @@
-// On a manual refresh, start at the top instead of restoring the previous
-// scroll position. Only affects reloads with no #hash, so back/forward
-// restoration and #section deep-links keep working.
+// On a manual refresh, always start at the top instead of restoring the
+// previous scroll position or jumping to a lingering #hash (e.g. from the
+// project pages' back arrow). Fresh navigation to a #section link (not a
+// reload) still jumps there as expected; only reloads are forced to top.
 (function () {
   if (!('scrollRestoration' in history)) return;
   var nav = (performance.getEntriesByType && performance.getEntriesByType('navigation')[0]) || null;
   var isReload = nav ? nav.type === 'reload'
                      : (performance.navigation && performance.navigation.type === 1);
-  if (isReload && !location.hash) {
+  if (isReload) {
     history.scrollRestoration = 'manual';
     window.scrollTo(0, 0);
     window.addEventListener('load', function () { window.scrollTo(0, 0); });

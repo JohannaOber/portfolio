@@ -4,7 +4,7 @@
 .alt-cover {
   cursor: none !important;
   width: 100%;
-  height: calc(70vh + 64px);
+  height: calc(67vh + 64px);
   overflow: hidden;
   margin: 60px 0 0;
 }
@@ -19,6 +19,17 @@
   font-weight: 400;
   letter-spacing: -0.03em;
   line-height: 1.15;
+  color: var(--text);
+}
+
+/* One-sentence project summary under the title, indented like the
+   meta strip text below it so it starts in line with "Client" */
+.alt-intro-lead {
+  margin-top: 2.5rem;
+  padding-left: 1.5rem;
+  max-width: 26rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
   color: var(--text);
 }
 
@@ -38,17 +49,17 @@
 }
 
 /* META STRIP — Client / Year / Keywords, spread across the width between
-   two hairline separators */
+   two separators, text slightly inset from their ends */
 .alt-meta-strip {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   flex-wrap: wrap;
   gap: 2rem 3rem;
-  margin: 0 var(--gutter);
-  padding: 2.5rem 4rem 1.25rem;
-  border-top: 0.5px solid #000;
-  border-bottom: 0.5px solid #000;
+  margin: 3rem var(--gutter);
+  padding: 2.5rem 1.5rem 1.25rem;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
 }
 
 .alt-meta-strip > div {
@@ -91,6 +102,12 @@
 }
 
 /* ABOUT SECTION — heading styled like the homepage's Projects/Resume/About */
+/* Space between the meta strip and the first image/text block (this
+   margin collapses with the strip's own bottom margin, the larger wins) */
+.alt-meta-strip + .alt-block {
+  margin-top: 16rem;
+}
+
 .alt-about {
   margin-left: 52%;
   margin-right: var(--gutter);
@@ -98,7 +115,7 @@
 }
 
 .alt-about > h2 {
-  font-size: clamp(1.8rem, 3.2vw, 2.75rem);
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
   font-weight: 400;
   letter-spacing: -0.025em;
   color: var(--text);
@@ -108,25 +125,18 @@
 .alt-about .alt-intro-desc {
   font-size: clamp(0.9rem, 1.4vw, 1.05rem);
   color: var(--text);
-  line-height: 1.7;
+  line-height: 1.5;
   margin-top: 0.25rem;
   max-width: 360px;
-  text-align: justify;
-}
-
-/* When the About text is long enough to need two columns, let it flow as
-   one continuous text split evenly across both (not two fixed paragraphs,
-   which tends to leave one column much shorter than the other) */
-.alt-about-desc-pair {
-  column-count: 2;
-  column-gap: 2.5rem;
-  margin-top: 0.25rem;
-  max-width: 740px;
-}
-
-.alt-about-desc-pair .alt-intro-desc {
-  margin-top: 0;
-  max-width: none;
+  text-align: left;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  word-break: normal;
+  hyphenate-limit-lines: 2;
+  -webkit-hyphenate-limit-lines: 2;
+  overflow-wrap: break-word;
+  hanging-punctuation: first last allow-end;
 }
 
 /* TASK STRIP */
@@ -169,6 +179,8 @@
 
 .alt-block-text {
   order: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .alt-block--flip .alt-block-image {
@@ -335,22 +347,32 @@
 }
 
 .alt-panel-heading {
-  font-size: clamp(1.7rem, 2.8vw, 2.5rem);
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
   font-weight: 400;
   letter-spacing: -0.025em;
   line-height: 1.2;
   color: var(--text);
   margin-bottom: 1.25rem;
   max-width: 360px;
+  order: -1;
 }
 
 .alt-panel-body {
   font-size: 0.92rem;
   color: var(--text);
-  line-height: 1.75;
+  line-height: 1.5;
   max-width: 360px;
-  text-align: justify;
+  text-align: left;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  word-break: normal;
+  hyphenate-limit-lines: 2;
+  -webkit-hyphenate-limit-lines: 2;
+  overflow-wrap: break-word;
+  hanging-punctuation: first last allow-end;
 }
+
 
 /* SOLUTION / IMPACT TEXT SECTIONS */
 .alt-text-section {
@@ -529,6 +551,12 @@
     padding: 2rem var(--gutter);
   }
 
+  .alt-intro-lead {
+    margin-top: 1.25rem;
+    max-width: none;
+    padding-left: 0;
+  }
+
   .alt-cover {
     margin-top: 48px;
     /* Width-relative height (no vh/svh at all) so it cannot react to the
@@ -566,15 +594,14 @@
     margin-right: 0;
   }
 
+  .alt-meta-strip + .alt-block {
+    margin-top: 4.5rem;
+  }
+
   .alt-about {
     margin-left: 0;
     margin-right: 0;
     padding: 2.5rem var(--gutter) 3rem;
-  }
-
-  .alt-about-desc-pair {
-    column-count: 1;
-    max-width: none;
   }
 
   /* Alternating blocks stack: image always above its text, in document order */
