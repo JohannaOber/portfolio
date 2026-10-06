@@ -580,7 +580,7 @@ h2 {
 }
 
 /* ── PROJECTS OVERVIEW PAGE ──────────────────────────── */
-/* Same top offset and left inset as "UX Designer & Engineer" on the homepage */
+/* Same top offset and left inset as "UX/UI & Product Designer" on the homepage */
 .projects-hero {
   padding: 12vh var(--gutter) 0;
 }
