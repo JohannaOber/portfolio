@@ -567,6 +567,12 @@ h2 {
   transform-origin: left center;
 }
 
+/* Right-anchored crop: the subject moves left in the frame (ELLA) */
+.project-thumb--zoom-right {
+  transform: scale(1.12);
+  transform-origin: right center;
+}
+
 .project-body .badges {
   margin-top: 0;
   margin-bottom: 0.5rem;
