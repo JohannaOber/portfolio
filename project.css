@@ -191,6 +191,13 @@
   display: block;
 }
 
+/* Square crop of a tall image, trimmed top and bottom (Voteasy: Research, natively 2:3) */
+.alt-block-image--crop-square img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center 25%;
+}
+
 .alt-block-video {
   width: 100%;
   height: auto;
@@ -205,6 +212,11 @@
 .alt-block-image--zoom img {
   transform: scale(1.06);
   transform-origin: right center;
+}
+
+/* Stronger crop, same right anchor (Car UX: Solution & Impact) */
+.alt-block-image--zoom.alt-block-image--zoom-more img {
+  transform: scale(1.25);
 }
 
 /* A second, independent zoom amount/origin for a different image */

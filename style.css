@@ -335,7 +335,7 @@ h2 {
 #resume > h2 {
   padding-bottom: 1.5rem;
   border-bottom: 2px solid #000;
-  margin-bottom: 1.75rem;
+  margin-bottom: 2.5rem;
 }
 
 /* ── INTRO ────────────────────────────────────────── */
@@ -393,7 +393,7 @@ h2 {
 }
 
 .intro-id h1 {
-  margin-bottom: 0.6em;
+  margin-bottom: 0.8em;
   font-size: clamp(1.15rem, 1.7vw, 1.4rem);
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -510,6 +510,26 @@ h2 {
   border-bottom-color: var(--accent);
 }
 
+/* Arrow slides in on hover; the link is right-aligned, so the text shifts left.
+   Pseudo-element because the language toggle replaces the link's innerHTML */
+.more-projects-link::after {
+  content: '→';
+  display: inline-block;
+  max-width: 0;
+  overflow: hidden;
+  vertical-align: bottom;
+  opacity: 0;
+  transition: max-width 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+              padding-left 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.4s ease 0.05s;
+}
+
+.more-projects-link:hover::after {
+  max-width: 1.2em;
+  padding-left: 0.3em;
+  opacity: 1;
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -538,6 +558,12 @@ h2 {
 /* Same crop, but anchored to the left edge so the left side stays in view */
 .project-thumb--zoom-left {
   transform: scale(1.15);
+  transform-origin: left center;
+}
+
+/* Lighter left-anchored crop (HMI) */
+.project-thumb--zoom-left-sm {
+  transform: scale(1.08);
   transform-origin: left center;
 }
 
@@ -1094,7 +1120,7 @@ h2 {
 /* Second photo: floats above the main pair, flush with the right gutter */
 .profile-pair--second {
   position: absolute;
-  top: 1.5rem;
+  top: 2.5rem;
   right: 0;
   width: 21vw;
 }
@@ -1339,7 +1365,7 @@ h2 {
   #resume { padding-bottom: 2rem; }
   #profile { padding-top: 0.5rem; }
   /* Breathing room between the About separator line and the first photo */
-  #profile > h2 { margin-bottom: 1.5rem; }
+  #profile > h2 { margin-bottom: 2.5rem; }
 
   /* "And after work?" is styled like the section headings globally;
      just tighten the spacing below it on mobile */
