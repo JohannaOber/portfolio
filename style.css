@@ -409,8 +409,8 @@ h2 {
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
   word-break: normal;
-  hyphenate-limit-lines: 2;
-  -webkit-hyphenate-limit-lines: 2;
+  hyphenate-limit-lines: 1;
+  -webkit-hyphenate-limit-lines: 1;
   overflow-wrap: break-word;
   hanging-punctuation: first last allow-end;
 }
