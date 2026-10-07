@@ -968,6 +968,9 @@ h2 {
 }
 
 /* Company / institution location, on its own line under the name */
+/* A line left empty in one language (e.g. the German school line) takes no space */
+.resume-role-col p:empty { display: none; }
+
 .resume-loc {
   font-size: 0.95rem;
   color: var(--gray-600);
