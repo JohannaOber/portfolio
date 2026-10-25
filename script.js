@@ -180,6 +180,45 @@ if (window.matchMedia('(pointer: fine)').matches) {
   }
 }
 
+// Headline hover: after 1s, a purple copy of the headline grows as a circle
+// from the cursor; on leave it shrinks back (pointer devices only)
+(function () {
+  const wrap = document.querySelector('#intro .slogan-wrap');
+  const headline = wrap && wrap.querySelector('.hero-display');
+  if (!headline || !window.matchMedia('(pointer: fine)').matches) return;
+
+  // Same text in both languages, so the copy needs no translation attributes
+  const layer = headline.cloneNode(true);
+  layer.removeAttribute('data-en');
+  layer.removeAttribute('data-de');
+  layer.classList.add('headline-purple-layer');
+  layer.setAttribute('aria-hidden', 'true');
+  wrap.appendChild(layer);
+
+  let rect = null, timer = null;
+
+  wrap.addEventListener('mouseenter', () => {
+    rect = wrap.getBoundingClientRect();
+    clearTimeout(timer);
+    timer = setTimeout(() => layer.classList.add('headline-purple-layer--expand'), 1000);
+  });
+
+  wrap.addEventListener('mousemove', e => {
+    if (!rect) rect = wrap.getBoundingClientRect();
+    wrap.style.setProperty('--cx', `${e.clientX - rect.left}px`);
+    wrap.style.setProperty('--cy', `${e.clientY - rect.top}px`);
+  });
+
+  wrap.addEventListener('mouseleave', () => {
+    clearTimeout(timer);
+    layer.classList.remove('headline-purple-layer--expand');
+    rect = null;
+  });
+
+  // The cached rect goes stale if the page scrolls while hovering
+  window.addEventListener('scroll', () => { rect = null; }, { passive: true });
+})();
+
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {

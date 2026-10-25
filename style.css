@@ -375,6 +375,27 @@ h2 {
 
 .slogan-wrap {
   display: block;
+  /* Hover area hugs the headline text; the purple layer is clipped to it */
+  position: relative;
+  overflow: hidden;
+  width: fit-content;
+}
+
+/* Purple copy of the headline, revealed as a growing circle from the
+   cursor after a 1s hover (driven by --cx / --cy from script.js) */
+.headline-purple-layer {
+  position: absolute;
+  inset: 0;
+  color: var(--accent);
+  pointer-events: none;
+  clip-path: circle(0% at var(--cx, 50%) var(--cy, 50%));
+  transition: clip-path 0.4s ease-in;
+  will-change: clip-path;
+}
+
+.headline-purple-layer--expand {
+  clip-path: circle(150% at var(--cx, 50%) var(--cy, 50%));
+  transition: clip-path 1.2s ease-out;
 }
 
 /* White per-line background so text reads over the photo */
