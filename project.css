@@ -789,6 +789,12 @@
 @media (max-width: 860px) {
   .alt-block--stacked.alt-block--text-first .alt-block-text { order: 1; }
   .alt-block--stacked.alt-block--text-first .alt-block-image-pair { order: 2; }
+  /* Food Fighters: the two closing images stacked, each at full content width, uncropped */
+  .alt-block--text-first .alt-block-image-pair { grid-template-columns: 1fr; gap: 1rem; }
+  .alt-block--text-first .alt-block-image-pair img { aspect-ratio: auto; height: auto; }
+  /* Food Fighters: playtesting video first, then the app clip */
+  .alt-media-row video:first-child { order: 2; }
+  .alt-media-row video:last-child { order: 1; }
 }
 
 /* Mobile block order: chapter label, image, heading, paragraph.
@@ -812,4 +818,10 @@
   }
   .alt-block:not(.alt-block--text-first) .alt-panel-body,
   .alt-block:not(.alt-block--text-first) .alt-panel-body-pair { order: 4; }
+}
+
+/* Mobile: more space between the process steps (Challenge, 01 Research, ...) */
+@media (max-width: 860px) {
+  .alt-block,
+  .alt-media-row { margin-bottom: 6rem; }
 }

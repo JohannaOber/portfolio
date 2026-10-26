@@ -1561,5 +1561,18 @@ h2 {
   /* Less space between the projects */
   .projects-overview .projects-grid { row-gap: 1.25rem; }
   /* Same side spacing as the homepage's Projects section */
-  .projects-overview { padding-left: 10px; padding-right: 10px; }
+  .projects-overview { padding-left: 10px; padding-right: 10px; padding-bottom: 8rem; }
+  .projects-hero { padding-left: 10px; padding-right: 10px; }
+}
+
+/* Projects overview: three projects per row on desktop */
+@media (min-width: 1025px) {
+  .projects-overview .projects-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Projects overview: more space between the filter row and the projects (desktop) */
+@media (min-width: 721px) {
+  .project-filters { margin-bottom: 3rem; }
+  /* Less vertical space between the project rows */
+  .projects-overview .projects-grid { row-gap: 3.5rem; }
 }
