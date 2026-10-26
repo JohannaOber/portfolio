@@ -922,17 +922,19 @@ window.addEventListener('scroll', () => {
   });
 })();
 
-// Meta strip topics: a tag that doesn't fit on the line moves to the next line
+// Meta strip topics (mobile): a tag that doesn't fit on the line moves to the next line
 // as a whole, without the separator dot in front of it
 (function () {
   var lists = document.querySelectorAll('.alt-meta-strip .alt-intro-tags');
   if (!lists.length) return;
+  var mobile = window.matchMedia('(max-width: 860px)');
 
   function update() {
     lists.forEach(function (list) {
       var tags = list.querySelectorAll(':scope > span');
       list.querySelectorAll('br.tag-br').forEach(function (br) { br.remove(); });
       tags.forEach(function (t) { t.classList.remove('tag-wrapped'); });
+      if (!mobile.matches) return; // desktop keeps its normal wrapping
       // One tag at a time, so each break is measured after the ones before it.
       // The <br> keeps the tag on its new line once its dot is gone
       for (var i = 1; i < tags.length; i++) {

@@ -1490,15 +1490,14 @@ h2 {
   .footer-role { margin-bottom: 5rem; }
 }
 
-/* Paragraph break in the About text, mobile only (an empty inline span on desktop) */
-.bio-break { display: none; }
+/* Paragraph break in the About text (a span, since the text comes from data attributes) */
+.bio-break { display: block; height: 1.5em; }
 
 /* ── MOBILE REFINEMENTS 2 (homepage) ──────────────────── */
 @media (max-width: 720px) {
   /* Slightly smaller body text */
   .intro-bio,
   .profile-bio { font-size: 0.88rem; }
-  .bio-break { display: block; height: 1.5em; }
 
   /* "More Projects": arrow always visible (no hover on touch),
      less space before the Resume section */

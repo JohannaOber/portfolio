@@ -48,10 +48,12 @@
   color: var(--muted);
 }
 
-/* Meta strip topics wrap as whole tags; a tag starting a new line gets a
+/* Mobile: meta strip topics wrap as whole tags; a tag starting a new line gets a
    line break instead of the separator dot (set in script.js) */
-.alt-meta-strip .alt-intro-tags > span { display: inline-block; white-space: nowrap; }
-.alt-meta-strip .alt-intro-tags > span.tag-wrapped::before { content: none; }
+@media (max-width: 860px) {
+  .alt-meta-strip .alt-intro-tags > span { display: inline-block; white-space: nowrap; }
+  .alt-meta-strip .alt-intro-tags > span.tag-wrapped::before { content: none; }
+}
 
 /* META STRIP — Client / Year / Keywords, spread across the width between
    two separators, text slightly inset from their ends */
