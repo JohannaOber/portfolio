@@ -269,6 +269,7 @@ function applyLang(lang) {
     if (val !== undefined) el.innerHTML = val;
   });
   try { localStorage.setItem('lang', lang); } catch (e) {}
+  document.dispatchEvent(new Event('langchange'));
 }
 
 langBtns.forEach(btn => {
@@ -696,7 +697,7 @@ window.addEventListener('scroll', () => {
 })();
 
 
-// Mobile burger menu: full-page sheet sliding in from the top
+// Mobile burger menu: sheet sliding in from the top, as tall as its items
 (function () {
   var nav = document.querySelector('nav');
   var navLinks = document.querySelector('.nav-links');
@@ -741,6 +742,15 @@ window.addEventListener('scroll', () => {
     if (e.target === sheet || e.target === ul) close();
   });
 
+  // Tap on the page below the sheet: just close the menu, don't follow anything there
+  document.addEventListener('click', function (e) {
+    if (!sheet.classList.contains('open')) return;
+    if (sheet.contains(e.target) || nav.contains(e.target)) return;
+    e.preventDefault();
+    e.stopPropagation();
+    close();
+  }, true);
+
   // Link clicks: close, smooth-scroll for same-page anchors
   ul.querySelectorAll('a').forEach(function (link) {
     link.addEventListener('click', function (e) {
@@ -769,13 +779,16 @@ window.addEventListener('scroll', () => {
 // the sentence length. CSS keeps a 28s fallback if this doesn't run.
 (function () {
   var SPEED = 300; // px per second — matches the homepage marquee's pace
+  // Mobile: half the pace, so the long sentence stays readable on a small screen
+  var mobile = window.matchMedia('(max-width: 860px)');
   var tracks = document.querySelectorAll('.marquee-band--disclaimer .marquee-track');
   if (!tracks.length) return;
 
   function sync() {
     for (var i = 0; i < tracks.length; i++) {
       var half = tracks[i].scrollWidth / 2;
-      if (half > 0) tracks[i].style.animationDuration = (half / SPEED).toFixed(2) + 's';
+      var speed = mobile.matches ? SPEED / 2 : SPEED;
+      if (half > 0) tracks[i].style.animationDuration = (half / speed).toFixed(2) + 's';
     }
   }
 
@@ -906,5 +919,122 @@ window.addEventListener('scroll', () => {
       if (sameOrigin && history.length > 1) history.back();
       else location.href = 'index.html';
     });
+  });
+})();
+
+// Meta strip topics: a tag that doesn't fit on the line moves to the next line
+// as a whole, without the separator dot in front of it
+(function () {
+  var lists = document.querySelectorAll('.alt-meta-strip .alt-intro-tags');
+  if (!lists.length) return;
+
+  function update() {
+    lists.forEach(function (list) {
+      var tags = list.querySelectorAll(':scope > span');
+      list.querySelectorAll('br.tag-br').forEach(function (br) { br.remove(); });
+      tags.forEach(function (t) { t.classList.remove('tag-wrapped'); });
+      // One tag at a time, so each break is measured after the ones before it.
+      // The <br> keeps the tag on its new line once its dot is gone
+      for (var i = 1; i < tags.length; i++) {
+        if (tags[i].offsetTop > tags[i - 1].offsetTop) {
+          tags[i].classList.add('tag-wrapped');
+          var br = document.createElement('br');
+          br.className = 'tag-br';
+          list.insertBefore(br, tags[i]);
+        }
+      }
+    });
+  }
+
+  update();
+  window.addEventListener('resize', update);
+  document.addEventListener('langchange', update);
+  if (document.fonts) document.fonts.ready.then(update);
+})();
+
+// Scroll reveal: images and text rise softly into place when they enter the view.
+// Elements already on screen at load stay as they are; several entering together
+// follow each other with a short stagger
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+
+  var SELECTOR = [
+    '#projects > h2', '#resume > h2', '#profile > h2', '.project-more-heading',
+    '.project-card', '.more-projects-link',
+    '.tab-nav', '.resume-item',
+    '.profile-ph1', '.profile-text', '.profile-pair--second',
+    '.alt-meta-strip', '.alt-block-image', '.alt-block-image-pair', '.alt-block-video',
+    '.alt-block-text', '.alt-panel-label', '.alt-panel-heading', '.alt-panel-body-pair',
+    '.alt-panel-body', '.alt-media-row',
+    '.contact-card'
+  ].join(',');
+
+  // A wrapper with display: contents (mobile project blocks) has no box to move,
+  // so its children animate on their own instead
+  var all = Array.prototype.slice.call(document.querySelectorAll(SELECTOR)).filter(function (el) {
+    return getComputedStyle(el).display !== 'contents';
+  });
+  // Animate the outermost match only, never an element inside another one
+  var items = all.filter(function (el) {
+    for (var p = el.parentElement; p; p = p.parentElement) {
+      if (all.indexOf(p) !== -1) return false;
+    }
+    return true;
+  });
+
+  // Title content (homepage header, project intro, projects overview) fades in
+  // on load, one after the other, wherever it sits
+  var heroes = Array.prototype.slice.call(document.querySelectorAll([
+    '.slogan-wrap', '.intro-id h1', '.intro-bio', '.intro-photo',
+    '.projects-overview-title', '.project-filters',
+    '.alt-cover', '.alt-intro-title', '.alt-intro-lead', '.alt-meta-strip'
+  ].join(',')));
+
+  var vh = window.innerHeight;
+  items = items.filter(function (el) {
+    if (heroes.indexOf(el) !== -1) return false;
+    var r = el.getBoundingClientRect();
+    return r.top > vh * 0.9; // below the first screen
+  });
+
+  // Start hidden without animating there (reveal-init switches the transition off)
+  items.concat(heroes).forEach(function (el) { el.classList.add('reveal', 'reveal-init'); });
+  if (items.length || heroes.length) void document.body.offsetWidth;
+  items.concat(heroes).forEach(function (el) { el.classList.remove('reveal-init'); });
+
+  // Drop the classes once done, so the element's own transitions (hover etc.) apply again
+  function done(e) {
+    if (e.target !== this || e.propertyName !== 'transform') return;
+    this.classList.remove('reveal', 'is-visible');
+    this.style.removeProperty('--reveal-delay');
+    this.removeEventListener('transitionend', done);
+  }
+
+  // Stagger across callbacks too: each reveal starts at least STEP after the
+  // previous one, so elements arriving in quick succession flow one after another
+  var STEP = 110, MAX_DELAY = 450, nextStart = 0;
+  var io = new IntersectionObserver(function (entries) {
+    var now = performance.now();
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      var el = entry.target;
+      var delay = Math.min(Math.max(0, nextStart - now), MAX_DELAY);
+      nextStart = now + delay + STEP;
+      el.style.setProperty('--reveal-delay', (delay / 1000).toFixed(2) + 's');
+      el.addEventListener('transitionend', done);
+      el.classList.add('is-visible');
+      io.unobserve(el);
+    });
+  }, { rootMargin: '0px 0px -5% 0px' });
+
+  items.forEach(function (el) { io.observe(el); });
+
+  heroes.forEach(function (el, i) {
+    el.style.setProperty('--reveal-delay', (0.1 + i * 0.12) + 's');
+    el.addEventListener('transitionend', done);
+  });
+  requestAnimationFrame(function () {
+    heroes.forEach(function (el) { el.classList.add('is-visible'); });
   });
 })();
