@@ -3,7 +3,7 @@
 :root {
   --accent:   #b281f1;
   --black:    #0d0d0d;
-  --white:    #ffffff;
+  --white:    #FAFAF7; /* subtle off-white page background */
   --gray-50:  #f9f9f9;
   --gray-100: #f2f2f2;
   --gray-200: #e4e4e4;
@@ -55,23 +55,23 @@ html { scroll-behavior: auto; overflow-x: clip; overflow-anchor: none; }
     position: fixed;
     top: 0;
     left: 0;
-    width: 80px;
-    height: 80px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
     background: var(--accent);
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.4rem;
+    font-size: 1.9rem;
     pointer-events: none;
-    margin: -40px 0 0 -40px;
+    margin: -55px 0 0 -55px;
     translate: -200px -200px;
-    scale: 0.4;
+    scale: 0.3;
     z-index: 10001;
     opacity: 0;
     will-change: translate, scale, opacity;
-    transition: opacity 0.25s ease, scale 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition: opacity 0.15s ease, scale 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   #cursor-photo.active {
@@ -83,24 +83,81 @@ html { scroll-behavior: auto; overflow-x: clip; overflow-anchor: none; }
     position: fixed;
     top: 0;
     left: 0;
-    width: 80px;
-    height: 80px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
     background: var(--accent);
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.4rem;
+    font-size: 1.9rem;
     pointer-events: none;
-    margin: -40px 0 0 -40px;
+    margin: -55px 0 0 -55px;
     translate: -200px -200px;
-    scale: 0.4;
+    scale: 0.3;
     z-index: 10001;
     opacity: 0;
     will-change: translate, scale, opacity;
-    transition: opacity 0.25s ease, scale 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition: opacity 0.15s ease, scale 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
+
+  /* Marquee bands and step dots: the round cursor flows into a purple
+     triangle, tilted 30° left. Both shapes are the same 36-point polygon
+     around the same centre, so clip-path morphs one into the other evenly. */
+  #cursor-band {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 42px;
+    height: 42px;
+    margin: -21px 0 0 -21px;          /* circle: centred on the pointer */
+    /* thin white edge, so it stays visible over the purple text below it */
+    filter: drop-shadow(0 0 1px #fff) drop-shadow(0 0 1px #fff);
+    rotate: 0deg;
+    translate: -200px -200px;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10001;
+    will-change: translate;
+    transition: rotate 0.35s cubic-bezier(0.45, 0, 0.2, 1),
+                margin 0.35s cubic-bezier(0.45, 0, 0.2, 1),
+                scale 0.2s ease;
+  }
+  #cursor-band span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: var(--accent);
+    clip-path: polygon(50.0% 0.0%, 58.7% 0.8%, 67.1% 3.0%, 75.0% 6.7%, 82.1% 11.7%, 88.3% 17.9%, 93.3% 25.0%, 97.0% 32.9%, 99.2% 41.3%, 100.0% 50.0%, 99.2% 58.7%, 97.0% 67.1%, 93.3% 75.0%, 88.3% 82.1%, 82.1% 88.3%, 75.0% 93.3%, 67.1% 97.0%, 58.7% 99.2%, 50.0% 100.0%, 41.3% 99.2%, 32.9% 97.0%, 25.0% 93.3%, 17.9% 88.3%, 11.7% 82.1%, 6.7% 75.0%, 3.0% 67.1%, 0.8% 58.7%, 0.0% 50.0%, 0.8% 41.3%, 3.0% 32.9%, 6.7% 25.0%, 11.7% 17.9%, 17.9% 11.7%, 25.0% 6.7%, 32.9% 3.0%, 41.3% 0.8%);
+    transition: clip-path 0.35s cubic-bezier(0.45, 0, 0.2, 1);
+  }
+  #cursor-band.active { opacity: 1; }
+  #cursor-band.triangle {
+    rotate: -30deg;
+    /* the triangle is inscribed in the circle, so the shape morphs around
+       its own centre, which stays on the pointer */
+  }
+  #cursor-band.triangle span { clip-path: polygon(50.0% 0.0%, 53.6% 6.2%, 57.2% 12.5%, 60.8% 18.7%, 64.4% 25.0%, 68.0% 31.2%, 71.7% 37.5%, 75.3% 43.7%, 78.9% 50.0%, 82.5% 56.2%, 86.1% 62.5%, 89.7% 68.7%, 93.3% 75.0%, 86.1% 75.0%, 78.9% 75.0%, 71.7% 75.0%, 64.4% 75.0%, 57.2% 75.0%, 50.0% 75.0%, 42.8% 75.0%, 35.6% 75.0%, 28.3% 75.0%, 21.1% 75.0%, 13.9% 75.0%, 6.7% 75.0%, 10.3% 68.8%, 13.9% 62.5%, 17.5% 56.3%, 21.1% 50.0%, 24.7% 43.8%, 28.3% 37.5%, 32.0% 31.3%, 35.6% 25.0%, 39.2% 18.8%, 42.8% 12.5%, 46.4% 6.3%); }
+  /* Pressed while dragging the band */
+  body:has(.marquee-band.dragging) #cursor-band.active,
+  body:has(.slogan-wrap.dragging) #cursor-band.active { scale: 0.85; }
+  /* Over a project step dot: the round cursor turns into a smaller solid
+     purple point (no blending), and the dot below grows, so it reads as a button */
+  /* (size, not scale: scale would also shrink the JS-set position) */
+  .cursor-layer {
+    transition: width 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+                height 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+                margin 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+                opacity 0.15s ease;
+  }
+  body.cursor-on-step .cursor-layer { width: 18px; height: 18px; margin: -9px 0 0 -9px; }
+  body.cursor-on-step #cursor-diff,
+  body.cursor-on-step #cursor-screen { opacity: 0 !important; }
+  body.cursor-on-step #cursor-white { opacity: 1 !important; }
+
+  /* The round cursor hides the moment the purple shape takes its place */
+  body.cursor-on-band .cursor-layer { opacity: 0 !important; }
 
   #cursor-nav.active {
     opacity: 1;
@@ -180,6 +237,40 @@ nav {
   color: var(--accent);
 }
 
+/* Homepage: one purple line slides between the JO logo (on the intro) and
+   the active menu item as the sections change (positioned by script.js) */
+a.nav-logo[href="#"] {
+  justify-self: start; /* hug the letters instead of filling the nav grid column */
+  /* JO keeps its normal size and the same spot as on the project pages, so
+     nothing jumps between pages; the line rises the last few pixels into it */
+}
+
+
+.nav-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease; /* movement is animated in script.js */
+}
+.nav-indicator.ready { opacity: 1; }
+/* On the intro the purple JO itself is the marker: the line rests hidden
+   inside the letters and, as a section takes over, runs straight out of the
+   logo, showing from 5% of the way; on the way back it runs into the JO */
+.nav-indicator.at-logo { opacity: 0; transition: none; } /* fading is part of the glide (script.js) */
+/* JO turns purple as the line runs into it (the glide back takes 0.95s) */
+a.nav-logo.active[href="#"] { transition: color 0.4s ease 0.7s; } /* purple once the line has run in */
+a.nav-logo[href="#"]:not(.active) { transition: color 0.4s ease; }
+/* On page load the JO is simply there, no animation */
+nav.no-anim a.nav-logo { transition: none !important; }
+/* The sliding line replaces the active item's own underline */
+nav.has-indicator .nav-links a.active,
+nav.has-indicator .nav-links a.active:hover { border-bottom-color: transparent; }
+
 /* Subpages: "JO | ←" on the left, JO goes home, ← goes one step back */
 .nav-left {
   display: flex;
@@ -210,9 +301,30 @@ nav {
   padding-bottom: 3px;
   border-bottom: 2px solid transparent;
   transition: border-color 0.2s;
+  position: relative;
 }
 
-.nav-links a:hover  { border-bottom-color: var(--accent); }
+/* Hover: a purple line runs in from the left under the word and runs out
+   to the right when the pointer leaves (sits where the border would) */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+.nav-links a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+/* The active item already carries the sliding line */
+nav.has-indicator .nav-links a.active::after { display: none; }
 .nav-links a.active { border-bottom-color: var(--accent); }
 
 /* LANG TOGGLE */
@@ -381,22 +493,17 @@ h2 {
   width: fit-content;
 }
 
-/* Purple copy of the headline, revealed as a growing circle from the
-   cursor after a 1s hover (driven by --cx / --cy from script.js) */
+/* Purple copy of the headline, shown through a wavy circle that follows
+   the cursor (clip-path animated in script.js) */
 .headline-purple-layer {
   position: absolute;
   inset: 0;
-  color: var(--accent);
   pointer-events: none;
-  clip-path: circle(0% at var(--cx, 50%) var(--cy, 50%));
-  transition: clip-path 0.4s ease-in;
-  will-change: clip-path;
+  clip-path: circle(0px at 0 0);
 }
 
-.headline-purple-layer--expand {
-  clip-path: circle(150% at var(--cx, 50%) var(--cy, 50%));
-  transition: clip-path 1.2s ease-out;
-}
+/* Two classes, so the accent color wins over .hero-display further down */
+.hero-display.headline-purple-layer { color: var(--accent); }
 
 /* White per-line background so text reads over the photo */
 .hero-display {
@@ -440,9 +547,9 @@ h2 {
   position: absolute;
   z-index: 1;
   left: 30%;
-  top: calc(15em + 24px);
+  top: calc(15em + 40px); /* 24px before: a little lower */
   right: 0;
-  bottom: 0;
+  bottom: -40px;          /* reaches a little past the header */
 }
 
 .intro-photo img {
@@ -1256,6 +1363,26 @@ h2 {
   margin-top: clamp(12rem, 15vw, 16rem);
 }
 
+/* Purple copy of the homepage marquee, shown through the wavy triangle
+   (clip-path animated in script.js); same padding so the copy lines up */
+.marquee-purple-layer {
+  position: absolute;
+  inset: 0;
+  padding: inherit;
+  overflow: hidden;
+  pointer-events: none;
+  clip-path: circle(0px at 0 0);
+}
+.marquee-purple-layer .marquee-track span,
+.marquee-purple-layer .marquee-dot { color: var(--accent) !important; }
+
+/* Marquee bands can be dragged (script.js) */
+.marquee-band {
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-y; /* the band can be dragged sideways, the page still scrolls */
+}
 .marquee-track {
   display: inline-flex;
   align-items: baseline;
@@ -1512,11 +1639,12 @@ h2 {
 }
 
 /* Paragraph break in the About text (a span, since the text comes from data attributes) */
-.bio-break { display: block; height: 1.5em; }
+.bio-break { display: none; } /* no break there: the text runs on */
 
 /* ── MOBILE REFINEMENTS 2 (homepage) ──────────────────── */
 @media (max-width: 720px) {
   /* Slightly smaller body text */
+  .intro-id h1,
   .intro-bio,
   .profile-bio { font-size: 0.88rem; }
 
@@ -1593,7 +1721,247 @@ h2 {
 
 /* Projects overview: more space between the filter row and the projects (desktop) */
 @media (min-width: 721px) {
-  .project-filters { margin-bottom: 3rem; }
+  .project-filters { margin-bottom: 1.75rem; }
   /* Less vertical space between the project rows */
   .projects-overview .projects-grid { row-gap: 3.5rem; }
+}
+
+/* Desktop: larger section titles (Projects, Resume, About) */
+@media (min-width: 861px) {
+  #projects > h2,
+  #resume > h2,
+  #profile > h2 { font-size: clamp(2.2rem, 4vw, 3.6rem); }
+}
+
+/* ── PROJECT STEP MENU (desktop) ──────────────────────
+   Just dots: light grey, the current step purple. Hovering a dot shows its
+   name in a purple caption next to the cursor (script.js). */
+.nav-links--steps { gap: 0.35rem; align-items: center; }
+.nav-links--steps a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 0.45rem;  /* comfortable hit area around the small dot */
+  border-bottom: 0;
+}
+.nav-links--steps a::after { display: none; }
+.nav-links--steps a::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #d4d4d4;
+  transition: background 0.3s ease, scale 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.nav-links--steps a:hover::before { background: #a9a9a9; scale: 1.6; }
+.nav-links--steps a.active::before { background: var(--accent); scale: 1.15; }
+.nav-links--steps .step-label,
+.nav-links--steps .step-tip { display: none; }
+
+/* Over a step dot a small purple caption with the section name rides
+   diagonally below-right of the cursor */
+@media (pointer: fine) {
+  #cursor-caption {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 1.2rem 0 0 1.2rem;    /* diagonally below-right of the triangle, at 45° */
+    padding: 0.2rem 0.45rem;
+    border-radius: 0;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.66rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 10002;
+    translate: -200px -200px;
+    opacity: 0;
+    scale: 0.85;
+    transform-origin: left top;
+    transition: opacity 0.18s ease, scale 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  #cursor-caption.active { opacity: 1; scale: 1; }
+}
+/* Mobile menu sheet: the full names, no dots or hover labels */
+.nav-sheet .step-tip { display: none; }
+
+/* Projects overview filters: one purple line glides to the active filter,
+   like the menu line (script.js); the filters' own underline steps aside */
+.project-filters.has-line { position: relative; }
+.project-filters.has-line .project-filter.active { border-bottom-color: transparent; }
+.filter-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: var(--accent);
+  pointer-events: none;
+}
+
+/* ── PROJECT CARDS AS BOXES (test) ─────────────────────
+   Every project card (homepage, overview, See More) is a white box: image
+   on top, tags and title below, standing off the off-white page */
+.project-card {
+  background: #fff;
+}
+.project-card a:not(.project-link) { margin-bottom: 0; }
+/* Text sits at the bottom of the white area, the two lines close together */
+.project-card .project-body { padding: 2.7rem 1.2rem 1.2rem; }
+/* Homepage two-column grid: a bit more room below the text */
+#projects .project-card .project-body { padding-bottom: 1.8rem; }
+.project-card .project-tags { line-height: 1.3; margin-bottom: 0.15rem; }
+.project-card .project-title { line-height: 1.25; }
+.project-card .project-title { margin-bottom: 0; }
+/* Card text: title in regular weight, just black (all sizes) */
+.project-card .project-title { font-weight: 400; color: var(--text); }
+/* Boxes need less air between rows than the open layout did */
+.projects-grid,
+.projects-overview .projects-grid { row-gap: 2rem; }
+@media (max-width: 720px) {
+  .projects-grid { row-gap: 1.5rem; }
+  .projects-overview .projects-grid { row-gap: 1.25rem; }
+}
+/* Cards: title first, keywords below */
+.project-card .project-body { display: flex; flex-direction: column; }
+.project-card .project-title { order: -1; margin-bottom: 0.15rem; }
+.project-card .project-tags { margin-bottom: 0; }
+
+/* Desktop: more room between the sections Projects, Resume and About */
+@media (min-width: 861px) {
+  #resume { padding-top: 140px; }
+  #profile { padding-top: 11rem; }
+}
+
+/* Desktop: the bicycle photo and its text move a little in from the left */
+@media (min-width: 721px) {
+  .profile-split { margin-left: 8vw; margin-top: 32vw; }  /* 24vw before: sits lower */
+}
+
+/* About: the short nature line under the mountain photo in italics */
+.profile-pair--second .profile-bio { font-style: italic; }
+
+/* Homepage headline can be dragged around the intro (script.js) */
+@media (pointer: fine) {
+  #intro .slogan-wrap { user-select: none; -webkit-user-select: none; }
+}
+/* The three headline parts move on their own (translate), so they must not
+   be clipped by the headline box; the purple copy keeps its clip-path */
+#intro .slogan-wrap { overflow: visible; }
+.hl-part { display: inline-block; } /* translate needs a box */
+/* Touch: dragging a part or a handle moves/scales it instead of scrolling */
+.hl-part, .hl-handle { touch-action: none; }
+#intro .slogan-wrap { user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
+/* Bigger, invisible grab area around the small handles */
+.hl-handle::after { content: ''; position: absolute; inset: -14px; }  /* ~22px around the centre */
+@media (pointer: coarse) { .hl-handle::after { inset: -18px; } }
+
+/* Colour palette for the headline parts (script.js) */
+.hl-palette {
+  position: absolute;
+  z-index: 200;
+  display: flex;
+  gap: 0.45rem;
+  padding: 0.5rem;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  translate: 0 -4px;
+  pointer-events: none;
+  transition: opacity 0.18s ease, translate 0.18s ease;
+}
+.hl-palette.open { opacity: 1; translate: 0 0; pointer-events: auto; }
+.hl-palette button {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 0;
+  padding: 0;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  transition: scale 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), outline-color 0.2s;
+}
+.hl-palette button:hover { scale: 1.15; }
+.hl-palette button.current { outline-color: rgba(0, 0, 0, 0.25); }
+
+/* Header: name in the bio's size, a couple of weights up (semibold) */
+.intro-id h1 {
+  font-size: clamp(0.95rem, 1.35vw, 1.1rem);
+  font-weight: 600;
+  letter-spacing: 0;
+  /* same line height and gap as between the two bio parts (.bio-gap) */
+  line-height: 1.5;
+  margin-bottom: 0.6em;
+}
+
+/* Editor-style selection around a headline part (script.js): thin purple
+   frame with square corner handles that scale the part, shown on click only */
+.hl-select {
+  position: absolute;
+  z-index: 150;
+  border: 1px solid var(--accent);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+.hl-select.open { opacity: 1; }
+.hl-handle {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  background: #fff;
+  border: 1px solid var(--accent);
+  pointer-events: auto;
+}
+.hl-select:not(.open) .hl-handle { pointer-events: none; }
+.hl-handle--nw { left: -5px; top: -5px; }
+.hl-handle--ne { right: -5px; top: -5px; }
+.hl-handle--sw { left: -5px; bottom: -5px; }
+.hl-handle--se { right: -5px; bottom: -5px; }
+.hl-handle { transition: scale 0.18s ease, background 0.18s ease; }
+.hl-handle:hover,
+.hl-handle.near,
+.hl-select.resizing .hl-handle { background: var(--accent); scale: 1.5; }
+
+/* Header bio: a small gap before the last sentence (a span, since the text comes from data attributes) */
+.bio-gap { display: block; height: 0.6em; }
+
+/* Desktop: name and bio sit a little further in from the left edge */
+@media (min-width: 721px) {
+  .intro-id { margin-left: 1.8vw; margin-bottom: 2vh; }  /* sits a bit higher */
+  .intro-bio { max-width: 20vw; }   /* 21vw originally */
+}
+
+/* Mobile: name spacing as before (the desktop line height / gap stays above) */
+@media (max-width: 720px) {
+  .intro-id h1 { line-height: 1.15; margin-bottom: 0.5em; }
+}
+
+/* Section title separators (Projects, Resume, About) a touch thicker */
+#projects > h2,
+#profile > h2,
+#resume > h2 { border-bottom-width: 2.5px; }
+
+/* Header name and bio in the same size as the project card text */
+.intro-bio,
+.intro-id h1 { font-size: clamp(0.85rem, 1.3vw, 1rem); }
+@media (max-width: 720px) {
+  .intro-id h1,
+  .intro-bio { font-size: 0.88rem; }  /* mobile size as before */
+}
+
+/* About text: a few key phrases set in bold */
+.profile-bio strong { font-weight: 600; }
+
+/* Mobile: project cards with a lower white text area */
+@media (max-width: 720px) {
+  .project-card .project-body,
+  #projects .project-card .project-body { padding: 1.3rem 1rem 1rem; }
+}
+
+/* Desktop: About text beside the bicycle photo a little narrower (28vw before) */
+@media (min-width: 721px) {
+  .profile-split .profile-text { max-width: 24vw; }
 }
