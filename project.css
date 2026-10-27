@@ -825,3 +825,93 @@
   .alt-block,
   .alt-media-row { margin-bottom: 6rem; }
 }
+
+/* Images with a transparent background (e.g. the Car UX sketches) sit on
+   white like all the others, so they stand out from the off-white page */
+.alt-block-image img,
+.alt-block-image-pair img,
+.alt-block-image-duo img,
+.alt-gallery-item img,
+.alt-image-grid img { background: #fff; }
+
+/* Wide image shown at the same proportions as the other sketches on the page
+   (2360 × 1640); the extra height becomes white space above the drawing */
+.alt-block-image--pad-top img {
+  aspect-ratio: 2360 / 1640;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+/* More room below the See More cards, so the back-to-top arrow has space */
+@media (min-width: 861px) {
+  .project-more { padding-bottom: 120px; }
+}
+
+/* Mobile: a row of step dots centred under the nav bar (script.js), on a
+   soft translucent pill; each dot has a 24px tap area */
+.step-rail { display: none; }
+@media (max-width: 860px) {
+  .step-rail {
+    display: flex;
+    flex-direction: row;     /* horizontal, centred under the nav bar */
+    position: fixed;
+    top: calc(60px + env(safe-area-inset-top, 0px) + 8px);
+    left: 50%;
+    translate: -50% 0;
+    padding: 0 6px;
+    border-radius: 999px;    /* pill: rounded at top and bottom */
+    background: rgba(250, 250, 247, 0.45);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    z-index: 80;             /* under the nav bar and the open menu sheet */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .step-rail.visible { opacity: 1; pointer-events: auto; }
+  body.nav-sheet-open .step-rail { opacity: 0; pointer-events: none; }
+  .step-rail button {
+    width: 24px;             /* tap area: 24 × 24, dot centred */
+    height: 24px;
+    padding: 0;
+    border: 0;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .step-rail button::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #cfcfcf;
+    transition: background 0.3s ease, scale 0.3s ease;
+  }
+  .step-rail button.active::before { background: var(--accent); scale: 1.35; }
+  .step-rail button:active::before { background: #a9a9a9; scale: 1.6; }
+  .step-rail-name { display: none !important; } /* no labels beside the dots */
+  .step-rail-name {
+    position: absolute;
+    left: 30px;
+    translate: 0 -50%;
+    padding: 0.15rem 0.4rem;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.66rem;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease, top 0.3s ease;
+    pointer-events: none;
+  }
+  .step-rail-name.show { opacity: 1; }
+}
+
+/* Mobile project intro: title and lead closer together */
+@media (max-width: 860px) {
+  .alt-intro { padding-top: 32px; }
+  .alt-intro-lead { margin-top: 12px; }
+  .alt-meta-strip { margin-top: 24px; }
+}
