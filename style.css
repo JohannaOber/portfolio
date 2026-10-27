@@ -1440,7 +1440,12 @@ h2 {
   .nav-sheet {
     display: block;
     position: fixed;
-    inset: 0;
+    /* Only as tall as the menu items plus padding, not the full page */
+    top: 0;
+    left: 0;
+    right: 0;
+    max-height: 100%;
+    border-bottom: 1.5px solid #000;
     z-index: 90;
     background: var(--white);
     transform: translateY(-100%);
@@ -1468,4 +1473,127 @@ h2 {
   }
 
   body.nav-sheet-open { overflow: hidden; }
+}
+
+/* ── MOBILE REFINEMENTS (homepage) ────────────────────
+   Mobile only; comes after the blocks above so it wins at equal specificity */
+@media (max-width: 720px) {
+  /* Header: half the gap between the headline and the name/bio block */
+  .slogan-wrap { margin-bottom: 4vh; }
+  .intro-id h1 { margin-bottom: 0.5em; }
+  .intro-bio { max-width: none; }
+
+  /* Projects and Resume sit closer to the screen edges */
+  #projects,
+  #resume { padding-left: 10px; padding-right: 10px; }
+
+  /* Much less space above "Show more Projects" (14rem on desktop) */
+  .more-projects-link { margin-top: 3rem; }
+
+  /* All four resume tabs fit in one row without overflowing */
+  .tab-nav { gap: 0.75rem; justify-content: space-between; }
+  .tab-nav label { font-size: 0.8rem; white-space: nowrap; }
+
+  /* Tighter spacing around the separator lines between entries */
+  .resume-item { padding-bottom: 1rem; margin-bottom: 1rem; }
+
+  /* A bit more room between Resume and About */
+  #resume { padding-bottom: 7rem; }
+
+  /* About: bicycle photo and text first, then the mountain photo and text,
+     both at full width */
+  .profile-gallery { display: flex; flex-direction: column; }
+  .profile-split { order: 1; margin: 0 0 3rem; }
+  .profile-text { width: auto; }
+  .profile-pair--second { order: 2; width: 60vw; margin: 0 auto 3rem 0; }
+
+  /* Footer: half the space between the role and the email link */
+  .footer-role { margin-bottom: 5rem; }
+}
+
+/* Paragraph break in the About text (a span, since the text comes from data attributes) */
+.bio-break { display: block; height: 1.5em; }
+
+/* ── MOBILE REFINEMENTS 2 (homepage) ──────────────────── */
+@media (max-width: 720px) {
+  /* Slightly smaller body text */
+  .intro-bio,
+  .profile-bio { font-size: 0.88rem; }
+
+  /* "More Projects": arrow always visible (no hover on touch),
+     less space before the Resume section */
+  .more-projects-link { margin-bottom: 4rem; }
+  .more-projects-link::after { max-width: 1.2em; padding-left: 0.3em; opacity: 1; }
+  #projects { padding-bottom: 0; }
+  #resume { padding-top: 2rem; }
+
+  /* Less space between section titles and their separator */
+  #projects > h2,
+  #profile > h2,
+  #resume > h2 { padding-bottom: 0.6rem; }
+  #resume > h2 { margin-bottom: 1.5rem; }
+
+  /* Smaller resume content */
+  .resume-meta,
+  .resume-role,
+  .resume-org,
+  .resume-loc,
+  .resume-detail,
+  #panel-vol .resume-detail,
+  #panel-pers .resume-detail,
+  #panel-exp .resume-desc { font-size: 0.85rem; }
+
+  /* Footer: smaller links, JO mark right-aligned beside them */
+  .contact-card { flex-direction: row; align-items: flex-end; justify-content: space-between; gap: 1rem; }
+  .footer-links a { font-size: 0.8rem; }
+  .footer-mark { font-size: 1rem; white-space: nowrap; }
+}
+
+/* ── SCROLL REVEAL ────────────────────────────────────
+   Images and text rise softly into place as they scroll into view.
+   Classes are set by script.js, so without JS everything stays visible */
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+  /* Opacity eases gently, the movement glides out long; both on the GPU */
+  transition: opacity 1.2s cubic-bezier(0.25, 0.1, 0.25, 1),
+              transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0s);
+  will-change: opacity, transform;
+}
+.reveal.reveal-init { transition: none; }
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── MOBILE REFINEMENTS (projects overview) ─────────── */
+@media (max-width: 720px) {
+  /* Less space between the "My Projects" title and the filters */
+  .projects-overview { padding-top: 1.5rem; }
+  /* All filters on one row, the project count on its own line below */
+  /* Filters spread across the full width, with a taller tap area */
+  .project-filters { flex-wrap: wrap; justify-content: space-between; }
+  .project-filter { margin-right: 0; padding-top: 0.9rem; font-size: 0.8rem; white-space: nowrap; }
+  /* Invisible hit area reaching into the gaps on both sides */
+  .project-filter { position: relative; }
+  .project-filter::before { content: ''; position: absolute; inset: -0.4rem -0.55rem; }
+  .project-count { flex-basis: 100%; margin-left: 0; padding-top: 0.75rem; font-size: 0.8rem; }
+  /* Less space between the projects */
+  .projects-overview .projects-grid { row-gap: 1.25rem; }
+  /* Same side spacing as the homepage's Projects section */
+  .projects-overview { padding-left: 10px; padding-right: 10px; padding-bottom: 8rem; }
+  .projects-hero { padding-left: 10px; padding-right: 10px; }
+}
+
+/* Projects overview: three projects per row on desktop */
+@media (min-width: 1025px) {
+  .projects-overview .projects-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Projects overview: more space between the filter row and the projects (desktop) */
+@media (min-width: 721px) {
+  .project-filters { margin-bottom: 3rem; }
+  /* Less vertical space between the project rows */
+  .projects-overview .projects-grid { row-gap: 3.5rem; }
 }

@@ -48,6 +48,13 @@
   color: var(--muted);
 }
 
+/* Mobile: meta strip topics wrap as whole tags; a tag starting a new line gets a
+   line break instead of the separator dot (set in script.js) */
+@media (max-width: 860px) {
+  .alt-meta-strip .alt-intro-tags > span { display: inline-block; white-space: nowrap; }
+  .alt-meta-strip .alt-intro-tags > span.tag-wrapped::before { content: none; }
+}
+
 /* META STRIP — Client / Year / Keywords, spread across the width between
    two separators, text slightly inset from their ends */
 .alt-meta-strip {
@@ -738,4 +745,83 @@
   .project-more-grid .project-card:last-child {
     display: none;
   }
+}
+
+/* ── MOBILE REFINEMENTS (project pages) ───────────────
+   Mobile only; comes after the blocks above so it wins at equal specificity */
+@media (max-width: 860px) {
+  /* Content sits closer to the screen edges (half the 20px gutter) */
+  .alt-page { --gutter: 10px; }
+  .alt-page nav { padding-left: 20px; padding-right: 20px; } /* nav keeps its spacing */
+  .alt-task-strip { padding-left: var(--gutter); padding-right: var(--gutter); }
+  .alt-text-section { padding-left: var(--gutter); padding-right: var(--gutter); }
+
+  /* Less space between the intro paragraph and the meta strip's top line */
+  .alt-intro { padding-bottom: 1rem; }
+  .alt-meta-strip {
+    margin-top: 1.5rem;
+    /* Same space above and below the text block, thinner separator lines */
+    padding: 1.25rem 0;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+  }
+
+  /* Meta list: tighter rows; values stack under each other in their own
+     column, each one wrapping as a whole instead of running into the next */
+  .alt-meta-strip > div {
+    display: grid;
+    grid-template-columns: 4.5rem minmax(0, 1fr);
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+  }
+  .alt-meta-strip > div:last-child { margin-bottom: 0; }
+  .alt-meta-strip .section-label { margin-bottom: 0; }
+  .alt-meta-strip p { grid-column: 2; }
+  .alt-meta-strip p + p::before { content: none; }
+
+  /* Disclaimer band: less space before "See More" */
+  .marquee-band--disclaimer { margin-bottom: 1rem; }
+  .project-more { padding-top: 1rem; padding-bottom: 120px; }
+  .project-more { padding-left: var(--gutter); padding-right: var(--gutter); }
+}
+
+/* Stacked block that keeps its text above the image pair on mobile (Food Fighters) */
+@media (max-width: 860px) {
+  .alt-block--stacked.alt-block--text-first .alt-block-text { order: 1; }
+  .alt-block--stacked.alt-block--text-first .alt-block-image-pair { order: 2; }
+  /* Food Fighters: the two closing images stacked, each at full content width, uncropped */
+  .alt-block--text-first .alt-block-image-pair { grid-template-columns: 1fr; gap: 1rem; }
+  .alt-block--text-first .alt-block-image-pair img { aspect-ratio: auto; height: auto; }
+  /* Food Fighters: playtesting video first, then the app clip */
+  .alt-media-row video:first-child { order: 2; }
+  .alt-media-row video:last-child { order: 1; }
+}
+
+/* Mobile block order: chapter label, image, heading, paragraph.
+   The text wrapper dissolves (display: contents) so its children sit in the
+   block's single column next to the image and can be ordered individually */
+@media (max-width: 860px) {
+  .alt-block:not(.alt-block--text-first) { gap: 0; }
+  .alt-block:not(.alt-block--text-first) .alt-block-text { display: contents; }
+  .alt-block:not(.alt-block--text-first) .alt-panel-label {
+    order: 1;
+    margin-bottom: 0.75rem;
+  }
+  .alt-block:not(.alt-block--text-first) .alt-block-image,
+  .alt-block:not(.alt-block--text-first) .alt-block-image-pair {
+    order: 2;
+    margin-bottom: 1.5rem;
+  }
+  .alt-block:not(.alt-block--text-first) .alt-panel-heading {
+    order: 3;
+    margin-bottom: 0.75rem;
+  }
+  .alt-block:not(.alt-block--text-first) .alt-panel-body,
+  .alt-block:not(.alt-block--text-first) .alt-panel-body-pair { order: 4; }
+}
+
+/* Mobile: more space between the process steps (Challenge, 01 Research, ...) */
+@media (max-width: 860px) {
+  .alt-block,
+  .alt-media-row { margin-bottom: 6rem; }
 }
