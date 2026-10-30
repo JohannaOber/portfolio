@@ -1965,3 +1965,8 @@ h2 {
 @media (min-width: 721px) {
   .profile-split .profile-text { max-width: 24vw; }
 }
+
+/* Header bio: slightly tighter lines; the name keeps the same line height */
+.intro-bio,
+.intro-id h1 { line-height: 1.4; }
+@media (max-width: 720px) { .intro-id h1 { line-height: 1.15; } }

@@ -467,28 +467,10 @@ function purpleWave(wrap, layer, size, opts) {
         if (over) wave.move(e.clientX, e.clientY);
       }, { passive: true });
     } else {
-      // Touch screens: no hover, so a small purple patch appears somewhere in
-      // the headline and slowly spreads until the whole text is purple, rests,
-      // fades back, and starts again elsewhere (only while on screen)
-      wave = purpleWave(wrap, layer, 0.25, { hover: false, minR: 18, grow: 2, fillTime: 14 });
-      let visible = false, loop = null;
-      const start = () => {
-        const r = wrap.getBoundingClientRect();
-        wave.enter(r.left + r.width * (0.15 + Math.random() * 0.7),
-                   r.top + r.height * (0.25 + Math.random() * 0.5), 0);
-        loop = setInterval(() => {
-          if (!wave.isFull()) return;
-          clearInterval(loop);
-          loop = setTimeout(() => {
-            wave.leave();
-            loop = setTimeout(() => { if (visible) start(); else loop = null; }, 1500);
-          }, 2500);
-        }, 200);
-      };
-      new IntersectionObserver(entries => {
-        visible = entries[0].isIntersecting;
-        if (visible && !loop) loop = setTimeout(start, 1200);
-      }).observe(wrap);
+      // Touch screens: no hover, so no purple wave at all (an automatic colour
+      // change without touching the headline was confusing). The wave object
+      // stays as a no-op, so the editing code below can call it safely.
+      wave = { enter() {}, move() {}, leave() {}, isFull: () => false };
     }
 
     // Editing works with mouse and touch alike (tap = select, drag = move)
@@ -1886,3 +1868,4 @@ document.querySelectorAll('.project-card').forEach(function (card) {
     else window.location.href = link.href;
   });
 });
+
