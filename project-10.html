@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="style.css?v=20261102d2" />
   <link rel="stylesheet" href="project.css?v=20261102d2" />
 </head>
-<body class="alt-page">
+<body class="alt-page cs-page">
 
   <nav>
     <div class="nav-left">
@@ -38,102 +38,147 @@
     </div>
   </nav>
 
-  <!-- ── COVER IMAGE ────────────────────────────────── -->
-  <div class="alt-cover">
+  <!-- ── HEADER ─────────────────────────────────────────── -->
+  <header class="cs-header">
+    <p class="cs-meta"><span data-en="Personal project" data-de="Persönliches Projekt">Personal project</span><span class="cs-dot">·</span>2026</p>
+    <h1 class="cs-title">Voteasy Votecounter</h1>
+    <p class="cs-lead" data-en="A mobile-first concept for AI-assisted vote counting on election night, designed to work within Germany's existing paper ballot system." data-de="Ein Mobile-First-Konzept für KI-gestützte Stimmenauszählung am Wahlabend, entwickelt für das bestehende Wahlsystem mit Papierstimmzetteln in Deutschland.">A mobile-first concept for AI-assisted vote counting on election night, designed to work within Germany's existing paper ballot system.</p>
+    <div class="cs-facts">
+      <div>
+        <span class="cs-facts-label" data-en="My role" data-de="Meine Rolle">My role</span>
+        <p><span data-en="Field observation" data-de="Feldbeobachtung">Field observation</span><span class="cs-dot">·</span><span data-en="Interviews" data-de="Interviews">Interviews</span><span class="cs-dot">·</span><span data-en="Concept" data-de="Konzept">Concept</span><span class="cs-dot">·</span><span data-en="Flow design" data-de="Flow-Design">Flow design</span></p>
+      </div>
+      <div>
+        <span class="cs-facts-label" data-en="Topic" data-de="Thema">Topic</span>
+        <p><span data-en="Civic Tech" data-de="Civic Tech">Civic Tech</span><span class="cs-dot">·</span><span data-en="Digital Elections" data-de="Digitale Wahlen">Digital Elections</span></p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── COVER IMAGE ────────────────────────────────────── -->
+  <div class="alt-cover cs-cover">
     <img decoding="async" src="images/project-10-voteasy/project-10-1.jpg" alt="Voteasy Votecounter" />
   </div>
 
-  <!-- HEADER -->
-  <div class="alt-intro">
-    <h1 class="alt-intro-title">Voteasy Votecounter</h1>
-    <p class="alt-intro-lead" data-en="Voteasy is a mobile-first concept for AI-assisted vote counting on election night, designed to work within Germany's existing paper ballot system." data-de="Voteasy ist ein Mobile-First-Konzept für KI-gestützte Stimmenauszählung am Wahlabend, entwickelt für das bestehende Wahlsystem mit Papierstimmzetteln in Deutschland.">Voteasy is a mobile-first concept for AI-assisted vote counting on election night, designed to work within Germany's existing paper ballot system.</p>
+  <section class="cs-section" id="overview">
+    <h2 class="cs-section-title" data-en="Overview" data-de="Überblick">Overview</h2>
+    <div class="cs-steps">
+        <article class="cs-step">
+          <div class="cs-step-top"><span class="cs-step-num">01</span><span class="cs-step-label" data-en="Problem" data-de="Problem">Problem</span></div>
+          <h3 class="cs-step-heading" data-en="No time to learn a complex system" data-de="Keine Zeit, ein komplexes System zu lernen">No time to learn a complex system</h3>
+          <p class="cs-step-body" data-en="At a local election in 2025, I worked as a volunteer poll worker and experienced the newly introduced digital counting system firsthand: unclear terminology, buried actions and a flow slower than pen and paper. For a tool used once a year, under time pressure and with no training, that is not acceptable." data-de="Bei einer Kommunalwahl 2025 war ich ehrenamtliche Wahlhelferin und habe das neu eingeführte digitale Zählsystem selbst erlebt: unklare Begriffe, versteckte Aktionen und ein Ablauf, der langsamer war als Stift und Papier. Für ein Werkzeug, das einmal im Jahr unter Zeitdruck und ohne Schulung genutzt wird, ist das nicht akzeptabel.">At a local election in 2025, I worked as a volunteer poll worker and experienced the newly introduced digital counting system firsthand: unclear terminology, buried actions and a flow slower than pen and paper. For a tool used once a year, under time pressure and with no training, that is not acceptable.</p>
+        </article>
+        <article class="cs-step">
+          <div class="cs-step-top"><span class="cs-step-num">02</span><span class="cs-step-label" data-en="Approach" data-de="Vorgehen">Approach</span></div>
+          <h3 class="cs-step-heading" data-en="ASSAP: As simple &amp; safe as possible" data-de="ASSAP: As simple &amp; safe as possible, so einfach und sicher wie möglich">ASSAP: As simple &amp; safe as possible</h3>
+          <p class="cs-step-body" data-en="Keep the existing system, including the paper ballot, and make only the counting digital. AI helps read the ballots, but whenever it is unsure, a person decides; in the background, it also checks that the counted results match up. Poll workers, vote counters and the municipal administration share one flow, yet none of them depends on another to get their part done." data-de="Das bestehende System inklusive Papierstimmzettel bleibt, nur das Auszählen wird digital. Die KI hilft beim Lesen der Stimmzettel, doch sobald sie unsicher ist, entscheidet ein Mensch; im Hintergrund prüft sie außerdem, ob die gezählten Ergebnisse übereinstimmen. Wahlhelfende am Eingang, Zählende am Tisch und die Gemeindeverwaltung arbeiten in einem gemeinsamen Ablauf, ohne für ihren Teil aufeinander angewiesen zu sein.">Keep the existing system, including the paper ballot, and make only the counting digital. AI helps read the ballots, but whenever it is unsure, a person decides; in the background, it also checks that the counted results match up. Poll workers, vote counters and the municipal administration share one flow, yet none of them depends on another to get their part done.</p>
+        </article>
+        <article class="cs-step cs-step--result">
+          <div class="cs-step-top"><span class="cs-step-num">03</span><span class="cs-step-label" data-en="Result" data-de="Ergebnis">Result</span></div>
+          <h3 class="cs-step-heading" data-en="Ready to pitch" data-de="Bereit für den Pitch">Ready to pitch</h3>
+          <p class="cs-step-body" data-en="A concept and prototype that volunteers can use without any training. Fellow poll workers who reviewed it responded immediately: clear, fast, and something they would use that same night. The next step is pitching it to the responsible municipal office." data-de="Ein Konzept und Prototyp, den Ehrenamtliche ganz ohne Schulung nutzen können. Andere Wahlhelfende, die ihn sich angesehen haben, waren sofort überzeugt: klar, schnell und etwas, das sie noch am selben Abend nutzen würden. Als Nächstes stelle ich das Konzept dem zuständigen Wahlamt vor.">A concept and prototype that volunteers can use without any training. Fellow poll workers who reviewed it responded immediately: clear, fast, and something they would use that same night. The next step is pitching it to the responsible municipal office.</p>
+        </article>
+    </div>
+  </section>
+
+  <div class="cs-gallery">
+    <div class="cs-gallery-item"><img loading="lazy" decoding="async" src="images/project-10-voteasy/project-10-2.jpg" alt="Voteasy Votecounter: Challenge" /></div>
+    <div class="cs-gallery-item"><img loading="lazy" decoding="async" src="images/project-10-voteasy/project-10-5.jpg" alt="Voteasy Votecounter: Solution & Impact" /></div>
   </div>
 
-  <!-- META STRIP -->
-  <div class="alt-meta-strip">
-    <div>
-      <span class="section-label" data-en="Client" data-de="Auftraggeber">Client</span>
-      <p data-en="Personal Project" data-de="Persönliches Projekt">Personal Project</p>
+  <section class="cs-section" id="decisions">
+    <h2 class="cs-section-title" data-en="Main decisions" data-de="Wichtige Entscheidungen">Main decisions</h2>
+    <div class="cs-decisions">
+        <div class="cs-decision">
+          <span class="cs-num">01</span>
+          <h3 class="cs-decision-title" data-en="Keep the paper ballot" data-de="Der Papierstimmzettel bleibt">Keep the paper ballot</h3>
+          <div class="cs-decision-text">
+            <p class="cs-decision-why" data-en="In Germany, paper ballots deliberately include voters who cannot or should not have to use digital systems. Only the counting becomes digital, the voter experience stays unchanged." data-de="In Deutschland schließen Papierstimmzettel bewusst auch Wählende ein, die keine digitalen Systeme nutzen können oder müssen sollen. Nur das Auszählen wird digital, für die Wählenden ändert sich nichts.">In Germany, paper ballots deliberately include voters who cannot or should not have to use digital systems. Only the counting becomes digital, the voter experience stays unchanged.</p>
+          </div>
+        </div>
+        <div class="cs-decision">
+          <span class="cs-num">02</span>
+          <h3 class="cs-decision-title" data-en="QR code instead of logins" data-de="QR-Code statt Login">QR code instead of logins</h3>
+          <div class="cs-decision-text">
+            <p class="cs-decision-why" data-en="Access works via QR code, so volunteers need no account and no training." data-de="Der Zugang läuft über einen QR-Code, sodass Ehrenamtliche weder ein Konto noch eine Schulung brauchen.">Access works via QR code, so volunteers need no account and no training.</p>
+          </div>
+        </div>
+        <div class="cs-decision">
+          <span class="cs-num">03</span>
+          <h3 class="cs-decision-title" data-en="AI suggests, people confirm" data-de="Die KI schlägt vor, Menschen bestätigen">AI suggests, people confirm</h3>
+          <div class="cs-decision-text">
+            <p class="cs-decision-why" data-en="AI reads the ballot photo and suggests a result, and the human confirms or corrects it: quicker than counting by hand, and safer because a person always has the final say." data-de="Die KI liest das Foto des Stimmzettels und schlägt ein Ergebnis vor, der Mensch bestätigt oder korrigiert es: schneller als von Hand zu zählen und sicherer, weil immer ein Mensch das letzte Wort hat.">AI reads the ballot photo and suggests a result, and the human confirms or corrects it: quicker than counting by hand, and safer because a person always has the final say.</p>
+          </div>
+        </div>
     </div>
-    <div>
-      <span class="section-label" data-en="Team" data-de="Team">Team</span>
-      <p data-en="Sole Designer" data-de="Alleinige Designerin">Sole Designer</p>
-    </div>
-    <div>
-      <span class="section-label" data-en="Year" data-de="Jahr">Year</span>
-      <p>2026</p>
-    </div>
-    <div class="alt-meta-topic">
-      <span class="section-label" data-en="Topic" data-de="Thema">Topic</span>
-      <p class="alt-intro-tags">
-        <span data-en="Civic Tech" data-de="Civic Tech">Civic Tech</span><span data-en="Digital Elections" data-de="Digitale Wahlen">Digital Elections</span>
-      </p>
-    </div>
-  </div>
+  </section>
 
-  <!-- ── ALTERNATING IMAGE / TEXT BLOCKS ─────────────────── -->
-  <div class="alt-block">
-    <div class="alt-block-image">
-      <img loading="lazy" decoding="async" src="images/project-10-voteasy/project-10-2.jpg" alt="Voteasy Votecounter: Challenge" />
+  <section class="cs-section" id="process">
+    <h2 class="cs-section-title" data-en="Full process" data-de="Der ganze Prozess">Full process</h2>
+    <div class="cs-accordion">
+        <div class="cs-acc-item open">
+          <button type="button" class="cs-acc-head" aria-expanded="true">
+            <span class="cs-num">01</span>
+            <span class="cs-acc-title" data-en="Research: no time to learn a system" data-de="Recherche: Keine Zeit zum Einarbeiten">Research: no time to learn a system</span>
+            <span class="cs-acc-icon" aria-hidden="true"></span>
+          </button>
+          <div class="cs-acc-body">
+            <div class="cs-acc-inner">
+              <p class="cs-acc-text" data-en="I spoke with fellow poll workers to check whether my experience was shared. It was. Recurring themes: unfamiliar terminology, no clear flow, and a system that assumed expert knowledge. The core insight: this tool is used once a year, under time pressure, by volunteers with no prior training. It has to work immediately." data-de="Ich sprach mit anderen Wahlhelfenden, ob es ihnen ähnlich ging. So war es. Wiederkehrende Themen: unbekannte Begriffe, kein klarer Ablauf und ein System, das Expertenwissen voraussetzt. Die zentrale Erkenntnis: Dieses Tool wird einmal im Jahr unter Zeitdruck von Ehrenamtlichen ohne Vorkenntnisse genutzt. Es muss auf Anhieb funktionieren.">I spoke with fellow poll workers to check whether my experience was shared. It was. Recurring themes: unfamiliar terminology, no clear flow, and a system that assumed expert knowledge. The core insight: this tool is used once a year, under time pressure, by volunteers with no prior training. It has to work immediately.</p>
+              <div class="cs-acc-image">
+                <img loading="lazy" decoding="async" src="images/project-10-voteasy/project-10-3.jpg" alt="Voteasy Votecounter: Research" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cs-acc-item">
+          <button type="button" class="cs-acc-head" aria-expanded="false">
+            <span class="cs-num">02</span>
+            <span class="cs-acc-title" data-en="Concept: a solution that does not exclude voters" data-de="Konzept: Eine Lösung, die niemanden ausschließt">Concept: a solution that does not exclude voters</span>
+            <span class="cs-acc-icon" aria-hidden="true"></span>
+          </button>
+          <div class="cs-acc-body">
+            <div class="cs-acc-inner">
+              <p class="cs-acc-text" data-en="A fully digital election would make this unnecessary. But in Germany, paper ballots remain a deliberate choice to include voters who cannot or should not have to interact with digital systems. Voteasy Votecounter works within that reality: it digitises the counting process behind the scenes, leaving the voter experience completely unchanged." data-de="Eine vollständig digitale Wahl würde das überflüssig machen. In Deutschland sind Papierstimmzettel aber eine bewusste Entscheidung: Niemand soll mit digitalen Systemen umgehen müssen, um wählen zu können. Voteasy Votecounter arbeitet innerhalb dieser Realität: Es digitalisiert die Auszählung im Hintergrund, während sich für die Wählenden nichts ändert.">A fully digital election would make this unnecessary. But in Germany, paper ballots remain a deliberate choice to include voters who cannot or should not have to interact with digital systems. Voteasy Votecounter works within that reality: it digitises the counting process behind the scenes, leaving the voter experience completely unchanged.</p>
+              <div class="cs-acc-image">
+                <img loading="lazy" decoding="async" src="images/project-10-voteasy/project-10-1.jpg" alt="Voteasy Votecounter: Concept" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cs-acc-item">
+          <button type="button" class="cs-acc-head" aria-expanded="false">
+            <span class="cs-num">03</span>
+            <span class="cs-acc-title" data-en="Design: as simple &amp; safe as possible" data-de="Design: so einfach und sicher wie möglich">Design: as simple &amp; safe as possible</span>
+            <span class="cs-acc-icon" aria-hidden="true"></span>
+          </button>
+          <div class="cs-acc-body">
+            <div class="cs-acc-inner">
+              <p class="cs-acc-text" data-en="The concept connects three roles: poll worker at the entrance, vote counter at the table, and municipal administration. Each sees only what they need. Access works via QR code, no login or training required. AI reads the ballot photo and suggests a result; the human confirms or corrects. All labels use the terminology poll workers already know." data-de="Das Konzept verbindet drei Rollen: Wahlhelfende am Eingang, Auszählende am Tisch und die Gemeindeverwaltung. Jede Rolle sieht nur, was sie braucht. Der Zugang läuft über einen QR-Code, ohne Login oder Schulung. Die KI liest das Foto des Stimmzettels und schlägt ein Ergebnis vor; ein Mensch bestätigt oder korrigiert es. Alle Bezeichnungen verwenden die Begriffe, die Wahlhelfende bereits kennen.">The concept connects three roles: poll worker at the entrance, vote counter at the table, and municipal administration. Each sees only what they need. Access works via QR code, no login or training required. AI reads the ballot photo and suggests a result; the human confirms or corrects. All labels use the terminology poll workers already know.</p>
+              <div class="cs-acc-image">
+                <img loading="lazy" decoding="async" src="images/project-10-voteasy/project-10-4.jpg" alt="Voteasy Votecounter: Design" />
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
-    <div class="alt-block-text">
-      <h2 class="alt-panel-heading" data-en="A first digital attempt" data-de="Ein erster digitaler Versuch">A first digital attempt</h2>
-      <span class="alt-panel-label" data-en="Challenge" data-de="Herausforderung">Challenge</span>
-      <p class="alt-panel-body" data-en="At a local election in 2025, I worked as a volunteer poll worker and experienced the newly introduced digital counting system firsthand. It had serious usability issues throughout: unclear terminology, buried actions, and a flow that made entering data slower than pen and paper. For a tool used once a year with no training, that is not acceptable." data-de="Bei einer Kommunalwahl 2025 war ich ehrenamtliche Wahlhelferin und habe das neu eingeführte digitale Zählsystem selbst erlebt. Es hatte durchgehend gravierende Usability-Probleme: unklare Begriffe, versteckte Aktionen und ein Ablauf, der die Dateneingabe langsamer machte als Stift und Papier. Für ein Tool, das einmal im Jahr ohne Schulung genutzt wird, ist das nicht tragbar.">At a local election in 2025, I worked as a volunteer poll worker and experienced the newly introduced digital counting system firsthand. It had serious usability issues throughout: unclear terminology, buried actions, and a flow that made entering data slower than pen and paper. For a tool used once a year with no training, that is not acceptable.</p>
-    </div>
-  </div>
+  </section>
 
-  <div class="alt-block alt-block--flip">
-    <div class="alt-block-image alt-block-image--crop-square">
-      <img loading="lazy" decoding="async" src="images/project-10-voteasy/project-10-3.jpg" alt="Voteasy Votecounter: Research" />
+  <section class="cs-section" id="role">
+    <h2 class="cs-section-title" data-en="My role" data-de="Meine Rolle">My role</h2>
+    <div class="cs-role">
+      <p class="cs-role-lead" data-en="As the sole designer, my tasks were:" data-de="Als alleinige Designerin waren meine Aufgaben:">As the sole designer, my tasks were:</p>
+      <ul class="cs-chips">
+          <li data-en="Field observation" data-de="Feldbeobachtung">Field observation</li>
+          <li data-en="Interviews" data-de="Interviews">Interviews</li>
+          <li data-en="Concept" data-de="Konzept">Concept</li>
+          <li data-en="Flow design" data-de="Flow-Design">Flow design</li>
+          <li data-en="UI design" data-de="UI-Design">UI design</li>
+          <li data-en="AI interaction design" data-de="KI-Interaktionsdesign">AI interaction design</li>
+          <li data-en="Prototyping" data-de="Prototyping">Prototyping</li>
+      </ul>
     </div>
-    <div class="alt-block-text">
-      <span class="alt-panel-label" data-en="01 Research" data-de="01 Recherche">01 Research</span>
-      <h2 class="alt-panel-heading" data-en="No time to learn a system" data-de="Keine Zeit zum Einarbeiten">No time to learn a system</h2>
-      <p class="alt-panel-body" data-en="I spoke with fellow poll workers to check whether my experience was shared. It was. Recurring themes: unfamiliar terminology, no clear flow, and a system that assumed expert knowledge. The core insight: this tool is used once a year, under time pressure, by volunteers with no prior training. It has to work immediately." data-de="Ich sprach mit anderen Wahlhelfenden, ob es ihnen ähnlich ging. So war es. Wiederkehrende Themen: unbekannte Begriffe, kein klarer Ablauf und ein System, das Expertenwissen voraussetzt. Die zentrale Erkenntnis: Dieses Tool wird einmal im Jahr unter Zeitdruck von Ehrenamtlichen ohne Vorkenntnisse genutzt. Es muss auf Anhieb funktionieren.">
-        I spoke with fellow poll workers to check whether my experience was shared. It was. Recurring themes: unfamiliar terminology, no clear flow, and a system that assumed expert knowledge. The core insight: this tool is used once a year, under time pressure, by volunteers with no prior training. It has to work immediately.
-      </p>
-    </div>
-  </div>
-
-  <div class="alt-block">
-    <div class="alt-block-image">
-      <img loading="lazy" decoding="async" src="images/project-10-voteasy/project-10-1.jpg" alt="Voteasy Votecounter: Concept" />
-    </div>
-    <div class="alt-block-text">
-      <span class="alt-panel-label" data-en="02 Concept" data-de="02 Konzept">02 Concept</span>
-      <h2 class="alt-panel-heading" data-en="A solution that does not exclude voters" data-de="Eine Lösung, die niemanden ausschließt">A solution that does not exclude voters</h2>
-      <p class="alt-panel-body" data-en="A fully digital election would make this unnecessary. But in Germany, paper ballots remain a deliberate choice to include voters who cannot or should not have to interact with digital systems. Voteasy Votecounter works within that reality: it digitises the counting process behind the scenes, leaving the voter experience completely unchanged." data-de="Eine vollständig digitale Wahl würde das überflüssig machen. In Deutschland sind Papierstimmzettel aber eine bewusste Entscheidung: Niemand soll mit digitalen Systemen umgehen müssen, um wählen zu können. Voteasy Votecounter arbeitet innerhalb dieser Realität: Es digitalisiert die Auszählung im Hintergrund, während sich für die Wählenden nichts ändert.">
-        A fully digital election would make this unnecessary. But in Germany, paper ballots remain a deliberate choice to include voters who cannot or should not have to interact with digital systems. Voteasy Votecounter works within that reality: it digitises the counting process behind the scenes, leaving the voter experience completely unchanged.
-      </p>
-    </div>
-  </div>
-
-  <div class="alt-block alt-block--flip">
-    <div class="alt-block-image">
-      <img loading="lazy" decoding="async" src="images/project-10-voteasy/project-10-4.jpg" alt="Voteasy Votecounter: Design" />
-    </div>
-    <div class="alt-block-text">
-      <span class="alt-panel-label" data-en="03 Design" data-de="03 Design">03 Design</span>
-      <h2 class="alt-panel-heading" data-en="Three roles, one seamless flow" data-de="Drei Rollen, ein durchgängiger Flow">Three roles, one seamless flow</h2>
-      <p class="alt-panel-body" data-en="The concept connects three roles: poll worker at the entrance, vote counter at the table, and municipal administration. Each sees only what they need. Access works via QR code, no login or training required. AI reads the ballot photo and suggests a result; the human confirms or corrects. All labels use the terminology poll workers already know." data-de="Das Konzept verbindet drei Rollen: Wahlhelfende am Eingang, Auszählende am Tisch und die Gemeindeverwaltung. Jede Rolle sieht nur, was sie braucht. Der Zugang läuft über einen QR-Code, ohne Login oder Schulung. Die KI liest das Foto des Stimmzettels und schlägt ein Ergebnis vor; ein Mensch bestätigt oder korrigiert es. Alle Bezeichnungen verwenden die Begriffe, die Wahlhelfende bereits kennen.">
-        The concept connects three roles: poll worker at the entrance, vote counter at the table, and municipal administration. Each sees only what they need. Access works via QR code, no login or training required. AI reads the ballot photo and suggests a result; the human confirms or corrects. All labels use the terminology poll workers already know.
-      </p>
-    </div>
-  </div>
-
-  <div class="alt-block">
-    <div class="alt-block-image">
-      <img loading="lazy" decoding="async" src="images/project-10-voteasy/project-10-5.jpg" alt="Voteasy Votecounter: Solution & Impact" />
-    </div>
-    <div class="alt-block-text">
-      <span class="alt-panel-label" data-en="Solution &amp; Impact" data-de="Lösung &amp; Wirkung">Solution &amp; Impact</span>
-      <h2 class="alt-panel-heading" data-en="Ready to pitch" data-de="Bereit für den Pitch">Ready to pitch</h2>
-      <p class="alt-panel-body" data-en="Voteasy Votecounter is a concept and prototype developed independently after experiencing the problem directly. Fellow poll workers who reviewed it responded immediately: clear, fast, and something they would use that same night. The next step is pitching the concept to the responsible municipal office." data-de="Voteasy Votecounter ist ein Konzept mit Prototyp, das ich eigenständig entwickelt habe, nachdem ich das Problem selbst erlebt hatte. Andere Wahlhelfende, die es sich angesehen haben, waren sofort überzeugt: klar, schnell und etwas, das sie noch am selben Abend nutzen würden. Als Nächstes folgt der Pitch beim zuständigen Gemeindeamt.">
-        Voteasy Votecounter is a concept and prototype developed independently after experiencing the problem directly. Fellow poll workers who reviewed it responded immediately: clear, fast, and something they would use that same night. The next step is pitching the concept to the responsible municipal office.
-      </p>
-    </div>
-  </div>
+  </section>
 
   <!-- ── SEE MORE ─────────────────────────────────────────── -->
   <section class="project-more">
@@ -155,7 +200,7 @@
           <p class="project-tags">
             <span data-en="International Research Project" data-de="Internationales Forschungsprojekt">International Research Project</span><span data-en="Self-Regulated Learning" data-de="Selbstreguliertes Lernen">Self-Regulated Learning</span>
           </p>
-          <p class="project-title">ELLA – Lifelong Learning with AI</p>
+          <p class="project-title">ELLA: Lifelong Learning with AI</p>
         </div>
       </div>
 
@@ -172,7 +217,6 @@
   </section>
 
   <a href="#" id="back-to-top" aria-label="Back to top"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 14.5V2.5M2.5 8l5.5-5.5 5.5 5.5"/></svg></a>
-
   <script src="script.js?v=20261102d2"></script>
 </body>
 </html>
