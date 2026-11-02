@@ -915,3 +915,429 @@
   .alt-intro-lead { margin-top: 12px; }
   .alt-meta-strip { margin-top: 24px; }
 }
+
+/* ══ CASE STUDY LAYOUT (draft: project-9-draft.html) ══════════════════════
+   Header (meta, title, one-line summary, role and topic), cover, then
+   sections with the homepage's section title style: Overview (problem,
+   approach, result), Main decisions, Full process (accordion), My role */
+.cs-header { padding: calc(60px + 4.5rem) var(--gutter) 3rem; }
+.cs-meta,
+.cs-facts-label {
+  font-size: clamp(0.85rem, 1.3vw, 1rem);
+  color: var(--muted);
+  letter-spacing: 0.01em;
+}
+.cs-dot { margin: 0 0.5em; color: var(--muted); }
+.cs-title {
+  font-size: clamp(3rem, 6.5vw, 7.5rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin: 1.5rem 0 2.5rem;
+}
+.cs-lead {
+  font-size: clamp(1.35rem, 2.6vw, 2.4rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  max-width: 22em;
+}
+/* same weight as the section title separators */
+.cs-facts {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 1.5rem 3rem;
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 2.5px solid #000;
+}
+.cs-facts-label { display: block; margin-bottom: 0.4rem; }
+.cs-facts p { font-size: clamp(0.95rem, 1.35vw, 1.1rem); line-height: 1.5; }
+
+.alt-cover.cs-cover {
+  width: auto;
+  height: auto;
+  margin: 0 var(--gutter);
+  aspect-ratio: 16 / 8;
+}
+
+.cs-section { padding: 9rem var(--gutter) 0; }
+.cs-section-title {
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  padding-bottom: 1.5rem;
+  margin-bottom: 3rem;
+  border-bottom: 2.5px solid #000;
+}
+.cs-section-title::before { content: '↓'; margin-right: 0.5em; }
+.cs-num { font-size: 0.85rem; color: var(--accent); letter-spacing: 0.02em; }
+
+/* Overview: three columns, a large number in the section title's face */
+.cs-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; }
+.cs-step-top {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 0.5px solid #000;
+}
+.cs-step-num {
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.cs-step--result .cs-step-num { color: var(--accent); }
+.cs-step-label { font-size: clamp(0.85rem, 1.3vw, 1rem); color: var(--muted); }
+.cs-step-heading {
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+.cs-step-quote { margin-top: 0.4rem; font-size: 0.8rem; color: var(--muted); }
+.cs-step-body,
+.cs-decision-why,
+.cs-acc-text {
+  margin-top: 1.25rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+/* Main decisions: number, title, reason (and trade-off) per row */
+.cs-decision {
+  display: grid;
+  grid-template-columns: 4rem 1fr 1.2fr;
+  gap: 2rem;
+  padding: 1.75rem 0;
+  border-bottom: 0.5px solid #000;
+}
+.cs-decision:first-child { padding-top: 0; }
+.cs-decision .cs-num { padding-top: 0.45rem; }
+.cs-decision-title {
+  font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+.cs-decision-why { margin-top: 0; }
+.cs-decision-trade { margin-top: 0.6rem; font-size: 0.85rem; color: var(--muted); }
+
+/* Full process: accordion */
+.cs-acc-item { border-bottom: 0.5px solid #000; }
+.cs-acc-item:first-child .cs-acc-head { padding-top: 0; }
+.cs-acc-head {
+  display: grid;
+  grid-template-columns: 4rem 1fr 2rem;
+  align-items: baseline;
+  gap: 2rem;
+  width: 100%;
+  padding: 1.6rem 0;
+  background: none;
+  border: 0;
+  text-align: left;
+  font: inherit;
+  color: var(--text);
+}
+.cs-acc-title {
+  font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+/* plus that turns into a cross when open */
+.cs-acc-icon { position: relative; width: 16px; height: 16px; justify-self: end; align-self: center; }
+.cs-acc-icon::before,
+.cs-acc-icon::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; top: 50%;
+  height: 1.5px;
+  background: currentColor;
+  transition: rotate 0.35s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.cs-acc-icon::after { rotate: 90deg; }
+/* open: the vertical bar folds flat, the plus becomes a minus */
+.cs-acc-item.open .cs-acc-icon::after { rotate: 180deg; }
+.cs-acc-body { height: 0; overflow: hidden; }
+.cs-acc-item.open .cs-acc-body { height: auto; }
+.cs-acc-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+  padding: 0 0 2.5rem calc(4rem + 2rem);
+}
+.cs-acc-text { margin-top: 0; }
+.cs-acc-image img { display: block; width: 100%; background: #fff; }
+
+/* My role: summary left, skills as chips right */
+.cs-role { display: grid; grid-template-columns: 1fr 1.4fr; gap: 3rem; padding-bottom: 2rem; }
+.cs-role-lead {
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+.cs-chips { list-style: none; display: flex; flex-wrap: wrap; gap: 0.6rem; align-content: flex-start; }
+.cs-chips li {
+  padding: 0.45rem 0.95rem;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 999px;
+  font-size: 0.88rem;
+  background: #fff;
+}
+
+/* Mobile: everything in one column */
+@media (max-width: 860px) {
+  .cs-header { padding-top: calc(60px + 2.5rem); }
+  .cs-title { margin: 1rem 0 1.5rem; }
+  .cs-facts { grid-template-columns: 1fr; margin-top: 2.5rem; }
+  .alt-cover.cs-cover { aspect-ratio: 4 / 3; }
+  .cs-section { padding-top: 5rem; }
+  .cs-section-title { padding-bottom: 0.6rem; margin-bottom: 2rem; }
+  .cs-steps { grid-template-columns: 1fr; gap: 3rem; }
+  .cs-decision { grid-template-columns: 2.5rem 1fr; gap: 0.5rem 1rem; }
+  .cs-decision-text { grid-column: 2; }
+  .cs-acc-head { grid-template-columns: 2.5rem 1fr 1.5rem; gap: 1rem; }
+  .cs-acc-inner { grid-template-columns: 1fr; gap: 1.5rem; padding-left: 0; }
+  .cs-role { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+/* role and topic items wrap as whole items */
+.cs-facts p > span:not(.cs-dot) { white-space: nowrap; }
+/* More room: between the sections, and between the summary sentence and the role/topic line */
+.cs-section { padding-top: 13rem; }
+.cs-facts { margin-top: 7rem; }
+@media (max-width: 860px) {
+  .cs-section { padding-top: 7rem; }
+  .cs-facts { margin-top: 4rem; }
+}
+/* Case-study draft: no step dots in the nav bar or on mobile */
+.cs-page nav .nav-links,
+.cs-page .step-rail { display: none !important; }
+/* Header block higher up, more room before the role/topic line */
+.cs-header { padding-top: calc(60px + 2rem); }
+.cs-facts { margin-top: 10rem; }
+@media (max-width: 860px) {
+  .cs-header { padding-top: calc(60px + 1.5rem); }
+  .cs-facts { margin-top: 5.5rem; }
+}
+.cs-section { padding-top: 18rem; }
+@media (max-width: 860px) { .cs-section { padding-top: 9rem; } }
+/* Accordion plus/minus sits a little in from the right edge */
+.cs-acc-icon { margin-right: 1rem; }
+/* Overview: each step as a white card, like the project cards; numbers purple */
+.cs-steps { gap: var(--gutter); }
+.cs-step { background: #fff; padding: 2rem 1.6rem 2.2rem; }
+.cs-step-num { color: var(--accent); }
+@media (max-width: 860px) {
+  .cs-steps { gap: 1.25rem; }
+  .cs-step { padding: 1.5rem 1.2rem 1.7rem; }
+}
+/* No full-width hairline between the case-study sections (from section + section) */
+.cs-section::before { display: none !important; }
+/* Same room before the disclaimer band as between the sections */
+.cs-page .marquee-band--disclaimer { margin-top: 18rem; }
+@media (max-width: 860px) { .cs-page .marquee-band--disclaimer { margin-top: 9rem; } }
+
+/* Overview cards: taller, a bold black divider, and an arrow on the right of
+   steps 1 and 2 pointing on to the next step (down on mobile, where they stack) */
+.cs-step { padding: 2.4rem 1.8rem 4rem; }
+.cs-step-top { border-bottom: 2.5px solid #000; }
+.cs-step:not(.cs-step--result) .cs-step-top::after {
+  content: '→';
+  margin-left: auto;
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  line-height: 1;
+  color: var(--text);
+}
+@media (max-width: 860px) {
+  .cs-step { padding: 1.8rem 1.3rem 2.8rem; }
+  .cs-step:not(.cs-step--result) .cs-step-top::after { content: '↓'; }
+}
+
+/* My role: skills as purple chips, no outline */
+.cs-chips li { background: var(--accent); color: #fff; border: 0; }
+
+/* Accordion plus/minus a little further in */
+.cs-acc-icon { margin-right: 2rem; }
+
+/* Overview cards: the label (The problem, ...) sits above the headline */
+.cs-step-label { display: block; margin-bottom: 0.5rem; }
+/* Step 3: a minimal finish flag instead of the arrow, line weight like the arrows */
+.cs-step--result .cs-step-top::after {
+  content: '';
+  margin-left: auto;
+  align-self: center;
+  width: clamp(1.6rem, 2.9vw, 2.6rem);
+  height: clamp(1.6rem, 2.9vw, 2.6rem);
+  background: var(--text);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 22V3'/%3E%3Cpath d='M5 4h13l-3 4.5 3 4.5H5'/%3E%3C/svg%3E") center / contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 22V3'/%3E%3Cpath d='M5 4h13l-3 4.5 3 4.5H5'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+/* Case study, mobile fixes */
+/* role / topic: the items can wrap onto the next line (as whole items) */
+.cs-facts p { display: flex; flex-wrap: wrap; align-items: baseline; }
+@media (max-width: 860px) {
+  /* clearer split between a decision's title and its explanation */
+  .cs-decision-text { margin-top: 0.9rem; }
+  /* accordion: plus/minus at the right edge, never over the title */
+  .cs-acc-head { grid-template-columns: 2.5rem 1fr 16px; }
+  .cs-acc-icon { margin-right: 0; }
+}
+
+/* Overview cards: number | label in one line, same size, no arrows or flag */
+.cs-step .cs-step-top::after,
+.cs-step:not(.cs-step--result) .cs-step-top::after,
+.cs-step--result .cs-step-top::after { content: none !important; display: none !important; }
+.cs-step-top { align-items: stretch; gap: 0; }
+.cs-step-top .cs-step-label {
+  display: flex;
+  align-items: center;
+  margin: 0 0 0 0.45em;
+  padding-left: 0.45em;
+  border-left: 2px solid #000;
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  white-space: nowrap;
+}
+/* equal card widths; number and label a touch smaller so "02 | My approach" fits */
+.cs-steps { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.cs-step-num,
+.cs-step-top .cs-step-label { font-size: clamp(1.8rem, 2.9vw, 2.8rem); }
+@media (max-width: 860px) { .cs-steps { grid-template-columns: 1fr; } }
+/* separator only as tall as the digits; label in light grey */
+.cs-step-top { align-items: center; }
+.cs-step-top .cs-step-label {
+  border-left: 0;
+  padding-left: 0;
+  color: #b3b3b3;
+}
+.cs-step-top .cs-step-label::before {
+  content: '';
+  display: inline-block;
+  width: 2px;
+  height: 0.72em;           /* about the height of the digits */
+  margin-right: 0.45em;
+  background: #000;
+}
+/* more room between the number row and the divider below it */
+.cs-step-top { padding-bottom: 1.6rem; }
+/* label and its separator in a lighter lilac than the number, regular weight */
+.cs-step-top .cs-step-label { color: #d4bdf7; font-weight: 400; }
+.cs-step-top .cs-step-label::before { background: #d4bdf7; }
+/* label in the same lilac as the number; a short horizontal stroke instead of
+   the vertical separator (drawn, not a typed dash) */
+.cs-step-top .cs-step-label { color: var(--accent); }
+.cs-step-top .cs-step-label::before {
+  width: 0.38em;
+  height: 2px;
+  margin: 0 0.4em 0 0.05em;
+  background: var(--accent);
+}
+/* stroke as thick as the digits' stems (~0.075em, about 3px at desktop size) */
+.cs-step-top .cs-step-label::before { height: 0.075em; min-height: 2px; }
+/* equal optical gaps: number to stroke = stroke to word (measured, incl. side bearings) */
+.cs-step-top .cs-step-label { margin-left: 0.33em; }
+/* Desktop: Main decisions with a narrower title column, so the explanation
+   starts further left; it stops short of the page edge on the right */
+@media (min-width: 861px) {
+  .cs-decision { grid-template-columns: 4rem minmax(0, 0.8fr) minmax(0, 1.2fr); }
+  .cs-decision-text { max-width: 36rem; }
+}
+
+/* Case study: image strip after the overview (challenge and solution images,
+   or all images on the short pages without an accordion) */
+.cs-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gutter);
+  padding: 0 var(--gutter);
+  margin-top: 18rem;
+}
+.cs-gallery-item img,
+.cs-gallery-item video { display: block; width: 100%; height: 100%; object-fit: cover; background: #fff; }
+/* an odd last image spans the full width */
+.cs-gallery-item:last-child:nth-child(odd) { grid-column: 1 / -1; }
+@media (max-width: 860px) {
+  .cs-gallery { grid-template-columns: 1fr; gap: 1.25rem; margin-top: 9rem; }
+}
+/* accordion steps with several images or videos stack them */
+.cs-acc-image { display: grid; gap: 1rem; align-content: start; }
+.cs-acc-image video { display: block; width: 100%; background: #000; }
+/* Case study header: the short project description below the summary sentence */
+.cs-about {
+  margin-top: 2rem;
+  max-width: 34rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+@media (max-width: 860px) { .cs-about { margin-top: 1.5rem; } }
+/* Case study: same large gap between My role and See More as between the
+   sections (pages with a disclaimer band already get it above the band) */
+.cs-page #role + .project-more { margin-top: 18rem; }
+@media (max-width: 860px) { .cs-page #role + .project-more { margin-top: 9rem; } }
+/* Overview cards: number, stroke and label in black instead of purple */
+.cs-step-num, .cs-step--result .cs-step-num,
+.cs-step-top .cs-step-label { color: var(--text); }
+.cs-step-top .cs-step-label::before { background: var(--text); }
+/* Header: the short project description sits at the bottom of the header,
+   just above the role/topic separator; the big gap moves above it */
+.cs-header .cs-about { margin-top: 10rem; }
+.cs-header .cs-about + .cs-facts { margin-top: 2.5rem; }
+@media (max-width: 860px) {
+  .cs-header .cs-about { margin-top: 5.5rem; }
+  .cs-header .cs-about + .cs-facts { margin-top: 1.75rem; }
+}
+/* Header description in the same size as the role/topic items */
+.cs-header .cs-about { font-size: clamp(0.95rem, 1.35vw, 1.1rem); line-height: 1.5; max-width: 40rem; }
+/* Overview card with two problems: room before the second headline */
+.cs-step-body + .cs-step-heading { margin-top: 2.2rem; }
+/* Accordion: show one part of a combined image (aspect ratio set inline) */
+.cs-crop { overflow: hidden; }
+.cs-crop img { width: 100%; height: 100%; object-fit: cover; }
+.cs-crop--top img { object-position: top; }
+.cs-crop--bottom img { object-position: bottom; }
+/* Accordion: two videos side by side, both in the portrait format of the
+   playtesting clip; the wide app clip is cropped to the phone in its centre */
+.cs-media-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.cs-media-pair video { width: 100%; aspect-ratio: 1080 / 1820; object-fit: cover; background: transparent; }
+/* Wide screens: the overview cards take the right three quarters, the first
+   quarter stays empty; number and label a touch smaller so they fit
+   (below 1200px the cards keep the full width so they don't get too narrow) */
+@media (min-width: 1200px) {
+  .cs-steps { margin-left: 25%; }
+  .cs-step-num,
+  .cs-step-top .cs-step-label { font-size: clamp(1.5rem, 2.2vw, 2.2rem); }
+}
+/* Image strip: images keep their full width and proportions (no cropping);
+   images in one row sit flush at the top */
+.cs-gallery { align-items: start; }
+.cs-gallery-item img,
+.cs-gallery-item video { height: auto; object-fit: initial; }
+/* Image strip in rows: each image's flex share equals its aspect ratio (set
+   inline), so the images in a row are the same height and never cropped */
+.cs-gallery--rows { display: block; }
+.cs-gallery-row { display: flex; gap: var(--gutter); align-items: flex-start; }
+.cs-gallery-row + .cs-gallery-row { margin-top: var(--gutter); }
+.cs-gallery-row .cs-gallery-item { min-width: 0; }
+.cs-gallery-row .cs-gallery-item img,
+.cs-gallery-row .cs-gallery-item video { display: block; width: 100%; height: auto; }
+@media (max-width: 860px) {
+  .cs-gallery-row { flex-direction: column; gap: 1.25rem; }
+  .cs-gallery-row + .cs-gallery-row { margin-top: 1.25rem; }
+  .cs-gallery-row .cs-gallery-item { flex: none !important; width: 100%; }
+}
+/* Accordion: two images side by side at the same height (flex share = aspect ratio, set inline) */
+.cs-img-row { display: flex; gap: 1rem; align-items: flex-start; }
+.cs-img-row > div { min-width: 0; }
+.cs-img-row img { display: block; width: 100%; height: auto; }
+/* A video as cover (muted loop) fills the cover like an image */
+.alt-cover video { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* Video cover: shown as a normal video in its own format (not cropped),
+   with the system controls; no scroll-on-click and no big cover cursor */
+.alt-cover.cs-cover.alt-cover--video { aspect-ratio: auto; height: auto; }
+.alt-cover--video video { height: auto; object-fit: contain; background: #000; }

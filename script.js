@@ -22,12 +22,14 @@ const stepPage = document.body.classList.contains('alt-page');
 (function () {
   if (!stepPage) return;
   const list = document.querySelector('nav .nav-links');
-  const labels = document.querySelectorAll('.alt-panel-label');
+  // New case-study layout: the menu lists its sections (Overview, ...)
+  const csHeads = document.querySelectorAll('.cs-section > .cs-section-title');
+  const labels = csHeads.length ? csHeads : document.querySelectorAll('.alt-panel-label');
   if (!list || !labels.length) return;
   const clean = t => (t || '').replace(/^\s*\d+\s+/, '').trim(); // "01 Research" → "Research"
   list.innerHTML = '';
   labels.forEach((label, i) => {
-    const step = label.closest('.alt-block, .alt-text-section') || label;
+    const step = label.closest('.alt-block, .alt-text-section, .cs-section') || label;
     if (!step.id) step.id = 'step-' + (i + 1);
     // Desktop shows inactive steps as dots: the name sits in a span that
     // opens for the active step, plus a small hover label for the dots
@@ -94,7 +96,7 @@ if (window.matchMedia('(pointer: fine)').matches) {
 
   const introPhoto   = document.querySelector('.intro-photo');
   const eventZones   = [
-    document.querySelector('.alt-cover'),
+    document.querySelector('.alt-cover:not(.alt-cover--video)'),
     ...Array.from(document.querySelectorAll('.project-thumb'))
   ].filter(Boolean);
 
@@ -853,8 +855,9 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
   // Project pages: cover image → first content image
   const cover = document.querySelector('.alt-cover');
-  const firstContent = document.querySelector('.alt-block');
-  if (cover && firstContent) {
+  const firstContent = document.querySelector('.alt-block, .cs-section');
+  // (a video cover is a normal video with controls: no scroll on click)
+  if (cover && firstContent && !cover.classList.contains('alt-cover--video')) {
     cover.addEventListener('click', () => scrollToEl(firstContent));
   }
 })();
@@ -1746,6 +1749,7 @@ window.addEventListener('scroll', () => {
     '.alt-meta-strip', '.alt-block-image', '.alt-block-image-pair', '.alt-block-video',
     '.alt-block-text', '.alt-panel-label', '.alt-panel-heading', '.alt-panel-body-pair',
     '.alt-panel-body', '.alt-media-row',
+    '.cs-section-title', '.cs-step', '.cs-decision', '.cs-acc-item', '.cs-role-lead', '.cs-chips', '.cs-gallery-item',
     '.contact-card'
   ].join(',');
 
@@ -1767,7 +1771,8 @@ window.addEventListener('scroll', () => {
   var heroes = Array.prototype.slice.call(document.querySelectorAll([
     '.slogan-wrap', '.intro-id h1', '.intro-bio', '.intro-photo',
     '.projects-overview-title', '.project-filters',
-    '.alt-cover', '.alt-intro-title', '.alt-intro-lead', '.alt-meta-strip'
+    '.alt-cover', '.alt-intro-title', '.alt-intro-lead', '.alt-meta-strip',
+    '.cs-meta', '.cs-title', '.cs-lead', '.cs-about', '.cs-facts'
   ].join(',')));
 
   var vh = window.innerHeight;
@@ -1869,3 +1874,19 @@ document.querySelectorAll('.project-card').forEach(function (card) {
   });
 });
 
+// Case-study accordion (Full process): one step open at a time is not forced;
+// each opens and closes with a soft height animation
+document.querySelectorAll('.cs-acc-item').forEach(function (item) {
+  var head = item.querySelector('.cs-acc-head');
+  var body = item.querySelector('.cs-acc-body');
+  if (!head || !body) return;
+  head.addEventListener('click', function () {
+    var open = item.classList.contains('open');
+    head.setAttribute('aria-expanded', String(!open));
+    var from = body.offsetHeight;
+    item.classList.toggle('open', !open);
+    var to = open ? 0 : body.scrollHeight;
+    body.animate([{ height: from + 'px' }, { height: to + 'px' }],
+      { duration: 450, easing: 'cubic-bezier(0.65, 0, 0.35, 1)' });
+  });
+});

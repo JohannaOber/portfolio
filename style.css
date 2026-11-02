@@ -1970,3 +1970,20 @@ h2 {
 .intro-bio,
 .intro-id h1 { line-height: 1.4; }
 @media (max-width: 720px) { .intro-id h1 { line-height: 1.15; } }
+
+/* Hyphenation, portfolio-wide: never more than two hyphenated lines in a row
+   (Safari), and only longer words get split, with at least 4 letters before
+   and 3 after the break (Chrome, Edge, Safari); both settings are inherited */
+html {
+  hyphenate-limit-lines: 2;
+  -webkit-hyphenate-limit-lines: 2;
+  hyphenate-limit-chars: 8 4 3;
+  -webkit-hyphenate-limit-before: 4;
+  -webkit-hyphenate-limit-after: 3;
+}
+
+/* Header: the name a bit larger than the bio text below it */
+.intro-id h1 { font-size: clamp(1.25rem, 1.9vw, 1.55rem); line-height: 1.25; }
+@media (max-width: 720px) {
+  .intro-id h1 { font-size: 1.15rem; line-height: 1.15; }
+}
