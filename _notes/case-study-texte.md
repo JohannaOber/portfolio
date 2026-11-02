@@ -53,10 +53,10 @@ Branch: `interaction-tweaks` (nur lokal committet, nicht gepusht, nicht in main 
 
 **Mobile-First Car UX (Audi)**
 - Kopfzeile: Audi AG · Bachelor’s thesis · 2025
-- Satz: „When nobody has to drive anymore, the car needs a new interface. I explored how your own smartphone can become its centre.“
+- Satz: „When nobody has to drive anymore, the car needs a new interface. I explored how your own smart device can become its centre.“
 - Overview: Problem „No steering wheel, no driver“ · Approach „Designing from future scenarios“ · Result „A base for further exploration“
 - Main decisions:
-  - 01 The smartphone at the core: vertraute Interaktionen statt eines neuen Systems im Auto.
+  - 01 The smart device at the core: vertraute Interaktionen statt eines neuen Systems im Auto.
   - 02 Scenarios instead of today’s users: Level 5 gibt es noch nicht. Trade-off: Das Konzept war eng an eine Persona gebunden, das hat die Fokusgruppe selbst angemerkt.
   - 03 Expert focus group instead of user tests: Es gibt kein Level-5-Auto, in dem man testen könnte, deshalb Skizzen und Videos.
 - My role: „Sole designer, from research to expert evaluation“
@@ -105,7 +105,7 @@ Branch: `interaction-tweaks` (nur lokal committet, nicht gepusht, nicht in main 
 
 **Little Food Fighters**
 - Kopfzeile: Linköping University · Course project · 2024
-- Satz: „A third of all food is wasted, and kids are rarely part of the solution. We printed a cooperative game right onto the grocery bag.“
+- Satz: „A third of all food is wasted, and there are plenty of opportunities to reduce it. We developed a playful way to empower kids with the knowledge to do so, produced sustainably from what already exists.“
 - Overview: Problem „No lectures, just play“ · Approach „A game that needs no new materials“ · Result „Wrapped in purpose“
 - Main decisions:
   - 01 The grocery bag as the board: kein Zusatzkauf, erreicht Familien genau beim Einkauf.

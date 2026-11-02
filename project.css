@@ -1248,3 +1248,96 @@
   .cs-decision { grid-template-columns: 4rem minmax(0, 0.8fr) minmax(0, 1.2fr); }
   .cs-decision-text { max-width: 36rem; }
 }
+
+/* Case study: image strip after the overview (challenge and solution images,
+   or all images on the short pages without an accordion) */
+.cs-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gutter);
+  padding: 0 var(--gutter);
+  margin-top: 18rem;
+}
+.cs-gallery-item img,
+.cs-gallery-item video { display: block; width: 100%; height: 100%; object-fit: cover; background: #fff; }
+/* an odd last image spans the full width */
+.cs-gallery-item:last-child:nth-child(odd) { grid-column: 1 / -1; }
+@media (max-width: 860px) {
+  .cs-gallery { grid-template-columns: 1fr; gap: 1.25rem; margin-top: 9rem; }
+}
+/* accordion steps with several images or videos stack them */
+.cs-acc-image { display: grid; gap: 1rem; align-content: start; }
+.cs-acc-image video { display: block; width: 100%; background: #000; }
+/* Case study header: the short project description below the summary sentence */
+.cs-about {
+  margin-top: 2rem;
+  max-width: 34rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+@media (max-width: 860px) { .cs-about { margin-top: 1.5rem; } }
+/* Case study: same large gap between My role and See More as between the
+   sections (pages with a disclaimer band already get it above the band) */
+.cs-page #role + .project-more { margin-top: 18rem; }
+@media (max-width: 860px) { .cs-page #role + .project-more { margin-top: 9rem; } }
+/* Overview cards: number, stroke and label in black instead of purple */
+.cs-step-num, .cs-step--result .cs-step-num,
+.cs-step-top .cs-step-label { color: var(--text); }
+.cs-step-top .cs-step-label::before { background: var(--text); }
+/* Header: the short project description sits at the bottom of the header,
+   just above the role/topic separator; the big gap moves above it */
+.cs-header .cs-about { margin-top: 10rem; }
+.cs-header .cs-about + .cs-facts { margin-top: 2.5rem; }
+@media (max-width: 860px) {
+  .cs-header .cs-about { margin-top: 5.5rem; }
+  .cs-header .cs-about + .cs-facts { margin-top: 1.75rem; }
+}
+/* Header description in the same size as the role/topic items */
+.cs-header .cs-about { font-size: clamp(0.95rem, 1.35vw, 1.1rem); line-height: 1.5; max-width: 40rem; }
+/* Overview card with two problems: room before the second headline */
+.cs-step-body + .cs-step-heading { margin-top: 2.2rem; }
+/* Accordion: show one part of a combined image (aspect ratio set inline) */
+.cs-crop { overflow: hidden; }
+.cs-crop img { width: 100%; height: 100%; object-fit: cover; }
+.cs-crop--top img { object-position: top; }
+.cs-crop--bottom img { object-position: bottom; }
+/* Accordion: two videos side by side, both in the portrait format of the
+   playtesting clip; the wide app clip is cropped to the phone in its centre */
+.cs-media-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.cs-media-pair video { width: 100%; aspect-ratio: 1080 / 1820; object-fit: cover; background: transparent; }
+/* Wide screens: the overview cards take the right three quarters, the first
+   quarter stays empty; number and label a touch smaller so they fit
+   (below 1200px the cards keep the full width so they don't get too narrow) */
+@media (min-width: 1200px) {
+  .cs-steps { margin-left: 25%; }
+  .cs-step-num,
+  .cs-step-top .cs-step-label { font-size: clamp(1.5rem, 2.2vw, 2.2rem); }
+}
+/* Image strip: images keep their full width and proportions (no cropping);
+   images in one row sit flush at the top */
+.cs-gallery { align-items: start; }
+.cs-gallery-item img,
+.cs-gallery-item video { height: auto; object-fit: initial; }
+/* Image strip in rows: each image's flex share equals its aspect ratio (set
+   inline), so the images in a row are the same height and never cropped */
+.cs-gallery--rows { display: block; }
+.cs-gallery-row { display: flex; gap: var(--gutter); align-items: flex-start; }
+.cs-gallery-row + .cs-gallery-row { margin-top: var(--gutter); }
+.cs-gallery-row .cs-gallery-item { min-width: 0; }
+.cs-gallery-row .cs-gallery-item img,
+.cs-gallery-row .cs-gallery-item video { display: block; width: 100%; height: auto; }
+@media (max-width: 860px) {
+  .cs-gallery-row { flex-direction: column; gap: 1.25rem; }
+  .cs-gallery-row + .cs-gallery-row { margin-top: 1.25rem; }
+  .cs-gallery-row .cs-gallery-item { flex: none !important; width: 100%; }
+}
+/* Accordion: two images side by side at the same height (flex share = aspect ratio, set inline) */
+.cs-img-row { display: flex; gap: 1rem; align-items: flex-start; }
+.cs-img-row > div { min-width: 0; }
+.cs-img-row img { display: block; width: 100%; height: auto; }
+/* A video as cover (muted loop) fills the cover like an image */
+.alt-cover video { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* Video cover: shown as a normal video in its own format (not cropped),
+   with the system controls; no scroll-on-click and no big cover cursor */
+.alt-cover.cs-cover.alt-cover--video { aspect-ratio: auto; height: auto; }
+.alt-cover--video video { height: auto; object-fit: contain; background: #000; }

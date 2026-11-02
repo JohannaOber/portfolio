@@ -96,7 +96,7 @@ if (window.matchMedia('(pointer: fine)').matches) {
 
   const introPhoto   = document.querySelector('.intro-photo');
   const eventZones   = [
-    document.querySelector('.alt-cover'),
+    document.querySelector('.alt-cover:not(.alt-cover--video)'),
     ...Array.from(document.querySelectorAll('.project-thumb'))
   ].filter(Boolean);
 
@@ -856,7 +856,8 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   // Project pages: cover image → first content image
   const cover = document.querySelector('.alt-cover');
   const firstContent = document.querySelector('.alt-block, .cs-section');
-  if (cover && firstContent) {
+  // (a video cover is a normal video with controls: no scroll on click)
+  if (cover && firstContent && !cover.classList.contains('alt-cover--video')) {
     cover.addEventListener('click', () => scrollToEl(firstContent));
   }
 })();
@@ -1748,7 +1749,7 @@ window.addEventListener('scroll', () => {
     '.alt-meta-strip', '.alt-block-image', '.alt-block-image-pair', '.alt-block-video',
     '.alt-block-text', '.alt-panel-label', '.alt-panel-heading', '.alt-panel-body-pair',
     '.alt-panel-body', '.alt-media-row',
-    '.cs-section-title', '.cs-step', '.cs-decision', '.cs-acc-item', '.cs-role-lead', '.cs-chips',
+    '.cs-section-title', '.cs-step', '.cs-decision', '.cs-acc-item', '.cs-role-lead', '.cs-chips', '.cs-gallery-item',
     '.contact-card'
   ].join(',');
 
@@ -1771,7 +1772,7 @@ window.addEventListener('scroll', () => {
     '.slogan-wrap', '.intro-id h1', '.intro-bio', '.intro-photo',
     '.projects-overview-title', '.project-filters',
     '.alt-cover', '.alt-intro-title', '.alt-intro-lead', '.alt-meta-strip',
-    '.cs-meta', '.cs-title', '.cs-lead', '.cs-facts'
+    '.cs-meta', '.cs-title', '.cs-lead', '.cs-about', '.cs-facts'
   ].join(',')));
 
   var vh = window.innerHeight;
