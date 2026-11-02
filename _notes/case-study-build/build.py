@@ -6,7 +6,7 @@ from content import P
 from de import DE
 
 REPO = '/Users/johanna/Documents/04_Portfolio_Sept2026'
-LC = open(f'{REPO}/project-9-draft.html', encoding='utf-8').read()
+LC = open(f'{REPO}/project-9.html', encoding='utf-8').read()  # hand-made page = template
 HEAD = LC[:LC.index('<body')]
 NAV = LC[LC.index('  <nav>'):LC.index('</nav>') + 6]
 TAIL = LC[LC.index('  <a href="#" id="back-to-top"'):]
@@ -85,7 +85,7 @@ def gallery_html(items):
 
 
 def build(n):
-    p = parse(f'{REPO}/project-{n}.html')
+    p = parse(f'{REPO}/_notes/case-study-build/originals/project-{n}.html')  # old layout as source
     c = P[n]
     blocks = p['blocks']
     chal, sol = blocks[0], blocks[-1]
@@ -101,10 +101,9 @@ def build(n):
     body_cls = p['body_class'] + ' cs-page'
     about = ('\n    ' + tx(p['lead'], 'p', 'cs-about')) if p['lead'] and not c.get('no_about') else ''
 
-    out = [HEAD.replace('<title>Language Coach (draft) · Johanna Ober</title>',
-                        f'<title>{title} (draft) · Johanna Ober</title>'),
+    out = [HEAD.replace('<title>Langenscheidt Language Coach · Johanna Ober</title>',
+                        f'<title>{title} · Johanna Ober</title>'),
            f'<body class="{body_cls}">\n\n', NAV, '\n\n',
-           f'  <!-- DRAFT: new case-study structure for {title}, not linked yet -->\n\n',
            f'''  <!-- ── HEADER ─────────────────────────────────────────── -->
   <header class="cs-header">
     <p class="cs-meta">{meta}</p>
@@ -249,7 +248,7 @@ def build(n):
     out.append('  <!-- ── SEE MORE ─────────────────────────────────────────── -->\n  '
                + p['more'].replace('ELLA – Lifelong', 'ELLA: Lifelong') + '\n\n')
     out.append(TAIL)
-    open(f'{REPO}/project-{n}-draft.html', 'w', encoding='utf-8').write(''.join(out))
+    open(f'{REPO}/project-{n}.html', 'w', encoding='utf-8').write(''.join(out))
     print('wrote', n)
 
 
